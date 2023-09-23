@@ -1,0 +1,3856 @@
+/***GENERAL CUSTOMISATION***/
+* {
+    font-family: "EB Garamond", serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /***IMAGES AND ICONS***/
+  div.iconWrap input[type="image"] {
+    position: relative;
+  }
+  
+  div.goBackMsgUserRegister a img {
+    filter: invert(1);
+  }
+  img.libraryImg {
+    position: absolute;
+    height: 100vh;
+    width: 50vw;
+    top: 5%;
+    opacity: 0.6;
+  }
+  body.insertBody {
+    background-image: url("Methods/img/pexels-jess-bailey-designs-1018136(1).webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+  }
+  /***Margin top 25px***/
+  div.uploadContainer form input[type="submit"],
+  div.goBackMsgReset,
+  div.goBackMsgUpd,
+  div.goBackMsgDiscount,
+  div.iconWrapSearchTrans,
+  div.goBackMsgUserPanel {
+    margin-top: 25px;
+    text-align: center;
+  }
+  /***Margin bottom***/
+  div.uploadContainer form textarea,
+  div.goBackMsgInsert,
+  div#animated > div.loginWrapper {
+    margin-bottom: 25px;
+  }
+  
+  /***Buttons/inputs 1 styles***/
+  input#loginButton,
+  input#submitRegMail,
+  input#reset,
+  input#submitNum,
+  input#submitUser,
+  div.registerContainerUser button,
+  input.logoutAdmin,
+  input.logoutUser,
+  input.ansMsg,
+  input.submitAnswer,
+  form input#list,
+  input.deleteSmall,
+  input#submitCategory,
+  input#submitSlider,
+  div.uploadContainerUser form input[type="submit"],
+  div.insertCategory form input,
+  input.deleteCat,
+  input#transSearch,
+  input.updateUser {
+    border-style: none;
+    padding: 5px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background-color: white;
+  }
+  
+  /***Button/inputs 1 styles hover***/
+  input#loginButton:hover,
+  button.g-recaptcha:hover,
+  input#submitRegMail:hover,
+  input#reset:hover,
+  input#submitNum:hover,
+  input#submitUser:hover,
+  form input#list:hover,
+  input.deleteSmall:hover,
+  form.userSearchForm input:hover,
+  div.updateContainerUser form input:hover,
+  div.uploadContainerUser form input[type="submit"]:hover,
+  input.submitCategory:hover,
+  input.deleteCat:hover,
+  input.logoutAdmin:hover,
+  input.updateUser:hover,
+  input.logoutUser:hover {
+    cursor: pointer;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+    background-color: azure;
+  }
+  /***Buttons/inputs 2 styles***/
+  div#selectAllQ,
+  div.uploadContainer form input[type="submit"],
+  p#delete,
+  p#deleteUser,
+  input#submitUpdFull,
+  input#submitSlider,
+  input#submitCategory,
+  input#listTrans,
+  div#transConfirmRestore,
+  p#updateDiscount,
+  div.transConfirm,
+  div#transConfirmDel {
+    border-radius: 15px;
+    text-align: center;
+    background-color: cornflowerblue;
+    color: white;
+    padding: 7px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: fit-content;
+    max-width: fit-content;
+    border-style: none;
+    outline: none;
+    min-width: 100px;
+    margin: auto;
+  }
+  /***Buttons/inputs 2 styles hover***/
+  div#selectAllQ:hover,
+  div.uploadContainer form input[type="submit"]:hover,
+  input#submitUpdFull:hover,
+  input#submitSlider:hover,
+  input#submitCategory:hover,
+  input#submitSlider:hover,
+  input#listTrans:hover,
+  th#selectAll:hover,
+  th#restoreSelec:hover,
+  th#changeStatus:hover,
+  th#deleteSelec:hover,
+  th#restoreSelecTrans:hover,
+  th#restoreSelecCust:hover {
+    cursor: pointer;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+    background-color: rgba(100, 148, 237, 0.466);
+  }
+  /***Question panel button stilisation***/
+  div.qContainer input.read,
+  div.qContainer input {
+    border-radius: 15px;
+    text-align: center;
+    background-color: rgba(100, 148, 237, 0.466);
+    color: white;
+    padding: 7px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: fit-content;
+    max-width: fit-content;
+    border-style: none;
+    outline: none;
+  }
+  @-moz-document url-prefix() {
+    form#demo-form button.g-recaptcha > img {
+      margin-bottom: -55%;
+    }
+  }
+  div.qContainer input.read:hover,
+  div.qContainer input:hover {
+    cursor: pointer;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+    background-color: cornflowerblue;
+  }
+  
+  /***Message for failed action stilisation***/
+  div.login-failed,
+  div.login-failed-empty,
+  div.login-failed-user,
+  div.login-failed-notfound,
+  div.login-failed-ip,
+  p.goBackMsg,
+  p.goBackMsgTerms,
+  div#porukaReg > span {
+    background: crimson;
+    color: white;
+    padding: 5px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 5px;
+    position: relative;
+  }
+  /***Small stilisation change on failed message used in another panel***/
+  body#updBody p#output > p.goBackMsg {
+    background: unset;
+    color: cornflowerblue;
+    margin-top: unset;
+    padding: unset;
+  }
+  /***Message for success action stilisation***/
+  p#loginSuccess,
+  p.mailMsg,
+  div#porukaReg > p,
+  p.userUploadMsg,
+  p#catAnchor {
+    background: cornflowerblue;
+    color: white;
+    padding: 5px;
+    width: fit-content;
+    margin: auto;
+  }
+  /***Message for already present element stilisation***/
+  p#output,
+  p#output2 {
+    background-color: azure;
+    color: cornflowerblue;
+  }
+  
+  /***Message for mild failed action stilisation(book upload)***/
+  div.finalMsg {
+    background: rgba(220, 20, 60, 0.363);
+    color: white;
+    margin-top: 15px;
+  }
+  
+  /***Input stilisation***/
+  div.firstPageSearchContainer form input,
+  div.firstPageSearchContainerA form input,
+  input.inputLogin,
+  input#mail,
+  input#mail2,
+  input#passVal,
+  div.uploadContainer form input,
+  div.uploadContainer form textarea,
+  div.insertCategory form input {
+    border-style: none;
+    outline: none;
+  }
+  
+  /***Book upload, update and search input stilisation***/
+  div.uploadContainer form input,
+  div.uploadContainer form textarea,
+  form input#img,
+  form label select#mySelect,
+  .inputContainer input,
+  select#mySelectSlider,
+  form.userSearchForm input {
+    border-style: none;
+    padding: 5px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background-color: white;
+  }
+  
+  /***General font sizes***/
+  div.quote span,
+  span.originalPrice,
+  span.finalThx,
+  div.registerContainerUser h2,
+  div.step1Wrapper h1,
+  div.mainLinks h2,
+  body.adminBody h1#adminMsg,
+  div.uploadContainer h2,
+  td.desc,
+  div.uploadContainerUser h2,
+  input.delCategory,
+  input.submitCategory {
+    font-size: 1.5rem;
+  }
+  div.reviews p,
+  div.cartContainer label,
+  body.userInsertCheckout h2,
+  span.finalMail,
+  body div.questionsContainer p:nth-child(1),
+  tbody tr td,
+  #mainTable th,
+  table#mainTableUser th,
+  span.goBackMsgUser,
+  p#output,
+  p#output2,
+  #userMainTable th,
+  table#mainTableStats th,
+  p.bookText,
+  p.userText,
+  div#transConfirmRestore,
+  div.transConfirm,
+  div#transConfirmDel,
+  p#updateDiscount,
+  p.emph {
+    font-size: 1.2rem;
+  }
+  div.titlePriceDisc,
+  div.newPriceSlider,
+  div.titlePrice,
+  div.priceSlide,
+  h1.cartHeading,
+  body.userInsert h1.mainTitle,
+  h1.statsTitle,
+  h1.statsTitleCust {
+    font-size: 2rem;
+  }
+  /***Html***/
+  html {
+    scroll-behavior: smooth;
+  }
+  /***Centered elements***/
+  main#cartMain,
+  body[onload="paymentFinal()"] > main,
+  .cartHeading,
+  h2.productSpec,
+  h2.latestEdition,
+  div.goBackMsgUpd,
+  div.paginationContainer,
+  footer.loginNav,
+  div.registerContainerUser,
+  div.allRegWrapper div.register-wrapper-user,
+  div#porukaPassword,
+  h1#adminMsg,
+  body.adminBody div.goBackMsg,
+  div.goBackMessages,
+  div.goBackMsg,
+  div.searchContainer h3,
+  div.searchContainer h2,
+  section.searchIcon,
+  div.finalMsg,
+  body.transBody,
+  div.userSearchContainer h2,
+  div.userSearchContainer h3,
+  div.goBackMsgUserSearch,
+  h2.categoryInsert,
+  div.insertCategory,
+  div.goBackMsgCategories,
+  h1#sliderTitle,
+  div.goBackMsgSlider,
+  #mainTableStats,
+  h1.statsTitle,
+  div.goBackMsgBookStats,
+  h1.statsTitleCust,
+  div.goBackMsgCustStatistics,
+  p.customerNotice {
+    text-align: center;
+  }
+  
+  body.gradient {
+    background-image: linear-gradient(
+      95.2deg,
+      rgb(173 186 252 / 0%) 26.8%,
+      rgb(72 182 233 / 46%) 64%
+    );
+  }
+  
+  /***Go back icons***/
+  div.goBackMsgUserRegister,
+  div.uploadContainer form input[type="submit"] {
+    margin-top: 15px;
+  }
+  /***Select tag fix for Firefox***/
+  @-moz-document url-prefix() {
+    nav select#mySelect,
+    nav select#mySelectDiscount,
+    select#adm_units,
+    div.uploadContainerUser > form > select#users.userUpd {
+      background: white;
+    }
+    select#users.userUpd {
+      border: none;
+    }
+  }
+  /***Select tag fix for some android phones (for some reason width isnt working)***/
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (min--moz-device-pixel-ratio: 1.5),
+    only screen and (-o-device-pixel-ratio: 3/2),
+    only screen and (min-device-pixel-ratio: 1.5) {
+    nav select#mySelect,
+    nav select#mySelectDiscount,
+    select#adm_units {
+      background: white;
+    }
+  }
+  
+  body {
+    min-width: 320px;
+    margin: auto;
+    max-width: 2256px;
+  }
+  
+  div.categoryFront {
+    position: relative;
+    top: -35px;
+    font-size: 1.5rem;
+    filter: opacity(0.2);
+    font-style: oblique;
+  }
+  
+  /***Removing arrows from input type number***/
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  /***Header on first page***/
+  /***Login, Icon and cart***/
+  div.headerStuff img.cartMain,
+  div.headerStuff input.cartMain:hover {
+    cursor: pointer;
+  }
+  span#cartNum {
+    box-shadow: rgb(3 102 214 / 30%) 0px 0px 0px 3px;
+    height: 25px;
+    padding: 2px;
+    align-self: center;
+  }
+  div.headerStuff {
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    margin: 1%;
+    gap: 1%;
+    margin-top: 2%;
+    box-shadow: rgb(27 31 35 / 4%) 0px 1px 0px,
+      rgb(255 255 255 / 25%) 0px 1px 0px inset;
+    position: sticky;
+    top: 0;
+    flex-direction: row-reverse;
+    z-index: 4000;
+  }
+  div.headerStuff a {
+    align-self: center;
+  }
+  /***Front section***/
+  section.frontSection {
+    background-attachment: unset;
+  }
+  
+  /***Main title***/
+  h1.mainTitle {
+    font-size: 2.5rem;
+    color: cornsilk;
+    filter: drop-shadow(2px 4px 6px black);
+    text-align: center;
+    margin-top: 2%;
+    position: relative;
+    top: 25px;
+  }
+  /***Girl first page image***/
+  img.wrapImage {
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    border-radius: 25% 0px 0% 0px;
+    width: 100%;
+    position: relative;
+    display: block;
+    height: auto;
+  }
+  
+  /***First page nav words***/
+  
+  div.wordsContainer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    bottom: 2vh;
+  }
+  ul.words {
+    position: absolute;
+    color: white;
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    row-gap: 15px;
+    font-size: 1.5rem;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    border-radius: 25px 25px 25px 25px;
+    column-gap: 27%;
+    margin: auto;
+  }
+  ul.words li.grid-item1 {
+    list-style-type: none;
+  }
+  div.contactContainer {
+    position: relative;
+    width: 100%;
+  }
+  ul.words li > a {
+    transition: font-size 0.2s linear;
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+  ul.words li > a:hover {
+    color: white;
+    box-shadow: 6.8px 13.6px 13.6px hsl(0deg 0% 0% / 0.29);
+    display: inline-block;
+    border-radius: 3%;
+  }
+  
+  section nav a[href="#contact"]:hover:after {
+    height: 5px;
+    width: 100%;
+  }
+  
+  /***Categories and discounts***/
+  nav div.selectWrap {
+    position: relative;
+    opacity: 0;
+    transform: translateY(-45px);
+    z-index: -4000;
+  }
+  nav select#mySelect:hover,
+  select#mySelectDiscount:hover {
+    cursor: pointer;
+  }
+  nav select#mySelectDiscount {
+    outline: none;
+    border-style: none;
+    border: none;
+    box-shadow: rgb(9 30 66 / 25%) 0px 4px 8px -2px,
+      rgb(9 30 66 / 8%) 0px 0px 0px 1px;
+  
+    text-align: center;
+  }
+  
+  nav select#mySelect {
+    outline: none;
+    border-style: none;
+    border: none;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+      rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    text-align: center;
+  }
+  nav select#mySelect:focus {
+    background-color: snow;
+  }
+  nav select#mySelectDiscount:focus {
+    background-color: snow;
+  }
+  nav div.selectWrapAnimated {
+    opacity: 1;
+    transition-property: opacity, transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
+  }
+  /***First page search form***/
+  
+  div.firstPageSearchContainer form,
+  div.firstPageSearchContainerA form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    box-shadow: rgb(0 0 0 / 45%) 0px 25px 20px -20px;
+    transition: padding 200ms linear;
+    padding: 0;
+    width: 300px;
+    margin: auto;
+    position: relative;
+    padding-top: 35px;
+  }
+  div.firstPageSearchContainer {
+    opacity: 0;
+    transform: translateY(-45px);
+  }
+  
+  div.firstPageSearchContainerA {
+    opacity: 1;
+    transition-property: opacity, transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+  }
+  p#empty {
+    background: aliceblue;
+    color: cornflowerblue;
+    font-size: 1.5rem;
+    position: relative;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+      rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  }
+  img#emptyIcon {
+    margin-top: 50px;
+    border-radius: 15px;
+    background: aliceblue;
+  }
+  /***Books rendered by categories***/
+  p#opisDesc {
+    font-size: large;
+    color: rgb(0, 0, 0);
+    width: fit-content;
+    padding: 25px;
+    border-radius: 50px 5px;
+    background-color: #fffbed30;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+      rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  div.descFront2 {
+    font-size: 1.8rem;
+  }
+  div.grid-item2 {
+    text-align: center;
+    background-color: white;
+    padding: 15px;
+    height: fit-content;
+    font-size: 1.5rem;
+    margin-top: 0%;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  }
+  input.cart {
+    position: relative;
+    top: 10px;
+    width: 50px;
+    height: 55px;
+  }
+  /***Slider area***/
+  .custom-shape-divider-top-1668023651 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    background: #00bcd494;
+    height: 92%;
+    border-radius: 0 0 25px 0px;
+  }
+  .custom-shape-divider-top-1668023651 svg {
+    position: relative;
+    display: block;
+    width: calc(160% + 1.3px);
+    height: 720px;
+  }
+  
+  /***Slider***/
+  
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    margin-top: 100px;
+  }
+  
+  img.discountIconSlider {
+    width: 65px;
+    height: 70px;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  .mySlides.fade {
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    background-image: radial-gradient(
+        at 34% 57%,
+        rgb(127, 142, 240) 0px,
+        transparent 50%
+      ),
+      radial-gradient(at 96% 72%, rgb(224, 92, 154) 0px, transparent 50%),
+      radial-gradient(at 91% 97%, rgb(179, 122, 235) 0px, transparent 50%),
+      radial-gradient(at 71% 54%, rgb(134, 164, 228) 0px, transparent 50%),
+      radial-gradient(at 46% 94%, rgb(119, 119, 254) 0px, transparent 50%),
+      radial-gradient(at 6% 44%, rgb(90, 216, 113) 0px, transparent 50%),
+      radial-gradient(at 30% 43%, rgb(158, 239, 107) 0px, transparent 50%);
+    border-radius: 5%;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    width: auto;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  div.prevNextContainer {
+    position: relative;
+    top: 250px;
+  }
+  /* Position the "next button" to the right */
+  p.next {
+    border-radius: 3px 0 0 3px;
+    left: 130px;
+  }
+  
+  p.prev {
+    right: 130px;
+  }
+  
+  /***On hover, add a black background color with a little bit see-through***/
+  .prev:hover,
+  .next:hover {
+    background-color: #6495ed59;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /***The dots/bullets/indicators***/
+  .dotSlider {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background: #6495ed59;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    padding: 0.5%;
+    visibility: hidden;
+  }
+  
+  .active,
+  .dotSlider:hover {
+    background-color: crimson;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .custom-shape-divider-top-1668023651 .shape-fill {
+    fill: #ffffff;
+  }
+  div.dotContainer {
+    z-index: 5000;
+    position: relative;
+    margin-top: 57px;
+  }
+  
+  div.discountContainer {
+    position: relative;
+    top: 70px;
+    left: 37px;
+  }
+  div.discIcon {
+    position: absolute;
+  }
+  div.discountSlider {
+    position: absolute;
+    left: 12.5px;
+    top: 19.5px;
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+  /***Cart icon slider***/
+  .cartFrontSlider {
+    height: 60px;
+    width: 55px;
+    position: relative;
+    top: 68px;
+  }
+  
+  /***Cart slider confirm message***/
+  p.cartConfirmSlider {
+    background-color: #2196f3de;
+    color: white;
+    padding: 10px;
+  
+    position: absolute;
+  
+    margin: auto;
+  }
+  
+  div.sliderCartCont {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    top: 110px;
+  }
+  /***Cart slider top message***/
+  div.titleFeatured {
+    color: white;
+    background: #ed143dab;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    border-radius: 25px 25px 25px 25px;
+  }
+  
+  div.slideshow-container div.mySlides.fade img:not(img.discountIconSlider) {
+    box-shadow: rgb(38 57 77) 0px 20px 30px -10px;
+  }
+  
+  div.mySlides.fade > span {
+    font-size: large;
+    color: rgb(0, 0, 0);
+    width: 85%;
+    padding: 5%;
+    margin-top: 5%;
+    border-radius: 50px 5px;
+    background-color: #fff8dc66;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+      rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  }
+  
+  div.newPriceSlider + img {
+    margin-top: 21px;
+  }
+  
+  /***SLIDER END***/
+  
+  /***FIRST PAGE BOOKS RENDER (categories, discount and search)***/
+  #opis2,
+  p#opis {
+    font-size: large;
+    color: rgb(0, 0, 0);
+    width: fit-content;
+    padding: 25px;
+    border-radius: 50px 5px;
+    background-color: #fffbed30;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+      rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  div.descFront {
+    font-size: 1.8rem;
+  }
+  div.bookContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+    justify-items: center;
+    justify-content: space-between;
+    margin: 5%;
+    align-items: start;
+    column-gap: 50px;
+    margin-top: 25px;
+    margin-bottom: 60px;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  }
+  div.status,
+  div.notStatus {
+    color: #00663f;
+    box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
+    background-color: azure;
+    font-size: 1.2rem;
+    width: fit-content;
+    margin: auto;
+    max-width: 200px;
+    padding: 10px;
+  }
+  main#cartMain div.status,
+  div.notStatus,
+  div.goBackMsgSlider a img {
+    margin-top: 5px;
+  }
+  div.notStatus,
+  div.notStatusCheckout {
+    color: crimson;
+    background-color: #e91e6329;
+  }
+  
+  .cartFront {
+    position: relative;
+    top: 10px;
+    width: 50px;
+    height: 55px;
+  }
+  
+  .notStatus {
+    color: crimson;
+    box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
+    background-color: #e91e6329;
+    font-size: 1.2rem;
+    margin: auto;
+    width: 50%;
+    max-width: 200px;
+  }
+  hr.hrClass {
+    width: 50%;
+    color: #6495ed59;
+    border-style: solid;
+    max-width: 210px;
+  }
+  
+  div.bookContainerSearch {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+    justify-items: center;
+    justify-content: space-between;
+    margin: 5%;
+    align-items: start;
+    column-gap: 50px;
+    margin-top: 10%;
+    margin-bottom: 0px;
+  }
+  section#funPart div.cuteImage {
+    background-image: url(Methods/img/indexImage.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+      rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    border-radius: 15px 0px 15px;
+  }
+  section#funPart div.cuteImage p {
+    font-family: "Caveat", cursive;
+    font-size: 3.8rem;
+    color: ghostwhite;
+    position: relative;
+    margin-bottom: -10px;
+    padding-top: 15%;
+  }
+  section.frontSection {
+    background-image: url(Methods/img/pexels-1.webp);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  p#outputCategory > h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 35px;
+  }
+  section#funPart {
+    position: relative;
+    text-align: center;
+  }
+  
+  .grid-item {
+    text-align: center;
+    background-color: white;
+    padding: 15px;
+    height: fit-content;
+    font-size: 1.5rem;
+    margin-top: 5%;
+  }
+  
+  p.cartConfirm {
+    background-color: #2196f3de;
+    color: white;
+    padding: 10px;
+    width: 150px;
+    margin: auto;
+    margin-top: 25px;
+  }
+  
+  .discountIcon {
+    width: 65px;
+  }
+  span.oldPrice,
+  div.oldPrice {
+    text-decoration: line-through;
+    display: inline;
+    font-size: 1.2rem;
+  }
+  div.discount {
+    position: absolute;
+    top: 16px;
+    color: white;
+    font-size: 1.5rem;
+    left: 12px;
+  }
+  .discountContainerFront {
+    position: relative;
+    max-width: fit-content;
+    text-align: center;
+    margin: auto;
+  }
+  
+  span.newPrice {
+    color: orangered;
+    font-size: 1.5rem;
+  }
+  div.grid-item > img:not(img.discountIcon) {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    position: relative;
+    top: -35px;
+  }
+  
+  .grid-item2 {
+    text-align: center;
+  
+    padding: 15px;
+  }
+  
+  div.bookContainer2 div.grid-item2 > img:not(img.discountIcon) {
+    box-shadow: rgb(38 57 77) 0px 20px 30px -10px;
+    position: relative;
+    top: -35px;
+  }
+  span#bookDescription {
+    display: inline-block;
+  }
+  
+  nav p#outputCategory div.bookContainer2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+    justify-items: center;
+    justify-content: space-between;
+    margin: 5%;
+    align-items: start;
+    column-gap: 50px;
+    margin-top: 10%;
+    margin-bottom: 60px;
+  }
+  
+  span#bookDescription {
+    font-size: large;
+    color: rgb(0, 0, 0);
+    width: 400px;
+    padding: 5px;
+  }
+  
+  h2.latestEdition:first-of-type {
+    font-size: 1.8rem;
+    margin-top: 45px;
+  }
+  
+  p#descCategory {
+    box-shadow: rgb(0 0 0 / 25%) 0px 0.0625em 0.0625em,
+      rgb(0 0 0 / 25%) 0px 0.125em 0.5em,
+      rgb(255 255 255 / 10%) 0px 0px 0px 1px inset;
+    width: 25%;
+    padding: 1%;
+    top: 55.5%;
+    position: fixed;
+    opacity: 0;
+    display: block;
+    margin-left: 1%;
+    text-align: center;
+  }
+  
+  div.close,
+  div.close:hover {
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    width: 22px;
+    background-color: #070707;
+    margin-left: 95%;
+    border-radius: 50%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+  /***Pagination***/
+  span.pageNumb {
+    position: relative;
+    background-color: white;
+    display: inline-block;
+    width: 44px;
+    padding: 10px;
+    box-shadow: rgb(255 255 255 / 20%) 0px 0px 0px 1px inset,
+      rgb(0 0 0 / 90%) 0px 0px 0px 1px;
+    color: cadetblue;
+    text-decoration: none;
+  }
+  span.pageNumb a {
+    color: cadetblue;
+  }
+  div.paginationContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    margin-top: 35px;
+  }
+  div.numbDist a {
+    color: cadetblue;
+    font-size: 1.2rem;
+  }
+  span.pageNumb a {
+    color: cadetblue;
+    font-size: 20px;
+  }
+  
+  span.pageNumb:hover {
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+    background-color: aliceblue;
+  }
+  div.paginationContainer div.prev {
+    position: relative;
+    background-color: white;
+    display: inline-block;
+    padding: 10px;
+    font-weight: 700;
+    color: black;
+    right: 60px;
+    top: 50px;
+  }
+  
+  div.numbDist {
+    display: inline-block;
+    padding: 1%;
+    position: relative;
+  }
+  
+  div.numbDistContainer {
+    text-align: center;
+    background-color: aliceblue;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+      rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  div.paginationContainer div.next {
+    position: relative;
+    background-color: white;
+    display: inline-block;
+    padding: 10px;
+    font-weight: 700;
+    color: black;
+    left: 60px;
+    top: -57px;
+  }
+  div.prev a {
+    font-size: xx-large;
+    font-weight: 900;
+  }
+  div.next a {
+    font-size: xx-large;
+    font-weight: 900;
+  }
+  
+  /***Book Reviews***/
+  article.bookReviews {
+    width: 85%;
+    height: 50vh;
+    overflow: scroll;
+    text-align: center;
+    border: none;
+    margin: auto;
+    padding: 3%;
+    position: relative;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
+      rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  }
+  
+  div.reviews {
+    margin-top: 8%;
+  }
+  article.bookReviews div.reviews a {
+    font-size: 1.5rem;
+    color: orangered;
+    border-bottom-style: solid;
+  
+    position: relative;
+    top: -30px;
+  }
+  h3.topRws {
+    position: relative;
+    font-size: 1.8rem;
+  }
+  div.reviews img {
+    height: auto;
+    width: auto;
+    margin-top: 5%;
+  }
+  
+  /***Fancy background around reviews and bottom part***/
+  .custom-shape-divider-top-1668022447 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+  }
+  
+  .custom-shape-divider-top-1668022447 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+  }
+  
+  .custom-shape-divider-top-1668022447 .shape-fill {
+    fill: #ffffff;
+  }
+  .custom-shape-divider-bottom-1668022563 {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+  
+  .custom-shape-divider-bottom-1668022563 svg {
+    position: relative;
+    display: block;
+    width: calc(121% + 1.3px);
+    height: 41px;
+  }
+  
+  .custom-shape-divider-bottom-1668022563 .shape-fill {
+    fill: #ffffff;
+  }
+  
+  /***Quote with image***/
+  .quote {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  section.quoteNdQuestion div.quote img.questionPortrait {
+    border-radius: 35% 65% 60% 40% / 89% 65% 35% 11%;
+    width: 100vw;
+    max-width: 992px;
+    height: auto;
+  }
+  div.quote span {
+    max-width: 350px;
+  }
+  
+  hr.hrClass2 {
+    width: 50%;
+    color: #6495ed59;
+    border-style: solid;
+    margin-top: 20px;
+    max-width: 210px;
+  }
+  
+  /***Questions form***/
+  
+  div.questionaire h2 {
+    font-size: 1.3rem;
+    padding: 10px 5px 0px 5px;
+  }
+  
+  section.quoteNdQuestion {
+    display: flex;
+    flex-direction: column;
+    background-color: snow;
+    position: relative;
+    flex-wrap: wrap;
+    margin-top: 20%;
+  }
+  div.questionaire {
+    box-shadow: rgb(136 165 191 / 48%) 6px 2px 16px 0px,
+      rgb(255 255 255 / 80%) -6px -2px 16px 0px;
+    max-width: 20%;
+    padding: 1%;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 25px;
+    background-color: white;
+    min-width: 300px;
+    text-align: center;
+    margin: auto;
+    margin-top: 45px;
+    position: relative;
+    top: -20px;
+  }
+  div.questionaire form textarea#questionBody.msgInsert {
+    background-color: #65a1ff1c;
+    border-radius: 10px;
+    outline: none;
+    position: relative;
+    top: 15px;
+    width: 250px;
+  }
+  div.questionaire form input#userName.msgInsert {
+    border-style: none;
+    border-bottom-style: solid;
+    outline: none;
+  }
+  div.questionaire form input#userName.msgInsert:focus {
+    background-color: white;
+  }
+  div.questionaire form label {
+    display: inline-block;
+    margin-top: 5%;
+    font-size: 1.1rem;
+  }
+  
+  div.questionaire form input#questionEmail.msgInsert {
+    border-style: none;
+    border-bottom-style: solid;
+    outline: none;
+  }
+  div.questionaire form input#questionEmail.msgInsert:focus {
+    background-color: white;
+  }
+  div.questionaire form input#questionSubmit {
+    position: relative;
+    top: 25px;
+  }
+  button#questionSubmit.g-recaptcha {
+    margin-top: 5%;
+    background-color: white;
+    border-style: none;
+    position: relative;
+    height: 70px;
+  }
+  button#questionSubmit.g-recaptcha img:hover {
+    cursor: pointer;
+  }
+  
+  p#confirmation {
+    color: cornflowerblue;
+    padding: 5px;
+    background: aliceblue;
+    border-radius: 15px 15px 15px 15px;
+    font-size: 1.2rem;
+  }
+  span.questionReject {
+    color: crimson;
+    font-size: 1.2rem;
+  }
+  /***Google maps***/
+  section aside h2 {
+    font-size: 1.5rem;
+  }
+  .mapouter {
+    position: relative;
+    text-align: center;
+    height: 500px;
+    width: 100%;
+    margin-left: 0%;
+  }
+  main section aside {
+    margin-top: 70px;
+  }
+  section aside h2,
+  body.userInsertCheckout h2 {
+    text-align: center;
+    padding-top: 12px;
+    position: relative;
+  }
+  div.gmap_canvas a {
+    visibility: hidden;
+  }
+  iframe#gmap_canvas {
+    height: 500px;
+    width: 90vw;
+  }
+  /***Footer with general info***/
+  div.footerContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: flex-start;
+    padding: 2%;
+  }
+  section.policies {
+    text-align: center;
+    flex: 0.5;
+  }
+  section.socials {
+    text-align: center;
+    flex: 0.5;
+  }
+  html body footer.frontPage,
+  footer.registerPage {
+    color: cornflowerblue;
+    background-image: linear-gradient(
+      95.2deg,
+      rgb(247 247 247) 26.8%,
+      rgba(192, 229, 246, 1) 64%
+    );
+    box-shadow: rgb(0 0 0 / 6%) 0px 2px 4px 0px inset;
+    font-weight: 600;
+  }
+  section.policies a,
+  section.policies a:visited {
+    color: cornflowerblue;
+    display: block;
+  }
+  section.generalData p {
+    font-family: "Playfair Display", serif;
+  }
+  section.generalData {
+    text-align: center;
+    width: 60%;
+    flex: 1;
+  }
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+  }
+  .fa:hover {
+    opacity: 0.7;
+  }
+  .fa-facebook {
+    background: cornflowerblue;
+    color: white;
+  }
+  /***Cart panel and confirmation***/
+  div.bookContainerCart,
+  main#cartMain section h2,
+  nav.goBackCart,
+  .bookContainerCheckout {
+    margin-top: 90px;
+  }
+  input.cartQuantity[type="number"]::-webkit-outer-spin-button,
+  input.cartQuantity[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  div.bookContainerCart .grid-item,
+  div.bookContainerCheckout .grid-item {
+    background: #ff7f5036;
+    width: min-content;
+    border-radius: 15px 15px 15px 15px;
+    margin: auto;
+  }
+  
+  input#cartDel.cartDel {
+    margin-top: 15px;
+  }
+  .quantityDown,
+  .quantityUp,
+  section h2,
+  p#cartOutput,
+  section.orderData p,
+  span.quantityFinal {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+  .quantityDown,
+  .quantityUp:hover {
+    cursor: pointer;
+  }
+  p#cartDelTest {
+    margin: 0;
+  }
+  input#cartQuantity.cartQuantity {
+    max-width: 45px;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-bottom-style: solid;
+    background: aliceblue;
+    font-size: 1.2rem;
+  }
+  div.cartContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  nav.goBackCart,
+  nav.goBackCartCheckout {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5px;
+    margin-top: 25px;
+    align-items: center;
+  }
+  nav.goBackCart a[href="index"],
+  nav.goBackCart input,
+  span.goBackCustomer a,
+  input.submitRegCustomer,
+  nav.goBackCartCheckout a,
+  nav.goBackCartCheckoutLogin a {
+    background: black;
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    padding: 8px;
+    border-style: none;
+  }
+  nav.goBackCart input:hover {
+    cursor: pointer;
+  }
+  body.userInsertCheckout img {
+    display: none;
+  }
+  /***Customer registration***/
+  body.userInsertCheckout main div.register-wrapper-user {
+    background-color: #2196f370;
+    text-align: center;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    position: relative;
+    width: 304px;
+    margin: auto;
+    margin-top: 35px;
+  }
+  form[action="checkout"] {
+    display: flex;
+    row-gap: 10px;
+    flex-direction: column;
+  }
+  
+  body.userInsertCheckout footer {
+    position: relative;
+    margin-top: 25px;
+  }
+  span.goBackCustomer {
+    margin-top: 5%;
+    display: inline-block;
+  }
+  select#adm_units {
+    outline: none;
+    border-style: none;
+  }
+  div.registerContainerUser {
+    width: 70%;
+    margin: auto;
+    max-width: 70%;
+    margin-top: 50px;
+  }
+  div.registerContainerUser form input,
+  div.registerContainerUser form input:hover,
+  input#mail3,
+  div.uploadContainerUser form input {
+    cursor: pointer;
+    outline: none;
+    border-style: none;
+  }
+  /***Confirmation and personal info***/
+  div.personalInfo {
+    padding: 5%;
+    font-size: 1.5rem;
+    width: fit-content;
+    box-shadow: rgb(38 57 77) 0px 20px 30px -10px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  section.customerData h2.productSpec {
+    width: 90%;
+    margin: auto;
+    font-size: 1.5rem;
+  }
+  section.orderData p {
+    border-bottom-style: solid;
+    width: 50%;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  p#finalDesc:after {
+    content: "";
+    position: absolute;
+    margin-top: -21px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #ffffff;
+    transform: rotate(0deg);
+    right: 30px;
+    top: 10px;
+  }
+  nav.goBackCartCheckout a {
+    position: relative;
+  }
+  div#paypalContainer {
+    width: 205px;
+    margin: auto;
+    margin-top: 10%;
+    position: relative;
+  }
+  p#finalDesc {
+    padding: 5px 6px 8px 6px;
+    padding: 5px 6px 8px 6px;
+    border-radius: 6px;
+    float: right;
+    color: black;
+    background-color: #ffffff;
+    position: absolute;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    top: 22px;
+    width: 200px;
+    left: -100px;
+    color: cornflowerblue;
+    z-index: 5000;
+  }
+  p#payPal {
+    padding: 5px 6px 8px 6px;
+    border-radius: 6px;
+    float: right;
+    color: black;
+    background-color: #ffffff;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    top: 20px;
+    width: 100%;
+    left: 0px;
+    color: cornflowerblue;
+    position: absolute;
+    z-index: 5000;
+  }
+  p#payPal:after {
+    content: "";
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #ffffff;
+    transform: rotate(0deg);
+    right: 30px;
+    top: -58px;
+    position: relative;
+  }
+  
+  /***Customer registration background animation***/
+  
+  @import url("https://fonts.googleapis.com/css?family=Exo:400,700");
+  
+  body.userInsertCheckout {
+    font-family: "Exo", sans-serif;
+  }
+  
+  div.area {
+    background: ghostwhite;
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .circles {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: aliceblue;
+    margin: auto;
+    position: fixed;
+  }
+  
+  .circles li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: cornflowerblue;
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+  }
+  
+  .circles li:nth-child(1) {
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+  }
+  
+  .circles li:nth-child(2) {
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+  }
+  
+  .circles li:nth-child(3) {
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+  }
+  
+  .circles li:nth-child(4) {
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+  }
+  
+  .circles li:nth-child(5) {
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+  }
+  
+  .circles li:nth-child(6) {
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+  }
+  
+  .circles li:nth-child(7) {
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+  }
+  
+  .circles li:nth-child(8) {
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+  }
+  
+  .circles li:nth-child(9) {
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+  }
+  
+  .circles li:nth-child(10) {
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+      border-radius: 0;
+    }
+  
+    100% {
+      transform: translateY(-1000px) rotate(720deg);
+      opacity: 0;
+      border-radius: 50%;
+    }
+  }
+  /***Transaction finalisation***/
+  section.finalImage img {
+    width: 265px;
+    box-shadow: rgb(0 0 0 / 45%) 0px 25px 20px -20px;
+    max-width: 265px;
+  }
+  main.finalMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  span.finalMsg {
+    background-color: ghostwhite;
+    width: fit-content;
+    display: inline-block;
+    padding: 5%;
+    text-align: center;
+    max-width: 480px;
+  }
+  /***Login page***/
+  div.bck-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    filter: brightness(0.5);
+    max-width: 2256px;
+  }
+  p.emph {
+    text-decoration: underline;
+    display: inline;
+    color: antiquewhite;
+  }
+  
+  div.loginWrapper form {
+    row-gap: 25px;
+  }
+  div.bck-image::before {
+    content: "";
+    background-image: url("Methods/img/pencils(1).webp");
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.8;
+  }
+  footer.loginNav {
+    position: relative;
+    top: 25px;
+  }
+  
+  p.afterRegMessage {
+    background-color: cornflowerblue;
+    color: snow;
+    margin: 0;
+    text-align: center;
+    padding: 10px;
+  }
+  form [action="adminPanel"] {
+    margin-bottom: 0px;
+  }
+  div.afterRegMessageAdmin,
+  div.afterRegMessageUser {
+    background-color: cornflowerblue;
+    color: snow;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    column-gap: 5px;
+  }
+  div#animate {
+    position: relative;
+    transform: translate(12%);
+    opacity: 0;
+  }
+  
+  div#animated {
+    opacity: 1;
+    position: relative;
+    transition-property: opacity, transform;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  div.loginWrapper form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35px;
+  }
+  div.registerContainerUser > form#demo-form,
+  div.uploadContainerUser form {
+    background: coral;
+    padding: 15px;
+    margin-top: 0;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 15px 15px 15px 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  
+  div.loginWrapper {
+    background-image: linear-gradient(to right, #2c3e50, #00dbffb0);
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    width: 90%;
+    text-align: center;
+  }
+  p.loginHere,
+  div.loginWrapper form label,
+  div#animated a {
+    color: white;
+  }
+  input#loginButton {
+    margin-bottom: 10px;
+  }
+  input#loginButton:hover {
+    cursor: pointer;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+    background-color: azure;
+  }
+  
+  /***User registration***/
+  body.userInsert {
+    background-image: url("Methods/img/joanna-kosinska-1_CMoFsPfso-unsplash\(1\).webp");
+    background-repeat: no-repeat;
+    text-align: center;
+    height: auto;
+  }
+  div#porukaMail,
+  div#porukaUser,
+  div#poruka {
+    margin-bottom: -10px;
+  }
+  body.userInsert form#regMailAnchor {
+    background-color: salmon;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 15px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 256px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  }
+  input.inputLogin {
+    width: 50%;
+    margin-left: 15px;
+  }
+  div.allRegWrapper div.register-wrapper-user,
+  div.register-wrapper {
+    width: 320px;
+    margin: auto;
+  }
+  div.allRegWrapper div.registerContainerUser,
+  div.uploadContainerUser {
+    width: 76%;
+    margin: auto;
+    max-width: 76%;
+    margin-top: 50px;
+  }
+  
+  /***PASSWORD RESET***/
+  section.iconReset {
+    display: none;
+  }
+  
+  div#finalStepShow {
+    background-color: #5a94c7bf;
+    color: black;
+  }
+  
+  .step1Wrapper,
+  #step2,
+  #stepShow,
+  #finalStepShow {
+    display: block;
+    background-color: aliceblue;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding: 5px;
+    margin-top: 3%;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    width: 300px;
+    max-width: 300px;
+    margin: auto;
+  }
+  #finalStepShow p {
+    margin: unset;
+  }
+  p#outputMail2 div#finalStepShow {
+    margin-top: -20px;
+  }
+  div#step2 {
+    opacity: 0;
+  }
+  
+  div#stepShow {
+    transition: opacity 0.6s linear;
+    opacity: 1;
+    background-color: #aad7ff;
+    display: block;
+    margin-top: 15px;
+  }
+  
+  div#finalStep {
+    opacity: 0;
+  }
+  
+  div#finalStepShow {
+    transition: opacity 0.6s linear;
+    opacity: 1;
+  }
+  /***SuperAdmin and admin panel***/
+  body.adminBody {
+    background-image: linear-gradient(to right, #ff9966, #ff5e62);
+  }
+  form[action="adminPanel"],
+  form[action="normalAdminPanel"],
+  div.afterRegMessageUser form {
+    margin-bottom: 0px;
+  }
+  a.icon {
+    display: flex;
+    align-items: flex-start;
+  
+    margin-right: 5px;
+  }
+  a.icon img {
+    margin-right: -10px;
+  }
+  a.icon span.msgNum {
+    width: 25px;
+    color: white;
+    background: crimson;
+    border-radius: 15px;
+    padding: 2px;
+  }
+  .mainLinks {
+    transition: box-shadow 0.3s;
+    font-size: large;
+    color: chocolate;
+    text-align: center;
+    display: block;
+    background-color: bisque;
+    text-decoration: none;
+    padding: 1.1em;
+    position: relative;
+    cursor: pointer;
+    margin: 5%;
+    border-radius: 15px 15px 15px 15px;
+  }
+  .mainLinks:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+  .sublinkContainerMessage1:hover p.bookText,
+  .sublinkContainerMessage2:hover p.bookText,
+  .sublinkContainerMessage3:hover p.bookText,
+  .sublinkContainerMessage1:hover p.userText,
+  .sublinkContainerMessage2:hover p.userText {
+    visibility: visible;
+  }
+  p.bookText,
+  p.userText {
+    visibility: hidden;
+    color: chocolate;
+  }
+  div.adminDot,
+  span.dot {
+    background: mediumspringgreen;
+    width: 10px;
+    height: 10px;
+    z-index: 5000;
+    border-radius: 15px;
+  }
+  span.logOut {
+    margin-right: 5px;
+  }
+  div.onlineDotContainer {
+    display: flex;
+    align-items: center;
+    flex: 2;
+  }
+  
+  div.mainLinksContainer {
+    display: grid;
+    width: 320px;
+    max-width: 320px;
+    margin: auto;
+  }
+  .sublinkContainer a:hover {
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+  }
+  
+  div.mainLinks .sublinkContainer {
+    width: fit-content;
+    margin: auto;
+  }
+  div.mainLinks h2 {
+    font-weight: 100;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+  body.adminBody div.goBackMsg a img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /***Messages/questions panel***/
+  body div.megaQuestionContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+  }
+  
+  div.qContainer {
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    bottom: 0px;
+    column-gap: 5px;
+  }
+  
+  div.paginationContainer ~ div.goBackMessages {
+    margin-top: 5px;
+  }
+  form textarea.adminAnswer {
+    border: none;
+    background-color: aliceblue;
+    position: relative;
+    width: 90%;
+    margin-bottom: 15px;
+  }
+  
+  body div.questionsContainer p.msgStatusAnswered {
+    color: crimson;
+    font-weight: 700;
+  }
+  
+  body div.questionsContainer p.msgStatusUnanswered {
+    color: #3fcc3f;
+    font-weight: 700;
+  }
+  body div.questionsContainer p:last-child {
+    color: #3fcc3f;
+  }
+  
+  body div.questionsContainer p:nth-child(2) {
+    font-size: larger;
+    text-decoration: underline;
+    word-break: break-all;
+    max-width: 382px;
+    padding: 5%;
+  }
+  
+  body div.questionsContainer {
+    box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px,
+      rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+    padding: 1%;
+    text-align: center;
+    border-radius: 25px 25px 25px 0px;
+    width: fit-content;
+    margin: auto;
+    max-width: 300px;
+    margin-bottom: 30px;
+    width: 300px;
+  }
+  div.frontMsg {
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: cornflowerblue;
+    color: snow;
+    padding: 2px;
+    margin: auto;
+    margin-bottom: 15px;
+  }
+  input.ansMsg:hover {
+    cursor: pointer;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+    background-color: rgba(100, 148, 237, 0.466);
+  }
+  form div.questionsContainer p#answer input.submitAnswer:hover {
+    cursor: pointer;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+    background-color: rgba(100, 148, 237, 0.466);
+  }
+  
+  /***Book upload form***/
+  div.uploadContainer form input,
+  input.bookUpd {
+    margin: 5px;
+  }
+  div.uploadContainer form textarea,
+  form input#img,
+  form textarea.bookUpd {
+    width: 300px;
+    max-width: 300px;
+  }
+  div.uploadContainer form input,
+  div.uploadContainer form textarea,
+  form input#img,
+  form label select#mySelect,
+  form input.bookUpd,
+  form textarea.bookUpd,
+  div.updateContainerUser form input,
+  div.updateContainerUser form select {
+    border-style: none;
+    padding: 5px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background-color: white;
+  }
+  
+  form label#catLabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+    color: cornflowerblue;
+  }
+  div.finalMsg img,
+  p#output img {
+    height: auto;
+  }
+  /***Book search***/
+  body.background {
+    background-color: ghostwhite;
+  }
+  
+  form div.inputContainer,
+  div.searchContainer form,
+  div.userSearchContainer form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    row-gap: 10px;
+  }
+  body.background main {
+    margin-bottom: 15px;
+  }
+  
+  section.searchIcon input {
+    width: 250px;
+    max-width: 250px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #mainTable th,
+  #userMainTable th,
+  table#mainTableStats tr th,
+  table#mainTableUser th {
+    background: cornflowerblue;
+  }
+  table img {
+    vertical-align: bottom;
+  }
+  #mainTable tr th.modify {
+    background: cornflowerblue;
+  }
+  
+  td {
+    padding: 0 15px 0 15px;
+  }
+  tr {
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  tr td.submit {
+    position: relative;
+  }
+  
+  #userMainTable th,
+  #mainTable th,
+  table#mainTableStats tr th,
+  table#mainTableUser th {
+    color: snow;
+    font-weight: lighter;
+    padding: 15px;
+  }
+  td.desc {
+    width: 25%;
+    padding: 25px;
+  }
+  #mainTable,
+  #userMainTable,
+  #mainTableStats,
+  table#mainTableUser {
+    background: aliceblue;
+    margin: auto;
+    width: 75%;
+    padding-top: 2%;
+    position: relative;
+    z-index: 2;
+    box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px,
+      rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+  }
+  
+  #mainTable tr td,
+  #userMainTable tr td,
+  table#mainTableUser tr td {
+    text-align: center;
+  }
+  td.submit form {
+    margin: 0;
+  }
+  td.submit form input[type="image"] {
+    width: 67px;
+    height: 67px;
+  }
+  p#opis {
+    width: 250px;
+    max-width: 250px;
+  }
+  input.deleteSmall {
+    margin: 5px;
+  }
+  p#delete,
+  p#deleteUser {
+    width: 250px;
+    max-width: 250px;
+  }
+  /***Book update form***/
+  p#output {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  span.bookId,
+  span.userId,
+  form label.label {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  span.key,
+  form label select#mySelect,
+  select#mySelectSlider,
+  div.updateContainerUser form select {
+    background: coral;
+    color: white;
+    text-align: center;
+    padding: 5px;
+  }
+  div.selectsContainer form {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  div.selectsContainer form label {
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+    color: cornflowerblue;
+  }
+  /***Deleted books list***/
+  div.numbDistContainer {
+    justify-content: center;
+  }
+  div#transConfirmRestore {
+    text-align: center;
+    margin: auto;
+  }
+  
+  /***User upload panel***/
+  
+  div.uploadContainerUser form {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
+  }
+  div.uploadContainerUser form input {
+    margin: 15px;
+  }
+  
+  div.userSearchContainer form {
+    margin-block-end: 1em;
+  }
+  /***Categories management***/
+  div.categoryRender {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 30px;
+    justify-items: center;
+    text-align: center;
+  }
+  input.delCategory {
+    color: crimson;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+    cursor: pointer;
+    border-style: none;
+    box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px,
+      rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+    background-color: white;
+    margin-top: 5px;
+    width: 50px;
+    padding-bottom: 10px;
+  }
+  input.delCategory:hover {
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+    background-color: azure;
+  }
+  div.insertCategory,
+  div.insertCategory form input.submitCategory {
+    margin-top: 25px;
+  }
+  input.deleteCat {
+    margin: 10px;
+  }
+  div.categoryItem p#delete {
+    width: 200px;
+    max-width: 200px;
+  }
+  div.goBackMsgCategories {
+    margin-top: 40px;
+  }
+  
+  /***Slider management***/
+  div.sliderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  span.position {
+    background: #1fb8f591;
+    font-size: 1.5rem;
+    width: 50px;
+    text-align: center;
+    color: white;
+  }
+  input.delSlider {
+    margin-bottom: 40px;
+    margin-top: 5px;
+  }
+  /***Transactions***/
+  section.notice p {
+    width: 250px;
+    max-width: 250px;
+    margin: auto;
+  }
+  
+  /***Statistics***/
+  
+  div#chartContainer1 {
+    height: 370px;
+    width: 100% !important;
+    left: 50%;
+  }
+  div#chartContainer2 {
+    height: 370px;
+    width: 100% !important;
+    left: 50%;
+  }
+  canvas.canvasjs-chart-canvas {
+    width: 100% !important;
+    height: 370px;
+    position: absolute;
+    user-select: none;
+  }
+  /*** User login panel (purchased books) and user update panel by user***/
+  input.logoutAdmin {
+    margin-right: 5px;
+  }
+  
+  div.userUpdateUser div.updateContainerUser,
+  section.searchIcon {
+    margin-top: 25px;
+  }
+  
+  /***FIREFOX OPTIMISATION***/
+  @-moz-document url-prefix() {
+    div.firstPageSearchContainerA form input,
+    div.firstPageSearchContainer form input {
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+    div.mySlides.fade > img {
+      margin-top: 21px;
+    }
+  
+    body.userInsert form#regMailAnchor {
+      row-gap: 5px;
+    }
+    div.selectsContainer form {
+      row-gap: 10px;
+    }
+  }
+  p.messageDel {
+    background: aliceblue;
+    text-align: center;
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: cornflowerblue;
+    margin-top: 150px;
+    font-size: 1.5rem;
+  }
+  
+  /***MEDIA QUERIES START***/
+  @media only screen and (min-width: 480px) {
+    ul.words li > a,
+    section nav a[href="#contact"] {
+      font-size: 1.4rem;
+    }
+    section.quoteNdQuestion div.quote img.questionPortrait {
+      height: auto;
+    }
+    div.mainLinksContainer {
+      width: 380px;
+      margin: auto;
+      max-width: 380px;
+    }
+    img.wrapImage {
+      height: 100%;
+    }
+  
+    ul.words {
+      column-gap: 40%;
+      background: #ed143d40;
+    }
+  
+    input.inputLogin {
+      width: 50%;
+    }
+    div.loginWrapper {
+      width: 336px;
+      max-width: 336px;
+    }
+    section.frontSection {
+      background-position: center;
+    }
+    p.cartConfirm {
+      width: fit-content;
+    }
+  }
+  
+  @media only screen and (min-width: 576px) {
+    ul.words li > a,
+    section nav a[href="#contact"] {
+      font-size: 1.5rem;
+    }
+    div.categoryRender {
+      grid-template-columns: auto auto auto;
+    }
+    nav select#mySelect,
+    nav select#mySelectDiscount {
+      display: block;
+    }
+    section.frontSection {
+      background-attachment: fixed;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    ul.words li > a,
+    section nav a[href="#contact"] {
+      font-size: 1.6rem;
+    }
+    section.frontSection {
+      background-position: bottom;
+    }
+    section.quoteNdQuestion div.quote img.questionPortrait {
+      border-radius: 35% 65% 60% 40% / 89% 65% 35% 11%;
+      width: fit-content;
+      max-width: 992px;
+    }
+  }
+  
+  @media only screen and (min-width: 992px) {
+    section#funPart div.cuteImage {
+      height: 600px;
+      max-height: 600px;
+    }
+    input.delSlider {
+      margin-bottom: 0;
+      margin-top: 245px;
+    }
+    div.loginWrapper form {
+      row-gap: 40px;
+    }
+    img#emptyIcon {
+      width: 150px;
+    }
+    div.goBackMsgSlider {
+      margin-top: 25px;
+    }
+    div.sliderContainer {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 100px;
+    }
+  
+    div.categoryItem p#delete {
+      width: 250px;
+      max-width: 250px;
+    }
+    div.stylishContainer,
+    div.userUpdateUser div.updateContainerUser {
+      margin-top: 250px;
+    }
+    div.uploadContainerUser form input {
+      margin: 30px;
+    }
+    div.uploadContainerUser form input[type="text"],
+    div.uploadContainerUser form input[type="password"] {
+      width: 90%;
+    }
+    div.ultimateStyleContainer {
+      display: flex;
+      margin: auto;
+      text-align: center;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  
+    div.uploadContainer form textarea,
+    form input#img,
+    form textarea.bookUpd {
+      width: 500px;
+      max-width: 500px;
+    }
+  
+    body p.messageDel {
+      height: 500px;
+      width: 500px;
+    }
+    .mainLinks {
+      transition: box-shadow, 0.3s;
+    }
+    .mainLinks:hover {
+      box-shadow: rgba(0, 0, 0, 0.6) 0px 5px 15px;
+    }
+    div.mainLinksContainer {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      width: fit-content;
+      margin: auto;
+      max-width: fit-content;
+    }
+    body.userInsert form#regMailAnchor,
+    .step1Wrapper,
+    #step2,
+    #stepShow,
+    #finalStepShow {
+      max-width: 420px;
+      width: 420px;
+    }
+    div.goBackMsgUserRegister a img,
+    div.goBackMsgReset a img,
+    div.goBackMsg a img,
+    div.goBackMsgInsert a img,
+    div.goBackMsgUser a img,
+    main div.goBackMsg a img,
+    div.goBackMsgUserSearch a img,
+    div.goBackMsgCategories a img,
+    div.goBackMsgSlider a img,
+    div.goBackMsgBookStats a img,
+    div.goBackMessages a img,
+    div.goBackMsgUpd a img,
+    div.goBackMsgDeletedBooks a img,
+    div.goBackMsgDiscount a img,
+    div.goBackMsgUserUpd a img,
+    div.iconWrapSearchTrans input,
+    div.goBackMsgCustStatistics a img,
+    div.goBackMsgUserPanel a img,
+    div.goBackUser a img {
+      width: 50px;
+      height: 50px;
+    }
+    span#alrdyInside,
+    span#itemInCart,
+    p.cartConfirmSlider,
+    #opis2,
+    div.status,
+    div.notStatus,
+    p.cartConfirm,
+    span.pageNumb a,
+    div.reviews p,
+    div.quote span strong,
+    div.questionaire form label,
+    section.policies a,
+    section.generalData p,
+    p#confirmation,
+    span.questionReject,
+    div.reviews,
+    p#opisDesc,
+    p#payPal,
+    p#finalDesc,
+    div.notStatusCheckout,
+    span.finalMail,
+    p.afterRegMessage,
+    form#demo-form label,
+    form#demo-form input,
+    label.acceptTerms a,
+    label[for="passDigit"],
+    input#mail3,
+    div.step1Wrapper label,
+    div#finalStepShow p,
+    div.step1Wrapper h2,
+    div.step1Wrapper input#mail,
+    form input#reset,
+    div#stepShow input#mail2,
+    p#outputMail,
+    div#stepShow h2,
+    div#finalStepShow h2,
+    div#finalStepShow input#passVal,
+    div#stepShow input#submitNum,
+    div#finalStepShow input#submitUser,
+    p#outputMail2 span.numFail,
+    p#outputMail2 > div.login-failed-password,
+    p.bookText,
+    p.userText,
+    div.onlineDotContainer span.logOut,
+    form input.logoutAdmin,
+    p#loginSuccess,
+    p.messageDel,
+    p.loginHere,
+    div.loginWrapper form label,
+    div#animated a,
+    input#loginButton,
+    input.inputLogin,
+    div.login-failed,
+    div.login-failed-empty,
+    div.login-failed-user,
+    div.login-failed-notfound,
+    div.login-failed-ip,
+    span#loginSuccess,
+    p.goBackMsg,
+    p.goBackMsgTerms,
+    div.numbDist a,
+    div#selectAllQ,
+    div.qContainer input.read,
+    div.qContainer input,
+    body div.questionsContainer p:nth-child(1),
+    body div.questionsContainer p:nth-child(2),
+    body div.questionsContainer p,
+    input.ansMsg,
+    p#answer form label,
+    input.submitAnswer,
+    form textarea.adminAnswer,
+    div.uploadContainer form input,
+    div.uploadContainer form textarea,
+    div.uploadContainer form p,
+    div.uploadContainer form label.img,
+    label#catLabel,
+    div.uploadContainer select#mySelect,
+    div.finalMsg,
+    div.finalMsg > span,
+    div.searchContainer h2,
+    form input#list,
+    div.searchContainer h3,
+    div.inputContainer label,
+    div.inputContainer input,
+    tbody tr td,
+    #mainTable th,
+    p#opis,
+    p#delete,
+    p#delete label,
+    input.deleteSmall,
+    p#delete2nd,
+    div.selectsContainer form label,
+    p#output,
+    p#output2,
+    span.bookId,
+    form input.bookUpd,
+    form textarea.bookUpd,
+    label[for="img"],
+    input#submitUpdFull,
+    span.key,
+    form label select#mySelect,
+    select#mySelectSlider,
+    input#submitCategory,
+    input#submitSlider,
+    input#listTrans,
+    div#transConfirmRestore,
+    p#updateDiscount,
+    form.userSearchForm input,
+    form.userSearchForm label,
+    div.userSearchContainer h2,
+    div.userSearchContainer h3,
+    #userMainTable th,
+    #mainTableUser th,
+    p#deleteUser,
+    p#deleteUser label,
+    p#deleteUser2nd,
+    div.updateContainerUser form input,
+    div.updateContainerUser form label,
+    div.updateContainerUser form select,
+    div.categoryItem,
+    div.insertCategory form label,
+    div.insertCategory form input#newCategory,
+    h2.categoryInsert,
+    input.deleteCat,
+    span#catWin,
+    span#catFail,
+    p#deleteFinal,
+    div#catNoDel,
+    p#catAnchor,
+    h1#sliderTitle,
+    input#transSearch,
+    section.notice p,
+    section.notice p strong,
+    div.transConfirm,
+    div#transConfirmDel,
+    table#mainTableStats tbody tr th,
+    p.customerNotice,
+    table#mainTableUser th,
+    form input.updateUser,
+    input.logoutUser,
+    span.userId,
+    div#poruka span,
+    div#porukaUser > span,
+    div#porukaMail > span,
+    div#porukaPassword > span,
+    p.mailMsg,
+    input#userName.msgInsert,
+    div.questionaire form textarea#questionBody.msgInsert,
+    div.questionaire form input#questionEmail.msgInsert {
+      font-size: 1.5rem;
+    }
+    section.notice p {
+      width: 330px;
+      max-width: 330px;
+    }
+    div.iconWrapSearch input {
+      width: 60px;
+      height: 60px;
+      margin-top: 15px;
+    }
+    input#submitUpdFull,
+    input#submitSlider,
+    input#submitCategory {
+      width: fit-content;
+      max-width: fit-content;
+    }
+    section.searchIcon input {
+      width: 300px;
+      max-width: 300px;
+    }
+    div.numbDistContainer {
+      justify-content: center;
+    }
+    section.finalImage img {
+      width: 400px;
+      max-width: 400px;
+    }
+    body div.questionsContainer {
+      max-width: 350px;
+  
+      width: 350px;
+    }
+    div.megaQuestionContainer form input[class="checked"],
+    form#delSelec > input.checked,
+    input.checked {
+      width: 20px;
+      height: 20px;
+    }
+    section.orderData p,
+    h1.statsTitle,
+    h1.statsTitleCust {
+      font-size: 2.8rem;
+    }
+    p#finalDesc {
+      top: 31px;
+      left: -85px;
+    }
+    div.loginWrapper {
+      width: 496px;
+      max-width: 496px;
+    }
+    p#payPal {
+      top: 22px;
+    }
+    p#payPal:after {
+      top: -78px;
+    }
+    div.frontMsg {
+      width: 50%;
+  
+      max-width: 50%;
+    }
+    body p.messageDel,
+    div.frontMsg,
+    section.customerData h2.productSpec,
+    span.finalThx,
+    body.adminBody h1#adminMsg,
+    div.uploadContainer h2,
+    p#output,
+    p#output2,
+    input.delCategory,
+    input.submitCategory,
+    p#output > p,
+    p#empty {
+      font-size: 2rem;
+    }
+    .discountIcon {
+      width: 94px;
+      height: 94px;
+    }
+    div.discount {
+      top: 25px;
+      font-size: 2rem;
+  
+      left: 20.5px;
+    }
+    div.slideshow-container div.mySlides.fade img:not(img.discountIconSlider) {
+      width: auto;
+      height: 600px;
+    }
+  
+    div.grid-item > img:not(img.discountIcon),
+    div.grid-item2 > img:not(img.discountIcon) {
+      height: 450px;
+      width: 300px;
+    }
+    div.discountSlider {
+      position: absolute;
+      left: 20px;
+      top: 35.5px;
+      font-size: 3rem;
+      color: white;
+    }
+    .custom-shape-divider-top-1668023651 {
+      height: 94%;
+    }
+    .cartFrontSlider {
+      height: 95px;
+      width: 90px;
+      top: 110px;
+    }
+    div.sliderCartCont {
+      top: 170px;
+    }
+    section#funPart div.cuteImage p {
+      width: 50%;
+    }
+    input#cartDel.cartDel {
+      width: 60px;
+      height: 60px;
+    }
+    input#cartQuantity.cartQuantity {
+      max-width: 55px;
+    }
+  
+    article.bookReviews div.reviews a,
+    section aside h2,
+    .quantityDown,
+    .quantityUp,
+    body.userInsertCheckout h2,
+    div.registerContainerUser h2,
+    div.uploadContainerUser h2 {
+      font-size: 2rem;
+    }
+  
+    body.userInsertCheckout main div.register-wrapper-user,
+    div.allRegWrapper div.register-wrapper-user,
+    div.register-wrapper {
+      width: 50%;
+      margin: auto;
+      border-radius: 5px;
+    }
+    input#terms,
+    input#acceptTerms {
+      height: 20px;
+      width: 20px;
+      margin: auto;
+    }
+    div#paypalContainer {
+      width: 300px;
+    }
+    h3.latestEditionNotice,
+    div.categoryFront,
+    .grid-item,
+    span.newPrice,
+    span.oldPrice,
+    div.newPrice,
+    div.oldPrice,
+    span.originalPrice,
+    input#cartQuantity.cartQuantity,
+    div.cartContainer label,
+    nav.goBackCart a,
+    nav.goBackCart input,
+    div.registerContainerUser section form label,
+    div.registerContainerUser section form label#acceptTerms a,
+    div.registerContainerUser section form input,
+    select#adm_units,
+    span.goBackCustomer a,
+    nav.goBackCartCheckout a,
+    form#demo-form label,
+    form#demo-form input,
+    label.acceptTerms a,
+    form#demo-form button.g-recaptcha,
+    input#submitRegMail,
+    div#porukaReg > span,
+    div#porukaReg p.registerSuccess,
+    div.mainLinks h2,
+    div.uploadContainerUser form input,
+    div.uploadContainerUser form label,
+    select.userUpd,
+    p.userUploadMsg,
+    p.emph {
+      font-size: 1.8rem;
+    }
+    h2.latestEdition:first-of-type,
+    div.next a,
+    div.prev a,
+    div.quote span,
+    p#outputCategory h2 {
+      font-size: 2rem;
+    }
+  
+    p#outputCategory > h2 {
+      margin-top: 70px;
+    }
+    div.quote span {
+      width: 50%;
+      max-width: unset;
+    }
+    .cartFront {
+      width: 55px;
+      height: 60px;
+    }
+    section#funPart div.cuteImage {
+      margin-top: 8%;
+    }
+    div.paginationContainer div.prev {
+      top: 57px;
+    }
+  
+    main section aside {
+      margin-top: 65px;
+    }
+  
+    div.dotContainer {
+      margin-top: 105px;
+    }
+    h1#adminMsg {
+      color: snow;
+    }
+    body.adminBody {
+      background-image: url(Methods/img/adminPanelLibrary.webp);
+      background-size: cover;
+      backdrop-filter: drop-shadow(2px 4px 6px black);
+    }
+  
+    div.adminDot {
+      width: 12px;
+      height: 12px;
+    }
+    a.icon span.msgNum {
+      font-size: 1.2rem;
+    }
+    a.icon img {
+      height: 45px;
+      width: 45px;
+    }
+    div.questionaire {
+      max-width: 370px;
+    }
+    div.questionaire form textarea#questionBody.msgInsert {
+      width: 95%;
+    }
+    .dotSlider {
+      height: 25px;
+      width: 25px;
+    }
+    div.questionaire h2 {
+      font-size: 1.6rem;
+    }
+    div.priceSlide,
+    div.newPriceSlider,
+    h1.cartHeading,
+    p#cartOutput,
+    section h2,
+    ul.words li > a,
+    section nav a[href="#contact"],
+    div.personalInfo {
+      font-size: 2.5rem;
+    }
+    img.discountIconSlider {
+      width: 120px;
+      height: 132px;
+    }
+    div.discountContainer {
+      position: relative;
+      top: 50px;
+      left: 85px;
+    }
+    p.prev {
+      right: 345px;
+      font-size: 2.5rem;
+    }
+    p.next {
+      font-size: 2.5rem;
+      left: 345px;
+    }
+    div.prevNextContainer {
+      position: relative;
+      top: 400px;
+    }
+    h1.mainTitle {
+      font-size: 3.5rem;
+    }
+    body.userInsert h1.mainTitle {
+      font-size: 3.5rem;
+    }
+    div.bookContainer,
+    div.bookContainerSearch,
+    div.bookContainer2,
+    nav p#outputCategory div.bookContainer2 {
+      grid-template-columns: 1fr 1fr;
+    }
+    a.loginIcon img.icon {
+      height: 55px;
+      width: 55px;
+    }
+    p#cartOutput {
+      font-size: 2.8rem;
+    }
+    span#cartNum {
+      height: auto;
+      padding: 0.5%;
+      font-size: 1.5rem;
+    }
+    div.firstPageSearchContainer form,
+    div.firstPageSearchContainerA form {
+      width: 330px;
+    }
+    div.titleFeatured {
+      font-size: 2rem;
+    }
+    div.mySlides.fade > span {
+      font-size: 1.6rem;
+    }
+    div.firstPageSearchContainer form label,
+    div.firstPageSearchContainer form input,
+    div.firstPageSearchContainerA form label,
+    div.firstPageSearchContainerA form input {
+      font-size: 1.5rem;
+    }
+    div.headerStuff img.cartMain,
+    div.headerStuff input.cartMain:hover {
+      width: 55px;
+      height: 55px;
+    }
+    nav select#mySelect,
+    nav select#mySelectDiscount {
+      display: block;
+      font-size: 1.5rem;
+    }
+    div.selectWrapAnimated label {
+      font-size: 1.5rem;
+    }
+    div.headerStuff a {
+      align-self: center;
+      font-size: 1.5rem;
+    }
+    .grid-item,
+    div.bookContainer2,
+    div.grid-item2 {
+      box-shadow: unset;
+    }
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    div.slideshow-container div.mySlides.fade img:not(img.discountIconSlider) {
+      height: 600px;
+      left: 250px;
+      position: relative;
+    }
+    .sublinkContainerMessage1,
+    .sublinkContainerMessage2,
+    .sublinkContainerMessage3 {
+      flex: 1;
+    }
+  
+    div.uploadContainerUser form {
+      padding: 40px;
+    }
+    section.searchIcon input {
+      width: 350px;
+      max-width: 350px;
+    }
+    div.uploadContainer form textarea,
+    form input#img {
+      width: 700px;
+      max-width: 700px;
+    }
+    nav.mainNav div.mainLinksContainer {
+      display: grid;
+      grid-template-columns: auto auto;
+      width: fit-content;
+      margin: auto;
+      max-width: fit-content;
+    }
+    div.checkoutContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    div.mainLinks .sublinkContainer,
+    .subli {
+      width: fit-content;
+      margin: auto;
+      display: flex;
+    }
+    div.generalResetCont {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      width: 1190px;
+      max-width: 1190px;
+      margin: auto;
+    }
+    section.iconReset {
+      display: block;
+    }
+    div.allRegWrapper div.registerContainerUser,
+    div.uploadContainerUser {
+      width: 65%;
+      max-width: 65%;
+    }
+    div#animated {
+      margin-top: 150px;
+    }
+  
+    section.finalImage img {
+      width: 600px;
+      box-shadow: rgb(0 0 0 / 45%) 0px 25px 20px -20px;
+      max-width: 600px;
+    }
+    span.finalMsg {
+      background-color: ghostwhite;
+      display: inline-block;
+      padding: 5%;
+      text-align: center;
+      max-width: 600px;
+      width: 600px;
+    }
+    main.finalMain {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-top: 150px;
+    }
+    section.orderData p {
+      margin-top: 75px;
+    }
+    button#questionSubmit.g-recaptcha img {
+      height: 70px;
+      width: 70px;
+    }
+    body.userInsertCheckout main div.register-wrapper-user {
+      width: 85%;
+      max-width: 500px;
+    }
+    div.customerContainer main {
+      flex: 1;
+    }
+    div.customerContainer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    body.userInsertCheckout img {
+      visibility: visible;
+      width: 600px;
+      z-index: 5000;
+      position: relative;
+      flex: 1;
+      display: unset;
+      max-width: 600px;
+      filter: saturate(0.5);
+      box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    }
+    nav.goBackCart,
+    nav.goBackCartCheckout {
+      justify-content: space-evenly;
+    }
+    .quantityDown,
+    .quantityUp,
+    section h2,
+    section.customerData h2.productSpec,
+    span.quantityFinal {
+      font-size: 2.5rem;
+    }
+    div.cartContainer input.cartQuantity {
+      padding: 5%;
+    }
+    div.paginationContainer div.prev {
+      top: 63px;
+    }
+    footer.finalNav nav.goBackCartCheckout {
+      width: 50%;
+      max-width: 50%;
+    }
+    footer.finalNav nav.goBackCartCheckout a {
+      bottom: 180px;
+    }
+    ul.words li > a,
+    section nav a[href="#contact"],
+    h3.topRws,
+    p#cartOutput,
+    h1.cartHeading,
+    span.finalThx {
+      font-size: 3rem;
+    }
+    input#listTrans {
+      width: fit-content;
+      max-width: fit-content;
+    }
+    div.descFront2,
+    div.descFront {
+      font-size: 2.2rem;
+    }
+    div.selectWrapAnimated label {
+      font-size: 2rem;
+    }
+    div.firstPageSearchContainer form label,
+    div.firstPageSearchContainer form label input,
+    div.firstPageSearchContainerA form label,
+    div.firstPageSearchContainerA form label input {
+      font-size: 1.8rem;
+      margin: 8px;
+    }
+    div.bookContainer2,
+    div.grid-item2,
+    h3.latestEditionNotice,
+    div.categoryFront,
+    .grid-item,
+    span.newPrice,
+    span.oldPrice,
+    div.newPrice,
+    div.oldPrice,
+    span.finalMail {
+      font-size: 2rem;
+    }
+  
+    h2.latestEdition:first-of-type,
+    div.next a,
+    div.prev a,
+    div.quote span,
+    p#outputCategory h2 {
+      font-size: 2.2rem;
+    }
+    nav select#mySelect,
+    nav select#mySelectDiscount {
+      font-size: 2rem;
+    }
+    section#funPart div.cuteImage p {
+      font-size: 5rem;
+    }
+    div.firstPageSearchContainer form,
+    div.firstPageSearchContainerA form {
+      width: 400px;
+    }
+    form div.questionsContainer p,
+    p.messageDel,
+    body div.questionsContainer p:nth-child(1),
+    body div.questionsContainer p:nth-child(2),
+    p#answer form label,
+    input.ansMsg,
+    input.submitAnswer,
+    form textarea.adminAnswer,
+    div#selectAllQ,
+    div.qContainer input.read,
+    div.qContainer input {
+      font-size: 1.8rem;
+    }
+    body div.questionsContainer {
+      max-width: 450px;
+      width: 450px;
+    }
+    body div.questionsContainer p:nth-child(2) {
+      max-width: 600px;
+    }
+    div#selectAllQ,
+    div.qContainer input.read,
+    div.qContainer input {
+      width: 190px;
+      max-width: 190px;
+    }
+    span#alrdyInside,
+    span#itemInCart,
+    p.cartConfirmSlider,
+    #opis2,
+    div.status,
+    div.notStatus p.cartConfirm,
+    span.pageNumb a,
+    div.reviews p,
+    div.quote span strong,
+    div.questionaire form label,
+    section.policies a,
+    section.generalData p,
+    p#confirmation,
+    span.questionReject,
+    div.reviews,
+    p#opisDesc {
+      font-size: 1.6rem;
+    }
+    p.next {
+      left: 500px;
+    }
+    div.titlePrice {
+      font-size: 4rem;
+      position: relative;
+      top: 370px;
+      right: 200px;
+    }
+    div.priceSlide,
+    div.newPriceSlider {
+      font-size: 4rem;
+      top: 380px;
+      position: relative;
+      right: 200px;
+    }
+    div.discountContainer {
+      position: relative;
+      top: 123px;
+      left: 335px;
+      z-index: 5000;
+    }
+    div.mySlides.fade > span {
+      font-size: 1.8rem;
+    }
+    h1.mainTitle {
+      font-size: 4rem;
+    }
+    p.prev {
+      right: 500px;
+    }
+    div.titlePriceDisc {
+      font-size: 4rem;
+      position: relative;
+      top: 370px;
+      right: 200px;
+    }
+    div.titleFeatured {
+      right: 200px;
+      position: relative;
+      top: 350px;
+    }
+    div.bookContainerCart {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
+    div.bookContainerCart .grid-item {
+      margin: unset;
+    }
+  }
+  
+  @media only screen and (min-width: 1400px) {
+    p#loginSuccess,
+    span#alrdyInside,
+    span#itemInCart,
+    p.cartConfirmSlider,
+    #opis2,
+    div.status,
+    div.notStatus p.cartConfirm,
+    span.pageNumb a,
+    div.reviews p,
+    div.quote span strong,
+    div.questionaire form label,
+    section.policies a,
+    section.generalData p,
+    p#confirmation,
+    span.questionReject,
+    div.reviews,
+    p#opisDesc,
+    p.loginHere,
+    div.loginWrapper form label,
+    div#animated a,
+    input#loginButton,
+    input.inputLogin,
+    form#demo-form label,
+    form#demo-form input,
+    label.acceptTerms a,
+    input#mail3,
+    label[for="passDigit"],
+    div.uploadContainer form p,
+    div.uploadContainer form input,
+    div.uploadContainer form textarea,
+    div.uploadContainer form label.img,
+    label#catLabel,
+    div.finalMsg > span,
+    div.uploadContainer select#mySelect,
+    div.selectsContainer form label,
+    input#listTrans,
+    div#transConfirmRestore,
+    p#delete,
+    p#delete2nd,
+    table#mainTable tr th,
+    table#mainTableUser tr th,
+    p#updateDiscount,
+    #userMainTable th,
+    p#deleteUser,
+    p#deleteUser label,
+    p#deleteUser2nd,
+    input.deleteCat,
+    span#catWin,
+    span#catFail,
+    p#delete label[for="submit1"],
+    div#catNoDel,
+    p#deleteFinal,
+    input#transSearch,
+    table#mainTableStats tbody tr th {
+      font-size: 1.8rem;
+    }
+    /***Select tag fix for Firefox***/
+    @-moz-document url-prefix() {
+      form select#adm_units {
+        width: 334.333px;
+      }
+    }
+    select#adm_units {
+      width: 291px;
+      margin: 1px;
+    }
+    div.registerContainerUser button.g-recaptcha {
+      margin-top: 15px;
+    }
+    div.registerContainerUser section form input {
+      margin: 1px;
+    }
+    div#porukaMail,
+    div#porukaUser,
+    div#poruka {
+      margin-bottom: unset;
+    }
+    div.registerContainerUser > form#demo-form,
+    div.uploadContainerUser form {
+      row-gap: unset;
+    }
+    div.uploadContainerUser form input[name="first_name"],
+    div.uploadContainerUser form input[name="last_name"] {
+      grid-column-start: 1;
+    }
+  
+    div.uploadContainerUser form input[name="user_name"],
+    div.uploadContainerUser form input[name="email"],
+    div.uploadContainerUser form input[name="password"],
+    div#poruka,
+    div#porukaUser,
+    div#porukaMail,
+    div#porukaPassword {
+      grid-column-start: 2;
+    }
+    div.registerContainerUser form#demo-form label {
+      grid-column-start: 1;
+    }
+    div.categoryItem p#delete {
+      width: 320px;
+      max-width: 320px;
+    }
+    div.uploadContainerUser form input[type="submit"] {
+      grid-column: 1/3;
+    }
+    div.uploadContainerUser form input[name="user_name"] {
+      grid-row-start: 1;
+    }
+    div.uploadContainerUser form input[name="email"] {
+      grid-row-start: 2;
+    }
+    p#opis {
+      width: 320px;
+      max-width: 320px;
+    }
+    p#payPal:after {
+      top: -47px;
+    }
+    p#payPal {
+      top: 32px;
+    }
+    div.allRegWrapper div.registerContainerUser,
+    div.uploadContainerUser {
+      width: fit-content;
+  
+      max-width: fit-content;
+    }
+  
+    div.registerContainerUser > form#demo-form,
+    div.uploadContainerUser form {
+      display: grid;
+      align-content: space-evenly;
+      justify-items: center;
+      grid-template-columns: 1fr 1fr;
+      justify-content: start;
+      align-items: center;
+      padding-top: 50px;
+      column-gap: 15px;
+    }
+    div.registerContainerUser > form#demo-form input,
+    div.uploadContainerUser form input {
+      border-style: none;
+      margin: 5px;
+    }
+  
+    div.registerContainerUserform#demo-form label:not(label#acceptTerms) {
+      grid-column-start: 1;
+    }
+    div.registerContainerUser form#demo-form input#first_name,
+    div.registerContainerUser form#demo-form div[id^="poruka"] {
+      grid-column-start: 2;
+    }
+  
+    div.allRegWrapper form#demo-form button.g-recaptcha,
+    div.allRegWrapper label.acceptTerms,
+    div.allRegWrapper input#acceptTerms {
+      grid-column: 1/4;
+    }
+    div.allRegWrapper input.acceptTerms {
+      -ms-transform: scale(1);
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% {
+        -ms-transform: scale(0.95);
+        -webkit-transform: scale(0.95);
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+      }
+  
+      70% {
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+      }
+  
+      100% {
+        -ms-transform: scale(0.95);
+        -webkit-transform: scale(0.95);
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+      }
+    }
+    div.loginWrapper {
+      width: 580px;
+      max-width: 580px;
+    }
+    footer.finalNav nav.goBackCartCheckout {
+      position: relative;
+      width: 50%;
+      max-width: 50%;
+    }
+    p#finalDesc {
+      top: 38px;
+      left: -62px;
+    }
+    div.registerContainerUser {
+      width: unset;
+      margin: auto;
+      max-width: unset;
+    }
+    body.userInsertCheckout main div.register-wrapper-user {
+      width: 80%;
+      max-width: fit-content;
+    }
+    span.goBackCustomer {
+      grid-column: 1/3;
+    }
+    div.registerContainerUser section form {
+      display: grid;
+      align-content: space-evenly;
+      justify-items: center;
+      grid-template-columns: 1fr 1fr;
+      justify-content: start;
+      align-items: center;
+      padding: 2%;
+      row-gap: unset;
+    }
+    div.mySlides.fade > span,
+    span.pageNumb a,
+    div.uploadContainer h2,
+    table#mainTable tr td,
+    div.numbDist a,
+    table#userMainTable tr td,
+    table#mainTableUser tr td,
+    p.emph {
+      font-size: 2rem;
+    }
+    section.frontSection {
+      background-position: bottom;
+    }
+    h1.mainTitle {
+      font-size: 6rem;
+    }
+    div.descFront2,
+    div.descFront,
+    article.bookReviews div.reviews a {
+      font-size: 2.5rem;
+    }
+    div.questionaire {
+      max-width: 425px;
+    }
+    div.paginationContainer div.prev {
+      right: 85px;
+      top: 78px;
+    }
+    section.quoteNdQuestion div.quote img.questionPortrait {
+      width: 40vw;
+      max-width: 1400px;
+    }
+    div.paginationContainer div.next {
+      top: -90px;
+      left: 85px;
+    }
+    input.cart,
+    input.cartFront {
+      width: 75px;
+      height: 80px;
+    }
+    div#paypalContainer {
+      width: 500px;
+    }
+    h2.latestEdition:first-of-type,
+    div.next a,
+    div.prev a,
+    div.quote span,
+    p#outputCategory h2,
+    h3.topRws,
+    h2.productSpec,
+    section.orderData p {
+      font-size: 3.5rem;
+    }
+    div.bookContainer2,
+    div.grid-item2,
+    h3.latestEditionNotice,
+    div.categoryFront,
+    .grid-item,
+    span.newPrice,
+    span.oldPrice,
+    div.newPrice,
+    div.oldPrice,
+    nav.goBackCartCheckout a {
+      font-size: 2.2rem;
+    }
+  
+    div.grid-item > img:not(img.discountIcon),
+    div.grid-item2 > img:not(img.discountIcon) {
+      height: 600px;
+      width: 400px;
+    }
+    .discountIcon {
+      width: 150px;
+      height: 150px;
+    }
+    div.discount {
+      top: 43px;
+      font-size: 3rem;
+      width: fit-content;
+      left: 35px;
+    }
+    span.pageNumb {
+      width: 70px;
+      text-decoration: none;
+      height: 75px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  @media only screen and (min-width: 1920px) and (max-width: 2560px) {
+    h1.mainTitle {
+      font-size: 8rem;
+    }
+    main.finalMain {
+      margin-top: 50px;
+    }
+    img#emptyIcon {
+      margin-top: 100px;
+    }
+    select[name="userStatus"] {
+      margin-top: 15px;
+    }
+    body.userInsertCheckout main div.register-wrapper-user {
+      width: 60%;
+      max-width: 60%;
+    }
+    div.allRegWrapper div.registerContainerUser {
+      width: 65%;
+      max-width: 65%;
+    }
+    footer.finalNav nav.goBackCartCheckout {
+      width: 50%;
+      max-width: 50%;
+    }
+    section.frontSection {
+      background-position: center;
+    }
+    ul.words li > a,
+    section nav a[href="#contact"],
+    h3.topRws {
+      font-size: 5rem;
+    }
+    ul.words {
+      margin-top: 150px;
+    }
+    div.firstPageSearchContainer form label,
+    input,
+    div.firstPageSearchContainerA form label,
+    input {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    div.firstPageSearchContainer form,
+    div.firstPageSearchContainerA form {
+      width: 100%;
+      flex-direction: row;
+      padding: 1%;
+    }
+  
+    section#funPart div.cuteImage {
+      margin-top: 0%;
+    }
+    .slideshow-container {
+      width: 80%;
+      max-width: 80%;
+    }
+    .custom-shape-divider-top-1668023651 svg {
+      height: unset;
+    }
+    section#funPart div.cuteImage p {
+      font-size: 7rem;
+      padding-top: initial;
+    }
+    div.bookContainer,
+    div.bookContainerSearch,
+    div.bookContainer2,
+    nav p#outputCategory div.bookContainer2 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  /***MEDIA QUERIES END***/
+  

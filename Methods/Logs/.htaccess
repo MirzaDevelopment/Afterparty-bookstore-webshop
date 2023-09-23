@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Please enter username and password"
+AuthUserFile C:/laragon/www/afterparty/TheBooksOfKnjige/Methods/Logs/.htpasswd
+Require valid-user
