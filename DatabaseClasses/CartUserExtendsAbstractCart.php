@@ -15,7 +15,7 @@ class CartUser extends AbstractCart
     foreach ($array as $value) {
       try {
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = $connection->prepare("SELECT books.book_id, book_pic, book_title, book_author, book_quantity, publish_year, pricing.book_price, pricing.discount, pricing.discounted_price FROM dbs10877614.pricing JOIN dbs10877614.books ON dbs10877614.pricing.book_id=books.book_id WHERE books.book_id=:value");
+        $sql = $connection->prepare("SELECT books.book_id, book_pic, book_title, book_author, book_quantity, publish_year, pricing.book_price, pricing.discount, pricing.discounted_price FROM {$_ENV['DATABASE_NAME']}.pricing JOIN {$_ENV['DATABASE_NAME']}.books ON {$_ENV['DATABASE_NAME']}.pricing.book_id=books.book_id WHERE books.book_id=:value");
         $queryArray = array('value' => $value);
         foreach ($queryArray as $keyQuery => $param) {
           $sql->bindParam($keyQuery, $param);
@@ -85,7 +85,7 @@ class CartUser extends AbstractCart
     foreach ($array as $key => $value) {
       try {
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = $connection->prepare("SELECT books.book_id, book_pic, book_title, book_author, book_quantity, publish_year, pricing.book_price, pricing.discount, pricing.discounted_price FROM dbs10877614.pricing JOIN dbs10877614.books ON dbs10877614.pricing.book_id=books.book_id WHERE books.book_id=:value");
+        $sql = $connection->prepare("SELECT books.book_id, book_pic, book_title, book_author, book_quantity, publish_year, pricing.book_price, pricing.discount, pricing.discounted_price FROM {$_ENV['DATABASE_NAME']}.pricing JOIN {$_ENV['DATABASE_NAME']}.books ON {$_ENV['DATABASE_NAME']}.pricing.book_id=books.book_id WHERE books.book_id=:value");
         $queryArray = array('value' => $value);
         foreach ($queryArray as $keyQuery => $param) {
           $sql->bindParam($keyQuery, $param);

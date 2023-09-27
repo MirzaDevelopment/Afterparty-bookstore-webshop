@@ -10,7 +10,7 @@ require __DIR__ . "../../../DatabaseClasses/ConnectPdoAdmin.php";
 
 try { //Getting data to be presented in pdf invoice for admins
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = $connection->query("SELECT books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, transactions.book_quantity, transactions.transaction_date, users_customers.adress, users_customers.first_name, users_customers.last_name, users_customers.city, users_customers.postal_code, users_customers.phone_number, users_customers.email FROM dbs10877614.transactions JOIN dbs10877614.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id WHERE transactions.transaction_id=$kljuc");
+    $sql = $connection->query("SELECT books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, transactions.book_quantity, transactions.transaction_date, users_customers.adress, users_customers.first_name, users_customers.last_name, users_customers.city, users_customers.postal_code, users_customers.phone_number, users_customers.email FROM {$_ENV['DATABASE_NAME']}.transactions JOIN {$_ENV['DATABASE_NAME']}.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id WHERE transactions.transaction_id=$kljuc");
     while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
         require('../../PDFConverterUTF8/tfpdf.php');
         $pdf = new tFPDF(); //PDF converter class include

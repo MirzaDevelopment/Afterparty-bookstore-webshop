@@ -9,7 +9,7 @@ trait PasswordResetTrait
 
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT email FROM dbs10877614.users"); //Fetching all emails from database
+            $sql = $connection->query("SELECT email FROM {$_ENV['DATABASE_NAME']}.users"); //Fetching all emails from database
             while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
 
                 $emails = array(); //creating empty array in $emails variable
@@ -32,7 +32,7 @@ trait PasswordResetTrait
         require "DatabaseClasses/ConnectPdo.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT user_name, password, email FROM dbs10877614.users WHERE email =:email");
+            $sql = $connection->prepare("SELECT user_name, password, email FROM {$_ENV['DATABASE_NAME']}.users WHERE email =:email");
             $sql->execute(array('email' => $email));
             echo "<br>";
 
@@ -57,7 +57,7 @@ trait PasswordResetTrait
             require "DatabaseClasses/ConnectPdo.php";
             try {
                 $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $sql = $connection->prepare("UPDATE dbs10877614.users SET password=:password, user_modified=:user_modified WHERE users.email=:email");
+                $sql = $connection->prepare("UPDATE {$_ENV['DATABASE_NAME']}.users SET password=:password, user_modified=:user_modified WHERE users.email=:email");
                 $array = array('password' => $password, 'user_modified' => date("Y-m-d h:i:s"), 'email' => $email);
                 foreach ($array as $key => $param) {
                     $sql->bindParam($key, $param);

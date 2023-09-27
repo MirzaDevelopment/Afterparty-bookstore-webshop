@@ -37,7 +37,7 @@ class Statistics
 
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql2 = $connection->query("SELECT transactions.transaction_id, books.book_id, books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, SUM(transactions.book_quantity) AS QUANTITY_TOTAL FROM dbs10877614.transactions JOIN dbs10877614.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id GROUP BY books.book_id ORDER BY QUANTITY_TOTAL DESC LIMIT " . $initial_page . ',' . $limit);
+            $sql2 = $connection->query("SELECT transactions.transaction_id, books.book_id, books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, SUM(transactions.book_quantity) AS QUANTITY_TOTAL FROM {$_ENV['DATABASE_NAME']}.transactions JOIN {$_ENV['DATABASE_NAME']}.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id GROUP BY books.book_id ORDER BY QUANTITY_TOTAL DESC LIMIT " . $initial_page . ',' . $limit);
             while ($row = $sql2->fetch(PDO::FETCH_ASSOC)) {
                 echo "<tr>";
                 echo '<td>' . $row['book_title'] . '</td>';
@@ -152,7 +152,7 @@ class Statistics
 
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql2 = $connection->query("SELECT GROUP_CONCAT(DISTINCT users_customers.first_name) as first_name, GROUP_CONCAT(DISTINCT users_customers.last_name) as last_name, concat(email) as Customer_Mail, SUM(transaction_price * transactions.book_quantity) as Income FROM dbs10877614.transactions JOIN  users_customers ON transactions.customer_id=users_customers.customer_id GROUP BY Customer_Mail ORDER BY Income DESC LIMIT " . $initial_page . ',' . $limit);
+            $sql2 = $connection->query("SELECT GROUP_CONCAT(DISTINCT users_customers.first_name) as first_name, GROUP_CONCAT(DISTINCT users_customers.last_name) as last_name, concat(email) as Customer_Mail, SUM(transaction_price * transactions.book_quantity) as Income FROM {$_ENV['DATABASE_NAME']}.transactions JOIN  users_customers ON transactions.customer_id=users_customers.customer_id GROUP BY Customer_Mail ORDER BY Income DESC LIMIT " . $initial_page . ',' . $limit);
             while ($row = $sql2->fetch(PDO::FETCH_ASSOC)) {
                 if ($row['first_name'] > 0) {
                     echo "<tr>";
@@ -219,7 +219,7 @@ class Statistics
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //First, getting user email from user table.
-            $sql2 = $connection->prepare("SELECT users.email FROM dbs10877614.users WHERE users.user_name=:userName");
+            $sql2 = $connection->prepare("SELECT users.email FROM {$_ENV['DATABASE_NAME']}.users WHERE users.user_name=:userName");
             $array = array('userName' => $user_name);
             foreach ($array as $key => $param) {
                 $sql2->bindParam($key, $param);
@@ -228,7 +228,7 @@ class Statistics
             $row = $sql2->fetch(PDO::FETCH_ASSOC);
             $customer_mail = $row['email']; //Putting obtained customer mail in variable
             //Getting data for specific email
-            $sql3 = $connection->prepare("SELECT transactions.book_id, books.book_title, books.book_author, book_pic, users_customers.email,  pricing.book_price, pricing.discounted_price, SUM(transactions.book_quantity) AS QUANTITY_TOTAL, GROUP_CONCAT(DISTINCT transactions.transaction_date) as transaction_time FROM dbs10877614.transactions JOIN dbs10877614.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id WHERE users_customers.email=:userMail GROUP BY books.book_id DESC LIMIT " . $initial_page . ',' . $limit);
+            $sql3 = $connection->prepare("SELECT transactions.book_id, books.book_title, books.book_author, book_pic, users_customers.email,  pricing.book_price, pricing.discounted_price, SUM(transactions.book_quantity) AS QUANTITY_TOTAL, GROUP_CONCAT(DISTINCT transactions.transaction_date) as transaction_time FROM {$_ENV['DATABASE_NAME']}.transactions JOIN {$_ENV['DATABASE_NAME']}.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id WHERE users_customers.email=:userMail GROUP BY books.book_id DESC LIMIT " . $initial_page . ',' . $limit);
             $array2 = array('userMail' => $customer_mail);
             foreach ($array2 as $key => $param) {
                 $sql3->bindParam($key, $param);

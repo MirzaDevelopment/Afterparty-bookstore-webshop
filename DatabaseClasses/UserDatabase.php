@@ -239,7 +239,7 @@ class UserDatabase implements UsersInterface, UserSelectInterface
     require "ConnectPdo.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM dbs10877614.users WHERE first_name LIKE CONCAT(:first_name,'%') AND last_name LIKE CONCAT(:last_name,'%') AND user_name LIKE CONCAT(:user_name,'%') ORDER BY first_name ASC");
+      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM {$_ENV['DATABASE_NAME']}.users WHERE first_name LIKE CONCAT(:first_name,'%') AND last_name LIKE CONCAT(:last_name,'%') AND user_name LIKE CONCAT(:user_name,'%') ORDER BY first_name ASC");
       $sql->execute(array('first_name' => $first_name, 'last_name' => $last_name, 'user_name' => $user_name));
     } catch (PDOException $e) {
       date_default_timezone_set('Europe/Sarajevo');
@@ -264,7 +264,7 @@ class UserDatabase implements UsersInterface, UserSelectInterface
 
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM dbs10877614.users WHERE first_name LIKE CONCAT(:first_name,'%') AND last_name LIKE CONCAT(:last_name,'%') AND user_name LIKE CONCAT(:user_name,'%') ORDER BY first_name ASC LIMIT " . $initial_page . ',' . $limit);
+      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM {$_ENV['DATABASE_NAME']}.users WHERE first_name LIKE CONCAT(:first_name,'%') AND last_name LIKE CONCAT(:last_name,'%') AND user_name LIKE CONCAT(:user_name,'%') ORDER BY first_name ASC LIMIT " . $initial_page . ',' . $limit);
       $sql->execute(array('first_name' => $first_name, 'last_name' => $last_name, 'user_name' => $user_name));
       /**End of pagination preparation******/
       echo "<br>";
@@ -324,7 +324,7 @@ class UserDatabase implements UsersInterface, UserSelectInterface
     require "ConnectPdo.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->query("SELECT user_id, first_name, last_name, user_name, status, email FROM dbs10877614.users ORDER BY first_name ASC");
+      $sql = $connection->query("SELECT user_id, first_name, last_name, user_name, status, email FROM {$_ENV['DATABASE_NAME']}.users ORDER BY first_name ASC");
     } catch (PDOException $e) {
       date_default_timezone_set('Europe/Sarajevo');
       $error = $e->getMessage() . " " . date("F j, Y, g:i a");
@@ -348,7 +348,7 @@ class UserDatabase implements UsersInterface, UserSelectInterface
     /**End of pagination preparation******/
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->query("SELECT user_id, first_name, last_name, user_name, status, email FROM dbs10877614.users ORDER BY first_name ASC LIMIT " . $initial_page . ',' . $limit);
+      $sql = $connection->query("SELECT user_id, first_name, last_name, user_name, status, email FROM {$_ENV['DATABASE_NAME']}.users ORDER BY first_name ASC LIMIT " . $initial_page . ',' . $limit);
       echo "<br>";
       echo "<div class='frontMsg'>Users in database:</div>";
       echo "<table id='userMainTable'>";
@@ -400,7 +400,7 @@ class UserDatabase implements UsersInterface, UserSelectInterface
     require "ConnectPdo.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM dbs10877614.users WHERE first_name LIKE CONCAT(:first_name,'%') ORDER BY first_name ASC");
+      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM {$_ENV['DATABASE_NAME']}.users WHERE first_name LIKE CONCAT(:first_name,'%') ORDER BY first_name ASC");
       $sql->execute(array('first_name' => $first_name));
     } catch (PDOException $e) {
       date_default_timezone_set('Europe/Sarajevo');
@@ -425,7 +425,7 @@ class UserDatabase implements UsersInterface, UserSelectInterface
 
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM dbs10877614.users WHERE first_name LIKE CONCAT(:first_name,'%') ORDER BY first_name ASC LIMIT " . $initial_page . ',' . $limit);
+      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM {$_ENV['DATABASE_NAME']}.users WHERE first_name LIKE CONCAT(:first_name,'%') ORDER BY first_name ASC LIMIT " . $initial_page . ',' . $limit);
       $sql->execute(array('first_name' => $first_name));
       echo "<br>";
       echo "<div class='frontMsg'>Users in database:</div>";
@@ -480,7 +480,7 @@ class UserDatabase implements UsersInterface, UserSelectInterface
     require "ConnectPdo.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM dbs10877614.users WHERE last_name LIKE CONCAT(:last_name,'%') ORDER BY last_name ASC");
+      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM {$_ENV['DATABASE_NAME']}.users WHERE last_name LIKE CONCAT(:last_name,'%') ORDER BY last_name ASC");
       $sql->execute(array('last_name' => $last_name));
     } catch (PDOException $e) {
       $error = $e->getMessage() . " " . date("F j, Y, g:i a");
@@ -504,7 +504,7 @@ class UserDatabase implements UsersInterface, UserSelectInterface
 
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM dbs10877614.users WHERE last_name LIKE CONCAT(:last_name,'%') ORDER BY last_name ASC LIMIT " . $initial_page . ',' . $limit);
+      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM {$_ENV['DATABASE_NAME']}.users WHERE last_name LIKE CONCAT(:last_name,'%') ORDER BY last_name ASC LIMIT " . $initial_page . ',' . $limit);
       $sql->execute(array('last_name' => $last_name));
       echo "<br>";
       echo "<div class='frontMsg'>Users in database:</div>";
@@ -559,7 +559,7 @@ class UserDatabase implements UsersInterface, UserSelectInterface
     require "ConnectPdo.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM dbs10877614.users WHERE user_name LIKE CONCAT(:user_name,'%') ORDER BY user_name ASC");
+      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM {$_ENV['DATABASE_NAME']}.users WHERE user_name LIKE CONCAT(:user_name,'%') ORDER BY user_name ASC");
       $sql->execute(array('user_name' => $user_name));
     } catch (PDOException $e) {
       date_default_timezone_set('Europe/Sarajevo');
@@ -584,7 +584,7 @@ class UserDatabase implements UsersInterface, UserSelectInterface
 
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM dbs10877614.users WHERE user_name LIKE CONCAT(:user_name,'%') ORDER BY user_name ASC LIMIT " . $initial_page . ',' . $limit);
+      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM {$_ENV['DATABASE_NAME']}.users WHERE user_name LIKE CONCAT(:user_name,'%') ORDER BY user_name ASC LIMIT " . $initial_page . ',' . $limit);
       $sql->execute(array('user_name' => $user_name));
       echo "<br>";
       echo "<div class='frontMsg'>Users in database:</div>";
@@ -639,7 +639,7 @@ class UserDatabase implements UsersInterface, UserSelectInterface
     require "ConnectPdo.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM dbs10877614.users WHERE first_name LIKE CONCAT(:first_name,'%') AND last_name LIKE CONCAT(:last_name,'%') ORDER BY first_name ASC");
+      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM {$_ENV['DATABASE_NAME']}.users WHERE first_name LIKE CONCAT(:first_name,'%') AND last_name LIKE CONCAT(:last_name,'%') ORDER BY first_name ASC");
       $sql->execute(array('first_name' => $first_name, 'last_name' => $last_name));
     } catch (PDOException $e) {
       date_default_timezone_set('Europe/Sarajevo');
@@ -664,7 +664,7 @@ class UserDatabase implements UsersInterface, UserSelectInterface
 
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM dbs10877614.users WHERE first_name LIKE CONCAT(:first_name,'%') AND last_name LIKE CONCAT(:last_name,'%') ORDER BY first_name ASC LIMIT " . $initial_page . ',' . $limit);
+      $sql = $connection->prepare("SELECT user_id, first_name, last_name, user_name, status, email FROM {$_ENV['DATABASE_NAME']}.users WHERE first_name LIKE CONCAT(:first_name,'%') AND last_name LIKE CONCAT(:last_name,'%') ORDER BY first_name ASC LIMIT " . $initial_page . ',' . $limit);
       $sql->execute(array('first_name' => $first_name, 'last_name' => $last_name));
       echo "<br>";
       echo "<div class='frontMsg'>Users in database:</div>";
@@ -721,7 +721,7 @@ class UserDatabase implements UsersInterface, UserSelectInterface
     require "ConnectPdo.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT user_name, password, status FROM dbs10877614.users WHERE user_name =:userName");
+      $sql = $connection->prepare("SELECT user_name, password, status FROM {$_ENV['DATABASE_NAME']}.users WHERE user_name =:userName");
       $sql->execute(array('userName' => $user_name));
       echo "<br>";
 

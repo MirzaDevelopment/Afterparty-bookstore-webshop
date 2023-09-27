@@ -57,7 +57,7 @@ class TransactionDatabase implements TransactionInterface
         $sql->execute();
         //Query 4: Precusion query to prevent user to continue with order even if all items are out of stock (customer data would be deleted if no transaction has been made).
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql2 = $connection->query("SELECT customer_id FROM dbs10877614.transactions order by customer_id DESC LIMIT 1"); //Selecting last customer id in transaction table
+        $sql2 = $connection->query("SELECT customer_id FROM {$_ENV['DATABASE_NAME']}.transactions order by customer_id DESC LIMIT 1"); //Selecting last customer id in transaction table
         while ($row = $sql2->fetch(PDO::FETCH_ASSOC)) {
           if ($row['customer_id'] !== $customer_id) { //if last made customer id is not the same as transaction customer id (transaction does not exsist)...
             $sql2 = $connection->prepare("Call deleteCustomerFailed(?)"); //Delete the corresponding customer (because such customer exists in customer DB without a corresponding transaction made by him)
@@ -93,7 +93,7 @@ class TransactionDatabase implements TransactionInterface
     require "NamespaceAdmin3.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, transactions.book_quantity, users_customers.email FROM dbs10877614.transactions JOIN dbs10877614.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id WHERE users_customers.email=:email AND transactions.customer_id=:customer_id");
+      $sql = $connection->prepare("SELECT books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, transactions.book_quantity, users_customers.email FROM {$_ENV['DATABASE_NAME']}.transactions JOIN {$_ENV['DATABASE_NAME']}.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id WHERE users_customers.email=:email AND transactions.customer_id=:customer_id");
       $arrayEmail = array('email' => $customer_email, 'customer_id' => $customer_id);
       $sql->execute($arrayEmail);
       foreach ($arrayEmail as $keyEmail => $param) {
@@ -136,7 +136,7 @@ class TransactionDatabase implements TransactionInterface
 
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT transactions.transaction_id, transactions.transaction_status FROM dbs10877614.transactions WHERE transactions.transaction_id=:transId AND transactions.transaction_status='pending'");
+      $sql = $connection->prepare("SELECT transactions.transaction_id, transactions.transaction_status FROM {$_ENV['DATABASE_NAME']}.transactions WHERE transactions.transaction_id=:transId AND transactions.transaction_status='pending'");
       for ($i = 0; $i < sizeof($transactionData); $i++) {
         $array = array('transId' => $transactionData[$i]);
         foreach ($array as $key => $param) {
@@ -169,7 +169,7 @@ class TransactionDatabase implements TransactionInterface
 
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT transactions.transaction_id, transactions.transaction_status FROM dbs10877614.transactions WHERE transactions.transaction_id=:transId AND transactions.transaction_status='finished'");
+      $sql = $connection->prepare("SELECT transactions.transaction_id, transactions.transaction_status FROM {$_ENV['DATABASE_NAME']}.transactions WHERE transactions.transaction_id=:transId AND transactions.transaction_status='finished'");
       for ($i = 0; $i < sizeof($transactionData); $i++) {
 
         $array = array('transId' => $transactionData[$i]);

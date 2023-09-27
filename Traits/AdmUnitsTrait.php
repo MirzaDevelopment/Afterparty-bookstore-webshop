@@ -5,7 +5,7 @@ public function getAdmUnits($adm_unit):string{
     require "../DatabaseClasses/NamespaceUser.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT adm_units.names FROM dbs10877614.adm_units WHERE adm_units.adm_unit_id=:adm_unit_id");
+      $sql = $connection->prepare("SELECT adm_units.names FROM {$_ENV['DATABASE_NAME']}.adm_units WHERE adm_units.adm_unit_id=:adm_unit_id");
       $sql->execute(array('adm_unit_id'=> $adm_unit));
       while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
        

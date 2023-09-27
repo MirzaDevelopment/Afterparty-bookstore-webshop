@@ -11,7 +11,7 @@ trait PreventDuplicateTrait
 
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT user_name, email FROM dbs10877614.users"); //Fetching all user names and emails from database
+            $sql = $connection->query("SELECT user_name, email FROM {$_ENV['DATABASE_NAME']}.users"); //Fetching all user names and emails from database
             while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
 
                 $names = array(); //creating empty array in $names variable
@@ -40,7 +40,7 @@ trait PreventDuplicateTrait
 
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT user_name, email FROM dbs10877614.users"); //Fetching all user names and emails from database
+            $sql = $connection->query("SELECT user_name, email FROM {$_ENV['DATABASE_NAME']}.users"); //Fetching all user names and emails from database
             while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
 
                 $names = array(); //creating empty array in $names variable
@@ -68,7 +68,7 @@ trait PreventDuplicateTrait
 
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT book_category FROM dbs10877614.book_category"); //Fetching current categories from database
+            $sql = $connection->query("SELECT book_category FROM {$_ENV['DATABASE_NAME']}.book_category"); //Fetching current categories from database
             while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
 
                 $categories = array(); //creating empty array in $names variable

@@ -12,7 +12,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_author LIKE CONCAT('%',:author,'%') AND book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC");
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_author LIKE CONCAT('%',:author,'%') AND book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC");
             $array = array('author' => $book_author, 'title' => $book_title, 'price1' => $number1, 'price2' => $number2);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -42,7 +42,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         /**End of pagination preparation******/
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_author LIKE CONCAT('%',:author,'%') AND book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_author LIKE CONCAT('%',:author,'%') AND book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC LIMIT " . $initial_page . ',' . $limit);
             $array = array('author' => $book_author, 'title' => $book_title, 'price1' => $number1, 'price2' => $number2);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -111,7 +111,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE NULLIF(book_title, '') IS NOT NULL ORDER BY books.import_time ASC");
+            $sql = $connection->query("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE NULLIF(book_title, '') IS NOT NULL ORDER BY books.import_time ASC");
         } catch (PDOException $e) {
             $error = $e->getMessage() . " " . date("F j, Y, g:i a");
             error_log($error . PHP_EOL, 3, "../Logs/logs.txt");
@@ -136,7 +136,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         /**End of pagination preparation******/
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE NULLIF(book_title, '') IS NOT NULL ORDER BY books.book_quantity ASC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->query("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE NULLIF(book_title, '') IS NOT NULL ORDER BY books.book_quantity ASC LIMIT " . $initial_page . ',' . $limit);
             echo "<br>";
             echo "<div class='frontMsg'>Books in database:</div>";
             echo "<table id='mainTable'>";
@@ -193,7 +193,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_author LIKE CONCAT('%',:author,'%') ORDER BY book_author ASC");
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_author LIKE CONCAT('%',:author,'%') ORDER BY book_author ASC");
             $array = array('author' => $book_author);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -224,7 +224,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         /**End of pagination preparation******/
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_author LIKE CONCAT('%',:author,'%') ORDER BY book_author ASC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_author LIKE CONCAT('%',:author,'%') ORDER BY book_author ASC LIMIT " . $initial_page . ',' . $limit);
             $array = array('author' => $book_author);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -289,7 +289,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_author LIKE CONCAT('%',:author,'%') AND book_price >= CONCAT(:price1,'%') ORDER BY book_price ASC");
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_author LIKE CONCAT('%',:author,'%') AND book_price >= CONCAT(:price1,'%') ORDER BY book_price ASC");
             $array = array('author' => $book_author, 'price1' => $number1);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -320,7 +320,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         /**End of pagination preparation***/
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_author LIKE CONCAT('%',:author,'%') AND book_price >= CONCAT(:price1,'%') ORDER BY book_price ASC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_author LIKE CONCAT('%',:author,'%') AND book_price >= CONCAT(:price1,'%') ORDER BY book_price ASC LIMIT " . $initial_page . ',' . $limit);
             $array = array('author' => $book_author, 'price1' => $number1);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -385,7 +385,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_author LIKE CONCAT('%',:author,'%') AND book_price <= CONCAT(:price2,'%') ORDER BY book_price DESC");
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_author LIKE CONCAT('%',:author,'%') AND book_price <= CONCAT(:price2,'%') ORDER BY book_price DESC");
             $array = array('author' => $book_author, 'price2' => $number2);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -414,7 +414,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         /**End of pagination preparation***/
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_author LIKE CONCAT('%',:author,'%') AND book_price <= CONCAT(:price2,'%') ORDER BY book_price DESC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_author LIKE CONCAT('%',:author,'%') AND book_price <= CONCAT(:price2,'%') ORDER BY book_price DESC LIMIT " . $initial_page . ',' . $limit);
             $array = array('author' => $book_author, 'price2' => $number2);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -478,7 +478,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_author LIKE CONCAT('%',:author,'%') AND book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC");
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_author LIKE CONCAT('%',:author,'%') AND book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC");
             $array = array('author' => $book_author, 'price1' => $number1, 'price2' => $number2);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -509,7 +509,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         /**End of pagination preparation***/
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_author LIKE CONCAT('%',:author,'%') AND book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_author LIKE CONCAT('%',:author,'%') AND book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC LIMIT " . $initial_page . ',' . $limit);
             $array = array('author' => $book_author, 'price1' => $number1, 'price2' => $number2);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -575,7 +575,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_title LIKE CONCAT('%',:title,'%') ORDER BY book_title ASC");
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_title LIKE CONCAT('%',:title,'%') ORDER BY book_title ASC");
             $array = array('title' => $book_title);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -604,7 +604,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         /**End of pagination preparation***/
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_title LIKE CONCAT('%',:title,'%') ORDER BY book_title ASC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_title LIKE CONCAT('%',:title,'%') ORDER BY book_title ASC LIMIT " . $initial_page . ',' . $limit);
             $array = array('title' => $book_title);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -667,7 +667,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1,'%') ORDER BY book_price ASC");
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1,'%') ORDER BY book_price ASC");
             $array = array('title' => $book_title, 'price1' => $number1);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -696,7 +696,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         /**End of pagination preparation***/
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1,'%') ORDER BY book_price ASC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1,'%') ORDER BY book_price ASC LIMIT " . $initial_page . ',' . $limit);
             $array = array('title' => $book_title, 'price1' => $number1);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -760,7 +760,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_title LIKE CONCAT('%',:title,'%') AND book_price AND book_price <= CONCAT(:price2,'%') ORDER BY book_price DESC");
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_title LIKE CONCAT('%',:title,'%') AND book_price AND book_price <= CONCAT(:price2,'%') ORDER BY book_price DESC");
             $array = array('title' => $book_title, 'price2' => $number2);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -788,7 +788,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         /**End of pagination preparation***/
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_title LIKE CONCAT('%',:title,'%') AND book_price AND book_price <= CONCAT(:price2,'%') ORDER BY book_price DESC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_title LIKE CONCAT('%',:title,'%') AND book_price AND book_price <= CONCAT(:price2,'%') ORDER BY book_price DESC LIMIT " . $initial_page . ',' . $limit);
             $array = array('title' => $book_title, 'price2' => $number2);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -853,7 +853,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC");
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC");
             $array = array('title' => $book_title, 'price1' => $number1, 'price2' => $number2);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -882,7 +882,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         /**End of pagination preparation***/
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC LIMIT " . $initial_page . ',' . $limit);
             $array = array('title' => $book_title, 'price1' => $number1, 'price2' => $number2);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -947,7 +947,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_title LIKE CONCAT('%',:title,'%') AND book_author LIKE CONCAT('%',:author,'%') ORDER BY book_author ASC");
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_title LIKE CONCAT('%',:title,'%') AND book_author LIKE CONCAT('%',:author,'%') ORDER BY book_author ASC");
             $array = array('title' => $book_title, 'author' => $book_author);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -976,7 +976,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         /**End of pagination preparation***/
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_title LIKE CONCAT('%',:title,'%') AND book_author LIKE CONCAT('%',:author,'%') ORDER BY book_author ASC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_title LIKE CONCAT('%',:title,'%') AND book_author LIKE CONCAT('%',:author,'%') ORDER BY book_author ASC LIMIT " . $initial_page . ',' . $limit);
             $array = array('title' => $book_title, 'author' => $book_author);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -1043,7 +1043,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price >= CONCAT(:price1,'%') ORDER BY book_price ASC");
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price >= CONCAT(:price1,'%') ORDER BY book_price ASC");
             $array = array('price1' => $number1);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -1072,7 +1072,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         /**End of pagination preparation***/
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price >= CONCAT(:price1,'%') ORDER BY book_price ASC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price >= CONCAT(:price1,'%') ORDER BY book_price ASC LIMIT " . $initial_page . ',' . $limit);
             $array = array('price1' => $number1);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -1137,7 +1137,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price <= CONCAT(:price2,'%') ORDER BY book_price DESC");
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price <= CONCAT(:price2,'%') ORDER BY book_price DESC");
             $array = array('price2' => $number2);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -1165,7 +1165,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         /**End of pagination preparation***/
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price <= CONCAT(:price2,'%') ORDER BY book_price DESC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price <= CONCAT(:price2,'%') ORDER BY book_price DESC LIMIT " . $initial_page . ',' . $limit);
             $array = array('price2' => $number2);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -1232,7 +1232,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC");
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC");
             $array = array('price1' => $number1, 'price2' => $number2);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -1261,7 +1261,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         /**End of pagination preparation***/
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC LIMIT " . $initial_page . ',' . $limit);
             $array = array('price1' => $number1, 'price2' => $number2);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -1326,7 +1326,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         require "ConnectPdo.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT book_category_id, book_category FROM dbs10877614.book_category");
+            $sql = $connection->query("SELECT book_category_id, book_category FROM {$_ENV['DATABASE_NAME']}.book_category");
             echo "<br>";
 
             while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
@@ -1350,7 +1350,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
 
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT deleted_books.book_id, deleted_books.book_pic, deleted_books.book_title, deleted_books.book_author, deleted_books.book_quantity, deleted_books.book_category_id, deleted_books.publish_year, deleted_books.delete_time, book_category.book_category FROM dbs10877614.deleted_books LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=deleted_books.book_category_id ORDER BY deleted_books.delete_time ASC");
+            $sql = $connection->query("SELECT deleted_books.book_id, deleted_books.book_pic, deleted_books.book_title, deleted_books.book_author, deleted_books.book_quantity, deleted_books.book_category_id, deleted_books.publish_year, deleted_books.delete_time, book_category.book_category FROM {$_ENV['DATABASE_NAME']}.deleted_books LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=deleted_books.book_category_id ORDER BY deleted_books.delete_time ASC");
         } catch (PDOException $e) {
           date_default_timezone_set('Europe/Sarajevo');
             $error = $e->getMessage() . " " . date("F j, Y, g:i a");
@@ -1377,7 +1377,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
             /***Getting deleted transaction details for admins***/
 
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql2 = $connection->query("SELECT deleted_books.book_id, deleted_books.book_pic, deleted_books.book_title, deleted_books.book_author, deleted_books.book_quantity, deleted_books.book_category_id, deleted_books.publish_year, deleted_books.delete_time, book_category.book_category FROM dbs10877614.deleted_books LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=deleted_books.book_category_id ORDER BY deleted_books.delete_time ASC LIMIT " . $initial_page . ',' . $limit);
+            $sql2 = $connection->query("SELECT deleted_books.book_id, deleted_books.book_pic, deleted_books.book_title, deleted_books.book_author, deleted_books.book_quantity, deleted_books.book_category_id, deleted_books.publish_year, deleted_books.delete_time, book_category.book_category FROM {$_ENV['DATABASE_NAME']}.deleted_books LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=deleted_books.book_category_id ORDER BY deleted_books.delete_time ASC LIMIT " . $initial_page . ',' . $limit);
             echo "<br>";
             echo "<div class='frontMsg'>Deleted books in database (latest):</div>";
             echo "<table id='mainTable'>";

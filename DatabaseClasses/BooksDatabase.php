@@ -10,7 +10,7 @@ class BooksDatabase implements UserBookSelectInterface
     require "ConnectPdoUser.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_author LIKE CONCAT('%',:author,'%') AND book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC");
+      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_author LIKE CONCAT('%',:author,'%') AND book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1,'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC");
       $sql->execute(array('author' => $book_author, 'title' => $book_title, 'price1' => $number1, 'price2' => $number2));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
@@ -68,7 +68,7 @@ class BooksDatabase implements UserBookSelectInterface
     require "ConnectPdoUser.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_author LIKE CONCAT('%',:author,'%') ORDER BY book_author ASC");
+      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_author LIKE CONCAT('%',:author,'%') ORDER BY book_author ASC");
       $sql->execute(array('author' => $book_author));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
@@ -125,7 +125,7 @@ class BooksDatabase implements UserBookSelectInterface
     require "ConnectPdoUser.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_author LIKE CONCAT('%',:author,'%') AND book_price >= CONCAT(:price1'%') ORDER BY book_price ASC");
+      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_author LIKE CONCAT('%',:author,'%') AND book_price >= CONCAT(:price1'%') ORDER BY book_price ASC");
       $sql->execute(array('author' => $book_author, 'price1' => $number1));
        //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
@@ -182,7 +182,7 @@ class BooksDatabase implements UserBookSelectInterface
     require "ConnectPdoUser.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_author LIKE CONCAT('%',:author,'%') AND book_price <= CONCAT(:price2'%') ORDER BY book_price DESC");
+      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_author LIKE CONCAT('%',:author,'%') AND book_price <= CONCAT(:price2'%') ORDER BY book_price DESC");
       $sql->execute(array('author' => $book_author, 'price2' => $number2));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
@@ -239,7 +239,7 @@ class BooksDatabase implements UserBookSelectInterface
     require "ConnectPdoUser.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_author LIKE CONCAT('%',:author,'%') AND book_price >= CONCAT(:price1'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC");
+      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_author LIKE CONCAT('%',:author,'%') AND book_price >= CONCAT(:price1'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC");
       $sql->execute(array('author' => $book_author, 'price1' => $number1, 'price2' => $number2));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
@@ -298,7 +298,7 @@ class BooksDatabase implements UserBookSelectInterface
     require "ConnectPdoUser.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_title LIKE CONCAT('%',:title,'%') ORDER BY book_title ASC");
+      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_title LIKE CONCAT('%',:title,'%') ORDER BY book_title ASC");
       $sql->execute(array('title' => $book_title));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
@@ -356,7 +356,7 @@ class BooksDatabase implements UserBookSelectInterface
     require "ConnectPdoUser.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1'%') ORDER BY book_price ASC");
+      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1'%') ORDER BY book_price ASC");
       $sql->execute(array('title' => $book_title, 'price1' => $number1));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
@@ -413,7 +413,7 @@ class BooksDatabase implements UserBookSelectInterface
     require "ConnectPdoUser.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_title LIKE CONCAT('%',:title,'%') AND book_price AND book_price <= CONCAT(:price2'%') ORDER BY book_price DESC");
+      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_title LIKE CONCAT('%',:title,'%') AND book_price AND book_price <= CONCAT(:price2'%') ORDER BY book_price DESC");
       $sql->execute(array('title' => $book_title, 'price2' => $number2));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
@@ -471,7 +471,7 @@ class BooksDatabase implements UserBookSelectInterface
     require "ConnectPdoUser.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC");
+      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE  book_title LIKE CONCAT('%',:title,'%') AND book_price >= CONCAT(:price1'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC");
       $sql->execute(array('title' => $book_title, 'price1' => $number1, 'price2' => $number2));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
@@ -528,7 +528,7 @@ class BooksDatabase implements UserBookSelectInterface
     require "ConnectPdoUser.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_title LIKE CONCAT('%',:title,'%') AND book_author LIKE CONCAT('%',:author,'%') ORDER BY book_author ASC");
+      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_title LIKE CONCAT('%',:title,'%') AND book_author LIKE CONCAT('%',:author,'%') ORDER BY book_author ASC");
       $sql->execute(array('title' => $book_title, 'author' => $book_author));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
@@ -586,7 +586,7 @@ class BooksDatabase implements UserBookSelectInterface
     require "ConnectPdoUser.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price >= CONCAT(:price1'%') ORDER BY book_price ASC");
+      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price >= CONCAT(:price1'%') ORDER BY book_price ASC");
       $sql->execute(array('price1' => $number1));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
@@ -645,7 +645,7 @@ class BooksDatabase implements UserBookSelectInterface
     require "ConnectPdoUser.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price <= CONCAT(:price2'%') ORDER BY book_price DESC");
+      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price <= CONCAT(:price2'%') ORDER BY book_price DESC");
       $sql->execute(array('price2' => $number2));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
@@ -705,7 +705,7 @@ class BooksDatabase implements UserBookSelectInterface
     require "ConnectPdoUser.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price >= CONCAT(:price1'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC");
+      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_price >= CONCAT(:price1'%') AND book_price <= CONCAT (:price2,'%') ORDER BY book_price ASC");
       $sql->execute(array('price1' => $number1, 'price2' => $number2));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
@@ -764,7 +764,7 @@ class BooksDatabase implements UserBookSelectInterface
     require "NamespaceUser.php";
     try { //Getting total amount of rows
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->query("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_title >'0'");
+      $sql = $connection->query("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_title >'0'");
     } catch (PDOException $e) {
       $error = $e->getMessage() . " " . date("F j, Y, g:i a");
       error_log($error . PHP_EOL, 3, "Methods/logs.txt");
@@ -795,7 +795,7 @@ class BooksDatabase implements UserBookSelectInterface
     /**End of pagination preparation******/
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql2 = $connection->query("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id ORDER BY publish_year DESC LIMIT " . $initial_page . ',' . $limit); //starting point, num of rows to return after starting point; 
+      $sql2 = $connection->query("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id ORDER BY publish_year DESC LIMIT " . $initial_page . ',' . $limit); //starting point, num of rows to return after starting point; 
       echo "<div class='bookContainer'>";
       while ($row = $sql2->fetch(PDO::FETCH_ASSOC)) {
         if ($row['book_title']>0){
@@ -880,7 +880,7 @@ class BooksDatabase implements UserBookSelectInterface
     require "NamespaceUser2.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->query("SELECT book_category_id, book_category FROM dbs10877614.book_category");
+      $sql = $connection->query("SELECT book_category_id, book_category FROM {$_ENV['DATABASE_NAME']}.book_category");
        echo"<label id='catLabel'>";
       echo "Pick a book category";
       echo "<select id='mySelect' name='category'>";
@@ -903,7 +903,7 @@ class BooksDatabase implements UserBookSelectInterface
     require "NamespaceUser3.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->query("SELECT book_category_id, book_category FROM dbs10877614.book_category");
+      $sql = $connection->query("SELECT book_category_id, book_category FROM {$_ENV['DATABASE_NAME']}.book_category");
       echo"<label>";
       echo "Available discounts";
       echo "<select id='mySelectDiscount' name='category'>";

@@ -10,7 +10,7 @@ class Slider
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT position FROM dbs10877614.slider");
+            $sql = $connection->query("SELECT position FROM {$_ENV['DATABASE_NAME']}.slider");
             echo "<label>";
             echo "Chose position in slider";
             echo "<select id='mySelectSlider' name='sliderPosition'>";
@@ -53,7 +53,7 @@ class Slider
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT * FROM dbs10877614.slider");
+            $sql = $connection->query("SELECT * FROM {$_ENV['DATABASE_NAME']}.slider");
             echo "<div class='sliderContainer'>";
             while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
 
@@ -78,7 +78,7 @@ class Slider
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT books.book_title, slider.book_pic, slider.book_id, book_description, books.book_author, pricing.book_price, pricing.discounted_price, pricing.discount, slider.position FROM dbs10877614.slider JOIN dbs10877614.books ON books.book_id=slider.book_id JOIN pricing ON books.book_id=pricing.book_id WHERE position='1'");
+            $sql = $connection->query("SELECT books.book_title, slider.book_pic, slider.book_id, book_description, books.book_author, pricing.book_price, pricing.discounted_price, pricing.discount, slider.position FROM {$_ENV['DATABASE_NAME']}.slider JOIN {$_ENV['DATABASE_NAME']}.books ON books.book_id=slider.book_id JOIN pricing ON books.book_id=pricing.book_id WHERE position='1'");
             while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='mySlides fade'>";
                 if ($row['book_pic'] > 0) {
@@ -122,7 +122,7 @@ class Slider
         require "NamespaceAdmin3.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT books.book_title, slider.book_pic, slider.book_id, book_description, books.book_author, pricing.book_price, pricing.discounted_price, pricing.discount, slider.position FROM dbs10877614.slider JOIN dbs10877614.books ON books.book_id=slider.book_id JOIN pricing ON books.book_id=pricing.book_id  WHERE position='2'");
+            $sql = $connection->query("SELECT books.book_title, slider.book_pic, slider.book_id, book_description, books.book_author, pricing.book_price, pricing.discounted_price, pricing.discount, slider.position FROM {$_ENV['DATABASE_NAME']}.slider JOIN {$_ENV['DATABASE_NAME']}.books ON books.book_id=slider.book_id JOIN pricing ON books.book_id=pricing.book_id  WHERE position='2'");
             while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='mySlides fade'>";
                 if ($row['book_pic'] > 0) {
@@ -167,7 +167,7 @@ class Slider
         require "NamespaceAdmin4.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT books.book_title, slider.book_pic, slider.book_pic, slider.book_id, book_description, books.book_author, pricing.book_price, pricing.discounted_price, pricing.discount, slider.position FROM dbs10877614.slider JOIN dbs10877614.books ON books.book_id=slider.book_id JOIN pricing ON books.book_id=pricing.book_id WHERE position='3'");
+            $sql = $connection->query("SELECT books.book_title, slider.book_pic, slider.book_pic, slider.book_id, book_description, books.book_author, pricing.book_price, pricing.discounted_price, pricing.discount, slider.position FROM {$_ENV['DATABASE_NAME']}.slider JOIN {$_ENV['DATABASE_NAME']}.books ON books.book_id=slider.book_id JOIN pricing ON books.book_id=pricing.book_id WHERE position='3'");
             while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='mySlides fade'>";
                 if ($row['book_pic'] > 0) {

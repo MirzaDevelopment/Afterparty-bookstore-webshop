@@ -23,7 +23,7 @@ class Database implements QueryInterface //Class that holds book management quer
       $sql->execute();
       //Query 2: Select last book_id
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->query("SELECT book_id FROM dbs10877614.books ORDER BY book_id DESC LIMIT 1");
+      $sql = $connection->query("SELECT book_id FROM {$_ENV['DATABASE_NAME']}.books ORDER BY book_id DESC LIMIT 1");
       while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
         $book_id_last = $row['book_id'];
       }
@@ -235,7 +235,7 @@ class Database implements QueryInterface //Class that holds book management quer
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $connection->beginTransaction();
       //Query 1: Select discount % so price changes can reflect on discounted price correctly
-      $sql = $connection->prepare("SELECT discount from dbs10877614.pricing WHERE pricing.book_id=:id;");
+      $sql = $connection->prepare("SELECT discount from {$_ENV['DATABASE_NAME']}.pricing WHERE pricing.book_id=:id;");
       $array = array('id' => $book_id);
       $sql->execute($array);
       foreach ($array as $key => $param) {
@@ -290,7 +290,7 @@ class Database implements QueryInterface //Class that holds book management quer
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $connection->beginTransaction();
       //Query 1: Select regular price so discount can be applied
-      $sql = $connection->prepare("SELECT book_price FROM dbs10877614.pricing WHERE dbs10877614.pricing.book_id=:id;");
+      $sql = $connection->prepare("SELECT book_price FROM {$_ENV['DATABASE_NAME']}.pricing WHERE {$_ENV['DATABASE_NAME']}.pricing.book_id=:id;");
       $array = array('id' => $book_id);
       $sql->execute($array);
       foreach ($array as $key => $param) {
@@ -472,7 +472,7 @@ class Database implements QueryInterface //Class that holds book management quer
     require "ConnectPdoAdmin.php";
     try {
       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, pricing.discount_price_time, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE pricing.discounted_price > 0 ORDER BY books.import_time DESC");
+      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, pricing.discount_price_time, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE pricing.discounted_price > 0 ORDER BY books.import_time DESC");
 
       $sql->execute();
       echo "<br>";

@@ -12,7 +12,7 @@ class CustomerSelectDatabase implements CustomerSelectInterface
 
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT users_customers.customer_id, first_name, last_name, email, adress, postal_code, dbs10877614.adm_units.names, city, phone_number FROM dbs10877614.users_customers JOIN dbs10877614.adm_units ON users_customers.adm_unit_id=adm_units.adm_unit_id");
+            $sql = $connection->query("SELECT users_customers.customer_id, first_name, last_name, email, adress, postal_code, {$_ENV['DATABASE_NAME']}.adm_units.names, city, phone_number FROM {$_ENV['DATABASE_NAME']}.users_customers JOIN {$_ENV['DATABASE_NAME']}.adm_units ON users_customers.adm_unit_id=adm_units.adm_unit_id");
         } catch (PDOException $e) {
           date_default_timezone_set('Europe/Sarajevo');
             $error = $e->getMessage() . " " . date("F j, Y, g:i a");
@@ -39,7 +39,7 @@ class CustomerSelectDatabase implements CustomerSelectInterface
             /***Getting transaction details for admins***/
 
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT users_customers.customer_id, first_name, last_name, email, adress, postal_code, dbs10877614.adm_units.names, city, phone_number, transaction_registered FROM dbs10877614.users_customers JOIN dbs10877614.adm_units ON users_customers.adm_unit_id=adm_units.adm_unit_id ORDER BY transaction_registered DESC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->query("SELECT users_customers.customer_id, first_name, last_name, email, adress, postal_code, {$_ENV['DATABASE_NAME']}.adm_units.names, city, phone_number, transaction_registered FROM {$_ENV['DATABASE_NAME']}.users_customers JOIN {$_ENV['DATABASE_NAME']}.adm_units ON users_customers.adm_unit_id=adm_units.adm_unit_id ORDER BY transaction_registered DESC LIMIT " . $initial_page . ',' . $limit);
             echo "<br>";
             echo "<div class='frontMsg'>Customers in database (latest):</div>";
             echo "<table id='mainTable'>";
@@ -100,7 +100,7 @@ class CustomerSelectDatabase implements CustomerSelectInterface
 
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT users_customers.customer_id, first_name, last_name, email, adress, postal_code, dbs10877614.adm_units.names, city, phone_number, transaction_registered FROM dbs10877614.users_customers JOIN dbs10877614.adm_units ON users_customers.adm_unit_id=adm_units.adm_unit_id WHERE first_name LIKE CONCAT(:input,'%') OR last_name LIKE CONCAT (:input,'%') OR email LIKE CONCAT (:input,'%') ORDER BY users_customers.transaction_registered ");
+            $sql = $connection->prepare("SELECT users_customers.customer_id, first_name, last_name, email, adress, postal_code, {$_ENV['DATABASE_NAME']}.adm_units.names, city, phone_number, transaction_registered FROM {$_ENV['DATABASE_NAME']}.users_customers JOIN {$_ENV['DATABASE_NAME']}.adm_units ON users_customers.adm_unit_id=adm_units.adm_unit_id WHERE first_name LIKE CONCAT(:input,'%') OR last_name LIKE CONCAT (:input,'%') OR email LIKE CONCAT (:input,'%') ORDER BY users_customers.transaction_registered ");
             $array = array('input' => $user_input);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -131,7 +131,7 @@ class CustomerSelectDatabase implements CustomerSelectInterface
         try {
             /***Getting transaction details for admins***/
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT users_customers.customer_id, first_name, last_name, email, adress, postal_code, dbs10877614.adm_units.names, city, phone_number, transaction_registered FROM dbs10877614.users_customers JOIN dbs10877614.adm_units ON users_customers.adm_unit_id=adm_units.adm_unit_id WHERE first_name LIKE CONCAT(:input,'%') OR last_name LIKE CONCAT (:input,'%') OR email LIKE CONCAT (:input,'%') ORDER BY users_customers.transaction_registered DESC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->prepare("SELECT users_customers.customer_id, first_name, last_name, email, adress, postal_code, {$_ENV['DATABASE_NAME']}.adm_units.names, city, phone_number, transaction_registered FROM {$_ENV['DATABASE_NAME']}.users_customers JOIN {$_ENV['DATABASE_NAME']}.adm_units ON users_customers.adm_unit_id=adm_units.adm_unit_id WHERE first_name LIKE CONCAT(:input,'%') OR last_name LIKE CONCAT (:input,'%') OR email LIKE CONCAT (:input,'%') ORDER BY users_customers.transaction_registered DESC LIMIT " . $initial_page . ',' . $limit);
             $array = array('input' => $user_input);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -200,7 +200,7 @@ class CustomerSelectDatabase implements CustomerSelectInterface
 
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT deleted_customers.customer_id, first_name, last_name, email, adress, postal_code, dbs10877614.adm_units.names, city, phone_number FROM dbs10877614.deleted_customers JOIN dbs10877614.adm_units ON deleted_customers.adm_unit_id=adm_units.adm_unit_id");
+            $sql = $connection->query("SELECT deleted_customers.customer_id, first_name, last_name, email, adress, postal_code, {$_ENV['DATABASE_NAME']}.adm_units.names, city, phone_number FROM {$_ENV['DATABASE_NAME']}.deleted_customers JOIN {$_ENV['DATABASE_NAME']}.adm_units ON deleted_customers.adm_unit_id=adm_units.adm_unit_id");
         } catch (PDOException $e) {
             $error = $e->getMessage() . " " . date("F j, Y, g:i a");
             error_log($error . PHP_EOL, 3, "../Logs/logs.txt");
@@ -225,7 +225,7 @@ class CustomerSelectDatabase implements CustomerSelectInterface
             /***Getting transaction details for admins***/
 
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT deleted_customers.customer_id, first_name, last_name, email, adress, postal_code, dbs10877614.adm_units.names, city, phone_number, transaction_registered FROM dbs10877614.deleted_customers JOIN dbs10877614.adm_units ON deleted_customers.adm_unit_id=adm_units.adm_unit_id ORDER BY transaction_registered DESC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->query("SELECT deleted_customers.customer_id, first_name, last_name, email, adress, postal_code, {$_ENV['DATABASE_NAME']}.adm_units.names, city, phone_number, transaction_registered FROM {$_ENV['DATABASE_NAME']}.deleted_customers JOIN {$_ENV['DATABASE_NAME']}.adm_units ON deleted_customers.adm_unit_id=adm_units.adm_unit_id ORDER BY transaction_registered DESC LIMIT " . $initial_page . ',' . $limit);
             echo "<br>";
             echo "<div class='frontMsg'>Customers in database (latest):</div>";
             echo "<table id='mainTable'>";

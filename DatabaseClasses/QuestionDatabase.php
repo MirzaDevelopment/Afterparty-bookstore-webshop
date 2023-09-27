@@ -33,7 +33,7 @@ class Questiondatabase implements QuestionInterface //Class for question/message
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT questions_id, questions_user_name, questions_body, questions_email, questions_status, questions_created FROM dbs10877614.questions  ORDER BY questions_created DESC");
+            $sql = $connection->query("SELECT questions_id, questions_user_name, questions_body, questions_email, questions_status, questions_created FROM {$_ENV['DATABASE_NAME']}.questions  ORDER BY questions_created DESC");
         } catch (PDOException $e) {
           date_default_timezone_set('Europe/Sarajevo');
             $error = $e->getMessage() . " " . date("F j, Y, g:i a");
@@ -67,7 +67,7 @@ class Questiondatabase implements QuestionInterface //Class for question/message
         /**End of pagination preparation******/
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql2 = $connection->query("SELECT questions_id, questions_user_name, questions_body, questions_email, questions_status, questions_created FROM dbs10877614.questions  ORDER BY questions_created DESC LIMIT " . $initial_page . ',' . $limit);
+            $sql2 = $connection->query("SELECT questions_id, questions_user_name, questions_body, questions_email, questions_status, questions_created FROM {$_ENV['DATABASE_NAME']}.questions  ORDER BY questions_created DESC LIMIT " . $initial_page . ',' . $limit);
             echo "<br>";
             echo "<div class='frontMsg'>Questions:</div>";
             echo "<div class='megaQuestionContainer'>";
@@ -130,7 +130,7 @@ class Questiondatabase implements QuestionInterface //Class for question/message
         require "NamespaceAdmin3.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT COUNT(questions_id) AS total FROM dbs10877614.questions WHERE questions_status='unanswered';");
+            $sql = $connection->query("SELECT COUNT(questions_id) AS total FROM {$_ENV['DATABASE_NAME']}.questions WHERE questions_status='unanswered';");
             $row = $sql->fetch(PDO::FETCH_ASSOC);
             $_SESSION['total'] = $row['total'];
         } catch (PDOException $e) {
@@ -197,7 +197,7 @@ class Questiondatabase implements QuestionInterface //Class for question/message
         require "ConnectPdoAdmin.php";
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT questions_email FROM dbs10877614.questions WHERE questions_id=:questionId");
+            $sql = $connection->prepare("SELECT questions_email FROM {$_ENV['DATABASE_NAME']}.questions WHERE questions_id=:questionId");
             $array = array('questionId' => $question_id);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);

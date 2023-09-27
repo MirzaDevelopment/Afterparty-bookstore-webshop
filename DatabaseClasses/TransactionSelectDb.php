@@ -10,7 +10,7 @@ class TransactionSelectDb implements TransactionSelectInterface //Class for sele
 
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT transactions.transaction_id, books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, transactions.book_quantity, transactions.transaction_date, users_customers.email FROM dbs10877614.transactions JOIN dbs10877614.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id");
+            $sql = $connection->query("SELECT transactions.transaction_id, books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, transactions.book_quantity, transactions.transaction_date, users_customers.email FROM {$_ENV['DATABASE_NAME']}.transactions JOIN {$_ENV['DATABASE_NAME']}.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id");
         } catch (PDOException $e) {
           date_default_timezone_set('Europe/Sarajevo');
             $error = $e->getMessage() . " " . date("F j, Y, g:i a");
@@ -37,7 +37,7 @@ class TransactionSelectDb implements TransactionSelectInterface //Class for sele
             /***Getting transaction details for admins***/
 
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT transactions.transaction_id, books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, transactions.book_quantity, transactions.transaction_status, transactions.transaction_date, users_customers.email, users_customers.first_name FROM dbs10877614.transactions JOIN dbs10877614.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id ORDER BY transactions.transaction_date DESC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->query("SELECT transactions.transaction_id, books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, transactions.book_quantity, transactions.transaction_status, transactions.transaction_date, users_customers.email, users_customers.first_name FROM {$_ENV['DATABASE_NAME']}.transactions JOIN {$_ENV['DATABASE_NAME']}.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id ORDER BY transactions.transaction_date DESC LIMIT " . $initial_page . ',' . $limit);
             echo "<br>";
             echo "<div class='frontMsg'>Orders in database (latest):</div>";
             echo "<table id='mainTable'>";
@@ -110,7 +110,7 @@ class TransactionSelectDb implements TransactionSelectInterface //Class for sele
 
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT deleted_transactions.transaction_id, books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, deleted_transactions.book_quantity, deleted_transactions.transaction_status, deleted_transactions.transaction_date, users_customers.email FROM dbs10877614.deleted_transactions JOIN dbs10877614.books ON books.book_id=deleted_transactions.book_id JOIN users_customers ON deleted_transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id");
+            $sql = $connection->query("SELECT deleted_transactions.transaction_id, books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, deleted_transactions.book_quantity, deleted_transactions.transaction_status, deleted_transactions.transaction_date, users_customers.email FROM {$_ENV['DATABASE_NAME']}.deleted_transactions JOIN {$_ENV['DATABASE_NAME']}.books ON books.book_id=deleted_transactions.book_id JOIN users_customers ON deleted_transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id");
         } catch (PDOException $e) {
           date_default_timezone_set('Europe/Sarajevo');
             $error = $e->getMessage() . " " . date("F j, Y, g:i a");
@@ -137,7 +137,7 @@ class TransactionSelectDb implements TransactionSelectInterface //Class for sele
             /***Getting deleted transaction details for admins***/
 
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql2 = $connection->query("SELECT deleted_transactions.transaction_id, books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, deleted_transactions.book_quantity, deleted_transactions.transaction_status, deleted_transactions.transaction_date, users_customers.email FROM dbs10877614.deleted_transactions JOIN dbs10877614.books ON books.book_id=deleted_transactions.book_id JOIN users_customers ON deleted_transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id ORDER BY deleted_transactions.transaction_end DESC LIMIT " . $initial_page . ',' . $limit);
+            $sql2 = $connection->query("SELECT deleted_transactions.transaction_id, books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, deleted_transactions.book_quantity, deleted_transactions.transaction_status, deleted_transactions.transaction_date, users_customers.email FROM {$_ENV['DATABASE_NAME']}.deleted_transactions JOIN {$_ENV['DATABASE_NAME']}.books ON books.book_id=deleted_transactions.book_id JOIN users_customers ON deleted_transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id ORDER BY deleted_transactions.transaction_end DESC LIMIT " . $initial_page . ',' . $limit);
             echo "<br>";
             echo "<div class='frontMsg'>Deleted transactions in database (latest):</div>";
             echo "<table id='mainTable'>";
@@ -205,7 +205,7 @@ class TransactionSelectDb implements TransactionSelectInterface //Class for sele
 
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT transactions.transaction_id, books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, transactions.book_quantity, transactions.transaction_status, transactions.transaction_date, users_customers.email, users_customers.first_name FROM dbs10877614.transactions JOIN dbs10877614.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id WHERE books.book_title LIKE CONCAT(:input,'%') OR books.book_author LIKE CONCAT (:input,'%') OR users_customers.email LIKE CONCAT (:input,'%') OR users_customers.first_name LIKE CONCAT (:input,'%') OR transactions.transaction_status LIKE CONCAT (:input,'%')");
+            $sql = $connection->prepare("SELECT transactions.transaction_id, books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, transactions.book_quantity, transactions.transaction_status, transactions.transaction_date, users_customers.email, users_customers.first_name FROM {$_ENV['DATABASE_NAME']}.transactions JOIN {$_ENV['DATABASE_NAME']}.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id WHERE books.book_title LIKE CONCAT(:input,'%') OR books.book_author LIKE CONCAT (:input,'%') OR users_customers.email LIKE CONCAT (:input,'%') OR users_customers.first_name LIKE CONCAT (:input,'%') OR transactions.transaction_status LIKE CONCAT (:input,'%')");
             $array = array('input' => $user_input);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);
@@ -236,7 +236,7 @@ class TransactionSelectDb implements TransactionSelectInterface //Class for sele
         try {
             /***Getting transaction details for admins***/
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->prepare("SELECT transactions.transaction_id, books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, transactions.book_quantity, transactions.transaction_status, transactions.transaction_date, users_customers.email, users_customers.first_name FROM dbs10877614.transactions JOIN dbs10877614.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id WHERE books.book_title LIKE CONCAT(:input,'%') OR books.book_author LIKE CONCAT (:input,'%') OR users_customers.email LIKE CONCAT (:input,'%') OR users_customers.first_name LIKE CONCAT (:input,'%') OR transactions.transaction_status LIKE CONCAT (:input,'%') ORDER BY transactions.transaction_date DESC LIMIT " . $initial_page . ',' . $limit);
+            $sql = $connection->prepare("SELECT transactions.transaction_id, books.book_title, books.book_author, pricing.book_price, pricing.discounted_price, transactions.book_quantity, transactions.transaction_status, transactions.transaction_date, users_customers.email, users_customers.first_name FROM {$_ENV['DATABASE_NAME']}.transactions JOIN {$_ENV['DATABASE_NAME']}.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id WHERE books.book_title LIKE CONCAT(:input,'%') OR books.book_author LIKE CONCAT (:input,'%') OR users_customers.email LIKE CONCAT (:input,'%') OR users_customers.first_name LIKE CONCAT (:input,'%') OR transactions.transaction_status LIKE CONCAT (:input,'%') ORDER BY transactions.transaction_date DESC LIMIT " . $initial_page . ',' . $limit);
             $array = array('input' => $user_input);
             foreach ($array as $key => $param) {
                 $sql->bindParam($key, $param);

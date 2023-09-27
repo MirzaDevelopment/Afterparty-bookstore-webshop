@@ -9,7 +9,7 @@ if (!empty($_GET['kljuc'])) {
     require "DatabaseClasses/ConnectPdo.php";
     try {
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = $connection->prepare("SELECT book_description FROM dbs10877614.books WHERE book_title=:data");
+        $sql = $connection->prepare("SELECT book_description FROM {$_ENV['DATABASE_NAME']}.books WHERE book_title=:data");
         $array = array('data' => $data);
         foreach ($array as $key => $param) {
             $sql->bindParam($key, $param);
@@ -37,7 +37,7 @@ if (!empty($_POST['kljucUser'])) {
     require "DatabaseClasses/ConnectPdoUser.php";
     try {
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = $connection->prepare("SELECT user_name FROM dbs10877614.users WHERE user_name LIKE CONCAT ('%',:userName)"); //Fetching user names from database
+        $sql = $connection->prepare("SELECT user_name FROM {$_ENV['DATABASE_NAME']}.users WHERE user_name LIKE CONCAT ('%',:userName)"); //Fetching user names from database
         $array = array('userName' => $user_name);
         foreach ($array as $key => $param) {
             $sql->bindParam($key, $param);
@@ -77,7 +77,7 @@ if (!empty($_POST['kljucCategory'])) {
     require "DatabaseClasses/ConnectPdo.php";
     try {
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = $connection->prepare("SELECT book_category FROM dbs10877614.book_category WHERE book_category LIKE CONCAT ('%',:category)"); //Fetching category from database
+        $sql = $connection->prepare("SELECT book_category FROM {$_ENV['DATABASE_NAME']}.book_category WHERE book_category LIKE CONCAT ('%',:category)"); //Fetching category from database
         $array = array('category' => $book_category);
         foreach ($array as $key => $param) {
             $sql->bindParam($key, $param);
@@ -119,7 +119,7 @@ if (!empty($_POST['kljucEmail'])) {
     require "DatabaseClasses/ConnectPdo.php";
     try {
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = $connection->prepare("SELECT email FROM dbs10877614.users WHERE email LIKE CONCAT('%',:email)"); //Fetching emails from database
+        $sql = $connection->prepare("SELECT email FROM {$_ENV['DATABASE_NAME']}.users WHERE email LIKE CONCAT('%',:email)"); //Fetching emails from database
         $array = array('email' => $email);
         foreach ($array as $key => $param) {
             $sql->bindParam($key, $param);
@@ -156,7 +156,7 @@ if (!empty($_GET['id'])) {
     require "DatabaseClasses/ConnectPdoUser.php";
     try {
 
-        $sql2 = $connection->prepare("SELECT book_category FROM dbs10877614.book_category WHERE book_category_id=:data");
+        $sql2 = $connection->prepare("SELECT book_category FROM {$_ENV['DATABASE_NAME']}.book_category WHERE book_category_id=:data");
         $array = array('data' => $data);
         foreach ($array as $key => $param) {
             $sql2->bindParam($key, $param);
@@ -166,7 +166,7 @@ if (!empty($_GET['id'])) {
         echo "<h2>Available books in category: " . $row['book_category'] . "</h2>";
         echo "<div class='bookContainer2'>";
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_category.book_category_id =:data ORDER BY books.import_time DESC");
+        $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_category.book_category_id =:data ORDER BY books.import_time DESC");
         $array = array('data' => $data);
         foreach ($array as $key => $param) {
             $sql->bindParam($key, $param);
@@ -221,7 +221,7 @@ if (!empty($_GET['Discount'])) {
     require "DatabaseClasses/ConnectPdoUser.php";
     try {
 
-        $sql2 = $connection->prepare("SELECT book_category FROM dbs10877614.book_category WHERE book_category_id=:data");
+        $sql2 = $connection->prepare("SELECT book_category FROM {$_ENV['DATABASE_NAME']}.book_category WHERE book_category_id=:data");
         $array = array('data' => $data);
         foreach ($array as $key => $param) {
             $sql2->bindParam($key, $param);
@@ -231,7 +231,7 @@ if (!empty($_GET['Discount'])) {
         echo "<h2>Available books in category: " . $row['book_category'] . "</h2>";
         echo "<div class='bookContainer2'>";
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM dbs10877614.books INNER JOIN dbs10877614.pricing ON books.book_id=pricing.book_id LEFT JOIN dbs10877614.book_category ON book_category.book_category_id=books.book_category_id WHERE book_category.book_category_id =:data AND pricing.discounted_price > 0 ORDER BY books.import_time DESC");
+        $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE book_category.book_category_id =:data AND pricing.discounted_price > 0 ORDER BY books.import_time DESC");
         $array = array('data' => $data);
         foreach ($array as $key => $param) {
             $sql->bindParam($key, $param);
@@ -283,7 +283,7 @@ if (!empty($_GET['desc'])) {
     require "DatabaseClasses/ConnectPdo.php";
     try {
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = $connection->prepare("SELECT book_description FROM dbs10877614.books WHERE book_title=:data");
+        $sql = $connection->prepare("SELECT book_description FROM {$_ENV['DATABASE_NAME']}.books WHERE book_title=:data");
         $array = array('data' => $data);
         foreach ($array as $key => $param) {
             $sql->bindParam($key, $param);
