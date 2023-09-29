@@ -7,8 +7,9 @@ External libraries used:<br/>
 2. PDF Converter - used for converting transaction data into printable pdf document <br/>
 3. Vulcas/phpdotenv - used for proper reading of .env variables <br/>
 
-**The app is a personal and passion project that is intended to show my coding abilities. It is still, however, completely functional product that anyone can use to check and test out.**
-As mentioned above, some functionalities in this app might have been made "subpar" or different from "best practices" especially if I have already made similiar functionality somewhere else in the application. Example for this is a book search form on the first page. For practice purpouse, it is deliberately made with multiple input fields user can use to search for a product (by author, or title, or price etc.). <br/>
+**The app is a personal and passion project that is intended to show my coding abilities. It is still, however, completely functional product that anyone can use to check and test out.**<br/>
+As mentioned above, some functionalities in this app might have been made "subpar" or different from "best practices" especially if I have already made similiar functionality somewhere else in the application.<br/> 
+Example for this is a book search form on the first page. For practice purpouse, it is deliberately made with multiple input fields user can use to search for a product (by author, or title, or price etc.). <br/>
 However later when Admin searches for a transaction, for example, a single search input field brings out any result that matches the keyword (customer name, mail, bought book etc.)<br/>
 Some functionalities are also left out for practical and time-saving purpouse. For example, I haven't made restore option for deleted users (deleted user is deleted forever), because I have already demonstrated that I can make the same functionality in the books management section.<br/>
 ## App Features
