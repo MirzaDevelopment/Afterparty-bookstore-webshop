@@ -8,7 +8,9 @@ External libraries used:<br/>
 3. Vulcas/phpdotenv - used for proper reading of .env variables <br/>
 
 **The app is a personal and passion project that is intended to show my coding abilities. It is still, however, completely functional product that anyone can use to check and test out.**
-
+As mentioned above, some functionalities in this app might have been made "subpar" or different from "best practices" especially if I have already made similiar functionality somewhere else in the application. Example for this is a book search form on the first page. For practice purpouse, it is deliberately made with multiple input fields user can use to search for a product (by author, or title, or price etc.). <br/>
+However later when Admin searches for a transaction, for example, a single search input field brings out any result that matches the keyword (customer name, mail, bought book etc.)<br/>
+Some functionalities are also left out for practical and time-saving purpouse. For example, I haven't made restore option for deleted users (deleted user is deleted forever), because I have already demonstrated that I can make the same functionality in the books management section.<br/>
 ## App Features
 1. Completely functional cart/purchase system with final payment integration using PayPal and Braintree gateway (sandbox mode)<br/>
 2. Confirmation mail for customers with the details of their successful purchases.<br/>
@@ -40,7 +42,7 @@ External libraries used:<br/>
 5. Web app shoud be completely responsive and is tested on GOOGLE CHROME AND FIREFOX browsers.<br/>
 6. Web application achieves 97+ score on google lighthouse test on performance, SEO and accessibility.
 
-## Features planned
+## Planned features
 1. Detailed book page with broader description, book rating, and reader comments.<br/>
 2. Comment management system with validation and profanity filter.<br/>
 3. "Similiar like this" carousel.<br/>
