@@ -57,25 +57,25 @@ All the .css and .js files are minified in live for best performance. They are l
 4. Paypal integration is somewhat complex proces. It requires paypal developer account, braintree sandbox account, and a mutual link between these two to obtain the required keys. I feel like this is beyond the scope of general user needs to do, so I will not provide a detailed guide here on how to do it. The app works flawlessly without the paypal integration anyway.
 5. Download the code of application in .zip here on github and extract it somewhere on your pc.
 6. Open the extracted folder "Afterparty-bookstore-webshop-main" in your Visual studio code and create a file called .env
-7. Modiy the .env file in your Visual studio code to look like this:<br/><br/>
-**All the above information you will recieve from your live host, google recatpcha and google smtp.
-#Database credentials
-DATABASE_SERVER=YOUR HOSTING SERVER
-DATABASE_NAME=YOUR DATABASE NAME
-DATABASE_USER=YOUR DATABASE USER
-DATABASE_PASS=YOUR DATABASE PASS
+7. Modiy the .env file in your Visual studio code to look like this(**All the below information you will recieve from your live host, google recatpcha and google smtp.):<br/><br/>
 
-#Recaptcha secret key
-RECAPTCHA_KEY=YOUR RECAPTCHA SECRET KEY
+#Database credentials<br/>
+DATABASE_SERVER=YOUR HOSTING SERVER<br/>
+DATABASE_NAME=YOUR DATABASE NAME<br/>
+DATABASE_USER=YOUR DATABASE USER<br/>
+DATABASE_PASS=YOUR DATABASE PASS<br/>
 
-#Mail credentials
-MAIL_HOST=smtp.gmail.com
-MAIL_USERNAME=YOUR_GOOGLE_USERNAME
-MAIL_PASSWORD=YOUR EMAIL SMTP HOST PASSWORD OBTAINED FROM GOOGLE
+#Recaptcha secret key<br/>
+RECAPTCHA_KEY=YOUR RECAPTCHA SECRET KEY<br/>
 
-#Braintree gateway tokens (YOU CAN IGNORE THESE)
-ENVIRONMENT=sandbox
-MERCHANT_ID=YOUR MERCHANT ID
-PUBLIC_KEY=YOUR PUBLIC KEY
+#Mail credentials<br/>
+MAIL_HOST=smtp.gmail.com<br/>
+MAIL_USERNAME=YOUR_GOOGLE_USERNAME<br/>
+MAIL_PASSWORD=YOUR EMAIL SMTP HOST PASSWORD OBTAINED FROM GOOGLE<br/>
+
+#Braintree gateway tokens (YOU CAN IGNORE THESE)<br/>
+ENVIRONMENT=sandbox<br/>
+MERCHANT_ID=YOUR MERCHANT ID<br/>
+PUBLIC_KEY=YOUR PUBLIC KEY<br/>
 PRIVATE_KEY=YOUR PRIVATE KEY <br/>
 4. 
