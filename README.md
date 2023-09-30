@@ -92,7 +92,7 @@ log_errors = On<br/>
 error_log = /homepages/11/d961183757/htdocs/Private/php-errors.log<br/>
 display_errors = Off<br/>
 date.timezone = Europe/Sarajevo<br/><br/>
-**This means all the errors are logged in folder Private I have created on my live host root space. You can however, modify php.ini to look like this:**<br/>
+**This means all the errors are logged in folder Private I have created on my live host root space. You can however, modify php.ini to look like this:**<br/><br/>
 error_reporting = E_ALL | E_STRICT;<br/>
 **log_errors = Off**<br/>
 error_log = /homepages/11/d961183757/htdocs/Private/php-errors.log<br/>
