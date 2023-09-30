@@ -85,7 +85,7 @@ PRIVATE_KEY=YOUR PRIVATE KEY <br/>
 
 8. Navigate to Methoods/Logs/.htpasswd Put your freely chosen password and user name in designated space. It is a small safety percussion to prevent users to read your logs by accessing them through URL. However most of the live servers have already forbidden such actions so this might not be necessary.
 9. After the changes have been made, copy all the files from Afterparty-bookstore-webshop-main on your pc, to your webspace which hosting provider designated for you. You might need FileZilla for this, or you can use some sort of cpanel. It all depends on your hosting provider.
-10. Access the site with the https://www.yourprovidedomain.com
+10. Access the site: https://www.yourprovidedomain.com
 11. Default php.ini for this app looks like this:<br/><br/>
 error_reporting = E_ALL | E_STRICT;<br/>
 log_errors = On<br/>
@@ -101,8 +101,6 @@ date.timezone = Europe/Sarajevo<br/>
 So the browser will now display errors which will make it easier for you to fix. **This should be reverted to default state after all the erros have been fixed.**
 12. Database file is called books_afterparty_bit_ready.sql. You will use your hosting provider guide on how to import this database in your designated database. You can easily navigate to this file, because it's already included in the folder you downloaded.
 13. Database contains only SuperAdmin credentials, and some dummy product data.
-14. Your super admin credentials are: 
-1. Username: SuperAdmin
-2. Password: Superadmin1234! <br/>
+14. Your super admin login credentials are: Username: SuperAdmin, Password: Superadmin1234!<br/>
 When you login you have complete access to all features in superadmin panel.<br/> If you want to change your superadmin password, go to the user management section in your super admin panel and click on "Modify users" icon. <br/> Now you are in a User search panel. In "search by Username" input field type "Super", then click on modify icon. Now you can simply change the default mail to your own mail adress. <br/>After that go back to User search panel and click logout on the top right. Here you click on a section "Forgot Password? Click here to reset...". <br/>After then just follow the program guide to reset the super admin password to your own.
 
