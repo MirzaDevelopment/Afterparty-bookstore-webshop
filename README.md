@@ -12,6 +12,7 @@ As mentioned above, some functionalities in this app might have been made "subpa
 Example for this is a book search form on the first page. For practice purpouse, it is deliberately made with multiple input fields user can use to search for a product (by author, or title, or price etc.). <br/>
 However later when Admin searches for a transaction, for example, a single search input field brings out any result that matches the keyword (customer name, mail, bought book etc.).<br/>
 Some functionalities are also left out for practical and time-saving purpouse. For example, I haven't made restore option for deleted users (deleted user is deleted forever), because I have already demonstrated that I can make the same functionality in the books management section.<br/>
+All the .css and .js files are minified in live for best performance. They are left here in their raw format for looks and see.<br/>
 ## App Features
 1. Completely functional cart/purchase system with final payment integration using PayPal and Braintree gateway (sandbox mode).<br/>
 2. Confirmation mail for customers with the details of their successful purchases.<br/>
@@ -47,3 +48,34 @@ Some functionalities are also left out for practical and time-saving purpouse. F
 1. Detailed book page with broader description, book rating, and reader comments.<br/>
 2. Comment management system with validation and profanity filter.<br/>
 3. "Similiar like this" carousel.<br/>
+
+## Installation and requirements
+**Code presented on Github is a live working example of code. So therefor it will probably not work on localhost without some serious modifications. There are many reasons for it, one is .htaccess forcing the ssl certificate, and another is environmental variables that I couldn't make to work on my localhost, like they did on live server. So if you are interested in downloading the code, the best bet would be to try it on a live server (shared hosting should be sufficient).**
+1. Php version is 8.1.0 and MYSQL version is 5.7.24
+2. You will need to obtain recaptcha keys, here is a guide how [Get recaptcha keys](https://melapress.com/support/kb/captcha-4wp-get-google-recaptcha-keys/).
+3. You will need (for this  example) to use Google SMTP and add your application to their system to obtain mail password. Here is a link how [Set up google SMTP](https://mailmeteor.com/blog/gmail-smtp-settings).
+4. Paypal integration is somewhat complex proces. It requires paypal developer account, braintree sandbox account, and a mutual link between these two to obtain the required keys. I feel like this is beyond the scope of general user needs to do, so I will not provide a detailed guide here on how to do it. The app works flawlessly without the paypal integration anyway.
+5. Download the code of application in .zip here on github and extract it somewhere on your pc.
+6. Open the extracted folder "Afterparty-bookstore-webshop-main" in your Visual studio code and create a file called .env
+7. Modiy the .env file in your Visual studio code to look like this:<br/><br/>
+**All the above information you will recieve from your live host, google recatpcha and google smtp.
+#Database credentials
+DATABASE_SERVER=YOUR HOSTING SERVER
+DATABASE_NAME=YOUR DATABASE NAME
+DATABASE_USER=YOUR DATABASE USER
+DATABASE_PASS=YOUR DATABASE PASS
+
+#Recaptcha secret key
+RECAPTCHA_KEY=YOUR RECAPTCHA SECRET KEY
+
+#Mail credentials
+MAIL_HOST=smtp.gmail.com
+MAIL_USERNAME=YOUR_GOOGLE_USERNAME
+MAIL_PASSWORD=YOUR EMAIL SMTP HOST PASSWORD OBTAINED FROM GOOGLE
+
+#Braintree gateway tokens (YOU CAN IGNORE THESE)
+ENVIRONMENT=sandbox
+MERCHANT_ID=YOUR MERCHANT ID
+PUBLIC_KEY=YOUR PUBLIC KEY
+PRIVATE_KEY=YOUR PRIVATE KEY <br/>
+4. 
