@@ -51,7 +51,7 @@ All the .css and .js files are minified in live for best performance. They are l
 
 ## Installation and requirements
 ## Installation notice
-**Code presented on Github is a live working example of code. So therefor it will probably not work on localhost without some serious modifications. There are many reasons for it, one is .htaccess forcing the ssl certificate, and another is environmental variables that I couldn't make to work on my localhost, like they did on live server. So if you are interested in downloading the code, the best bet would be to try it on a live server (shared hosting should be sufficient).**<br/>
+**Code presented on Github is a live working example of code. So therefore it will probably not work on localhost without some serious modifications. There are many reasons for it, one is .htaccess forcing the ssl certificate, and another is environmental variables that I couldn't make to work on my localhost, like they did on live server. So if you are interested in downloading the code, the best bet would be to try it on a live server (shared hosting should be sufficient).**<br/>
 **Since almost all of the database queries in this app are made through stored procedures you will need to find a way to create/import them on your live host. They are included in the books_afterparty_bit_ready.sql file, but my hosting provider does not allow me to simply import them, so I needed to create each one separately. Stored procedures would also have needed to contain your own database credentials, so just importing them from me would not do anyway. The code for each of the stored procedure is found in the books_afterparty_bit_ready.sql you can open in your Visual studio code. Using the code from the file, you can create each one on your live host using their recommendations. They need to have same name as the ones in the code, same query command, but everything else is provided by your host.**<br/></br>
 ## Preparation and installation
 1. Php version is 8.1.0 and MYSQL version is 5.7.24.
@@ -83,10 +83,10 @@ MERCHANT_ID=YOUR MERCHANT ID<br/>
 PUBLIC_KEY=YOUR PUBLIC KEY<br/>
 PRIVATE_KEY=YOUR PRIVATE KEY <br/>
 
-4. Navigate to Methoods/Logs/.htpasswd Put your freely chosen password and user name in designated space. It is a small safety percussion to prevent users to read your logs by accessing them through URL. However most of the live servers have already forbidden such actions so this might not be necessary.
-5. After the changes have been made, copy all the files from Afterparty-bookstore-webshop-main on your pc, to your webspace which hosting provider designated for you. You might need FileZilla for this, or you can use some sort of cpanel. It all depends on your hosting provider.
-6. Access the site with the https://www.yourprovidedomain.com
-7. Default php.ini for this app looks like this:<br/>
+8. Navigate to Methoods/Logs/.htpasswd Put your freely chosen password and user name in designated space. It is a small safety percussion to prevent users to read your logs by accessing them through URL. However most of the live servers have already forbidden such actions so this might not be necessary.
+9. After the changes have been made, copy all the files from Afterparty-bookstore-webshop-main on your pc, to your webspace which hosting provider designated for you. You might need FileZilla for this, or you can use some sort of cpanel. It all depends on your hosting provider.
+10. Access the site with the https://www.yourprovidedomain.com
+11. Default php.ini for this app looks like this:<br/><br/>
 error_reporting = E_ALL | E_STRICT;<br/>
 log_errors = On<br/>
 error_log = /homepages/11/d961183757/htdocs/Private/php-errors.log<br/>
@@ -99,10 +99,10 @@ error_log = /homepages/11/d961183757/htdocs/Private/php-errors.log<br/>
 **display_errors = On**<br/>
 date.timezone = Europe/Sarajevo<br/>
 So the browser will now display errors which will make it easier for you to fix. **This should be reverted to default state after all the erros have been fixed.**
-8. Database file is called books_afterparty_bit_ready.sql. You will use your hosting provider guide on how to import this database in your designated database. You can easily navigate to this file, because it's already included in github.
-9. Database contains only SuperAdmin credentials, and some dummy product data.
-10. Your super admin credentials are: 
+12. Database file is called books_afterparty_bit_ready.sql. You will use your hosting provider guide on how to import this database in your designated database. You can easily navigate to this file, because it's already included in the folder you downloaded.
+13. Database contains only SuperAdmin credentials, and some dummy product data.
+14. Your super admin credentials are: 
 1. Username: SuperAdmin
-2. Password:Superadmin1234! <br/>
-When you login you have complete access to all features in superadmin panel.<br/> If you want to change your superadmin password, go to the user management section in your super admin panel and click on "Modify users" icon. Now you are in a User search panel. In "search by Username" input field type "Super", then click on modify icon. Now you can simply change the default mail to your own mail adress. After that go back to User search panel and click logout on the top right. Here you click on a section "Forgot Password? Click here to reset...". After that just follow the program guide to reset the super admin password to your own.
+2. Password: Superadmin1234! <br/>
+When you login you have complete access to all features in superadmin panel.<br/> If you want to change your superadmin password, go to the user management section in your super admin panel and click on "Modify users" icon. <br/> Now you are in a User search panel. In "search by Username" input field type "Super", then click on modify icon. Now you can simply change the default mail to your own mail adress. <br/>After that go back to User search panel and click logout on the top right. Here you click on a section "Forgot Password? Click here to reset...". <br/>After then just follow the program guide to reset the super admin password to your own.
 
