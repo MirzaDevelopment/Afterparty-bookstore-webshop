@@ -1138,9 +1138,7 @@ function delCategoryIntersection(category) {
                 }
 
 
-            } else {
-                document.getElementsByClassName('delete').innerHTML = "Sorry there was an error!";
-            }
+            } 
         }
         ajax.open("POST", "../Controllers/deleteControllerSmall");
         ajax.send(formData);
@@ -1180,9 +1178,7 @@ function delCategoryFinalisation(category) {
                 }
 
 
-            } else {
-                document.getElementsByClassName('delete').innerHTML = "Sorry there was an error!";
-            }
+            } 
 
         }
         ajax.open("POST", "../Controllers/deleteController");
@@ -1273,9 +1269,7 @@ function multipleUpd() {//Body "onload" function in updateControllerSmall.php
 
                         document.getElementById('output2').innerHTML = this.responseText;
 
-                    } else {
-                        document.getElementById('output2').innerHTML = "Sorry there was an error!"
-                    }
+                    } 
                 }
                 ajax.open("POST", "updateController");
                 ajax.send(formData);
@@ -1304,8 +1298,6 @@ function multipleUpd() {//Body "onload" function in updateControllerSmall.php
                         document.getElementById('output').innerHTML = this.responseText;
 
 
-                    } else {
-                        document.getElementById('output').innerHTML = "Sorry there was an error!"
                     }
                 }
                 ajax.open("POST", "updateController");
@@ -1366,9 +1358,7 @@ function multipleUpd() {//Body "onload" function in updateControllerSmall.php
                         }
                         document.getElementById('output').innerHTML = this.responseText;
 
-                    } else {
-                        document.getElementById('output').innerHTML = "Sorry there was an error!"
-                    }
+                    } 
                 }
                 ajax.open("POST", "updateController");
                 ajax.send(formData);
@@ -1434,9 +1424,7 @@ function multipleUpd() {//Body "onload" function in updateControllerSmall.php
 
                         document.getElementById('output').innerHTML = this.responseText;
 
-                    } else {
-                        document.getElementById('output').innerHTML = "Sorry there was an error!"
-                    }
+                    } 
                 }
                 ajax.open("POST", "updateController");
                 ajax.send(formData);
@@ -1507,9 +1495,7 @@ function multipleUpd() {//Body "onload" function in updateControllerSmall.php
 
 
 
-                    } else {
-                        document.getElementById('output').innerHTML = "Sorry there was an error!"
-                    }
+                    } 
                 }
                 ajax.open("POST", "updateController");
                 ajax.send(formData);
@@ -1580,9 +1566,7 @@ function getDescription(element) {
 
                         }
 
-                    } else {
-                        document.getElementsByClassName('descCategory').innerHTML = "Sorry there was an error!"
-                    }
+                    } 
 
 
                 }
@@ -1659,9 +1643,7 @@ function selectAll() {
                                     document.getElementById("outputTrans").scrollIntoView(false);
                                 }
 
-                            } else {
-                                document.getElementById('outputTrans').innerHTML = "Sorry there was an error!";
-                            }
+                            } 
                         }
 
                         ajax.open("POST", "../../server");
@@ -1699,9 +1681,7 @@ function selectAll() {
                                     document.getElementById("outputTransDel").scrollIntoView(false);
                                 }
 
-                            } else {
-                                document.getElementById('outputTransDel').innerHTML = "Sorry there was an error!";
-                            }
+                            } 
                         }
 
                         ajax.open("POST", "../Controllers/transactionController");
@@ -1760,9 +1740,7 @@ function restoreAll() {
                                 }
 
 
-                            } else {
-                                document.getElementById('outputTransDel').innerHTML = "Sorry there was an error!";
-                            }
+                            } 
                         }
 
                         ajax.open("POST", "../Controllers/transactionController");
@@ -1800,9 +1778,7 @@ function restoreAll() {
                                 }
 
 
-                            } else {
-                                document.getElementById('outputTransDel').innerHTML = "Sorry there was an error!";
-                            }
+                            } 
                         }
 
                         ajax.open("POST", "../Controllers/customerController");
@@ -1839,9 +1815,7 @@ function restoreAll() {
                                     document.getElementById("outputTransDel").scrollIntoView(false);
                                 }
 
-                            } else {
-                                document.getElementById('outputTransDel').innerHTML = "Sorry there was an error!";
-                            }
+                            } 
                         }
 
                         ajax.open("POST", "../Controllers/controller");
@@ -1901,9 +1875,7 @@ function selectAllCustomers() {
                                     document.getElementById("outputTransDel").scrollIntoView(false);
                                 }
 
-                            } else {
-                                document.getElementById('outputTransDel').innerHTML = "Sorry there was an error!";
-                            }
+                            } 
                         }
 
                         ajax.open("POST", "../Controllers/customerController");
