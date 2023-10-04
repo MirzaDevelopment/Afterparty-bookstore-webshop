@@ -1579,7 +1579,7 @@ section.customerData h2.productSpec {
 }
 section.orderData p {
   border-bottom-style: solid;
-  width: 50%;
+  width: fit-content;
   margin: auto;
   margin-top: 25px;
   margin-bottom: 25px;
