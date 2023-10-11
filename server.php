@@ -1,7 +1,6 @@
 <?php
 declare(strict_types=1);
 /***server.php is mostly used to give response for ajax calls mainly from script.js and validation.js***/
-//session_start();
 /***GETTING BOOK DESCRIPTION FROM DATABASE FOR CHOSEN BOOK ID***/
 if (!empty($_GET['kljuc'])) {
     $data = $_GET['kljuc'];
