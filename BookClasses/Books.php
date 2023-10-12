@@ -16,21 +16,5 @@ class Books
         $this->book_author = $book_author;
     }
 
-
-
-    public function __get($book_title)
-    {
-        return $book_title;
-    }
-    public function __set($book_price, $value)
-    {
-        $this->$book_price = $value;
-    }
-
-    function __toString()
-    {
-
-        return "Book: $this->book_title, price: $this->book_price $";
-    }
 }
 
