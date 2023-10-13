@@ -1,4 +1,4 @@
-# Afterparty-bookstore-webshop v. 1.1
+# Afterparty-bookstore-webshop v. 1.1.
 ## Description
 Completely custom-made Bookstore webshop with CMS system created using vanilla OOP PHP, JS, HTML, CSS, AJAX and PDO.<br/>
 Live link [Afterparty-bookstore](https://www.afterparty-bookstore.com/).<br/>
