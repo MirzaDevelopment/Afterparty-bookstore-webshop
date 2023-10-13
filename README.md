@@ -1,4 +1,4 @@
-# Afterparty-bookstore-webshop v. 1.0
+# Afterparty-bookstore-webshop v. 1.1
 ## Description
 Completely custom-made Bookstore webshop with CMS system created using vanilla OOP PHP, JS, HTML, CSS, AJAX and PDO.<br/>
 Live link [Afterparty-bookstore](https://www.afterparty-bookstore.com/).<br/>
@@ -104,3 +104,6 @@ So the browser will now display errors which will make it easier for you to fix.
 14. Your super admin login credentials are: Username: SuperAdmin, Password: Superadmin1234!<br/>
 When you login you have complete access to all features in superadmin panel.<br/> If you want to change your superadmin password, go to the user management section in your super admin panel and click on "Modify users" icon. <br/> Now you are in a User search panel. In "search by Username" input field type "Super", then click on modify icon. Now you can simply change the default mail to your own mail adress. <br/>After that go back to User search panel and click logout on the top right. Here you click on a section "Forgot Password? Click here to reset...". <br/>After then just follow the program guide to reset the super admin password to your own.
 
+# Update to version 1.1. 
+1. Added book preview (detailed description on special page) and "shroud" on book images that appears when hovered with cursor.
+2. Each product contains a link that will guide to the "preview" page.

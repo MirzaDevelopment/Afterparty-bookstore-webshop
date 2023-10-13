@@ -8,14 +8,14 @@ if (!empty($_GET['kljuc'])) {
     require "DatabaseClasses/ConnectPdo.php";
     try {
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = $connection->prepare("SELECT book_description FROM {$_ENV['DATABASE_NAME']}.books WHERE book_title=:data");
+        $sql = $connection->prepare("SELECT book_id, book_description FROM {$_ENV['DATABASE_NAME']}.books WHERE book_title=:data");
         $array = array('data' => $data);
         foreach ($array as $key => $param) {
             $sql->bindParam($key, $param);
         }
         $sql->execute($array);
         while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
-            echo $row['book_description'];
+            echo substr($row['book_description'],0, 350)."..."."<a href='preview.php?id={$row['book_id']}'>Read more</a>";
             break;
         }
     } catch (PDOException $e) {
@@ -175,7 +175,7 @@ if (!empty($_GET['id'])) {
             echo "<div class='grid-item2'>";
           echo "<div class='categoryFront'>".$row['book_category']."</div>";
             $newPic = str_replace("../", "Methods/", $row['book_pic']);
-            echo $newPic;
+            echo "<a href='preview.php?id={$row['book_id']}' onmouseover='getShroud()'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
             echo "<div class='descFront2' onmouseover='getDescription(this.textContent)'>";
             echo $row['book_title'];
             echo  "</div>";
@@ -240,7 +240,7 @@ if (!empty($_GET['Discount'])) {
             echo "<div class='grid-item2'>";
             echo "<div class='categoryFront'>".$row['book_category']."</div>";
             $newPic = str_replace("../", "Methods/", $row['book_pic']);
-            echo $newPic;
+            echo "<a href='preview.php?id={$row['book_id']}'onmouseover='getShroud()'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
             echo "<div class='descFront2' onmouseover='getDescription(this.textContent)'>";
             echo $row['book_title'];
             echo  "</div>";
@@ -282,14 +282,14 @@ if (!empty($_GET['desc'])) {
     require "DatabaseClasses/ConnectPdo.php";
     try {
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = $connection->prepare("SELECT book_description FROM {$_ENV['DATABASE_NAME']}.books WHERE book_title=:data");
+        $sql = $connection->prepare("SELECT book_id, book_description FROM {$_ENV['DATABASE_NAME']}.books WHERE book_title=:data");
         $array = array('data' => $data);
         foreach ($array as $key => $param) {
             $sql->bindParam($key, $param);
         }
         $sql->execute($array);
         while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
-            echo $row['book_description'];
+            echo substr($row['book_description'],0, 350)."..."."<a href='preview.php?id={$row['book_id']}'>Read more</a>";
             break;
         }
     } catch (PDOException $e) {

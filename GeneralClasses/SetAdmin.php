@@ -103,7 +103,7 @@ class SetAdmin //VARIABLE SETTING CLASS WITH TRAITS
                                             echo "<img src='../img/" . $img_path . "'width='200' height='100'>"; //IMAGE PROJECTING ON FRONTEND SO USER CAN SEE
                                             //REST OF THE INPUT SANITATION
                                             $book_title = $this->titleCleaning();
-                                            $book_pic = "<img src='../img/" . $img_path . "'alt='book image' width='200' height='300'>"; //IMAGE LINK STORED IN DATABASE
+                                            $book_pic = "<img class='shroudImg' src='../img/"  . $img_path . "'alt='book image' width='200' height='300'>"; //IMAGE LINK STORED IN DATABASE
                                             $book_price = $this->priceCleaning();
                                             $book_author = $this->authorCleaning();
                                             $book_description = $this->descCleaning();
@@ -259,9 +259,9 @@ class SetAdmin //VARIABLE SETTING CLASS WITH TRAITS
                 }
                 echo "This is your book image: " . "<br><br>";
                 $img_path = $_FILES['img']['name'];
-                echo "<img src='../img/" . $img_path . "'width='200' height='100'>"; //IMAGE PROJECTING ON FRONTEND SO USER CAN SEE
+                echo "<img class='shroudImg' src= '../img/" . $img_path . "'width='200' height='100'>"; //IMAGE PROJECTING ON FRONTEND SO USER CAN SEE
                 //REST OF THE INPUT SANITATION
-                $book_pic = "<img src='../img/" . $img_path . "'alt='book image' width='200' height='300'>"; //IMAGE LINK STORED IN DATABASE
+                $book_pic = "<img class='shroudImg' src='../img/" . $img_path . "'alt='book image' width='200' height='300'>"; //IMAGE LINK STORED IN DATABASE
                 require __DIR__ . "../../DatabaseClasses/Database.php";
                 require __DIR__ . "../../BookClasses/BookstoreExtendsDatabase.php";
                 Bookstore::update_image($book_pic, $book_id);

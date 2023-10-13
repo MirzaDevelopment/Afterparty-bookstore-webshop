@@ -23,7 +23,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo $newPic;
+         echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -81,7 +81,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo $newPic;
+        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -138,7 +138,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo $newPic;
+        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -195,7 +195,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo $newPic;
+        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -252,7 +252,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo $newPic;
+        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -311,7 +311,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo $newPic;
+        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -369,7 +369,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo $newPic;
+        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -426,7 +426,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo $newPic;
+        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -484,7 +484,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo $newPic;
+        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -541,7 +541,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo $newPic;
+        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -599,7 +599,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo $newPic;
+        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -658,7 +658,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo $newPic;
+        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -718,7 +718,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo $newPic;
+        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -802,7 +802,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo $newPic;
+        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -873,7 +873,67 @@ class BooksDatabase implements UserBookSelectInterface
 
     $connection = null;
   }
+/***Book details rendered for book preview***/
+  public static function bookPreview($book_id):void{
+  require "ConnectPdoUser.php";
+  try{
+    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql=$connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_description, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.book_publisher, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE books.book_id=:book_id");
+    $sql->execute(array('book_id' => $book_id));
+    echo "<div class='prevContainer'>";
+    echo "<div class='bookContainer'>";
+    while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
+      if ($row['book_title']>0){
+      $description=$row['book_description'];
+      $publisher=$row['book_publisher'];
+      echo "<div class='grid-item'>";
+      echo "<div class='categoryFront'>".$row['book_category']."</div>";
+      $newPic = str_replace("../", "Methods/", $row['book_pic']);
+      echo $newPic;
+      echo "<div class='descFront'>";
+      echo $row['book_title'];
+      echo  "</div>";
+      echo $row['book_author'] . "<br>";
+      //Logic to properly discounted price
+      if ($row['discounted_price'] > 0) {
+        echo "<div class='discountContainerFront'>";
+        echo "<img class='discountIcon' src='Methods/img/Bez_naslova.png' width='65' height='65' alt='discount-icon'>";
+        echo "<div class='discount'>" . $row['discount'] . "%" . "</div>";
+        echo "</div>";
+        echo "<span class='oldPrice'>" . $row['book_price'] . "$" . "<br></span>";
+        echo "<span class='newPrice'>" . $row['discounted_price'] . "$" . "<br></span>";
+      } else {
+        echo $row['book_price'] . "$" . "<br>";
+      }
+      echo $row['publish_year'] . "<br>";
+      //Checking if book quantity is positive or 0, and rendering corresponding message to user
+      if ($row['book_quantity'] > 0) {
+        echo "<div class='status'> Available</div>";
+        echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' onclick='cartInsertManual(this)' value='Add-to-cart'>";//Shopping cart icon on front page
+      } else if ($row['book_quantity'] == 0) {
+        echo "<div class='notStatus'> Not available </div>";
+      }
+      echo "</div>";
+      
 
+    }
+    }
+    echo "<div class='smallPreviewCont'>";
+    echo "<i class='fa fa-paperclip' style='padding:unset;' aria-hidden='true'></i>
+    <span id='publisher' style='color:cadetblue;'>Published by ".$publisher."</span>";
+    echo "<span class=previewDesc><p>".$description."</p></span>";//For better stylisation.
+    echo "</div>";
+    echo "</div>";
+    echo "</div>";
+  
+  }catch (PDOException $e) {
+    $error = $e->getMessage() . " " . date("F j, Y, g:i a");
+    error_log($error . PHP_EOL, 3, "Methods/Logs/logs.txt");
+    echo "Failed to comply. Check log for more detail!";
+  }
+  $connection = null;
+
+  }
   /***BOOK CATEGORIES RENDER FOR FIRST PAGE AND BOOK UPDATE***/
   public static function userSelectCategory():void
   {

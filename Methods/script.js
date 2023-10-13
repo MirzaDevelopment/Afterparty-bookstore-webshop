@@ -1,7 +1,4 @@
 
-
-
-
 /****BOOK DESCRIPTION APPEARANCE ON HOVER***/
 function myFunction() {
     let x = document.getElementsByClassName("desc");
@@ -719,6 +716,61 @@ function firstFunction() {
         });
 
     });
+//Shround on images on mouse enter 
+let shroudImg = document.getElementsByClassName("shroudImg")
+let shroud = document.getElementsByClassName("shroud");
+let inception= document.getElementsByClassName("inception");
+
+    for (let i=0; i<shroudImg.length;i++){
+        shroudImg[i].addEventListener("mouseenter", function(){
+        shroud[i].style.height="100%";
+        inception[i].classList.add("inceptionA");
+        
+        });
+
+        
+        for(let i=0; i<shroud.length; i++){
+        shroud[i].addEventListener("mouseleave", function(){
+            for (let i=0; i<shroudImg.length;i++){
+                shroud[i].style.height="0px";
+                inception[i].setAttribute("class", "inception");
+            
+        
+            } 
+            });
+        
+        }
+    }
+
+
+}
+/***Shroud cover for categories and discounted items***/
+function getShroud(){
+    let shroudImg = document.getElementsByClassName("shroudImg")
+    let shroud = document.getElementsByClassName("shroud");
+    let inception= document.getElementsByClassName("inception");
+    
+        for (let i=0; i<shroudImg.length;i++){
+            shroudImg[i].addEventListener("mouseenter", function(){
+            shroud[i].style.height="100%";
+            inception[i].classList.add("inceptionA");
+            
+            });
+    
+            
+            for(let i=0; i<shroud.length; i++){
+            shroud[i].addEventListener("mouseleave", function(){
+                for (let i=0; i<shroudImg.length;i++){
+                    shroud[i].style.height="0px";
+                    inception[i].setAttribute("class", "inception");
+                
+            
+                } 
+                });
+            
+            }
+        }
+    
 }
 /***Slider JS part***/
 //Next/last slide controls

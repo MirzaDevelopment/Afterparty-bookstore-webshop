@@ -44,7 +44,10 @@ div.goBackMsgInsert,
 div#animated > div.loginWrapper {
   margin-bottom: 25px;
 }
-
+/***Margin unset***/
+#finalStepShow p, span#publisher {
+  margin: unset;
+}
 /***Buttons/inputs 1 styles***/
 input#loginButton,
 input#submitRegMail,
@@ -260,7 +263,7 @@ div.uploadContainer h2,
 td.desc,
 div.uploadContainerUser h2,
 input.delCategory,
-input.submitCategory {
+input.submitCategory, span#publisher {
   font-size: 1.5rem;
 }
 div.reviews p,
@@ -268,7 +271,7 @@ div.cartContainer label,
 body.userInsertCheckout h2,
 span.finalMail,
 body div.questionsContainer p:nth-child(1),
-tbody tr td,
+tbody tr td, tbody tr td>a,
 #mainTable th,
 table#mainTableUser th,
 span.goBackMsgUser,
@@ -282,7 +285,8 @@ div#transConfirmRestore,
 div.transConfirm,
 div#transConfirmDel,
 p#updateDiscount,
-p.emph {
+p.emph,
+span.previewDesc p {
   font-size: 1.2rem;
 }
 div.titlePriceDisc,
@@ -415,7 +419,7 @@ span#cartNum {
 div.headerStuff {
   display: flex;
   align-content: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
   margin: 1%;
   gap: 1%;
   margin-top: 2%;
@@ -423,7 +427,7 @@ div.headerStuff {
     rgb(255 255 255 / 25%) 0px 1px 0px inset;
   position: sticky;
   top: 0;
-  flex-direction: row-reverse;
+  flex-direction: row;
   z-index: 4000;
 }
 div.headerStuff a {
@@ -480,6 +484,7 @@ ul.words {
   border-radius: 25px 25px 25px 25px;
   column-gap: 27%;
   margin: auto;
+  box-shadow: rgb(0 0 0 / 45%) 0px 25px 20px -20px;
 }
 ul.words li.grid-item1 {
   list-style-type: none;
@@ -492,13 +497,14 @@ ul.words li > a {
   transition: font-size 0.2s linear;
   font-size: 1.2rem;
   color: white;
+  border-radius: 10px;
 }
 
 ul.words li > a:hover {
   color: white;
-  box-shadow: 6.8px 13.6px 13.6px hsl(0deg 0% 0% / 0.29);
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
   display: inline-block;
-  border-radius: 3%;
+  
 }
 
 section nav a[href="#contact"]:hover:after {
@@ -601,7 +607,7 @@ p#opisDesc {
   width: fit-content;
   padding: 25px;
   border-radius: 50px 5px;
-  background-color: #fffbed30;
+  background-color: wheat;
   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
     rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
   text-align: center;
@@ -772,6 +778,7 @@ div.discountContainer {
 }
 div.discIcon {
   position: absolute;
+  z-index: 5000;
 }
 div.discountSlider {
   position: absolute;
@@ -779,6 +786,7 @@ div.discountSlider {
   top: 19.5px;
   font-size: 1.5rem;
   color: white;
+  z-index: 6000;
 }
 
 /***Cart icon slider***/
@@ -819,6 +827,9 @@ div.titleFeatured {
 
 div.slideshow-container div.mySlides.fade img:not(img.discountIconSlider) {
   box-shadow: rgb(38 57 77) 0px 20px 30px -10px;
+  margin-bottom: -26px;
+  margin-top: 21px;
+  
 }
 
 div.mySlides.fade > span {
@@ -833,12 +844,62 @@ div.mySlides.fade > span {
     rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
 
-div.newPriceSlider + img {
+div.newPriceSlider + a > img {
   margin-top: 21px;
+  margin-bottom: -26px;
 }
 
 /***SLIDER END***/
 
+/***PREVIEW PAGE***/
+span.previewDesc {
+  width: fit-content;
+  height: 50vh;
+  overflow: scroll;
+  text-align: center;
+  border: none;
+  margin: auto;
+  position: relative;
+  display: inline-block;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  padding: 20px;
+}
+a[href*="preview"]{
+  color: #00663f;
+  text-decoration: underline;
+  position: relative;
+  
+}
+
+
+span.previewDesc p{
+  text-align: justify;
+}
+div.prevContainer div.grid-item img:not(img.discountIcon){
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    position: relative;
+    top: -35px;
+}
+body.previewBody div.prevContainer {
+  background-image: url(Methods/img/wave\(1\).svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+div.prevContainer div.grid-item {
+  background: unset;
+}
+body.previewBody div.headerStuff a {
+  align-self: center;
+  margin-top: 5px;
+}
+body.previewBody div.headerStuff {
+  background: mintcream;
+  margin: 0;
+  flex-direction: row;
+  justify-content: flex-end;
+}
 /***FIRST PAGE BOOKS RENDER (categories, discount and search)***/
 #opis2,
 p#opis {
@@ -847,7 +908,7 @@ p#opis {
   width: fit-content;
   padding: 25px;
   border-radius: 50px 5px;
-  background-color: #fffbed30;
+  background-color: wheat;
   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
     rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
   text-align: center;
@@ -858,6 +919,48 @@ p#opis {
 div.descFront {
   font-size: 1.8rem;
 }
+div.shroud{
+  height: 0px;
+  width: 200px;
+  position: absolute;
+  top: -35px;
+  transition: 1s ease height;
+  background: #0000007a;
+  z-index: 5000;
+
+}
+div.shroudCont {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p.inception{
+  opacity: 0;
+  transition-property: opacity, transform;
+  color:ghostwhite;
+    font-size: 1.8rem;
+    top: 0px;
+    position: relative;
+    margin: auto;
+}
+
+p.inceptionA{
+  transform: translateY(50px);
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+  opacity: 1;
+  color:ghostwhite;
+    font-size: 1.8rem;
+    position: relative;
+    margin: auto;
+}
+div.mySlides.fade a div.shroud {
+
+  top: 21px;
+
+}
+
 div.bookContainer {
   display: grid;
   grid-template-columns: 1fr;
@@ -899,7 +1002,11 @@ div.notStatusCheckout {
   width: 50px;
   height: 55px;
 }
-
+div.grid-item > img:not(img.discountIcon) {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  position: relative;
+  top: -35px;
+}
 .notStatus {
   color: crimson;
   box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
@@ -1007,10 +1114,11 @@ span.newPrice {
   color: orangered;
   font-size: 1.5rem;
 }
-div.grid-item > img:not(img.discountIcon) {
+div.grid-item a > img:not(img.discountIcon) {
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   position: relative;
   top: -35px;
+  margin-bottom: -5px;
 }
 
 .grid-item2 {
@@ -1019,10 +1127,11 @@ div.grid-item > img:not(img.discountIcon) {
   padding: 15px;
 }
 
-div.bookContainer2 div.grid-item2 > img:not(img.discountIcon) {
+div.bookContainer2 div.grid-item2 a > img:not(img.discountIcon) {
   box-shadow: rgb(38 57 77) 0px 20px 30px -10px;
   position: relative;
   top: -35px;
+  margin-bottom: -5px;
 }
 span#bookDescription {
   display: inline-block;
@@ -1911,7 +2020,6 @@ body.userInsert {
   background-repeat: no-repeat;
   text-align: center;
   height: auto;
-  background-size: cover;
 }
 div#porukaMail,
 div#porukaUser,
@@ -1980,9 +2088,7 @@ div#finalStepShow {
   max-width: 300px;
   margin: auto;
 }
-#finalStepShow p {
-  margin: unset;
-}
+
 p#outputMail2 div#finalStepShow {
   margin-top: -20px;
 }
@@ -2587,6 +2693,14 @@ p.messageDel {
     height: 600px;
     max-height: 600px;
   }
+  div.discountContainer  ~ a[href*="preview"]>div.shroudCont>div.shroud {
+    width: 100%;
+    right: 0.8px;
+}
+div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud  {
+ 
+  width: 100%;
+}
   input.delSlider {
     margin-bottom: 0;
     margin-top: 245px;
@@ -2607,7 +2721,9 @@ p.messageDel {
     justify-content: center;
     margin-top: 100px;
   }
-
+  body.previewBody div.grid-item {
+    margin-top: 0;
+  }
   div.categoryItem p#delete {
     width: 250px;
     max-width: 250px;
@@ -2701,7 +2817,7 @@ p.messageDel {
   p#confirmation,
   span.questionReject,
   div.reviews,
-  p#opisDesc,
+  p#opisDesc, p#opisDesc a,
   p#payPal,
   p#finalDesc,
   div.notStatusCheckout,
@@ -2771,7 +2887,7 @@ p.messageDel {
   div.inputContainer input,
   tbody tr td,
   #mainTable th,
-  p#opis,
+  p#opis, p#opis>a,
   p#delete,
   p#delete label,
   input.deleteSmall,
@@ -2833,7 +2949,8 @@ p.messageDel {
   p.mailMsg,
   input#userName.msgInsert,
   div.questionaire form textarea#questionBody.msgInsert,
-  div.questionaire form input#questionEmail.msgInsert {
+  div.questionaire form input#questionEmail.msgInsert,
+   p#opis2 a, tbody tr td>a {
     font-size: 1.5rem;
   }
   section.notice p {
@@ -2911,6 +3028,12 @@ p.messageDel {
   p#empty {
     font-size: 2rem;
   }
+  p.inception {
+
+    font-size: 2.5rem;
+    top: 150px;
+
+}
   .discountIcon {
     width: 94px;
     height: 94px;
@@ -2926,8 +3049,8 @@ p.messageDel {
     height: 600px;
   }
 
-  div.grid-item > img:not(img.discountIcon),
-  div.grid-item2 > img:not(img.discountIcon) {
+  div.grid-item a > img:not(img.discountIcon),
+  div.grid-item2 a > img:not(img.discountIcon), div.grid-item > img:not(img.discountIcon), div.grid-item > img:not(img.discountIcon) {
     height: 450px;
     width: 300px;
   }
@@ -3147,7 +3270,7 @@ p.messageDel {
   div.titleFeatured {
     font-size: 2rem;
   }
-  div.mySlides.fade > span {
+  div.mySlides.fade > span, div.mySlides.fade > span a {
     font-size: 1.6rem;
   }
   div.firstPageSearchContainer form label,
@@ -3191,7 +3314,13 @@ p.messageDel {
   .sublinkContainerMessage3 {
     flex: 1;
   }
+  div.discountContainer ~ a[href*="preview"]>div.shroudCont>div.shroud {
 
+    left:250px;
+}
+div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud {
+  left: 250px;
+}
   div.uploadContainerUser form {
     padding: 40px;
   }
@@ -3413,7 +3542,7 @@ p.messageDel {
   p#confirmation,
   span.questionReject,
   div.reviews,
-  p#opisDesc {
+  p#opisDesc, p#opisDesc a, p#opis2 a {
     font-size: 1.6rem;
   }
   p.next {
@@ -3438,7 +3567,7 @@ p.messageDel {
     left: 335px;
     z-index: 5000;
   }
-  div.mySlides.fade > span {
+  div.mySlides.fade > span, div.mySlides.fade > span a {
     font-size: 1.8rem;
   }
   h1.mainTitle {
@@ -3474,7 +3603,7 @@ p.messageDel {
   span#alrdyInside,
   span#itemInCart,
   p.cartConfirmSlider,
-  #opis2,
+  #opis2, p#opis2 a,
   div.status,
   div.notStatus p.cartConfirm,
   span.pageNumb a,
@@ -3486,7 +3615,7 @@ p.messageDel {
   p#confirmation,
   span.questionReject,
   div.reviews,
-  p#opisDesc,
+  p#opisDesc, p#opisDesc a,
   p.loginHere,
   div.loginWrapper form label,
   div#animated a,
@@ -3523,7 +3652,7 @@ p.messageDel {
   div#catNoDel,
   p#deleteFinal,
   input#transSearch,
-  table#mainTableStats tbody tr th {
+  table#mainTableStats tbody tr th, table#mainTable tr td, span.previewDesc p {
     font-size: 1.8rem;
   }
   /***Select tag fix for Firefox***/
@@ -3532,6 +3661,11 @@ p.messageDel {
       width: 334.333px;
     }
   }
+  div.shroud {
+  
+    width: 400px;
+
+}
   select#adm_units {
     width: 291px;
     margin: 1px;
@@ -3593,8 +3727,9 @@ p.messageDel {
   }
   div.allRegWrapper div.registerContainerUser,
   div.uploadContainerUser {
-    width: 630px; 
-    max-width: 630px;
+    width: fit-content;
+
+    max-width: fit-content;
   }
 
   div.registerContainerUser > form#demo-form,
@@ -3693,11 +3828,10 @@ p.messageDel {
   div.mySlides.fade > span,
   span.pageNumb a,
   div.uploadContainer h2,
-  table#mainTable tr td,
   div.numbDist a,
   table#userMainTable tr td,
   table#mainTableUser tr td,
-  p.emph {
+  p.emph, tbody tr td>a {
     font-size: 2rem;
   }
   section.frontSection {
@@ -3757,8 +3891,8 @@ p.messageDel {
     font-size: 2.2rem;
   }
 
-  div.grid-item > img:not(img.discountIcon),
-  div.grid-item2 > img:not(img.discountIcon) {
+  div.grid-item a > img:not(img.discountIcon),
+  div.grid-item2 a > img:not(img.discountIcon), div.grid-item > img:not(img.discountIcon), div.grid-item > img:not(img.discountIcon)  {
     height: 600px;
     width: 400px;
   }
@@ -3788,6 +3922,9 @@ p.messageDel {
   main.finalMain {
     margin-top: 50px;
   }
+  div.prevContainer div.bookContainer {
+    grid-template-columns: 1fr 1fr;
+  }
   img#emptyIcon {
     margin-top: 100px;
   }
@@ -3799,8 +3936,8 @@ p.messageDel {
     max-width: 60%;
   }
   div.allRegWrapper div.registerContainerUser {
-    width: 624px;
-    max-width: 624px;
+    width: 65%;
+    max-width: 65%;
   }
   footer.finalNav nav.goBackCartCheckout {
     width: 50%;

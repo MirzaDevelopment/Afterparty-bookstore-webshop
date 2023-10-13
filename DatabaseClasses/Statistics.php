@@ -228,7 +228,7 @@ class Statistics
             $row = $sql2->fetch(PDO::FETCH_ASSOC);
             $customer_mail = $row['email']; //Putting obtained customer mail in variable
             //Getting data for specific email
-            $sql3 = $connection->prepare("SELECT transactions.book_id, books.book_title, books.book_author, book_pic, users_customers.email,  pricing.book_price, pricing.discounted_price, SUM(transactions.book_quantity) AS QUANTITY_TOTAL, GROUP_CONCAT(DISTINCT transactions.transaction_date) as transaction_time FROM {$_ENV['DATABASE_NAME']}.transactions JOIN {$_ENV['DATABASE_NAME']}.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id WHERE users_customers.email=:userMail GROUP BY books.book_id DESC LIMIT " . $initial_page . ',' . $limit);
+            $sql3 = $connection->prepare("SELECT transactions.book_id, books.book_title,  books.book_description, books.book_author, book_pic, users_customers.email,  pricing.book_price, pricing.discounted_price, SUM(transactions.book_quantity) AS QUANTITY_TOTAL, GROUP_CONCAT(DISTINCT transactions.transaction_date) as transaction_time FROM {$_ENV['DATABASE_NAME']}.transactions JOIN {$_ENV['DATABASE_NAME']}.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id WHERE users_customers.email=:userMail GROUP BY books.book_id DESC LIMIT " . $initial_page . ',' . $limit);
             $array2 = array('userMail' => $customer_mail);
             foreach ($array2 as $key => $param) {
                 $sql3->bindParam($key, $param);
@@ -238,7 +238,8 @@ class Statistics
             echo "<table id='mainTableUser'>";
             while ($row = $sql3->fetch(PDO::FETCH_ASSOC)) {
                 echo "<tr>";
-                echo "<th>Title (hover below the Title for book description)</th>";
+                echo "<th>Title</th>";
+             	echo "<th>Synopsis</th>";
                 echo "<th>Author</th>";
                 echo "<th>Image</th>";
                 echo "<th>Your email</th>";
@@ -247,7 +248,8 @@ class Statistics
                 echo "<th>Dates of purchase</th>";
                 echo "</tr>";
                 echo "<tr>";
-                echo "<td class='desc'>" . $row['book_title'] . "</td>";
+                echo "<td>" . $row['book_title'] . "</td>";
+              	echo "<td>" . substr($row['book_description'], 0, 100) . "..." . "<a href='../../preview.php?id={$row['book_id']}'>Read more</a></td>";
                 echo '<td>' . $row['book_author'] . '</td>';
                 echo '<td>' . $row['book_pic'] . '</td>';
                 echo "<td>" . $row['email'] . "</td>";
