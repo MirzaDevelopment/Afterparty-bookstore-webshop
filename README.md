@@ -58,10 +58,10 @@ All the .css and .js files are minified in live for best performance. They are l
 2. You will need to obtain recaptcha keys, here is a guide how [Get recaptcha keys](https://melapress.com/support/kb/captcha-4wp-get-google-recaptcha-keys/).
 3. You will need (for this  example) to use Google SMTP and add your application to their system to obtain mail password. Here is a link how [Set up google SMTP](https://mailmeteor.com/blog/gmail-smtp-settings).
 4. Paypal integration is somewhat complex proces. It requires paypal developer account, braintree sandbox account, and a mutual link between these two to obtain the required keys. I feel like this is beyond the scope of general user needs to do, so I will not provide a detailed guide here on how to do it. The app works flawlessly without the paypal integration anyway.
-4. You should create a private folder on your live host to store your logs. For example root/Private/php-errors.log.
-5. Download the code of application in .zip here on github and extract it somewhere on your pc.
-6. Open the extracted folder "Afterparty-bookstore-webshop-main" in your Visual studio code and create a file called .env.
-7. Modify the .env file in your Visual studio code to look like this(**All the below information you will recieve from your live host, google recatpcha and google smtp.**):<br/>
+5. You should create a private folder on your live host to store your logs. For example root/Private/php-errors.log.
+6. Download the code of application in .zip here on github and extract it somewhere on your pc.
+7. Open the extracted folder "Afterparty-bookstore-webshop-main" in your Visual studio code and create a file called .env.
+8. Modify the .env file in your Visual studio code to look like this(**All the below information you will recieve from your live host, google recatpcha and google smtp.**):<br/>
 
 #Database credentials<br/>
 DATABASE_SERVER=YOUR_HOSTING_SERVER<br/>
@@ -83,10 +83,10 @@ MERCHANT_ID=YOUR MERCHANT ID<br/>
 PUBLIC_KEY=YOUR PUBLIC KEY<br/>
 PRIVATE_KEY=YOUR PRIVATE KEY <br/>
 
-8. Navigate to Methoods/Logs/.htpasswd Put your freely chosen password and user name in designated space. It is a small safety percussion to prevent users to read your logs by accessing them through URL. However most of the live servers have already forbidden such actions so this might not be necessary.
-9. After the changes have been made, copy all the files from Afterparty-bookstore-webshop-main on your pc, to your webspace which hosting provider designated for you. You might need FileZilla for this, or you can use some sort of cpanel. It all depends on your hosting provider.
-10. Access the site: https://www.yourprovidedomain.com
-11. Default php.ini for this app looks like this:<br/><br/>
+9. Navigate to Methoods/Logs/.htpasswd Put your freely chosen password and user name in designated space. It is a small safety percussion to prevent users to read your logs by accessing them through URL. However most of the live servers have already forbidden such actions so this might not be necessary.
+10. After the changes have been made, copy all the files from Afterparty-bookstore-webshop-main on your pc, to your webspace which hosting provider designated for you. You might need FileZilla for this, or you can use some sort of cpanel. It all depends on your hosting provider.
+11. Access the site: https://www.yourprovidedomain.com
+12. Default php.ini for this app looks like this:<br/><br/>
 error_reporting = E_ALL | E_STRICT;<br/>
 log_errors = On<br/>
 error_log = /homepages/11/d961183757/htdocs/Private/php-errors.log<br/>
@@ -99,9 +99,9 @@ error_log = /homepages/11/d961183757/htdocs/Private/php-errors.log<br/>
 **display_errors = On**<br/>
 date.timezone = Europe/Sarajevo<br/>
 So the browser will now display errors which will make it easier for you to fix. **This should be reverted to default state after all the erros have been fixed.**
-12. Database file is called books_afterparty_bit_ready.sql. You will use your hosting provider guide on how to import this database in your designated database. You can easily navigate to this file, because it's already included in the folder you downloaded.
-13. Database contains only SuperAdmin credentials, and some dummy product data.
-14. Your super admin login credentials are: Username: SuperAdmin, Password: Superadmin1234!<br/>
+13. Database file is called books_afterparty_bit_ready.sql. You will use your hosting provider guide on how to import this database in your designated database. You can easily navigate to this file, because it's already included in the folder you downloaded.
+14. Database contains only SuperAdmin credentials, and some dummy product data.
+15. Your super admin login credentials are: Username: SuperAdmin, Password: Superadmin1234!<br/>
 When you login you have complete access to all features in superadmin panel.<br/> If you want to change your superadmin password, go to the user management section in your super admin panel and click on "Modify users" icon. <br/> Now you are in a User search panel. In "search by Username" input field type "Super", then click on modify icon. Now you can simply change the default mail to your own mail adress. <br/>After that go back to User search panel and click logout on the top right. Here you click on a section "Forgot Password? Click here to reset...". <br/>After then just follow the program guide to reset the super admin password to your own.
 
 # Update to version 1.1. 
