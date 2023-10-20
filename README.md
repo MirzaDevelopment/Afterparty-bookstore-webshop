@@ -60,7 +60,7 @@ All the .css and .js files are minified in live for best performance. They are l
 4. Paypal integration is somewhat complex proces. It requires paypal developer account, braintree sandbox account, and a mutual link between these two to obtain the required keys. I feel like this is beyond the scope of general user needs to do, so I will not provide a detailed guide here on how to do it. The app works flawlessly without the paypal integration anyway.
 4. You should create a private folder on your live host to store your logs. For example root/Private/php-errors.log.
 5. Download the code of application in .zip here on github and extract it somewhere on your pc.
-6. Open the extracted folder "Afterparty-bookstore-webshop-main" in your Visual studio code and create a file called .env
+6. Open the extracted folder "Afterparty-bookstore-webshop-main" in your Visual studio code and create a file called .env.
 7. Modify the .env file in your Visual studio code to look like this(**All the below information you will recieve from your live host, google recatpcha and google smtp.**):<br/>
 
 #Database credentials<br/>
