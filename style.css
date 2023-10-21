@@ -929,6 +929,16 @@ div.shroud{
   z-index: 5000;
 
 }
+@-moz-document url-prefix() {
+
+  div.shroudCont div.shroud{
+    top: -19px;
+  
+  }
+
+
+
+  }
 div.shroudCont {
   margin: auto;
   display: flex;

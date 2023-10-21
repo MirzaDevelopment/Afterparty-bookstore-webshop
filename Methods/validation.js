@@ -241,12 +241,7 @@ function regMail() {
         focusError1[i].scrollIntoView(false);
 
     }
-    //OVO VIDJETI TREBA LI GDJE PA UKLJUCIT
-  /*  let focusError2 = document.getElementsByClassName("goBackMsg3");
-    for (let i = 0; i < focusError2.length; i++) {
-        focusError2[i].scrollIntoView(false);
 
-    }*/
     let focusError3 = document.getElementsByClassName("goBackNotice");
     for (let i = 0; i < focusError3.length; i++) {
         focusError3[i].scrollIntoView(false);

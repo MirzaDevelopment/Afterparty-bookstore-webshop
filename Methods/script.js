@@ -723,7 +723,7 @@ let inception= document.getElementsByClassName("inception");
 
     for (let i=0; i<shroudImg.length;i++){
         shroudImg[i].addEventListener("mouseenter", function(){
-        shroud[i].style.height="100%";
+        shroud[i].style.height="600px";
         inception[i].classList.add("inceptionA");
         
         });
@@ -752,7 +752,7 @@ function getShroud(){
     
         for (let i=0; i<shroudImg.length;i++){
             shroudImg[i].addEventListener("mouseenter", function(){
-            shroud[i].style.height="100%";
+            shroud[i].style.height="600px";
             inception[i].classList.add("inceptionA");
             
             });
