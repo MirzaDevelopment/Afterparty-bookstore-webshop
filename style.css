@@ -45,7 +45,8 @@ div#animated > div.loginWrapper {
   margin-bottom: 25px;
 }
 /***Margin unset***/
-#finalStepShow p, span#publisher {
+#finalStepShow p,
+span#publisher {
   margin: unset;
 }
 /***Buttons/inputs 1 styles***/
@@ -67,7 +68,8 @@ div.uploadContainerUser form input[type="submit"],
 div.insertCategory form input,
 input.deleteCat,
 input#transSearch,
-input.updateUser {
+input.updateUser,
+input#submitComment {
   border-style: none;
   padding: 5px;
   border-radius: 5px 5px 5px 5px;
@@ -91,7 +93,8 @@ input.submitCategory:hover,
 input.deleteCat:hover,
 input.logoutAdmin:hover,
 input.updateUser:hover,
-input.logoutUser:hover {
+input.logoutUser:hover,
+input#submitComment:hover {
   cursor: pointer;
   -webkit-transition: background-color 200ms linear;
   -ms-transition: background-color 200ms linear;
@@ -110,7 +113,8 @@ input#listTrans,
 div#transConfirmRestore,
 p#updateDiscount,
 div.transConfirm,
-div#transConfirmDel {
+div#transConfirmDel,
+a#shop {
   border-radius: 15px;
   text-align: center;
   background-color: cornflowerblue;
@@ -137,13 +141,20 @@ th#restoreSelec:hover,
 th#changeStatus:hover,
 th#deleteSelec:hover,
 th#restoreSelecTrans:hover,
-th#restoreSelecCust:hover {
+th#restoreSelecCust:hover,
+div.afterRegMessageUser a#shop:hover {
   cursor: pointer;
   -webkit-transition: background-color 200ms linear;
   -ms-transition: background-color 200ms linear;
   transition: background-color 200ms linear;
   background-color: rgba(100, 148, 237, 0.466);
 }
+/***Lonesome button***/
+div.afterRegMessageUser a#shop {
+  min-width: unset;
+  background-color: coral;
+}
+
 /***Question panel button stilisation***/
 div.qContainer input.read,
 div.qContainer input {
@@ -263,7 +274,8 @@ div.uploadContainer h2,
 td.desc,
 div.uploadContainerUser h2,
 input.delCategory,
-input.submitCategory, span#publisher {
+input.submitCategory,
+span#publisher {
   font-size: 1.5rem;
 }
 div.reviews p,
@@ -271,7 +283,8 @@ div.cartContainer label,
 body.userInsertCheckout h2,
 span.finalMail,
 body div.questionsContainer p:nth-child(1),
-tbody tr td, tbody tr td>a,
+tbody tr td,
+tbody tr td > a,
 #mainTable th,
 table#mainTableUser th,
 span.goBackMsgUser,
@@ -286,7 +299,9 @@ div.transConfirm,
 div#transConfirmDel,
 p#updateDiscount,
 p.emph,
-span.previewDesc p {
+label[for="commentId"],
+a.loginComment,
+input#submitComment {
   font-size: 1.2rem;
 }
 div.titlePriceDisc,
@@ -337,7 +352,10 @@ h1.statsTitle,
 div.goBackMsgBookStats,
 h1.statsTitleCust,
 div.goBackMsgCustStatistics,
-p.customerNotice {
+p.customerNotice,
+div.smallPreviewCont,
+div.goBackMsgPreview,
+div.mainCommentContainer {
   text-align: center;
 }
 
@@ -378,12 +396,16 @@ div.uploadContainer form input[type="submit"] {
   }
 }
 
+/***Bodies***/
+
 body {
   min-width: 320px;
   margin: auto;
   max-width: 2256px;
 }
-
+body.insertBodyUser {
+  width: min-content;
+}
 div.categoryFront {
   position: relative;
   top: -35px;
@@ -504,7 +526,6 @@ ul.words li > a:hover {
   color: white;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
   display: inline-block;
-  
 }
 
 section nav a[href="#contact"]:hover:after {
@@ -829,7 +850,6 @@ div.slideshow-container div.mySlides.fade img:not(img.discountIconSlider) {
   box-shadow: rgb(38 57 77) 0px 20px 30px -10px;
   margin-bottom: -26px;
   margin-top: 21px;
-  
 }
 
 div.mySlides.fade > span {
@@ -861,24 +881,60 @@ span.previewDesc {
   margin: auto;
   position: relative;
   display: inline-block;
-  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
+    rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   padding: 20px;
 }
-a[href*="preview"]{
+a[href*="preview"] {
   color: #00663f;
   text-decoration: underline;
   position: relative;
-  
 }
-
-
-span.previewDesc p{
+a.loginComment {
+  background: black;
+  color: white;
+  padding: 10px;
+  border-radius: 15px;
+  position: relative;
+  top: 50px;
+}
+a.loginComment:hover {
+  cursor: pointer;
+  -webkit-transition: background-color 200ms linear;
+  -ms-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+  background-color: rgba(0, 0, 0, 0.349);
+}
+span.badWords {
+  padding: 5px;
+  border-radius: 5px;
+  text-shadow: 0 0 4px #fff;
+  color: transparent;
+}
+.commentBody {
+  border-color: cadetblue;
+  border-style: solid;
+  width: 100%;
+  outline: none;
+  background: #f8f8ff4a;
+}
+.commentContainer {
+  margin: 5px;
+  margin-top: 100px;
+}
+div.commentContainer form {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+span.previewDesc p {
   text-align: justify;
 }
-div.prevContainer div.grid-item img:not(img.discountIcon){
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    position: relative;
-    top: -35px;
+div.prevContainer div.grid-item img:not(img.discountIcon) {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  position: relative;
+  top: -35px;
 }
 body.previewBody div.prevContainer {
   background-image: url(Methods/img/wave\(1\).svg);
@@ -919,7 +975,7 @@ p#opis {
 div.descFront {
   font-size: 1.8rem;
 }
-div.shroud{
+div.shroud {
   height: 0px;
   width: 200px;
   position: absolute;
@@ -927,48 +983,40 @@ div.shroud{
   transition: 1s ease height;
   background: #0000007a;
   z-index: 5000;
-
 }
-@-moz-document url-prefix() {
-
-  div.shroudCont div.shroud{
-    top: -19px;
-  
-  }
-
-
-
-  }
 div.shroudCont {
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-p.inception{
+p.inception {
   opacity: 0;
   transition-property: opacity, transform;
-  color:ghostwhite;
-    font-size: 1.8rem;
-    top: 0px;
-    position: relative;
-    margin: auto;
+  color: ghostwhite;
+  font-size: 1.8rem;
+  top: 0px;
+  position: relative;
+  margin: auto;
 }
 
-p.inceptionA{
+p.inceptionA {
   transform: translateY(50px);
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
   opacity: 1;
-  color:ghostwhite;
-    font-size: 1.8rem;
-    position: relative;
-    margin: auto;
+  color: ghostwhite;
+  font-size: 1.8rem;
+  position: relative;
+  margin: auto;
+}
+@-moz-document url-prefix() {
+  div.shroudCont div.shroud {
+    top: -19px;
+  }
 }
 div.mySlides.fade a div.shroud {
-
   top: 21px;
-
 }
 
 div.bookContainer {
@@ -1462,7 +1510,8 @@ button#questionSubmit.g-recaptcha img:hover {
   cursor: pointer;
 }
 
-p#confirmation {
+p#confirmation,
+p#latest {
   color: cornflowerblue;
   padding: 5px;
   background: aliceblue;
@@ -1962,7 +2011,7 @@ div.afterRegMessageUser {
   justify-content: space-between;
   align-items: center;
   padding: 5px;
-  column-gap: 5px;
+  column-gap: 8px;
 }
 div#animate {
   position: relative;
@@ -2189,7 +2238,7 @@ span.logOut {
 }
 div.onlineDotContainer {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   flex: 2;
 }
 
@@ -2643,6 +2692,9 @@ p.messageDel {
     margin: auto;
     max-width: 380px;
   }
+  body.insertBodyUser {
+    width: auto;
+  }
   img.wrapImage {
     height: 100%;
   }
@@ -2703,14 +2755,19 @@ p.messageDel {
     height: 600px;
     max-height: 600px;
   }
-  div.discountContainer  ~ a[href*="preview"]>div.shroudCont>div.shroud {
+  div.discountContainer ~ a[href*="preview"] > div.shroudCont > div.shroud {
     width: 100%;
     right: 0.8px;
-}
-div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud  {
- 
-  width: 100%;
-}
+  }
+  div.titlePrice ~ a[href*="preview"] > div.shroudCont > div.shroud {
+    width: 100%;
+  }
+  div.shroudCont div.shroud {
+    width: 300px;
+  }
+  input#submitComment {
+    margin-top: 15px;
+  }
   input.delSlider {
     margin-bottom: 0;
     margin-top: 245px;
@@ -2807,7 +2864,8 @@ div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud  {
   div.iconWrapSearchTrans input,
   div.goBackMsgCustStatistics a img,
   div.goBackMsgUserPanel a img,
-  div.goBackUser a img {
+  div.goBackUser a img,
+  div.goBackMsgPreview a img {
     width: 50px;
     height: 50px;
   }
@@ -2825,9 +2883,11 @@ div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud  {
   section.policies a,
   section.generalData p,
   p#confirmation,
+  p#latest,
   span.questionReject,
   div.reviews,
-  p#opisDesc, p#opisDesc a,
+  p#opisDesc,
+  p#opisDesc a,
   p#payPal,
   p#finalDesc,
   div.notStatusCheckout,
@@ -2897,7 +2957,8 @@ div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud  {
   div.inputContainer input,
   tbody tr td,
   #mainTable th,
-  p#opis, p#opis>a,
+  p#opis,
+  p#opis > a,
   p#delete,
   p#delete label,
   input.deleteSmall,
@@ -2960,7 +3021,15 @@ div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud  {
   input#userName.msgInsert,
   div.questionaire form textarea#questionBody.msgInsert,
   div.questionaire form input#questionEmail.msgInsert,
-   p#opis2 a, tbody tr td>a {
+  p#opis2 a,
+  tbody tr td > a,
+  div.afterRegMessageUser a#shop,
+  a.loginComment,
+  label[for="commentId"],
+  span.previewDesc p,
+  .commentBody,
+  input#submitComment,
+  span.badWords {
     font-size: 1.5rem;
   }
   section.notice p {
@@ -3039,11 +3108,9 @@ div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud  {
     font-size: 2rem;
   }
   p.inception {
-
     font-size: 2.5rem;
     top: 150px;
-
-}
+  }
   .discountIcon {
     width: 94px;
     height: 94px;
@@ -3060,7 +3127,9 @@ div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud  {
   }
 
   div.grid-item a > img:not(img.discountIcon),
-  div.grid-item2 a > img:not(img.discountIcon), div.grid-item > img:not(img.discountIcon), div.grid-item > img:not(img.discountIcon) {
+  div.grid-item2 a > img:not(img.discountIcon),
+  div.grid-item > img:not(img.discountIcon),
+  div.grid-item > img:not(img.discountIcon) {
     height: 450px;
     width: 300px;
   }
@@ -3280,7 +3349,8 @@ div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud  {
   div.titleFeatured {
     font-size: 2rem;
   }
-  div.mySlides.fade > span, div.mySlides.fade > span a {
+  div.mySlides.fade > span,
+  div.mySlides.fade > span a {
     font-size: 1.6rem;
   }
   div.firstPageSearchContainer form label,
@@ -3324,13 +3394,12 @@ div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud  {
   .sublinkContainerMessage3 {
     flex: 1;
   }
-  div.discountContainer ~ a[href*="preview"]>div.shroudCont>div.shroud {
-
-    left:250px;
-}
-div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud {
-  left: 250px;
-}
+  div.discountContainer ~ a[href*="preview"] > div.shroudCont > div.shroud {
+    left: 250px;
+  }
+  div.titlePrice ~ a[href*="preview"] > div.shroudCont > div.shroud {
+    left: 250px;
+  }
   div.uploadContainerUser form {
     padding: 40px;
   }
@@ -3550,9 +3619,12 @@ div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud {
   section.policies a,
   section.generalData p,
   p#confirmation,
+  p#latest,
   span.questionReject,
   div.reviews,
-  p#opisDesc, p#opisDesc a, p#opis2 a {
+  p#opisDesc,
+  p#opisDesc a,
+  p#opis2 a {
     font-size: 1.6rem;
   }
   p.next {
@@ -3577,7 +3649,8 @@ div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud {
     left: 335px;
     z-index: 5000;
   }
-  div.mySlides.fade > span, div.mySlides.fade > span a {
+  div.mySlides.fade > span,
+  div.mySlides.fade > span a {
     font-size: 1.8rem;
   }
   h1.mainTitle {
@@ -3613,7 +3686,8 @@ div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud {
   span#alrdyInside,
   span#itemInCart,
   p.cartConfirmSlider,
-  #opis2, p#opis2 a,
+  #opis2,
+  p#opis2 a,
   div.status,
   div.notStatus p.cartConfirm,
   span.pageNumb a,
@@ -3623,9 +3697,11 @@ div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud {
   section.policies a,
   section.generalData p,
   p#confirmation,
+  p#latest,
   span.questionReject,
   div.reviews,
-  p#opisDesc, p#opisDesc a,
+  p#opisDesc,
+  p#opisDesc a,
   p.loginHere,
   div.loginWrapper form label,
   div#animated a,
@@ -3662,7 +3738,9 @@ div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud {
   div#catNoDel,
   p#deleteFinal,
   input#transSearch,
-  table#mainTableStats tbody tr th, table#mainTable tr td, span.previewDesc p {
+  table#mainTableStats tbody tr th,
+  table#mainTable tr td,
+  span.previewDesc p {
     font-size: 1.8rem;
   }
   /***Select tag fix for Firefox***/
@@ -3672,10 +3750,11 @@ div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud {
     }
   }
   div.shroud {
-  
     width: 400px;
-
-}
+  }
+  div.shroudCont div.shroud {
+    width: 400px;
+  }
   select#adm_units {
     width: 291px;
     margin: 1px;
@@ -3841,7 +3920,8 @@ div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud {
   div.numbDist a,
   table#userMainTable tr td,
   table#mainTableUser tr td,
-  p.emph, tbody tr td>a {
+  p.emph,
+  tbody tr td > a {
     font-size: 2rem;
   }
   section.frontSection {
@@ -3902,7 +3982,9 @@ div.titlePrice ~ a[href*="preview"]>div.shroudCont>div.shroud {
   }
 
   div.grid-item a > img:not(img.discountIcon),
-  div.grid-item2 a > img:not(img.discountIcon), div.grid-item > img:not(img.discountIcon), div.grid-item > img:not(img.discountIcon)  {
+  div.grid-item2 a > img:not(img.discountIcon),
+  div.grid-item > img:not(img.discountIcon),
+  div.grid-item > img:not(img.discountIcon) {
     height: 600px;
     width: 400px;
   }

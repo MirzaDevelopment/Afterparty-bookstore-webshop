@@ -307,7 +307,7 @@ function firstFunction() {
 
     /*** Small insert of Slider part, so the elements in slider are rendered properly***/
     showSlides();//Starting function for first time
-    var refreshIntervalId = setInterval(showSlides, 4000);
+    //var refreshIntervalId = setInterval(showSlides, 4000);
     let prevButton = document.getElementsByClassName("prev");
     let nextButton = document.getElementsByClassName("next");
     for (let i = 0; i < prevButton.length; i++) {
@@ -716,20 +716,29 @@ function firstFunction() {
         });
 
     });
-//Shround on images on mouse enter 
+//Shroud on images on mouse enter 
 let shroudImg = document.getElementsByClassName("shroudImg")
 let shroud = document.getElementsByClassName("shroud");
 let inception= document.getElementsByClassName("inception");
 
     for (let i=0; i<shroudImg.length;i++){
         shroudImg[i].addEventListener("mouseenter", function(){
-        shroud[i].style.height="600px";
-        inception[i].classList.add("inceptionA");
+            if(mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches|| mediaQuery2.matches){
+                shroud[i].style.height="300px";
+                inception[i].classList.add("inceptionA");
+            } else if (mediaQuery3.matches || mediaQuery4.matches){
+                shroud[i].style.height="450px";
+                 inception[i].classList.add("inceptionA");
+            } else if(mediaQuery5.matches || mediaQuery6.matches){
+                shroud[i].style.height="600px";
+                inception[i].classList.add("inceptionA");
+            }
+     
         
         });
 
         
-        for(let i=0; i<shroud.length; i++){
+      for(let i=0; i<shroud.length; i++){
         shroud[i].addEventListener("mouseleave", function(){
             for (let i=0; i<shroudImg.length;i++){
                 shroud[i].style.height="0px";
@@ -746,14 +755,30 @@ let inception= document.getElementsByClassName("inception");
 }
 /***Shroud cover for categories and discounted items***/
 function getShroud(){
+    let mediaQueryNull = window.matchMedia("only screen and (min-width: 320px) and (max-width: 479px)");
+    let mediaQueryNew = window.matchMedia("only screen and (min-width: 480px) and (max-width: 575px)");
+    let mediaQuery1 = window.matchMedia("only screen and (min-width: 576px) and (max-width: 767px)");
+    let mediaQuery2 = window.matchMedia("only screen and (min-width: 768px) and (max-width: 991px)");
+    let mediaQuery3 = window.matchMedia("only screen and (min-width: 992px) and (max-width: 1199px)");
+    let mediaQuery4 = window.matchMedia("only screen and (min-width: 1200px) and (max-width: 1399px)");
+    let mediaQuery5 = window.matchMedia("only screen and (min-width: 1400px) and (max-width: 1919px)");
+    let mediaQuery6 = window.matchMedia("only screen and (min-width: 1920px)");
     let shroudImg = document.getElementsByClassName("shroudImg")
     let shroud = document.getElementsByClassName("shroud");
     let inception= document.getElementsByClassName("inception");
     
         for (let i=0; i<shroudImg.length;i++){
             shroudImg[i].addEventListener("mouseenter", function(){
-            shroud[i].style.height="600px";
-            inception[i].classList.add("inceptionA");
+            if(mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches|| mediaQuery2.matches){
+                shroud[i].style.height="300px";
+                inception[i].classList.add("inceptionA");
+            } else if (mediaQuery3.matches || mediaQuery4.matches){
+                shroud[i].style.height="450px";
+                 inception[i].classList.add("inceptionA");
+            } else if(mediaQuery5.matches || mediaQuery6.matches){
+                shroud[i].style.height="600px";
+                inception[i].classList.add("inceptionA");
+            }
             
             });
     
