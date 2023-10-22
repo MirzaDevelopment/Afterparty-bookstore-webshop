@@ -995,7 +995,7 @@ p.inception {
   transition-property: opacity, transform;
   color: ghostwhite;
   font-size: 1.8rem;
-  top: 0px;
+  top: 50px;
   position: relative;
   margin: auto;
 }

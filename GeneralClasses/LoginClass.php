@@ -5,15 +5,29 @@ class LoginClass
 {
     //Check if session with username exsists. If it does, link to User or Admin panel according to the appropriate status.
     public static function indexCheck():void
-    {
-        if (!empty($_SESSION['username']) && $_SESSION['status'] == 1 && !empty($_SESSION['rawPassword'])) {
+    {   //Redirect to Superadmin panel regularly by logging in
+        if (!empty($_SESSION['loginUsername']) && $_SESSION['status'] == 1 && !empty($_SESSION['rawPassword']) && empty($_SESSION['id'])) {
             header("Location:Methods/Admin/adminPanel.php");
             exit();
-        } else if (!empty($_SESSION['username']) && $_SESSION['status'] == 3 && !empty($_SESSION['rawPassword'])) {
+            //Return Superadmin to preview panel after clicking "write your review" button
+        }else if (!empty($_SESSION['loginUsername']) && $_SESSION['status'] == 1 && !empty($_SESSION['rawPassword']) && !empty($_SESSION['id'])){
+            header("Location:preview.php?id={$_SESSION['id']}");
+            exit();
+            //Redirect to User panel regularly by logging in
+        } else if (!empty($_SESSION['loginUsername']) && $_SESSION['status'] == 3 && !empty($_SESSION['rawPassword']) && empty($_SESSION['id'])) {
             header("Location:Methods/User/userPanel.php");
             exit();
-        } else if (!empty($_SESSION['username']) && $_SESSION['status'] == 2 && !empty($_SESSION['rawPassword'])) {
+            //Redirect to Normal admin panel regularly by logging in
+        } else if (!empty($_SESSION['loginUsername']) && $_SESSION['status'] == 2 && !empty($_SESSION['rawPassword']) && empty($_SESSION['id'])) {
             header("Location:Methods/Admin/normalAdminPanel.php");
+            exit();
+            //Return Normal admin to preview panel after clicking "write your review" button
+        } else if (!empty($_SESSION['loginUsername']) && $_SESSION['status'] == 2 && !empty($_SESSION['rawPassword']) && !empty($_SESSION['id'])){
+            header("Location:preview.php?id={$_SESSION['id']}");
+            exit();
+            //Return User to preview panel after clicking "write your review" button
+        } else if (!empty($_SESSION['loginUsername']) && $_SESSION['status'] == 3 && !empty($_SESSION['rawPassword']) && !empty($_SESSION['id']) ){
+            header("Location:preview.php?id={$_SESSION['id']}");
             exit();
         }
     }

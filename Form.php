@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 class Form
-{ //CLASS USED MOSTLY FOR QUICK RENDER OF UPDATES AND DELETE FORMS OF BOOKS OR USERS (SOME WITH AJAX CALLS)
+{//CLASS USED MOSTLY FOR FORM STRUCTURE GENERATION 
 
     private $action;
     private $method;
@@ -31,7 +31,7 @@ class Form
             "labelPic" => '<label for="img">Select book image (allowed extentions: jpg, png, jpeg):</label><br>',
             "book_picture" => '<input class="bookUpd" type="file" id="img" name="img" accept=".jpg, .png, .jpeg"><br>',
             "quantity" => '<input class="bookUpd" type="number" name="quantity" min="0" placeholder="Update book quantity..."></br>',
-            "textarea" => '<textarea class="bookUpd" name="description" rows="10" cols="80" maxlength="400" placeholder="Write a short book description (650 chars max.)"></textarea><br>',
+            "textarea" => '<textarea class="bookUpd" name="description" rows="10" cols="80" placeholder="Update book synopsis..."></textarea><br>',
             "submit" => '<input id="submitUpdFull" type=submit value="Update data">'
         );
         foreach ($input as $array) {
@@ -305,6 +305,27 @@ class Form
         echo "<div class=firstPageSearchContainer>";
         echo "<form action='index#searchAnchor' method='POST' >";
         $this->firstPageSearchForm();
+        echo "<br>";
+        echo "</form>";
+        echo "</div>";
+    }
+      public function commentForm()
+    {
+        $input = array(
+            "labelComment" => '<label for="commentId">Liked the book? Leave a comment or review!</label>',
+            "comment" => '<textarea class="commentBody" id="commentId" name="comment" rows="10" cols="80"></textarea><br>',
+            "submit" => '<input type="submit" id="submitComment" value="Publish">'
+
+        );
+        foreach ($input as $array) {
+            echo $array . "<br>";
+        }
+        unset($input);
+    }
+    public function commentFormRender(){
+        echo "<div class='commentContainer'>";
+        echo "<form action='preview' method='POST'>";
+        $this->commentForm();
         echo "<br>";
         echo "</form>";
         echo "</div>";

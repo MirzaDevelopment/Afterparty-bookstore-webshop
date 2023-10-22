@@ -873,7 +873,9 @@ class BooksDatabase implements UserBookSelectInterface
 
     $connection = null;
   }
-/***Book details rendered for book preview***/
+
+  
+  /***Book details rendered for book preview***/
   public static function bookPreview($book_id):void{
   require "ConnectPdoUser.php";
   try{
@@ -922,6 +924,13 @@ class BooksDatabase implements UserBookSelectInterface
     echo "<i class='fa fa-paperclip' style='padding:unset;' aria-hidden='true'></i>
     <span id='publisher' style='color:cadetblue;'>Published by ".$publisher."</span>";
     echo "<span class=previewDesc><p>".$description."</p></span>";//For better stylisation.
+    //To hide comment button
+   if (isset($_SESSION['id'])&& isset($_SESSION['status'])) {
+    $formObject=new Form;
+    $formObject->commentFormRender();
+  } else {
+    echo "<a class='loginComment' href='loginPage.php?id={$_GET['id']}'>Leave a comment</a>";
+  }
     echo "</div>";
     echo "</div>";
     echo "</div>";
@@ -934,6 +943,7 @@ class BooksDatabase implements UserBookSelectInterface
   $connection = null;
 
   }
+
   /***BOOK CATEGORIES RENDER FOR FIRST PAGE AND BOOK UPDATE***/
   public static function userSelectCategory():void
   {

@@ -1,6 +1,13 @@
 <?php
 declare(strict_types=1);
 session_start();
+//putting get into session
+if(isset($_GET['id'])){
+$_SESSION['id']=$_GET['id'];
+} else if (!isset($_GET['id'])&& empty($_SESSION['id'])){
+    header("Location:index.php");
+    exit();
+}
 if (empty($_SESSION['cart'])) {
     $_SESSION['cart'] = array(); //Declaring general session variable to hold cart items to show on first page
 }
@@ -16,6 +23,7 @@ if (empty($_SESSION['cart'])) {
     <link rel="icon" href="data:;base64,=">
     <!-- General JS app script-->
     <script src="Methods/script.js"></script>
+  	<script src="Methods/validation.js"></script>
     <!-- Google recaptcha script. -->
     <title>Bookstore webshop</title>
     <link  rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap" as="style">
@@ -25,37 +33,55 @@ if (empty($_SESSION['cart'])) {
     <script async src="https://kit.fontawesome.com/cba05393c5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="previewBody">
+<body onload="previewFunction()" class="previewBody">
+  <main>
     <!--Positioned here so it can stay on top while scrolling the entire page-->
     <div class="headerStuff">
         <span id='cartNum'><?php print_r(count($_SESSION['cart'])) ?></span>
         <!--Number of items in cart-->
         <a class='cartIcon' href="cart"><img class='cartMain' src='Methods/img/shopping-cart.png' alt='shopping-cart-icon' width='35' height='35'></a>
         <!--Cart icon-->
-        <a class='loginIcon' href="loginPage"><img class="icon" src="Methods/img/userFront.png" alt="user-icon" width="35" height="35"></a>
-        <!--Login/register page-->
-        <a href="loginPage">Login/Register</a>
     </div>
     
 <h2 class='latestEdition' >Book preview</h2>
+<section>
 <?php
+//Rendering chosen book
 require __DIR__ . "/config.php";
 require __DIR__ . "/Interfaces/UserBookSelectInterface.php";
 require __DIR__ . "/DatabaseClasses/BooksDatabase.php"; //Required for categories
-Booksdatabase::bookPreview($_GET['id']);
+require __DIR__. "/Form.php";//Form for user comments
+Booksdatabase::bookPreview($_SESSION['id']);
+require __DIR__."/Traits/CleaningLadyTrait.php"; 
+require __DIR__."/Traits/PreventDuplicateTrait.php"; 
+require __DIR__."/Traits/PasswordResetTrait.php"; 
+require __DIR__."/Traits/SelectUserTrait.php"; 
+require __DIR__."/GeneralClasses/SetUser.php"; //Variable setting class include
+//Setting class for insert comments
+$objekatSet = new SetUser();
+echo "<div class='mainCommentContainer'>";
+//Comment insert method
+$objekatSet->commentInsertSetting();
+echo "</div>";
+echo "<br>";
+echo "</section>";
 //Creating logic to correctly back users from preview panel to their corresponding panels.
-if(isset($_SESSION['status']) == 2 || isset($_SESSION['status'])==1) {
-   echo"<div class='goBackMsg'>
+if(isset($_SESSION['status']) && $_SESSION['status'] == 2 || isset($_SESSION['status']) && $_SESSION['status']==1) {
+   echo"<div class='goBackMsgPreview'>
                 <a href='Methods/Admin/bookSearch'><img src='Methods/img/previous.png' alt='back-to-previous-page' width='35' height='35'></a>
             </div>";
-} else if (isset($_SESSION['status']) == 3) {
-    echo"<div class='goBackMsg'>
+} else if (isset($_SESSION['status']) && $_SESSION['status'] == 3 && empty($_SESSION['id'])) {
+    echo"<div class='goBackMsgPreview'>
     <a href='Methods/User/userPanel'><img src='Methods/img/previous.png' alt='back-to-previous-page' width='35' height='35'></a>
 </div>";
-} else {
-    echo"<div class='goBackMsg'>
+} else if (isset($_SESSION['status']) && $_SESSION['status'] == 3 && !empty($_SESSION['id'])){
+    echo"<div class='goBackMsgPreview'>
     <a href='index'><img src='Methods/img/previous.png' alt='back-to-previous-page' width='35' height='35'></a>
 </div>";
+} else {
+    echo"<div class='goBackMsgPreview'>
+    <a href='index'><img src='Methods/img/previous.png' alt='back-to-previous-page' width='35' height='35'></a>
+</div>"; 
 }
             ?>
     <footer class="frontPage">

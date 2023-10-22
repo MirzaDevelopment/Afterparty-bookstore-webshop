@@ -5,6 +5,7 @@ class SetUser //VARIABLE SETTING CLASS WITH TRAITS (USER PANEL)
     use CleaningLadyTrait; //Validation and sanitation trait
     use PreventDuplicateTrait; //Trait to prevent duplicates of user name and email i database during registration of users
     use PasswordResetTrait; //Traits used to reset user passwords
+  	use SelectUserTrait;
     private $digits; //Relates to User password restart
     private $reg_verification; //Relates to User registration mail verification
 
@@ -109,14 +110,17 @@ class SetUser //VARIABLE SETTING CLASS WITH TRAITS (USER PANEL)
                     if (password_verify($password, $_SESSION['password'])) {
                         $_SESSION['rawPassword'] = $password;
                         if ($user_name == $_SESSION['username'] && $_SESSION['status'] == 1) {
+                          $_SESSION['loginUsername']=$user_name;
                             echo "<p id='loginSuccess'>You have logged in successfully!</p>";
                             IpSecurity::deleteIp($ip); //Deleting login attempts from this ip made in last 10 minutes
                             exit();
                         } else if ($user_name == $_SESSION['username'] && $_SESSION['status'] == 3) {
+                          $_SESSION['loginUsername']=$user_name;
                             echo "<p id='loginSuccess'>You have logged in successfully!</p>";
                             IpSecurity::deleteIp($ip); //Deleting login attempts from this ip made in last 10 minutes
                             exit();
                         } else if ($user_name == $_SESSION['username'] && $_SESSION['status'] == 2) {
+                          $_SESSION['loginUsername']=$user_name;
                             echo "<p id='loginSuccess'>You have logged in successfully!</p>";
                             IpSecurity::deleteIp($ip); //Deleting login attempts from this ip made in last 10 minutes
                             exit();
@@ -125,9 +129,10 @@ class SetUser //VARIABLE SETTING CLASS WITH TRAITS (USER PANEL)
                             IpSecurity::selectIp($ip); //Getting number of attempts
                             $count = $_SESSION['Attempts'];
                             if ($count > 3) {
-                                die("<div class='login-failed-ip'>You are allowed maximum of 3 tries per 10 minutes!</div>");
+                             die("<div class='login-failed-ip'>You are allowed maximum of 3 tries per 10 minutes!</div>");
+                              
                             }
-                            echo "<div class='login-failed'> Login failed, Wrong username or password!</div>";
+                           echo "<div class='login-failed'> Login failed, Wrong username or password!</div>";     
                         }
                     } else if (!password_verify($password, $_SESSION['password'])) {
 
@@ -140,7 +145,7 @@ class SetUser //VARIABLE SETTING CLASS WITH TRAITS (USER PANEL)
                         echo "<div class='login-failed'> Login failed, Wrong username or password!</div>";
                     }
                 } else {
-                    echo "<div class='login-failed-notfound'> User not found!</div>"; //Vidjeti ovo ili loginFUser
+                    echo "<div class='login-failed-notfound'> User not found!</div>"; 
                 }
             } else {
                 echo "<div class='login-failed-empty'>Password field empty</div>";
@@ -327,4 +332,34 @@ class SetUser //VARIABLE SETTING CLASS WITH TRAITS (USER PANEL)
             echo "<span class='questionReject'>User name empty!</span>";
         }
     }
+   /***USER COMMENT SETTING AND INSERT LOGIC***/
+    public function commentInsertSetting()
+    {
+        if (isset($_POST['comment']) && !empty($_POST['comment'])) {
+            require __DIR__ . "../../Interfaces/CommentInterface.php";
+            require __DIR__ . "../../DatabaseClasses/CommentDatabase.php";
+            require __DIR__ . "../../GeneralClasses/CommentsExtendsDatabase.php";
+            $username=$_SESSION['username'];
+            $comment_body=$this->commentBodyClean();//Cleaned and censored comment text
+            $comment_book_id=(Int)$_SESSION['id'];
+            $comment_user_id=$this->getUser($username);
+            //Calculate time difference to prevent comment spam
+            if(isset($_SESSION['timestamp'])){
+            $from_time=strtotime($_SESSION['timestamp']);
+            $to_time=strtotime(date('H:i:s'));
+            $diff_minutes = round(abs($from_time - $to_time) / 60,2);
+            if ($diff_minutes>10){
+            Comments::insertComment($comment_user_id, $comment_body, $comment_book_id);
+        } else{
+            echo "<p id='failComment' class='goBackMsg'>Sorry, but you can only post one review per 10 minutes</p>";
+        }
+
+        }else {
+            Comments::insertComment($comment_user_id, $comment_body, $comment_book_id);
+            
+        }
+    } else if (isset($_POST['comment']) && empty($_POST['comment'])) {
+        echo "<p id='failComment' class='goBackMsg'>Ooops...you didn't write any comments!</p>";
+    }
+}
 }

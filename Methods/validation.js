@@ -155,7 +155,7 @@ function checkCategory(category) {
 
 /***User registration mail verification***/
 
-function regMail() {
+function regFunction() {
     if (document.getElementById("submitRegMail")) {
         document.getElementById("submitRegMail").addEventListener('click', function (e) {
             e.preventDefault();
@@ -396,8 +396,36 @@ function mailReset() {
 
 }
 
+function previewFunction(){
 
+    if (document.getElementById('failComment')) {
+        let messages = document.getElementById('failComment');
+        
+            messages.style.transition = "opacity 5s linear"
+            messages.style.opacity = "0";
+            setTimeout(function () {
+            messages.remove();
+            }, 3000);
+            let focusError4 = document.getElementById('failComment');
+            focusError4.scrollIntoView(false);    
+    }
 
+    if (document.getElementById('latest')) {
+        let messages = document.getElementById('latest');
+        messages.style.transition = "opacity 5s linear"
+        messages.style.opacity = "0";
+            setTimeout(function () {
+                messages.remove();
+            }, 3000);
+          
+        
+        let focusError1 = document.getElementById('latest');
+        focusError1.scrollIntoView(false);
+    
+        
+
+}
+}
 //Unsetting objects
 messages = null;
 ajax = null;

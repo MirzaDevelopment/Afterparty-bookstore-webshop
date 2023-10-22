@@ -142,7 +142,7 @@ class Questiondatabase implements QuestionInterface //Class for question/message
         $connection = null;
     }
     /*** DELETING CHECKBOX SELECTED MESSAGES***/
-    public static function delQuestions($questions_id)
+    public static function delQuestions($questions_id):void
     {
 
         require "NamespaceAdmin4.php";

@@ -10,6 +10,7 @@ if (empty($_SESSION['cart'])){
 require __DIR__ . "/Traits/PreventDuplicateTrait.php"; //User name and email duplication prevention trait
 require __DIR__ . "/Traits/CleaningLadyTrait.php"; //Sanitation and valiation trait
 require __DIR__ . "/Traits/PasswordResetTrait.php"; //Password reset trait
+require __DIR__ . "/Traits/SelectUserTrait.php";
 require __DIR__ . "/GeneralClasses/SetUser.php";
 require __DIR__ . "/Interfaces/UserBookSelectInterface.php";
 require __DIR__ . "/Interfaces/QuestionInterface.php"; //Interface for question form
@@ -54,9 +55,9 @@ require __DIR__ . "/config.php";
         <!--Number of items in cart-->
         <a class='cartIcon' href="cart"><img class='cartMain' src='Methods/img/shopping-cart.png' alt='shopping-cart-icon' width='35' height='35'></a>
         <!--Cart icon-->
-        <a class='loginIcon' href="loginPage"><img class="icon" src="Methods/img/userFront.png" alt="user-icon" width="35" height="35"></a>
+        <a class='loginIcon' href="loginPage?raw=login"><img class="icon" src="Methods/img/userFront.png" alt="user-icon" width="35" height="35"></a>
         <!--Login/register page-->
-        <a href="loginPage">Login/Register</a>
+        <a href="loginPage?raw=login">Login/Register</a>
     </div>
     <header>
         <!--Header start-->
