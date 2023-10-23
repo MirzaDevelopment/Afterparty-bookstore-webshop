@@ -6,7 +6,7 @@ class IpSecurity {
 /***Insert into ip database (to limit number of logins)***/
 public static function insertIp($ip)
 {
-  require "ConnectPdoAdmin.php";
+  require "NamespaceAdmin3.php";
   try {
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = $connection->prepare("Call insertIp(?)");
@@ -24,7 +24,7 @@ public static function insertIp($ip)
 public static function selectIp($ip)
 {
 
-  require "NamespaceAdmin3.php";
+  require "Namespace3.php";
   try {
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = $connection->prepare("SELECT COUNT(*) as Attempts FROM ip_security WHERE ip_adress LIKE CONCAT('%',:ip,'%') AND timestamp > (now() - interval 10 minute)");

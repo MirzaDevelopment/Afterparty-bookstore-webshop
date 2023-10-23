@@ -134,8 +134,7 @@ class SetUser //VARIABLE SETTING CLASS WITH TRAITS (USER PANEL)
                             }
                            echo "<div class='login-failed'> Login failed, Wrong username or password!</div>";     
                         }
-                    } else if (!password_verify($password, $_SESSION['password'])) {
-
+                    } else {
                         IpSecurity::insertIp($ip); //Insert login attempt on each fail to keep track
                         IpSecurity::selectIp($ip); //Getting number of attempts
                         $count = $_SESSION['Attempts'];
