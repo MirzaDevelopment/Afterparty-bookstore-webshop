@@ -24,7 +24,7 @@ session_start();
     <title>Bookstore user registration</title>
 </head>
 
-<body onload="regMail()" class="userInsert">
+<body onload="regFunction()" class="userInsert">
     <h1 class="mainTitle">Afterparty book store</h2>
         <div class="allRegWrapper">
             <!--WRAPPER FOR IMAGE AND FORM-->
@@ -88,7 +88,6 @@ if (isset($_POST['g-recaptcha-response'])) {
         require __DIR__ . "../../Traits/CleaningLadyTrait.php";
       	require __DIR__ . "../../Traits/SelectUserTrait.php";
         require __DIR__ . "../../GeneralClasses/SetUser.php";
-      	require __DIR__ . "../../../Traits/SelectUserTrait.php";
         require __DIR__ . "../../Interfaces/UsersInterface.php";
      	require __DIR__ ."../../vendor/autoload.php";//Required for config.php
 		require __DIR__ . "../../config.php";
