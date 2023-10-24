@@ -107,3 +107,4 @@ When you login you have complete access to all features in superadmin panel.<br/
 # Update to version 1.1. 
 1. Added book preview (detailed description on special page) and "shroud" on book images that appears when hovered with cursor.
 2. Each product contains a link that will guide to the "preview" page.
+3. Added insert comment functionality by logged in users.
