@@ -6,6 +6,7 @@ require __DIR__."../../../Interfaces/UserSelectInterface.php";
 require __DIR__."../../../Interfaces/QueryInterface.php";
 require __DIR__."../../../Traits/PasswordResetTrait.php";
 require __DIR__."../../../Traits/CleaningLadyTrait.php"; //SANITATION AND VALIDATION TRAIT "CleaningLady"
+require __DIR__."../../../Traits/SelectUserTrait.php";//Getting user Id for proper comment insert
 require __DIR__."../../../Traits/PreventDuplicateTrait.php"; //Trait to prevent duplicate user names and mails upload in DB
 require __DIR__."../../../GeneralClasses/SetUser.php"; //Variable setting class include regarding users
 require __DIR__."../../../GeneralClasses/SetAdmin.php"; //Variable setting class include Admin panel

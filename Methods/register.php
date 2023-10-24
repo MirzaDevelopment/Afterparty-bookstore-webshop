@@ -86,7 +86,9 @@ if (isset($_POST['g-recaptcha-response'])) {
         require __DIR__ . "../../Traits/PasswordResetTrait.php";
         require __DIR__ . "../../Traits/PreventDuplicateTrait.php";
         require __DIR__ . "../../Traits/CleaningLadyTrait.php";
+      	require __DIR__ . "../../Traits/SelectUserTrait.php";
         require __DIR__ . "../../GeneralClasses/SetUser.php";
+      	require __DIR__ . "../../../Traits/SelectUserTrait.php";
         require __DIR__ . "../../Interfaces/UsersInterface.php";
      	require __DIR__ ."../../vendor/autoload.php";//Required for config.php
 		require __DIR__ . "../../config.php";

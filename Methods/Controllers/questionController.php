@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
  /***Google recaptcha validation logic and question insert***/
  if (isset($_POST['recaptchaResponse'])) {
@@ -15,6 +14,7 @@ declare(strict_types=1);
         require_once __DIR__ . "../../../Traits/PreventDuplicateTrait.php";
         require_once __DIR__ . "../../../Traits/PasswordResetTrait.php"; //Password reset trait
         require_once __DIR__ . "../../../Traits/CleaningLadyTrait.php";
+      	require_once __DIR__ . "../../../Traits/SelectUserTrait.php";
         require_once __DIR__ . "../../../GeneralClasses/SetUser.php";
         $obj = new SetUser();
         //Logic for question DB insert

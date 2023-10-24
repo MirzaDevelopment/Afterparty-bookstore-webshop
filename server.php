@@ -349,6 +349,7 @@ if (!empty($_POST['regDigits'])) {
     require_once __DIR__ . "/Traits/PreventDuplicateTrait.php";
     require_once __DIR__ . "/Traits/PasswordResetTrait.php"; //Password reset trait
     require_once __DIR__ . "/Traits/CleaningLadyTrait.php";
+ 	require_once __DIR__ . "/Traits/SelectUserTrait.php";
   	require_once __DIR__ . "/config.php";
     require_once __DIR__ . "/GeneralClasses/SetUser.php";
     $obj = new SetUser();
@@ -363,6 +364,7 @@ if (isset($_POST['question'])) {
     require_once __DIR__ . "/GeneralClasses/SetAdmin.php";
     require_once __DIR__ . "/Interfaces/QuestionInterface.php";
     require_once __DIR__ . "/Traits/PasswordResetTrait.php"; //Password reset trait
+  	require_once __DIR__ . "/Traits/SelectUserTrait.php";
     require_once __DIR__ . "/DatabaseClasses/QuestionDatabase.php";
     require __DIR__ . "/config.php";
     //Update for checked questions
@@ -374,6 +376,7 @@ if (isset($_POST['question'])) {
 if (isset($_POST['passReset']) || isset($_POST['passDigits']) || isset($_POST['password'])) {
     require_once __DIR__ . "/Traits/PreventDuplicateTrait.php";
     require_once __DIR__ . "/Traits/CleaningLadyTrait.php";
+ 	require_once __DIR__ . "/Traits/SelectUserTrait.php";
   	require_once __DIR__ . "/config.php";
     require_once __DIR__ . "/Traits/PasswordResetTrait.php"; //Password reset trait
     require_once __DIR__ . "/GeneralClasses/SetUser.php";
