@@ -722,8 +722,12 @@ let shroud = document.getElementsByClassName("shroud");
 let inception= document.getElementsByClassName("inception");
 
     for (let i=0; i<shroudImg.length;i++){
-        shroudImg[i].addEventListener("mouseenter", function(e){
-            e.preventDefault;
+        shroudImg[i].addEventListener("mouseenter", function(){
+            window.oncontextmenu=function(event){
+                event.preventDefault();
+                event.stopPropagation();
+                return false;
+            };
             if(mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches|| mediaQuery2.matches){
                 shroud[i].style.height="300px";
                 inception[i].classList.add("inceptionA");
