@@ -722,7 +722,7 @@ let shroud = document.getElementsByClassName("shroud");
 let inception= document.getElementsByClassName("inception");
 
     for (let i=0; i<shroudImg.length;i++){
-        shroudImg[i].addEventListener("mouseenter", function(){
+        shroudImg[i].addEventListener("touchstart", function(){
             window.oncontextmenu=function(event){
                 event.preventDefault();
                 event.stopPropagation();
@@ -744,7 +744,7 @@ let inception= document.getElementsByClassName("inception");
 
         
       for(let i=0; i<shroud.length; i++){
-        shroud[i].addEventListener("mouseleave", function(){
+        shroud[i].addEventListener("touchmove", function(){
             for (let i=0; i<shroudImg.length;i++){
                 shroud[i].style.height="0px";
                 inception[i].setAttribute("class", "inception");
