@@ -741,7 +741,6 @@ const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         });
     }else {
         shroudImg[i].addEventListener("mouseenter", function(){
-            console.log("kita");
             if(mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches|| mediaQuery2.matches){
                 shroud[i].style.height="300px";
                 inception[i].classList.add("inceptionA");
