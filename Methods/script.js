@@ -324,9 +324,6 @@ function firstFunction() {
 
     }
 
-
-
-
     /***Appearing  elements on scroll on first page depending on media query breakpoint***/
     let scrollElementNav = document.getElementsByClassName("selectWrap"); //Navigation (categories)
     let scrollElementSearch = document.getElementsByClassName("firstPageSearchContainer");//Search form
@@ -720,8 +717,9 @@ function firstFunction() {
 let shroudImg = document.getElementsByClassName("shroudImg")
 let shroud = document.getElementsByClassName("shroud");
 let inception= document.getElementsByClassName("inception");
-
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     for (let i=0; i<shroudImg.length;i++){
+        if (isMobile) {
         shroudImg[i].addEventListener("touchstart", function(){
             window.oncontextmenu=function(event){
                 event.preventDefault();
@@ -741,9 +739,27 @@ let inception= document.getElementsByClassName("inception");
      
         
         });
+    }else {
+        shroudImg[i].addEventListener("mouseenter", function(){
+            console.log("kita");
+            if(mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches|| mediaQuery2.matches){
+                shroud[i].style.height="300px";
+                inception[i].classList.add("inceptionA");
+            } else if (mediaQuery3.matches || mediaQuery4.matches){
+                shroud[i].style.height="450px";
+                 inception[i].classList.add("inceptionA");
+            } else if(mediaQuery5.matches || mediaQuery6.matches){
+                shroud[i].style.height="600px";
+                inception[i].classList.add("inceptionA");
+            }
+     
+        
+        });
 
+    }
         
       for(let i=0; i<shroud.length; i++){
+        if (isMobile) {
         shroud[i].addEventListener("touchmove", function(){
             for (let i=0; i<shroudImg.length;i++){
                 shroud[i].style.height="0px";
@@ -752,7 +768,16 @@ let inception= document.getElementsByClassName("inception");
         
             } 
             });
-        
+        }else {
+            shroud[i].addEventListener("mouseleave", function(){
+                for (let i=0; i<shroudImg.length;i++){
+                    shroud[i].style.height="0px";
+                    inception[i].setAttribute("class", "inception");
+                
+            
+                } 
+                });  
+        }
         }
     }
 
@@ -2106,7 +2131,6 @@ function fancyAnimation() {
             }
             ajax.open("POST", "Methods/Controllers/controllerUsers");
             ajax.send(formData);
-            console.log(formData);
         } catch (error) {
             console.log(error);
         }
