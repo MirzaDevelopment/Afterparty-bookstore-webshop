@@ -38,6 +38,88 @@ div.goBackMsgUserPanel {
   margin-top: 25px;
   text-align: center;
 }
+/***Margin auto***/
+body,
+div#selectAllQ,
+div.uploadContainer form input[type="submit"],
+p#delete,
+p#deleteUser,
+input#submitUpdFull,
+input#submitSlider,
+input#submitCategory,
+input#listTrans,
+div#transConfirmRestore,
+p#updateDiscount,
+div.transConfirm,
+div#transConfirmDel,
+a#shop,
+div.login-failed,
+div.login-failed-empty,
+div.login-failed-user,
+div.login-failed-notfound,
+div.login-failed-ip,
+p.goBackMsg,
+p.goBackMsgTerms,
+div#porukaReg > span,
+p#loginSuccess,
+p.mailMsg,
+div#porukaReg > p,
+p.userUploadMsg,
+p#catAnchor,
+ul.words,
+div.firstPageSearchContainer form,
+div.firstPageSearchContainerA form,
+p#opisDesc,
+.slideshow-container,
+p.cartConfirmSlider,
+span.previewDesc,
+div.commentEditDiv,
+p#commentMsg,
+#opis2,
+p#opis,
+div.shroudCont,
+p.inception,
+p.inceptionA,
+div.status,
+div.notStatus,
+.notStatus,
+p.cartConfirm,
+.discountContainerFront,
+div.paginationContainer,
+article.bookReviews,
+div.questionaire,
+div.bookContainerCart .grid-item,
+div.bookContainerCheckout .grid-item,
+body.userInsertCheckout main div.register-wrapper-user,
+div.registerContainerUser,
+div.personalInfo,
+section.customerData h2.productSpec,
+section.orderData p,
+div#paypalContainer,
+body.userInsert form#regMailAnchor,
+div.allRegWrapper div.register-wrapper-user,
+div.register-wrapper,
+div.allRegWrapper div.registerContainerUser,
+div.uploadContainerUser,
+.step1Wrapper,
+#step2,
+#stepShow,
+#finalStepShow,
+div.mainLinksContainer,
+div.mainLinks .sublinkContainer,
+div.mainLinks h2,
+body div.questionsContainer,
+div.frontMsg,
+#mainTable,
+#userMainTable,
+#mainTableStats,
+table#mainTableUser,
+div#transConfirmRestore,
+section.notice p,
+p.messageDel {
+  margin: auto;
+}
+
 /***Margin bottom***/
 div.uploadContainer form textarea,
 div.goBackMsgInsert,
@@ -46,7 +128,9 @@ div#animated > div.loginWrapper {
 }
 /***Margin unset***/
 #finalStepShow p,
-span#publisher {
+span#publisher,
+div.mainCommentContainer p,
+div.mainCommentContainer {
   margin: unset;
 }
 /***Buttons/inputs 1 styles***/
@@ -69,7 +153,9 @@ div.insertCategory form input,
 input.deleteCat,
 input#transSearch,
 input.updateUser,
-input#submitComment {
+input#submitComment,
+input#commentEdit,
+button#commentDelete {
   border-style: none;
   padding: 5px;
   border-radius: 5px 5px 5px 5px;
@@ -94,7 +180,9 @@ input.deleteCat:hover,
 input.logoutAdmin:hover,
 input.updateUser:hover,
 input.logoutUser:hover,
-input#submitComment:hover {
+input#submitComment:hover,
+input#commentEdit:hover,
+button#commentDelete:hover {
   cursor: pointer;
   -webkit-transition: background-color 200ms linear;
   -ms-transition: background-color 200ms linear;
@@ -126,7 +214,6 @@ a#shop {
   border-style: none;
   outline: none;
   min-width: 100px;
-  margin: auto;
 }
 /***Buttons/inputs 2 styles hover***/
 div#selectAllQ:hover,
@@ -196,7 +283,6 @@ div#porukaReg > span {
   color: white;
   padding: 5px;
   width: fit-content;
-  margin: auto;
   margin-top: 5px;
   position: relative;
 }
@@ -217,7 +303,6 @@ p#catAnchor {
   color: white;
   padding: 5px;
   width: fit-content;
-  margin: auto;
 }
 /***Message for already present element stilisation***/
 p#output,
@@ -301,7 +386,9 @@ p#updateDiscount,
 p.emph,
 label[for="commentId"],
 a.loginComment,
-input#submitComment {
+input#submitComment,
+input#commentEdit,
+button#commentDelete {
   font-size: 1.2rem;
 }
 div.titlePriceDisc,
@@ -313,6 +400,13 @@ body.userInsert h1.mainTitle,
 h1.statsTitle,
 h1.statsTitleCust {
   font-size: 2rem;
+}
+div.descFront2,
+section.orderData p,
+div.descFront,
+.userCommentName,
+.userLoginCommentName {
+  font-size: 1.8rem;
 }
 /***Html***/
 html {
@@ -354,8 +448,7 @@ h1.statsTitleCust,
 div.goBackMsgCustStatistics,
 p.customerNotice,
 div.smallPreviewCont,
-div.goBackMsgPreview,
-div.mainCommentContainer {
+div.goBackMsgPreview {
   text-align: center;
 }
 
@@ -397,10 +490,8 @@ div.uploadContainer form input[type="submit"] {
 }
 
 /***Bodies***/
-
 body {
   min-width: 320px;
-  margin: auto;
   max-width: 2256px;
 }
 body.insertBodyUser {
@@ -505,7 +596,6 @@ ul.words {
   font-size: 1.5rem;
   border-radius: 25px 25px 25px 25px;
   column-gap: 27%;
-  margin: auto;
   box-shadow: rgb(0 0 0 / 45%) 0px 25px 20px -20px;
 }
 ul.words li.grid-item1 {
@@ -593,7 +683,6 @@ div.firstPageSearchContainerA form {
   transition: padding 200ms linear;
   padding: 0;
   width: 300px;
-  margin: auto;
   position: relative;
   padding-top: 35px;
 }
@@ -632,13 +721,10 @@ p#opisDesc {
   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
     rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
   text-align: center;
-  margin: auto;
   margin-top: 5%;
   margin-bottom: 5%;
 }
-div.descFront2 {
-  font-size: 1.8rem;
-}
+
 div.grid-item2 {
   text-align: center;
   background-color: white;
@@ -678,7 +764,6 @@ input.cart {
 .slideshow-container {
   max-width: 100%;
   position: relative;
-  margin: auto;
   margin-top: 100px;
 }
 
@@ -825,8 +910,6 @@ p.cartConfirmSlider {
   padding: 10px;
 
   position: absolute;
-
-  margin: auto;
 }
 
 div.sliderCartCont {
@@ -878,12 +961,44 @@ span.previewDesc {
   overflow: scroll;
   text-align: center;
   border: none;
-  margin: auto;
   position: relative;
   display: inline-block;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
     rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   padding: 20px;
+}
+div.buttonCommentCont {
+  align-self: flex-end;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 10px;
+  margin-top: 15px;
+}
+input#commentEdit,
+button#commentDelete {
+  width: 80px;
+  margin-bottom: 10px;
+}
+div.commentEditDiv {
+  display: flex;
+}
+p#commentMsg {
+  margin-bottom: 5px;
+}
+
+div.commentEditDiv > input {
+  margin-top: -15px;
+}
+
+.userLoginCommentName {
+  width: 100%;
+  background-color: antiquewhite;
+  padding: 5px;
+}
+body.previewBody main section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 a[href*="preview"] {
   color: #00663f;
@@ -897,6 +1012,57 @@ a.loginComment {
   border-radius: 15px;
   position: relative;
   top: 50px;
+  display: inline-block;
+}
+div.mainCommentContainer div.paginationContainer div.prev,
+div.mainCommentContainer div.paginationContainer div.next {
+  background-color: transparent;
+}
+.mainCommentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: justify;
+  padding: 15px;
+  background-image: url(Methods/img/wave2.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  background-attachment: fixed;
+  border-radius: 15px 15px 15px 15px;
+  margin: 15px;
+  margin-top: 0px;
+  width: 100%;
+}
+div.mainCommentContainer span.pageNumb {
+  background-color: transparent;
+  box-shadow: unset;
+}
+div.mainCommentContainer div.numbDistContainer {
+  align-self: stretch;
+  margin-bottom: 25px;
+}
+p.commentDate {
+  font-style: italic;
+  font-size: 1.2rem;
+  border-bottom-style: solid;
+  border-bottom-color: cadetblue;
+}
+
+div.mainCommentContainer p.userComment,
+textarea.userCommentText {
+  margin-top: 5px;
+  margin-bottom: 25px;
+  padding: 20px;
+  width: 100%;
+}
+
+p#line {
+  width: 50%;
+  background: cadetblue;
+  height: 2px;
+  align-self: self-end;
+  margin-bottom: 20px;
 }
 a.loginComment:hover {
   cursor: pointer;
@@ -968,13 +1134,10 @@ p#opis {
   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
     rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
   text-align: center;
-  margin: auto;
   margin-top: 5%;
   margin-bottom: 5%;
 }
-div.descFront {
-  font-size: 1.8rem;
-}
+
 div.shroud {
   height: 0px;
   width: 200px;
@@ -985,7 +1148,6 @@ div.shroud {
   z-index: 5000;
 }
 div.shroudCont {
-  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -997,7 +1159,6 @@ p.inception {
   font-size: 1.8rem;
   top: 50px;
   position: relative;
-  margin: auto;
 }
 
 p.inceptionA {
@@ -1008,7 +1169,6 @@ p.inceptionA {
   color: ghostwhite;
   font-size: 1.8rem;
   position: relative;
-  margin: auto;
 }
 @-moz-document url-prefix() {
   div.shroudCont div.shroud {
@@ -1039,7 +1199,6 @@ div.notStatus {
   background-color: azure;
   font-size: 1.2rem;
   width: fit-content;
-  margin: auto;
   max-width: 200px;
   padding: 10px;
 }
@@ -1070,7 +1229,6 @@ div.grid-item > img:not(img.discountIcon) {
   box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
   background-color: #e91e6329;
   font-size: 1.2rem;
-  margin: auto;
   width: 50%;
   max-width: 200px;
 }
@@ -1141,7 +1299,6 @@ p.cartConfirm {
   color: white;
   padding: 10px;
   width: 150px;
-  margin: auto;
   margin-top: 25px;
 }
 
@@ -1165,7 +1322,6 @@ div.discount {
   position: relative;
   max-width: fit-content;
   text-align: center;
-  margin: auto;
 }
 
 span.newPrice {
@@ -1270,16 +1426,17 @@ div.paginationContainer {
   align-items: center;
   position: relative;
   width: 100%;
-  margin: auto;
   margin-top: 35px;
 }
 div.numbDist a {
   color: cadetblue;
   font-size: 1.5rem;
+  text-decoration: none;
 }
 span.pageNumb a {
   color: cadetblue;
   font-size: 20px;
+  text-decoration: none;
 }
 
 span.pageNumb:hover {
@@ -1326,10 +1483,12 @@ div.paginationContainer div.next {
 div.prev a {
   font-size: xx-large;
   font-weight: 900;
+  text-decoration: none;
 }
 div.next a {
   font-size: xx-large;
   font-weight: 900;
+  text-decoration: none;
 }
 
 /***Book Reviews***/
@@ -1339,7 +1498,6 @@ article.bookReviews {
   overflow: scroll;
   text-align: center;
   border: none;
-  margin: auto;
   padding: 3%;
   position: relative;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
@@ -1460,7 +1618,6 @@ div.questionaire {
   background-color: white;
   min-width: 300px;
   text-align: center;
-  margin: auto;
   margin-top: 45px;
   position: relative;
   top: -20px;
@@ -1619,7 +1776,6 @@ div.bookContainerCheckout .grid-item {
   background: #ff7f5036;
   width: min-content;
   border-radius: 15px 15px 15px 15px;
-  margin: auto;
 }
 
 input#cartDel.cartDel {
@@ -1629,7 +1785,6 @@ input#cartDel.cartDel {
 .quantityUp,
 section h2,
 p#cartOutput,
-section.orderData p,
 span.quantityFinal {
   margin: 0;
   font-size: 1.8rem;
@@ -1695,7 +1850,6 @@ body.userInsertCheckout main div.register-wrapper-user {
     rgba(0, 0, 0, 0.09) 0px 32px 16px;
   position: relative;
   width: 304px;
-  margin: auto;
   margin-top: 35px;
 }
 form[action="checkout"] {
@@ -1718,7 +1872,6 @@ select#adm_units {
 }
 div.registerContainerUser {
   width: 70%;
-  margin: auto;
   max-width: 70%;
   margin-top: 50px;
 }
@@ -1736,19 +1889,16 @@ div.personalInfo {
   font-size: 1.5rem;
   width: fit-content;
   box-shadow: rgb(38 57 77) 0px 20px 30px -10px;
-  margin: auto;
   margin-top: 25px;
   margin-bottom: 25px;
 }
 section.customerData h2.productSpec {
   width: 90%;
-  margin: auto;
   font-size: 1.5rem;
 }
 section.orderData p {
   border-bottom-style: solid;
   width: fit-content;
-  margin: auto;
   margin-top: 25px;
   margin-bottom: 25px;
 }
@@ -1768,7 +1918,6 @@ nav.goBackCartCheckout a {
 }
 div#paypalContainer {
   width: 205px;
-  margin: auto;
   margin-top: 10%;
   position: relative;
 }
@@ -1836,7 +1985,6 @@ div.area {
   height: 100vh;
   overflow: hidden;
   background: aliceblue;
-  margin: auto;
   position: fixed;
 }
 
@@ -2087,7 +2235,6 @@ div#poruka {
 }
 body.userInsert form#regMailAnchor {
   background-color: salmon;
-  margin: auto;
   text-align: center;
   position: relative;
   margin-top: 0px;
@@ -2108,12 +2255,10 @@ input.inputLogin {
 div.allRegWrapper div.register-wrapper-user,
 div.register-wrapper {
   width: 320px;
-  margin: auto;
 }
 div.allRegWrapper div.registerContainerUser,
 div.uploadContainerUser {
   width: 76%;
-  margin: auto;
   max-width: 76%;
   margin-top: 50px;
 }
@@ -2145,7 +2290,6 @@ div#finalStepShow {
     rgba(0, 0, 0, 0.09) 0px 32px 16px;
   width: 300px;
   max-width: 300px;
-  margin: auto;
 }
 
 p#outputMail2 div#finalStepShow {
@@ -2246,7 +2390,6 @@ div.mainLinksContainer {
   display: grid;
   width: 320px;
   max-width: 320px;
-  margin: auto;
 }
 .sublinkContainer a:hover {
   -webkit-transition: background-color 200ms linear;
@@ -2256,11 +2399,9 @@ div.mainLinksContainer {
 
 div.mainLinks .sublinkContainer {
   width: fit-content;
-  margin: auto;
 }
 div.mainLinks h2 {
   font-weight: 100;
-  margin: auto;
   margin-bottom: 50px;
 }
 body.adminBody div.goBackMsg a img {
@@ -2324,7 +2465,6 @@ body div.questionsContainer {
   text-align: center;
   border-radius: 25px 25px 25px 0px;
   width: fit-content;
-  margin: auto;
   max-width: 300px;
   margin-bottom: 30px;
   width: 300px;
@@ -2335,7 +2475,6 @@ div.frontMsg {
   background-color: cornflowerblue;
   color: snow;
   padding: 2px;
-  margin: auto;
   margin-bottom: 15px;
 }
 input.ansMsg:hover {
@@ -2460,7 +2599,6 @@ td.desc {
 #mainTableStats,
 table#mainTableUser {
   background: aliceblue;
-  margin: auto;
   width: 75%;
   padding-top: 2%;
   position: relative;
@@ -2532,7 +2670,6 @@ div.numbDistContainer {
 }
 div#transConfirmRestore {
   text-align: center;
-  margin: auto;
 }
 
 /***User upload panel***/
@@ -2615,7 +2752,6 @@ input.delSlider {
 section.notice p {
   width: 250px;
   max-width: 250px;
-  margin: auto;
 }
 
 /***Statistics***/
@@ -2642,7 +2778,8 @@ input.logoutAdmin {
 }
 
 div.userUpdateUser div.updateContainerUser,
-section.searchIcon {
+section.searchIcon,
+div.goBackMsgPreview {
   margin-top: 25px;
 }
 
@@ -2669,7 +2806,6 @@ p.messageDel {
   text-align: center;
   height: 300px;
   width: 300px;
-  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3029,7 +3165,11 @@ p.messageDel {
   span.previewDesc p,
   .commentBody,
   input#submitComment,
-  span.badWords {
+  input#commentEdit,
+  button#commentDelete,
+  span.badWords,
+  div.mainCommentContainer p.userComment,
+  textarea.userCommentText {
     font-size: 1.5rem;
   }
   section.notice p {

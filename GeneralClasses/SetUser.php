@@ -334,23 +334,35 @@ class SetUser //VARIABLE SETTING CLASS WITH TRAITS (USER PANEL)
    /***USER COMMENT SETTING AND INSERT LOGIC***/
     public function commentInsertSetting()
     {
-        if (isset($_POST['comment']) && !empty($_POST['comment'])) {
-            require __DIR__ . "../../Interfaces/CommentInterface.php";
-            require __DIR__ . "../../DatabaseClasses/CommentDatabase.php";
-            require __DIR__ . "../../GeneralClasses/CommentsExtendsDatabase.php";
+             if (isset($_POST['comment']) && !empty($_POST['comment'])) {
             $username=$_SESSION['username'];
             $comment_body=$this->commentBodyClean();//Cleaned and censored comment text
             $comment_book_id=(Int)$_SESSION['id'];
             $comment_user_id=$this->getUser($username);
+            //Profanity word filter implementation
+            $keywords = preg_split("/[\s,]+/", $comment_body);//Creating array from user comment
+            $badWords = json_decode(file_get_contents("Methods/Badwords.json"), true);//Importing bad words JSON and turning it into array
+            foreach($badWords as $words){
+            foreach($words as $key=>$finalWords){
+                $newBadWords[]=$finalWords['word'];//Creating an array from words in json file
+            }
+        //Match user comment with bad words array
+        $result=array_intersect($newBadWords,$keywords);//Matching user comment with bad words array
+        if(count($result)>0){
+            $badWordsString=implode(", ", $result);
+            echo "<p id='failComment' class='goBackMsg'> Words such as <span class='badWords'>$badWordsString</span> are not allowed. Please refrain from using vulgar language.</p>";
+           return false;
+        }
+    }/***Profanity filter end***/
             //Calculate time difference to prevent comment spam
             if(isset($_SESSION['timestamp'])){
             $from_time=strtotime($_SESSION['timestamp']);
             $to_time=strtotime(date('H:i:s'));
             $diff_minutes = round(abs($from_time - $to_time) / 60,2);
-            if ($diff_minutes>10){
+            if ($diff_minutes>0){
             Comments::insertComment($comment_user_id, $comment_body, $comment_book_id);
         } else{
-            echo "<p id='failComment' class='goBackMsg'>Sorry, but you can only post one review per 10 minutes</p>";
+            echo "<p id='failComment' class='goBackMsg'>Sorry, but you can only post one comment per 10 minutes</p>";
         }
 
         }else {
@@ -360,5 +372,27 @@ class SetUser //VARIABLE SETTING CLASS WITH TRAITS (USER PANEL)
     } else if (isset($_POST['comment']) && empty($_POST['comment'])) {
         echo "<p id='failComment' class='goBackMsg'>Ooops...you didn't write any comments!</p>";
     }
+}
+  public function commentUpdateSetting(){
+    if (isset($_POST['comment']) && !empty($_POST['comment'])) {
+        $comment_body=$this->commentBodyClean();//Cleaned and censored comment text
+        $comment_id=$_SESSION['commentId'];
+        //Profanity word filter implementation
+        $keywords = preg_split("/[\s,]+/", $comment_body);//Creating array from user comment
+        $badWords = json_decode(file_get_contents("Methods/Badwords.json"), true);//Importing bad words JSON and turning it into array
+        foreach($badWords as $words){
+        foreach($words as $key=>$finalWords){
+            $newBadWords[]=$finalWords['word'];//Creating an array from words in json file
+        }
+    //Match user comment with bad words array
+    $result=array_intersect($newBadWords,$keywords);//Matching user comment with bad words array
+    if(count($result)>0){
+        $badWordsString=implode(", ", $result);
+        echo "<p id='failComment' class='goBackMsg'> Words such as <span class='badWords'>$badWordsString</span> are not allowed. Please refrain from using vulgar language.</p>";
+       return false;
+    }
+}/***Profanity filter end***/
+Comments::updateComment($comment_body,$comment_id);
+}
 }
 }

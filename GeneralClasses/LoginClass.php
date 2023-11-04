@@ -66,6 +66,7 @@ class LoginClass
             echo "<span class='logOut'>" . $user_name . " is online</span>"; //Showing user name with online status.
             echo "<div class='adminDot'></div>";
             echo "</div>";
+          	echo "<a id='shop' href='../index'>Webshop</a>";
             echo "<form action='userPanel' method='POST'><input type='Submit' name='Logout' class='logoutUser' value='Log out'></input></form>"; //Logout button 
             echo "<form action='../Controllers/updateControllerSmall' method='GET'><input class='updateUser' type='Submit' name='userUpdate' value='Update'></input></form>"; //User update data button
             echo "</div>";

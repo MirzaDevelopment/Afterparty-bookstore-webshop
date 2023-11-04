@@ -3,7 +3,9 @@ declare(strict_types=1);
 session_start();
 //putting get into session
 if(isset($_GET['id'])){
-$_SESSION['id']=$_GET['id'];
+    $trimmed=trim($_GET['id']);
+    $cleaned=htmlspecialchars($trimmed,ENT_QUOTES);
+    $_SESSION['id']=(int)$cleaned;
 } else if (!isset($_GET['id'])&& empty($_SESSION['id'])){
     header("Location:index.php");
     exit();
@@ -57,14 +59,13 @@ require __DIR__."/Traits/PreventDuplicateTrait.php";
 require __DIR__."/Traits/PasswordResetTrait.php"; 
 require __DIR__."/Traits/SelectUserTrait.php"; 
 require __DIR__."/GeneralClasses/SetUser.php"; //Variable setting class include
+require __DIR__ . "/Interfaces/CommentInterface.php";
+require __DIR__ . "/DatabaseClasses/CommentDatabase.php";
+require __DIR__ . "/GeneralClasses/CommentsExtendsDatabase.php";
 //Setting class for insert comments
 $objekatSet = new SetUser();
-echo "<div class='mainCommentContainer'>";
 //Comment insert method
 $objekatSet->commentInsertSetting();
-echo "</div>";
-echo "<br>";
-echo "</section>";
 //Creating logic to correctly back users from preview panel to their corresponding panels.
 if(isset($_SESSION['status']) && $_SESSION['status'] == 2 || isset($_SESSION['status']) && $_SESSION['status']==1) {
    echo"<div class='goBackMsgPreview'>
@@ -83,7 +84,14 @@ if(isset($_SESSION['status']) && $_SESSION['status'] == 2 || isset($_SESSION['st
     <a href='index'><img src='Methods/img/previous.png' alt='back-to-previous-page' width='35' height='35'></a>
 </div>"; 
 }
+echo "<br>";
+echo "<div class='mainCommentContainer'>";
+Comments::selectAllComments($_SESSION['id']);
+echo "</div>";
+echo "</section>";
             ?>
+   </main>
+               <!--Footer start-->  
     <footer class="frontPage">
         <div class="footerContainer">
             <section class="policies">

@@ -320,23 +320,7 @@ trait CleaningLadyTrait
     {      
         $commentBodyRaw=trim($_POST['comment']);//Raw input sanitation 1
         $commentBodyClean = htmlspecialchars($commentBodyRaw, ENT_QUOTES);//Sanitation 2
-        $keywords = preg_split("/[\s,]+/", $commentBodyClean);//Creating array from user comment
-        $badWords = json_decode(file_get_contents("Methods/Badwords.json"), true);//Importing bad words JSON and turning it into array
-        foreach($badWords as $words){
-            foreach($words as $key=>$finalWords){
-                $newBadWords[]=$finalWords['word'];//Creating an array from words in json file
-            }
-        }
-        //Match user comment with bad words array
-        $result=array_intersect($newBadWords,$keywords);//Matching user comment with bad words array
-        if(count($result)>0){
-            $badWordsString=implode(", ", $result);
-            echo "<p id='failComment' class='goBackMsg'> Words such as <span class='badWords'>$badWordsString</span> are not allowed. Please refrain from using vulgar language.</p>";
-            return false;
-        } else {
         return $commentBodyClean;
-        }
-        
     }
 
     //Transaction search input sanitation 

@@ -777,7 +777,7 @@ class BooksDatabase implements UserBookSelectInterface
     $total_pages = ceil($count / $limit); //Number of total pages required to show query results.
 
     //Retrieving active page number
-    if (isset($_GET["page"])) {
+    if (isset($_GET["page"]) && $_GET["page"] <= $total_pages) {
 
       $page_number  = $_GET["page"];
     } else {
@@ -882,6 +882,7 @@ class BooksDatabase implements UserBookSelectInterface
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql=$connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, books.book_description, books.book_author, books.book_quantity, book_category.book_category, pricing.book_price, pricing.discount, pricing.discounted_price, books.book_publisher, books.publish_year FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE books.book_id=:book_id");
     $sql->execute(array('book_id' => $book_id));
+    if($sql->rowCount()>0){
     echo "<div class='prevContainer'>";
     echo "<div class='bookContainer'>";
     while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
@@ -916,10 +917,8 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='notStatus'> Not available </div>";
       }
       echo "</div>";
-      
-
     }
-    }
+    
     echo "<div class='smallPreviewCont'>";
     echo "<i class='fa fa-paperclip' style='padding:unset;' aria-hidden='true'></i>
     <span id='publisher' style='color:cadetblue;'>Published by ".$publisher."</span>";
@@ -934,7 +933,12 @@ class BooksDatabase implements UserBookSelectInterface
     echo "</div>";
     echo "</div>";
     echo "</div>";
-  
+  } 
+  }else{
+  echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+  echo "<p id='empty'>Ooops...don't have books with that id sir.<p>";
+
+}
   }catch (PDOException $e) {
     $error = $e->getMessage() . " " . date("F j, Y, g:i a");
     error_log($error . PHP_EOL, 3, "Methods/Logs/logs.txt");

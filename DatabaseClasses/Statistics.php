@@ -193,7 +193,7 @@ class Statistics
         try {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //Selecting general transaction table with required data
-            $sql = $connection->query("SELECT * FROM statisticforuser");
+            $sql = $connection->query("SELECT transactions.book_id, books.book_title, books.book_description, books.book_author, book_pic, users_customers.email,  pricing.book_price, pricing.discounted_price, SUM(transactions.book_quantity) AS QUANTITY_TOTAL, GROUP_CONCAT(DISTINCT transactions.transaction_date) as transaction_time FROM {$_ENV['DATABASE_NAME']}.transactions JOIN {$_ENV['DATABASE_NAME']}.books ON books.book_id=transactions.book_id JOIN users_customers ON transactions.customer_id=users_customers.customer_id JOIN pricing ON books.book_id=pricing.book_id");
         } catch (PDOException $e) {
           date_default_timezone_set('Europe/Sarajevo');
             $error = $e->getMessage() . " " . date("F j, Y, g:i a");
@@ -237,6 +237,7 @@ class Statistics
             echo "<div class='frontMsg'>Your purchased books:</div>";
             echo "<table id='mainTableUser'>";
             while ($row = $sql3->fetch(PDO::FETCH_ASSOC)) {
+              if ($row['book_title']>0){
                 echo "<tr>";
                 echo "<th>Title</th>";
              	echo "<th>Synopsis</th>";
@@ -261,6 +262,7 @@ class Statistics
                 echo "<td>" . $row['QUANTITY_TOTAL'] . "</td>";
                 echo "<td>" . $row['transaction_time'] . "</td>";
                 echo "</tr>";
+                 }
             }
             echo "</table>";
             //Small for loop to render number of pages for user to click on

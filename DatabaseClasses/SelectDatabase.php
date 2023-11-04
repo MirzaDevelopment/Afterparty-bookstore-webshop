@@ -30,7 +30,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         $total_pages = ceil($count / $limit); //Number of total pages required to show query results.
 
         //Retrieving active page number
-        if (isset($_GET["pageAllFilled"])) {
+        if (isset($_GET["pageAllFilled"])&& $_GET["pageAllFilled"] <= $total_pages) {
 
             $page_number  = $_GET["pageAllFilled"];
         } else {
@@ -125,7 +125,7 @@ class SelectDatabase implements SelectInterface //Class that holds SELECT querie
         $total_pages = ceil($count / $limit); //Number of total pages required to show query results.
 
         //Retrieving active page number
-        if (isset($_GET["page"])) {
+        if (isset($_GET["page"])&& $_GET["page"] <= $total_pages) {
 
             $page_number  = $_GET["page"];
         } else {

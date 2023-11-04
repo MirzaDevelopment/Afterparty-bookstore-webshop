@@ -713,77 +713,77 @@ function firstFunction() {
         });
 
     });
-//Shroud on images on mouse enter 
-let shroudImg = document.getElementsByClassName("shroudImg")
-let shroud = document.getElementsByClassName("shroud");
-let inception= document.getElementsByClassName("inception");
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    for (let i=0; i<shroudImg.length;i++){
+    //Shroud on images on mouse enter 
+    let shroudImg = document.getElementsByClassName("shroudImg")
+    let shroud = document.getElementsByClassName("shroud");
+    let inception = document.getElementsByClassName("inception");
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    for (let i = 0; i < shroudImg.length; i++) {
         if (isMobile) {
-        shroudImg[i].addEventListener("touchstart", function(){
-            window.oncontextmenu=function(event){
-                event.preventDefault();
-                event.stopPropagation();
-                return false;
-            };
-            if(mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches|| mediaQuery2.matches){
-                shroud[i].style.height="300px";
-                inception[i].classList.add("inceptionA");
-            } else if (mediaQuery3.matches || mediaQuery4.matches){
-                shroud[i].style.height="450px";
-                 inception[i].classList.add("inceptionA");
-            } else if(mediaQuery5.matches || mediaQuery6.matches){
-                shroud[i].style.height="600px";
-                inception[i].classList.add("inceptionA");
-            }
-     
-        
-        });
-    }else {
-        shroudImg[i].addEventListener("mouseenter", function(){
-            if(mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches|| mediaQuery2.matches){
-                shroud[i].style.height="300px";
-                inception[i].classList.add("inceptionA");
-            } else if (mediaQuery3.matches || mediaQuery4.matches){
-                shroud[i].style.height="450px";
-                 inception[i].classList.add("inceptionA");
-            } else if(mediaQuery5.matches || mediaQuery6.matches){
-                shroud[i].style.height="600px";
-                inception[i].classList.add("inceptionA");
-            }
-     
-        
-        });
+            shroudImg[i].addEventListener("touchstart", function () {
+                window.oncontextmenu = function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    return false;
+                };
+                if (mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches || mediaQuery2.matches) {
+                    shroud[i].style.height = "300px";
+                    inception[i].classList.add("inceptionA");
+                } else if (mediaQuery3.matches || mediaQuery4.matches) {
+                    shroud[i].style.height = "450px";
+                    inception[i].classList.add("inceptionA");
+                } else if (mediaQuery5.matches || mediaQuery6.matches) {
+                    shroud[i].style.height = "600px";
+                    inception[i].classList.add("inceptionA");
+                }
 
-    }
-        
-      for(let i=0; i<shroud.length; i++){
-        if (isMobile) {
-        shroud[i].addEventListener("touchmove", function(){
-            for (let i=0; i<shroudImg.length;i++){
-                shroud[i].style.height="0px";
-                inception[i].setAttribute("class", "inception");
-            
-        
-            } 
+
             });
-        }else {
-            shroud[i].addEventListener("mouseleave", function(){
-                for (let i=0; i<shroudImg.length;i++){
-                    shroud[i].style.height="0px";
-                    inception[i].setAttribute("class", "inception");
-                
-            
-                } 
-                });  
+        } else {
+            shroudImg[i].addEventListener("mouseenter", function () {
+                if (mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches || mediaQuery2.matches) {
+                    shroud[i].style.height = "300px";
+                    inception[i].classList.add("inceptionA");
+                } else if (mediaQuery3.matches || mediaQuery4.matches) {
+                    shroud[i].style.height = "450px";
+                    inception[i].classList.add("inceptionA");
+                } else if (mediaQuery5.matches || mediaQuery6.matches) {
+                    shroud[i].style.height = "600px";
+                    inception[i].classList.add("inceptionA");
+                }
+
+
+            });
+
         }
+
+        for (let i = 0; i < shroud.length; i++) {
+            if (isMobile) {
+                shroud[i].addEventListener("touchmove", function () {
+                    for (let i = 0; i < shroudImg.length; i++) {
+                        shroud[i].style.height = "0px";
+                        inception[i].setAttribute("class", "inception");
+
+
+                    }
+                });
+            } else {
+                shroud[i].addEventListener("mouseleave", function () {
+                    for (let i = 0; i < shroudImg.length; i++) {
+                        shroud[i].style.height = "0px";
+                        inception[i].setAttribute("class", "inception");
+
+
+                    }
+                });
+            }
         }
     }
 
 
 }
 /***Shroud cover for categories and discounted items***/
-function getShroud(){
+function getShroud() {
     let mediaQueryNull = window.matchMedia("only screen and (min-width: 320px) and (max-width: 479px)");
     let mediaQueryNew = window.matchMedia("only screen and (min-width: 480px) and (max-width: 575px)");
     let mediaQuery1 = window.matchMedia("only screen and (min-width: 576px) and (max-width: 767px)");
@@ -794,37 +794,37 @@ function getShroud(){
     let mediaQuery6 = window.matchMedia("only screen and (min-width: 1920px)");
     let shroudImg = document.getElementsByClassName("shroudImg")
     let shroud = document.getElementsByClassName("shroud");
-    let inception= document.getElementsByClassName("inception");
-    
-        for (let i=0; i<shroudImg.length;i++){
-            shroudImg[i].addEventListener("mouseenter", function(){
-            if(mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches|| mediaQuery2.matches){
-                shroud[i].style.height="300px";
+    let inception = document.getElementsByClassName("inception");
+
+    for (let i = 0; i < shroudImg.length; i++) {
+        shroudImg[i].addEventListener("mouseenter", function () {
+            if (mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches || mediaQuery2.matches) {
+                shroud[i].style.height = "300px";
                 inception[i].classList.add("inceptionA");
-            } else if (mediaQuery3.matches || mediaQuery4.matches){
-                shroud[i].style.height="450px";
-                 inception[i].classList.add("inceptionA");
-            } else if(mediaQuery5.matches || mediaQuery6.matches){
-                shroud[i].style.height="600px";
+            } else if (mediaQuery3.matches || mediaQuery4.matches) {
+                shroud[i].style.height = "450px";
+                inception[i].classList.add("inceptionA");
+            } else if (mediaQuery5.matches || mediaQuery6.matches) {
+                shroud[i].style.height = "600px";
                 inception[i].classList.add("inceptionA");
             }
-            
-            });
-    
-            
-            for(let i=0; i<shroud.length; i++){
-            shroud[i].addEventListener("mouseleave", function(){
-                for (let i=0; i<shroudImg.length;i++){
-                    shroud[i].style.height="0px";
+
+        });
+
+
+        for (let i = 0; i < shroud.length; i++) {
+            shroud[i].addEventListener("mouseleave", function () {
+                for (let i = 0; i < shroudImg.length; i++) {
+                    shroud[i].style.height = "0px";
                     inception[i].setAttribute("class", "inception");
-                
-            
-                } 
-                });
-            
-            }
+
+
+                }
+            });
+
         }
-    
+    }
+
 }
 /***Slider JS part***/
 //Next/last slide controls
@@ -1244,7 +1244,7 @@ function delCategoryIntersection(category) {
                 }
 
 
-            } 
+            }
         }
         ajax.open("POST", "../Controllers/deleteControllerSmall");
         ajax.send(formData);
@@ -1284,7 +1284,7 @@ function delCategoryFinalisation(category) {
                 }
 
 
-            } 
+            }
 
         }
         ajax.open("POST", "../Controllers/deleteController");
@@ -1375,7 +1375,7 @@ function multipleUpd() {//Body "onload" function in updateControllerSmall.php
 
                         document.getElementById('output2').innerHTML = this.responseText;
 
-                    } 
+                    }
                 }
                 ajax.open("POST", "updateController");
                 ajax.send(formData);
@@ -1464,7 +1464,7 @@ function multipleUpd() {//Body "onload" function in updateControllerSmall.php
                         }
                         document.getElementById('output').innerHTML = this.responseText;
 
-                    } 
+                    }
                 }
                 ajax.open("POST", "updateController");
                 ajax.send(formData);
@@ -1530,7 +1530,7 @@ function multipleUpd() {//Body "onload" function in updateControllerSmall.php
 
                         document.getElementById('output').innerHTML = this.responseText;
 
-                    } 
+                    }
                 }
                 ajax.open("POST", "updateController");
                 ajax.send(formData);
@@ -1601,7 +1601,7 @@ function multipleUpd() {//Body "onload" function in updateControllerSmall.php
 
 
 
-                    } 
+                    }
                 }
                 ajax.open("POST", "updateController");
                 ajax.send(formData);
@@ -1672,7 +1672,7 @@ function getDescription(element) {
 
                         }
 
-                    } 
+                    }
 
 
                 }
@@ -1749,7 +1749,7 @@ function selectAll() {
                                     document.getElementById("outputTrans").scrollIntoView(false);
                                 }
 
-                            } 
+                            }
                         }
 
                         ajax.open("POST", "../../server");
@@ -1787,7 +1787,7 @@ function selectAll() {
                                     document.getElementById("outputTransDel").scrollIntoView(false);
                                 }
 
-                            } 
+                            }
                         }
 
                         ajax.open("POST", "../Controllers/transactionController");
@@ -1846,7 +1846,7 @@ function restoreAll() {
                                 }
 
 
-                            } 
+                            }
                         }
 
                         ajax.open("POST", "../Controllers/transactionController");
@@ -1884,7 +1884,7 @@ function restoreAll() {
                                 }
 
 
-                            } 
+                            }
                         }
 
                         ajax.open("POST", "../Controllers/customerController");
@@ -1921,7 +1921,7 @@ function restoreAll() {
                                     document.getElementById("outputTransDel").scrollIntoView(false);
                                 }
 
-                            } 
+                            }
                         }
 
                         ajax.open("POST", "../Controllers/controller");
@@ -1981,7 +1981,7 @@ function selectAllCustomers() {
                                     document.getElementById("outputTransDel").scrollIntoView(false);
                                 }
 
-                            } 
+                            }
                         }
 
                         ajax.open("POST", "../Controllers/customerController");
@@ -2189,6 +2189,69 @@ function paymentFinal() {
         }
     })
 }
+/***Edit comment by user(creating update button and textarea***/
+function commentEdit(element) {
+    let formData = new FormData();
+    formData.append(element.name, element.value);
+    try {
+        let ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                let td = document.getElementById(element.name);
+                if(td){
+                //Creating text area for comment modification
+                let newElement = document.createElement("textarea");
+                newElement.setAttribute("class", "userCommentText");
+                newElement.setAttribute("rows", "10");
+                newElement.setAttribute("cols", "80");
+                newElement.setAttribute("name","comment")
+                newElement.innerHTML = td.textContent;
+                td.replaceWith(newElement);
+                let p= document.createElement("p");
+                p.setAttribute("id", "commentMsg");
+                let button = document.createElement('div');
+                button.setAttribute("class","commentEditDiv")
+                button.innerHTML=this.responseText;
+                newElement.after(button)
+                button.after(p);
+            }
+
+            } else {
+                return;
+            }
+        }
+
+        ajax.open("POST", "server?commentEdit=" + element.name);
+        ajax.send(element.name);
+    } catch (error) {
+        console.log(error);
+    }
+}
+/***Submitting textarea comment to server and final update to db***/
+function commentUpdate(){
+    let newComment=document.getElementsByClassName("userCommentText");
+    let formData = new FormData();
+    for(let i=0; i<newComment.length;i++){
+    formData.append(newComment[i].name, newComment[i].value);
+    }try {
+        let ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+
+                document.getElementById("commentMsg").innerHTML=this.responseText;
+      
+              
+            }
+        }   
+            
+        ajax.open("POST", "server");
+        ajax.send(formData);
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+
 
 //Unsetting some of the objects
 message = null;
@@ -2228,6 +2291,8 @@ paypal = null;
 var refreshIntervalId = null;
 prevButton = null;
 nextButton = null;
-
+newComment=null;
+newElement=null;
+button=null;
 
 

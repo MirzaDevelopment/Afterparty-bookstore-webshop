@@ -415,3 +415,26 @@ if (!empty($_POST['trans'])) { //Selected transactions "id-s" from ajax
     echo ("<meta http-equiv='refresh' content='2'>"); //Refresh by HTTP 'meta'
 
 }
+/***Comment edit by user***/
+//PART I, creating update button and textarea
+if (!empty($_GET['commentEdit'])) {
+session_start();
+echo "<input type='submit' id='commentEdit' name='{$_GET['commentEdit']}' value='Update' onclick='commentUpdate(this)'></input>";
+$_SESSION['commentId']=$_GET['commentEdit'];//Adding comment id
+}
+//PART II, submitting the new comment for update
+if (!empty($_POST['comment'])) {
+  session_start();
+require __DIR__ . "/Interfaces/CommentInterface.php";
+require __DIR__ . "/DatabaseClasses/CommentDatabase.php";
+require __DIR__ . "/GeneralClasses/CommentsExtendsDatabase.php";
+    require_once __DIR__ . "/Traits/CleaningLadyTrait.php";
+    require_once __DIR__ . "/Traits/SelectUserTrait.php";
+    require_once __DIR__ . "/Traits/PreventDuplicateTrait.php";
+    require_once __DIR__ . "/config.php";
+    require_once __DIR__ . "/Traits/PasswordResetTrait.php"; //Password reset trait
+    require_once __DIR__ . "/GeneralClasses/SetUser.php";
+    $setObjekat = new SetUser();
+    $setObjekat->commentUpdateSetting();
+    echo ("<meta http-equiv='refresh' content='2'>"); //Refresh by HTTP 'meta'
+}

@@ -46,7 +46,7 @@ class Questiondatabase implements QuestionInterface //Class for question/message
         $total_pages = ceil($count / $limit); //Number of total pages required to show query results.
 
         //Retrieving active page number
-        if (isset($_GET["page"])) {
+        if (isset($_GET["page"])&& $_GET["page"] <= $total_pages) {
 
             $page_number  = $_GET["page"];
         } else {
