@@ -359,14 +359,16 @@ class SetUser //VARIABLE SETTING CLASS WITH TRAITS (USER PANEL)
             $from_time=strtotime($_SESSION['timestamp']);
             $to_time=strtotime(date('H:i:s'));
             $diff_minutes = round(abs($from_time - $to_time) / 60,2);
-            if ($diff_minutes>0){
+            if ($diff_minutes>10){
             Comments::insertComment($comment_user_id, $comment_body, $comment_book_id);
         } else{
             echo "<p id='failComment' class='goBackMsg'>Sorry, but you can only post one comment per 10 minutes</p>";
+            echo ("<meta http-equiv='refresh' content='4'>");
         }
 
         }else {
             Comments::insertComment($comment_user_id, $comment_body, $comment_book_id);
+            echo ("<meta http-equiv='refresh' content='4'>");
             
         }
     } else if (isset($_POST['comment']) && empty($_POST['comment'])) {

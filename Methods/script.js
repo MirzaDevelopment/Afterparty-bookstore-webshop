@@ -1165,6 +1165,7 @@ function delFinalisation(element) {
         console.log(error);
     }
 }
+
 /***DELETE BOOK DISCOUNTS (update with null)***/
 
 function delDiscount(element) {
@@ -2198,23 +2199,37 @@ function commentEdit(element) {
         ajax.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 let td = document.getElementById(element.name);
-                if(td){
-                //Creating text area for comment modification
-                let newElement = document.createElement("textarea");
-                newElement.setAttribute("class", "userCommentText");
-                newElement.setAttribute("rows", "10");
-                newElement.setAttribute("cols", "80");
-                newElement.setAttribute("name","comment")
-                newElement.innerHTML = td.textContent;
-                td.replaceWith(newElement);
-                let p= document.createElement("p");
-                p.setAttribute("id", "commentMsg");
-                let button = document.createElement('div');
-                button.setAttribute("class","commentEditDiv")
-                button.innerHTML=this.responseText;
-                newElement.after(button)
-                button.after(p);
-            }
+                if (td) {
+                    //Creating text area for comment modification
+                    let newElement = document.createElement("textarea");
+                    newElement.setAttribute("class", "userCommentText");
+                    newElement.setAttribute("rows", "10");
+                    newElement.setAttribute("cols", "80");
+                    newElement.setAttribute("name", "comment")
+                    newElement.innerHTML = td.textContent;
+                    td.replaceWith(newElement);
+                    let p = document.createElement("p");
+                    p.setAttribute("id", "commentMsg");
+                    let button = document.createElement('div');
+                    button.setAttribute("class", "commentEditDiv")
+                    button.innerHTML = this.responseText;
+                    newElement.after(button)
+                    button.after(p);
+                    //Removing textarea if user clicks on edit again
+                } else if(document.getElementsByClassName("userCommentText")){
+                   deleteText=document.getElementsByClassName("userCommentText");
+                   let button=document.getElementsByClassName("commentEditDiv");
+                   for(let i=0;i<deleteText.length;i++){
+                   let td = document.createElement("p");
+                   td.setAttribute("id",element.name);
+                   td.setAttribute("class","userComment");
+                   td.innerHTML=deleteText[i].value;
+                   
+                    deleteText[i].replaceWith(td);
+                    button[i].remove();
+                   }
+                  
+                }
 
             } else {
                 return;
@@ -2228,22 +2243,22 @@ function commentEdit(element) {
     }
 }
 /***Submitting textarea comment to server and final update to db***/
-function commentUpdate(){
-    let newComment=document.getElementsByClassName("userCommentText");
+function commentUpdate() {
+    let newComment = document.getElementsByClassName("userCommentText");
     let formData = new FormData();
-    for(let i=0; i<newComment.length;i++){
-    formData.append(newComment[i].name, newComment[i].value);
-    }try {
+    for (let i = 0; i < newComment.length; i++) {
+        formData.append(newComment[i].name, newComment[i].value);
+    } try {
         let ajax = new XMLHttpRequest();
         ajax.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
 
-                document.getElementById("commentMsg").innerHTML=this.responseText;
-      
-              
+                document.getElementById("commentMsg").innerHTML = this.responseText;
+
+
             }
-        }   
-            
+        }
+
         ajax.open("POST", "server");
         ajax.send(formData);
     } catch (error) {
@@ -2252,6 +2267,143 @@ function commentUpdate(){
 
 }
 
+/***DELETE BOOK COMMENTS CONFIRMATION***/
+
+function delCommentIntersection(element) {
+    let formData = new FormData();
+    formData.append(element.name, element.value);
+    try {
+        let ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function () {
+
+            if (this.readyState == 4 && this.status == 200) {
+                if (document.getElementById("delete")) {
+                    return;
+                }
+                let td = document.createElement('P');//CREATING ELEMENT THAT WILL SHOW SERVER RESPONSE DATA
+                td.setAttribute("id", "delete")
+                td.innerHTML = this.response;
+                element.after(td);
+                if (document.getElementById("delete")) {
+                    document.getElementById("delete").scrollIntoView(false);
+                }
+            } else {
+                if (document.getElementById("delete")) {
+                    return;
+                }
+            }
+        }
+
+        ajax.open("POST", "Methods/Controllers/deleteControllerSmall");
+        ajax.send(formData);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+/***DELETE COMMENTS FINALISATION***/
+function delCommentFinalisation(element) {
+    let formData = new FormData();
+    formData.append(element.name, element.value);
+    try {
+        let ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function () {
+
+            if (this.readyState == 4 && this.status == 200) {
+                let td = document.createElement('P');//CREATING ELEMENT THAT WILL SHOW SERVER RESPONSE DATA
+                td.setAttribute("id", "delete2nd")
+                if(!document.getElementById("delete2nd")){
+                td.innerHTML = this.response;
+                let elementNo = document.getElementById("styleId");
+                elementNo.after(td);
+                if (element.name == "noComm") {
+                    if (document.getElementById("delete2nd")) {
+                        document.getElementById("delete2nd").scrollIntoView(false);
+                    }
+                    window.setTimeout(function () {
+
+                        let pId = document.getElementById("delete");
+                        pId.remove();
+
+                    }, 2000) //Reloading page automatically after final response
+                } else {
+                    if (document.getElementById("delete2nd")) {
+                        document.getElementById("delete2nd").scrollIntoView(false);
+                    }
+                    window.setTimeout(function () {
+                       location.reload();
+                    }, 2000)
+                }
+            }
+        }
+    }
+        ajax.open("POST", "Methods/Controllers/deleteController");
+        ajax.send(formData);
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+/***Onload function for comments in admin panel***/
+function selectAllComments() {
+        /***Select all button logic for comments***/
+        let td = document.getElementById("selectAll");
+        if (td) {
+            td.addEventListener('click', function (e) {
+                e.preventDefault();
+    
+                let selects = document.getElementsByClassName('checked');
+                for (let i = 0; i < selects.length; i++) {
+    
+                    if (selects[i].checked == 0) {
+                        selects[i].checked = true;
+                    } else {
+                        selects[i].checked = false;
+                    }
+    
+                }
+    
+            });
+        }
+/***Deleting comments by admin****/
+if (document.getElementById("deleteSelec")) {
+    document.getElementById("deleteSelec").addEventListener('click', function (e) {
+        e.preventDefault();
+
+        let selectedCustomers = document.getElementsByClassName("checked");
+        let formData = new FormData;
+        for (let i = 0; i < selectedCustomers.length; i++) {
+            if (selectedCustomers[i].checked == 1) {
+                formData.append(selectedCustomers[i].name, selectedCustomers[i].value)
+
+                try {
+
+                    let ajax = new XMLHttpRequest();
+                    ajax.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+
+                            let output = document.getElementById("outputTransDel");
+                            output.innerHTML = this.response;
+                            if (document.getElementById("outputTransDel")) {
+                                document.getElementById("outputTransDel").scrollIntoView(false);
+                            }
+
+                        }
+                    }
+
+                    ajax.open("POST", "../Controllers/commentController");
+                    ajax.send(formData);
+
+                } catch (error) {
+                    console.log(error);
+                }
+
+            }
+        }
+    });
+}
+}
 
 //Unsetting some of the objects
 message = null;
@@ -2291,8 +2443,9 @@ paypal = null;
 var refreshIntervalId = null;
 prevButton = null;
 nextButton = null;
-newComment=null;
-newElement=null;
-button=null;
+newComment = null;
+newElement = null;
+button = null;
+pId = null;
 
 

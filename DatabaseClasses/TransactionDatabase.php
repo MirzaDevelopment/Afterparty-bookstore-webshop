@@ -287,6 +287,7 @@ class TransactionDatabase implements TransactionInterface
       date_default_timezone_set('Europe/Sarajevo');
       $error = $e->getMessage() . " " . date("F j, Y, g:i a");
       error_log($error . PHP_EOL, 3, "Methods/Logs/logs.txt");
+      $connection->rollBack();
       echo "Failed to comply. Check log for more detail!";
     }
   }
@@ -320,6 +321,7 @@ class TransactionDatabase implements TransactionInterface
       date_default_timezone_set('Europe/Sarajevo');
       $error = $e->getMessage() . " " . date("F j, Y, g:i a");
       error_log($error . PHP_EOL, 3, "Methods/Logs/logs.txt");
+      $connection->rollBack();
       echo "Failed to comply. Check log for more detail!";
     }
   }

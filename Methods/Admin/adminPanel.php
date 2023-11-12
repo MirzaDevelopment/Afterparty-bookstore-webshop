@@ -88,7 +88,11 @@ header("Expires: 0"); // Proxies.
                         <a href="userSearch"><img src="../img/user-profile.png" alt="modify-user-icon" width="80" height="80"></a>
                         <p class="userText">Modify users</p>
                     </div>
-
+                    <div class="sublinkContainerMessage1">
+                        <!--link to comments.php shown as icon (search and modify user data)-->
+                        <a href="comments"><img src="../img/commentsAdmin.png" alt="comments-panel" width="80" height="80"></a>
+                        <p class="userText">User comments</p>
+                    </div>
                 </div>
             </div>
             <div class="mainLinks">

@@ -30,5 +30,16 @@ if (isset($_POST["yesCat"])&&!empty($_POST["yesCat"])){
   echo "<div id='catNoDel'>Category was not deleted! Reloading page...</div>";
   echo ("<meta http-equiv='refresh' content='2'>"); //Refresh by HTTP 'meta'    ;
 }
+if (isset($_POST["yesComm"])&&!empty($_POST["yesComm"])){
+
+  require __DIR__."../../../Interfaces/CommentInterface.php";
+  require __DIR__."../../../DatabaseClasses/CommentDatabase.php";
+      require __DIR__."../../../config.php";
+  $comment_id=$_SESSION['comment_id'];
+  CommentDatabase::delComments($comment_id);
+
+} else if (isset($_POST["noComm"]) && !empty($_POST["noComm"])){
+  echo "Comment not deleted!";
+} 
 
 unset($_SESSION['key']);

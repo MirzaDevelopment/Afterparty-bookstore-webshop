@@ -392,6 +392,7 @@ class Database implements QueryInterface //Class that holds book management quer
       date_default_timezone_set('Europe/Sarajevo');
       $error = $e->getMessage() . " " . date("F j, Y, g:i a");
       error_log($error . PHP_EOL, 3, "../Logs/logs.txt");
+      $connection->rollBack();
       echo "Failed to insert data into Database check log for more detail!";
     }
     $connection = null;
@@ -442,6 +443,7 @@ class Database implements QueryInterface //Class that holds book management quer
       date_default_timezone_set('Europe/Sarajevo');
       $error = $e->getMessage() . " " . date("F j, Y, g:i a");
       error_log($error . PHP_EOL, 3, "../Logs/logs.txt");
+      $connection->rollBack();
       echo "Failed to insert data into Database check log for more detail!";
     }
     $connection = null;

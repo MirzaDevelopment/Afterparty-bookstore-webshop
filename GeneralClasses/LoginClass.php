@@ -67,8 +67,10 @@ class LoginClass
             echo "<div class='adminDot'></div>";
             echo "</div>";
           	echo "<a id='shop' href='../index'>Webshop</a>";
+           echo "<div class= 'styleContainer'>";
             echo "<form action='userPanel' method='POST'><input type='Submit' name='Logout' class='logoutUser' value='Log out'></input></form>"; //Logout button 
             echo "<form action='../Controllers/updateControllerSmall' method='GET'><input class='updateUser' type='Submit' name='userUpdate' value='Update'></input></form>"; //User update data button
+            echo "</div>";
             echo "</div>";
             echo "</header>";
             //Check if session with NORMAL ADMIN exsists in User panel. If it doesn't return to loginPage.php

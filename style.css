@@ -155,7 +155,7 @@ input#transSearch,
 input.updateUser,
 input#submitComment,
 input#commentEdit,
-button#commentDelete {
+input#commentDelete, button#deleteSelec, button#selectAll {
   border-style: none;
   padding: 5px;
   border-radius: 5px 5px 5px 5px;
@@ -182,7 +182,7 @@ input.updateUser:hover,
 input.logoutUser:hover,
 input#submitComment:hover,
 input#commentEdit:hover,
-button#commentDelete:hover {
+input#commentDelete:hover, button#deleteSelec:hover, button#selectAll:hover  {
   cursor: pointer;
   -webkit-transition: background-color 200ms linear;
   -ms-transition: background-color 200ms linear;
@@ -388,7 +388,7 @@ label[for="commentId"],
 a.loginComment,
 input#submitComment,
 input#commentEdit,
-button#commentDelete {
+input#commentDelete,button#deleteSelec, button#selectAll {
   font-size: 1.2rem;
 }
 div.titlePriceDisc,
@@ -973,10 +973,17 @@ div.buttonCommentCont {
   grid-template-columns: 1fr auto;
   column-gap: 10px;
   margin-top: 15px;
+  justify-items: end;
+}
+div.buttonCommentCont p#delete{
+  position: relative;
+  left: 110px;
+  background: #faebd759;
+  color: crimson;
 }
 input#commentEdit,
-button#commentDelete {
-  width: 80px;
+input#commentDelete {
+  width: 100px;
   margin-bottom: 10px;
 }
 div.commentEditDiv {
@@ -2160,6 +2167,17 @@ div.afterRegMessageUser {
   align-items: center;
   padding: 5px;
   column-gap: 8px;
+
+}
+div.afterRegMessageUser{
+  flex-direction: column;
+  row-gap: 5px;
+}
+div.styleContainer{
+  display: flex;
+  column-gap: 5px;
+  justify-content: flex-start;
+  flex-direction: row;
 }
 div#animate {
   position: relative;
@@ -2408,7 +2426,23 @@ body.adminBody div.goBackMsg a img {
   width: 40px;
   height: 40px;
 }
+/***Admin comment panel***/
+div.buttonCont {
+  position:relative;
+  align-self: flex-end;
 
+}
+div.mainCommentContainer img.shroudImg{
+  margin-bottom: 15px;
+  margin-top: -15px;
+}
+button#selectAll{
+  margin-right: 15px;
+}
+div.mainCommentContainer input.checked {
+  position: relative;
+  top: 50px;
+}
 /***Messages/questions panel***/
 body div.megaQuestionContainer {
   display: flex;
@@ -2876,6 +2910,12 @@ p.messageDel {
   section nav a[href="#contact"] {
     font-size: 1.6rem;
   }
+  div.afterRegMessageAdmin,
+  div.afterRegMessageUser {
+  
+    flex-direction: row;
+   
+  }
   section.frontSection {
     background-position: bottom;
   }
@@ -2891,6 +2931,7 @@ p.messageDel {
     height: 600px;
     max-height: 600px;
   }
+
   div.discountContainer ~ a[href*="preview"] > div.shroudCont > div.shroud {
     width: 100%;
     right: 0.8px;
@@ -3166,10 +3207,10 @@ p.messageDel {
   .commentBody,
   input#submitComment,
   input#commentEdit,
-  button#commentDelete,
+  input#commentDelete,button#deleteSelec, button#selectAll,
   span.badWords,
   div.mainCommentContainer p.userComment,
-  textarea.userCommentText {
+  textarea.userCommentText, p#delete2nd {
     font-size: 1.5rem;
   }
   section.notice p {
@@ -3880,7 +3921,7 @@ p.messageDel {
   input#transSearch,
   table#mainTableStats tbody tr th,
   table#mainTable tr td,
-  span.previewDesc p {
+  span.previewDesc p,p#delete2nd {
     font-size: 1.8rem;
   }
   /***Select tag fix for Firefox***/

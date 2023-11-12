@@ -110,3 +110,7 @@ When you login you have complete access to all features in superadmin panel.<br/
 3. Added insert comment functionality by logged in users with small profanity filter.
 4. Added comments listing below the corresponding books with comment authors and timestamps of the published comment.
 5. Added edit comment functionality for logged in users to edit their comment.
+6. Added delete comment functionality for logged in user.
+7. Admin comment management- display all comments or search and display comments for specific book or comments made by specific user name.
+8. Delete single or multiple comments by admin in comment panel.
+

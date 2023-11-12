@@ -17,6 +17,9 @@ $_SESSION['key'] = $kljuc; //Storing key in session!
 if ($value == "Slider") {
   $book_id = $kljuc;
   Slider::sliderDelete($book_id);
+  }else if($value=="Remove"){
+  $_SESSION['comment_id']=$_SESSION['key'];
+  Form::confirmationCommentCategory(); //Calling confirmation method!
   /***Category delete First message***/
 } else if ((int)$_SESSION['key'] && $value != "Update" && $value != "x") {
   echo "Data row with the unique id: " . $kljuc . " will be deleted!<br><br>"; //Making sure user wants to delete book with that key!

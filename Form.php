@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 class Form
-{//CLASS USED MOSTLY FOR FORM STRUCTURE GENERATION 
+{ //CLASS USED MOSTLY FOR QUICK RENDER OF UPDATES AND DELETE FORMS OF BOOKS OR USERS (SOME WITH AJAX CALLS)
 
     private $action;
     private $method;
@@ -93,7 +93,7 @@ class Form
     }
 
 
-    /**********************************************************ROWS DELETE CONFIRMATION METHOD FOR BOOKS****************************************************************/
+    /***ROWS DELETE CONFIRMATION METHOD FOR BOOKS***/
     public static function confirmationRadio()
     {
         $radioConf = array(
@@ -108,7 +108,7 @@ class Form
         }
     }
 
-    /**********************************************************ROWS DELETE CONFIRMATION METHOD FOR CATEGORIES****************************************************************/
+    /***ROWS DELETE CONFIRMATION METHOD FOR CATEGORIES***/
     public static function confirmationDelCategory()
     {
         $radioConf = array(
@@ -122,6 +122,21 @@ class Form
             echo $array;
         }
     }
+          /***ROWS DELETE CONFIRMATION METHOD FOR COMMENTS***/
+
+        public static function confirmationCommentCategory()
+        {
+            $radioConf = array(
+                "labelA" => '<label for=submit1>Are you sure you want to remove your comment?</label><br><br>',
+                "submit1" => '<input class="deleteCat" type=submit name="yesComm" value="Yes" onclick="delCommentFinalisation(this)">',
+                "submit2" => '<input class="deleteCat" id="styleId" type=submit name="noComm" value="No" onclick="delCommentFinalisation(this)">'
+            );
+    
+            foreach ($radioConf as $array) {
+    
+                echo $array;
+            }
+        }
     /***ROWS DELETE CONFIRMATION METHOD FOR USERS***/
     public static function confirmationRadioUser()
     {

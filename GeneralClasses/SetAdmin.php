@@ -581,4 +581,15 @@ class SetAdmin //VARIABLE SETTING CLASS WITH TRAITS
             $objekat->selectSearchCustomers($user_input);
         }
     }
+      /***Variable setting for comment search panel***/
+    public function varSearchSettingComment():void
+    {
+
+        if (isset($_POST['commSearch'])) {
+            $user_input = $this->commCleaning();
+            $_SESSION['userInput'] = $user_input;
+            $objekat = new CommentSelectDatabase;
+            $objekat->selectFilterCommentsAdmin($user_input);
+        }
+    }
 }

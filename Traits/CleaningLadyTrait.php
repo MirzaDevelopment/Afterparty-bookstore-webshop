@@ -340,4 +340,11 @@ trait CleaningLadyTrait
       return $userInputClean;
   
       }
+      //Comment search input sanitation 
+    public function commCleaning(): string
+    {
+        $userInput = trim($_POST['commSearch']);
+        $userInputClean = htmlspecialchars($userInput, ENT_QUOTES);
+        return $userInputClean;
+    }
 }

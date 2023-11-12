@@ -20,6 +20,7 @@ if (empty($_SESSION['cart'])) {
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  	<meta name="description" content="Details, comments and average reader score.">
     <meta name="description" content="Details, reviews and average reader score.">
     <!--Removing favicon icon console error-->
     <link rel="icon" href="data:;base64,=">
@@ -61,6 +62,8 @@ require __DIR__."/Traits/SelectUserTrait.php";
 require __DIR__."/GeneralClasses/SetUser.php"; //Variable setting class include
 require __DIR__ . "/Interfaces/CommentInterface.php";
 require __DIR__ . "/DatabaseClasses/CommentDatabase.php";
+require __DIR__ . "/Interfaces/CommentSelectInterface.php";
+require __DIR__ . "/DatabaseClasses/CommentSelectDatabase.php";
 require __DIR__ . "/GeneralClasses/CommentsExtendsDatabase.php";
 //Setting class for insert comments
 $objekatSet = new SetUser();
@@ -86,7 +89,7 @@ if(isset($_SESSION['status']) && $_SESSION['status'] == 2 || isset($_SESSION['st
 }
 echo "<br>";
 echo "<div class='mainCommentContainer'>";
-Comments::selectAllComments($_SESSION['id']);
+CommentSelectDatabase::selectAllComments($_SESSION['id']);
 echo "</div>";
 echo "</section>";
             ?>
