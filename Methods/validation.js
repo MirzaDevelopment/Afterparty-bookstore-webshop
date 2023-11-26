@@ -399,14 +399,14 @@ function mailReset() {
 function previewFunction(){
 
     if (document.getElementById('failComment')) {
-        let messages = document.getElementById('failComment');
         
+        let messages = document.getElementById('failComment');
             messages.style.transition = "opacity 5s linear"
             messages.style.opacity = "0";
             setTimeout(function () {
             messages.remove();
-            }, 3000);
-            let focusError4 = document.getElementById('failComment');
+            }, 5000);
+            let focusError4 = document.getElementById('commentAnchor');
             focusError4.scrollIntoView(false);    
     }
 
@@ -416,13 +416,14 @@ function previewFunction(){
         messages.style.opacity = "0";
             setTimeout(function () {
                 messages.remove();
-            }, 3000);
+            }, 5000);
           
         
-        let focusError1 = document.getElementById('latest');
+        let focusError1 = document.getElementById('commentAnchor');
         focusError1.scrollIntoView(false);
     
         
+
 
 }
 }

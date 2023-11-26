@@ -198,7 +198,7 @@ public static function selectFilterCommentsAdmin($user_input):void{
 //Select all comments below the chosen book on book preview
 public static function selectAllComments($book_id):void
 {
-require "ConnectPdoAdmin.php";
+require "Namespace3.php";
 try{
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = $connection->prepare("SELECT users.user_name, books.book_title, books.book_id, comments.comment_body, comments.comment_id, comments.comment_created FROM users JOIN comments ON comment_user_id=users.user_id JOIN books ON comment_book_id=books.book_id WHERE books.book_id=:bookId");

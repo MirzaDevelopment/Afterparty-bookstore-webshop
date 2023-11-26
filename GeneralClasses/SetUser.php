@@ -397,4 +397,12 @@ class SetUser //VARIABLE SETTING CLASS WITH TRAITS (USER PANEL)
 Comments::updateComment($comment_body,$comment_id);
 }
 }
+  /***Rating insert setting***/
+public function ratingInsertSetting(){
+    $rating_mark = (int)$_SESSION['rating'];
+    $rating_user_name = $_SESSION['username'];
+    $rating_book_id = $_SESSION['id'];
+    $rating_user_id = $this->getUser($rating_user_name);
+    Rating::insertRating($rating_user_id, $rating_mark, $rating_book_id);
+}
 }

@@ -438,3 +438,19 @@ require __DIR__ . "/GeneralClasses/CommentsExtendsDatabase.php";
     $setObjekat->commentUpdateSetting();
     echo ("<meta http-equiv='refresh' content='2'>"); //Refresh by HTTP 'meta'
 }
+//Rating insert by user
+if (!empty($_GET['rating'])) {
+    session_start();
+    $_SESSION['rating']=$_GET['rating'];
+    require_once __DIR__ . "/Traits/CleaningLadyTrait.php";
+    require_once __DIR__ . "/Traits/SelectUserTrait.php";
+    require_once __DIR__ . "/Traits/PreventDuplicateTrait.php";
+    require_once __DIR__ . "/config.php";
+    require_once __DIR__ . "/Traits/PasswordResetTrait.php"; //Password reset trait
+    require_once __DIR__ . "/GeneralClasses/SetUser.php";
+    require_once __DIR__ . "/DatabaseClasses/RatingDatabase.php";
+    require_once __DIR__ . "/GeneralClasses/RatingExtendsDatabase.php";
+    
+    $setObjekat = new SetUser();
+    $setObjekat->ratingInsertSetting();
+    }

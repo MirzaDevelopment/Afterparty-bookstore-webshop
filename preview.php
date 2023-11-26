@@ -54,6 +54,8 @@ require __DIR__ . "/config.php";
 require __DIR__ . "/Interfaces/UserBookSelectInterface.php";
 require __DIR__ . "/DatabaseClasses/BooksDatabase.php"; //Required for categories
 require __DIR__. "/Form.php";//Form for user comments
+require __DIR__ . "/DatabaseClasses/RatingDatabase.php";
+require __DIR__ . "/GeneralClasses/RatingExtendsDatabase.php";
 Booksdatabase::bookPreview($_SESSION['id']);
 require __DIR__."/Traits/CleaningLadyTrait.php"; 
 require __DIR__."/Traits/PreventDuplicateTrait.php"; 

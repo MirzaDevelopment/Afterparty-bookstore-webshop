@@ -925,9 +925,42 @@ class BooksDatabase implements UserBookSelectInterface
     echo "<span class=previewDesc><p>".$description."</p></span>";//For better stylisation.
     //To hide comment button
    if (isset($_SESSION['id'])&& isset($_SESSION['status'])) {
+     $book_id=$_SESSION['id'];
+    $user_name=$_SESSION['username'];
+   //Selecing rating for logged in user.
+    Rating::selectUserBookRating($book_id, $user_name);
+    if(!empty($_SESSION['average_rating'])){
+      $mark=$_SESSION['average_rating'];
+      $counter=0;
+      echo "<div id='ratingContId' class='ratingContainer'>";
+      echo "<p class='ratingLabel'>Your rating:</p>";
+      while($counter<$mark){
+        $counter++;
+       //Showing how many stars logged in user has given to the product
+        echo"<span id='1' class='fa fa-star faChecked'value='1' disabled></span>";
+      }
+      echo "</div>";
+    } else {
+      echo "<div id='ratingContId' class='ratingContainer'>";
+      echo"<span id='1' class='fa fa-star'value='1' onmouseover='starsChecked(this)' onclick='insertRating(this)'></span>";
+      echo"<span id='2' class='fa fa-star'value='2' onmouseover='starsChecked(this)'onclick='insertRating(this)'></span>";
+      echo"<span id='3' class='fa fa-star'value='3' onmouseover='starsChecked(this)'onclick='insertRating(this)'></span>";
+      echo"<span id='4' class='fa fa-star'value='4' onmouseover='starsChecked(this)'onclick='insertRating(this)'></span>";
+      echo"<span id='5' class='fa fa-star'value='5' onmouseover='starsChecked(this)'onclick='insertRating(this)'></span>";
+  
+      echo "</div>";
+    }
+    
+    //Rating stars
+    echo "<p class='ratingLabel'>Average user rating:</p>";
+    //Rendering AVERAGE book rating logged in user
+    Rating::selectRating($book_id);
     $formObject=new Form;
     $formObject->commentFormRender();
   } else {
+    echo "<p class='ratingLabel'>Average user rating:</p>";
+    //Rendering AVERAGE book rating logged out user
+    Rating::selectRating($book_id);
     echo "<a class='loginComment' href='loginPage.php?id={$_GET['id']}'>Leave a comment</a>";
   }
     echo "</div>";

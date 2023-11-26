@@ -1,4 +1,4 @@
-# Afterparty-bookstore-webshop v. 1.1.
+# Afterparty-bookstore-webshop v. 1.2.
 ## Description
 Completely custom-made Bookstore webshop with CMS system created using vanilla OOP PHP, JS, HTML, CSS, AJAX and PDO.<br/>
 Live link [Afterparty-bookstore](https://www.afterparty-bookstore.com/).<br/>
@@ -8,6 +8,7 @@ External libraries used:<br/>
 3. Vulcas/phpdotenv - used for proper reading of .env variables <br/>
 
 **The app is a personal and passion project that is intended to show my coding abilities. It is still, however, completely functional product that anyone can use to check and test out.**<br/><br/>
+You can complete the purchase process without any former registration. After that you can register on the app with your working mail and explore the books. You can leave comments and/or rating below the books. Also, your user panel should contain all your purchased books with dates of the purchase if you used the same mail in the purchase process.<br/>
 As mentioned above, some functionalities in this app might have been made "subpar" or different from "best practices" especially if I have already made similiar functionality somewhere else in the application.<br/> 
 Example for this is a book search form on the first page. For practice purpouse, it is deliberately made with multiple input fields user can use to search for a product (by author, or title, or price etc.). <br/>
 However later when Admin searches for a transaction, for example, a single search input field brings out any result that matches the keyword (customer name, mail, bought book etc.).<br/>
@@ -34,9 +35,16 @@ All the .css and .js files are minified in live for best performance. They are l
 18. Orders statistics. Top-selling product, and line chart that represents quantity and value of sold items visually.<br/>
 19. Customers panel with search, delete and restore functionality.<br/>
 20. Customers statistics - top customers with total value of their purchase.<br/>
-21. User/customer page that shows user purchases with details and dates of purchase, with ability to change user credentials.
+21. User/customer page that shows user purchases with details and dates of purchase, with ability to change user credentials.<br/>
+22. Detailed book preview with user comments for the book, and average book rating.
+23. Logged in users can leave comment, edit them at the spot, or eventually delete them. Comments made by logged in user are displayed differently.<br/>
+24. Small profanity filter is added for comments that prevents the "bad-word" comment to be uploaded.
+25. Added a 10 minute limit to prevent comment spam.<br/>
+26. Added admin panel for comments with search function and ability for admin to delete any comment. Comments can be searched by book title, or user name of comment author. Admin can delete multiple or single comment using one press of the button.<br/>
+27. Implemented rating system for logged in users. User can rate a book by using fontawesome icons from 1-5. Rating is then saved in database and displayed always for logged in user.<br/>
+28. Implemented a display of average book rating for each book.<br/>
 
-## Other features
+## Other general features
 1. All the security best-practices have been implemented. <br/>
 2. Email and password validation (both front and back) is also included. <br/>
 3. Web app has improved user experience (e.g. aplication shows immediately if the username or email is taken, and if email or password is not in a required format).<br/>
@@ -45,9 +53,7 @@ All the .css and .js files are minified in live for best performance. They are l
 6. Web application achieves 97+ score on google lighthouse test on performance, SEO and accessibility.
 
 ## Planned features
-1. Detailed book page with broader description, book rating, and reader comments.<br/>
-2. Comment management system with validation and profanity filter.<br/>
-3. "Similiar like this" carousel.<br/>
+1. "Similiar like this" carousel.<br/>
 
 ## Installation and requirements
 ## Installation notice
@@ -114,3 +120,6 @@ When you login you have complete access to all features in superadmin panel.<br/
 7. Admin comment management- display all comments or search and display comments for specific book or comments made by specific user name.
 8. Delete single or multiple comments by admin in comment panel.
 
+# Update to version 1.2.
+1. Added a book rating system for logged in users using fontawesome icons
+2. Added a display of average rating provided by users on the previewed book

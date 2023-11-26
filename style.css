@@ -22,6 +22,7 @@ img.libraryImg {
   top: 5%;
   opacity: 0.6;
 }
+
 body.insertBody {
   background-image: url("Methods/img/pexels-jess-bailey-designs-1018136(1).webp");
   background-repeat: no-repeat;
@@ -38,6 +39,7 @@ div.goBackMsgUserPanel {
   margin-top: 25px;
   text-align: center;
 }
+
 /***Margin auto***/
 body,
 div#selectAllQ,
@@ -155,7 +157,9 @@ input#transSearch,
 input.updateUser,
 input#submitComment,
 input#commentEdit,
-input#commentDelete, button#deleteSelec, button#selectAll {
+input#commentDelete,
+button#deleteSelec,
+button#selectAll {
   border-style: none;
   padding: 5px;
   border-radius: 5px 5px 5px 5px;
@@ -182,7 +186,9 @@ input.updateUser:hover,
 input.logoutUser:hover,
 input#submitComment:hover,
 input#commentEdit:hover,
-input#commentDelete:hover, button#deleteSelec:hover, button#selectAll:hover  {
+input#commentDelete:hover,
+button#deleteSelec:hover,
+button#selectAll:hover {
   cursor: pointer;
   -webkit-transition: background-color 200ms linear;
   -ms-transition: background-color 200ms linear;
@@ -360,7 +366,8 @@ td.desc,
 div.uploadContainerUser h2,
 input.delCategory,
 input.submitCategory,
-span#publisher {
+span#publisher,
+p.ratingLabel {
   font-size: 1.5rem;
 }
 div.reviews p,
@@ -388,7 +395,9 @@ label[for="commentId"],
 a.loginComment,
 input#submitComment,
 input#commentEdit,
-input#commentDelete,button#deleteSelec, button#selectAll {
+input#commentDelete,
+button#deleteSelec,
+button#selectAll, a[href*="preview"] {
   font-size: 1.2rem;
 }
 div.titlePriceDisc,
@@ -398,7 +407,8 @@ div.priceSlide,
 h1.cartHeading,
 body.userInsert h1.mainTitle,
 h1.statsTitle,
-h1.statsTitleCust {
+h1.statsTitleCust,
+span.ratingMark {
   font-size: 2rem;
 }
 div.descFront2,
@@ -967,6 +977,40 @@ span.previewDesc {
     rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   padding: 20px;
 }
+div.smallPreviewCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/***Rating***/
+
+div.ratingContainer span.fa {
+  color: #80808054;
+}
+div.ratingContainer span.fa:hover {
+  cursor: pointer;
+}
+div.ratingContainer span.faChecked {
+  color: orange;
+}
+
+span.fa {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+span.ratingMark {
+  background: aquamarine;
+  padding: 15px;
+  border-radius: 15px;
+}
+p#ratingStyle {
+  position: absolute;
+  font-size: 1.5rem;
+  margin: unset;
+  color: orange;
+}
+
 div.buttonCommentCont {
   align-self: flex-end;
   display: grid;
@@ -975,7 +1019,7 @@ div.buttonCommentCont {
   margin-top: 15px;
   justify-items: end;
 }
-div.buttonCommentCont p#delete{
+div.buttonCommentCont p#delete {
   position: relative;
   left: 110px;
   background: #faebd759;
@@ -1034,8 +1078,7 @@ div.mainCommentContainer div.paginationContainer div.next {
   background-image: url(Methods/img/wave2.svg);
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
   border-radius: 15px 15px 15px 15px;
   margin: 15px;
   margin-top: 0px;
@@ -1093,7 +1136,7 @@ span.badWords {
 }
 .commentContainer {
   margin: 5px;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 div.commentContainer form {
   display: flex;
@@ -1113,8 +1156,8 @@ body.previewBody div.prevContainer {
   background-image: url(Methods/img/wave\(1\).svg);
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: cover;
-  background-attachment: fixed;
+ 
+  background-attachment: scroll;
 }
 div.prevContainer div.grid-item {
   background: unset;
@@ -2167,13 +2210,12 @@ div.afterRegMessageUser {
   align-items: center;
   padding: 5px;
   column-gap: 8px;
-
 }
-div.afterRegMessageUser{
+div.afterRegMessageUser {
   flex-direction: column;
   row-gap: 5px;
 }
-div.styleContainer{
+div.styleContainer {
   display: flex;
   column-gap: 5px;
   justify-content: flex-start;
@@ -2428,15 +2470,17 @@ body.adminBody div.goBackMsg a img {
 }
 /***Admin comment panel***/
 div.buttonCont {
-  position:relative;
+  position: relative;
   align-self: flex-end;
-
 }
-div.mainCommentContainer img.shroudImg{
+form[action="comments"] > input {
+  text-align: center;
+}
+div.mainCommentContainer img.shroudImg {
   margin-bottom: 15px;
   margin-top: -15px;
 }
-button#selectAll{
+button#selectAll {
   margin-right: 15px;
 }
 div.mainCommentContainer input.checked {
@@ -2854,6 +2898,11 @@ p.messageDel {
   section nav a[href="#contact"] {
     font-size: 1.4rem;
   }
+  body.previewBody div.prevContainer,.mainCommentContainer {
+    background-attachment: fixed;
+    background-size: cover;
+
+  }
   section.quoteNdQuestion div.quote img.questionPortrait {
     height: auto;
   }
@@ -2912,9 +2961,7 @@ p.messageDel {
   }
   div.afterRegMessageAdmin,
   div.afterRegMessageUser {
-  
     flex-direction: row;
-   
   }
   section.frontSection {
     background-position: bottom;
@@ -3207,10 +3254,13 @@ p.messageDel {
   .commentBody,
   input#submitComment,
   input#commentEdit,
-  input#commentDelete,button#deleteSelec, button#selectAll,
+  input#commentDelete,
+  button#deleteSelec,
+  button#selectAll,
   span.badWords,
   div.mainCommentContainer p.userComment,
-  textarea.userCommentText, p#delete2nd {
+  textarea.userCommentText,
+  p#delete2nd,a[href*="preview"] {
     font-size: 1.5rem;
   }
   section.notice p {
@@ -3399,7 +3449,8 @@ p.messageDel {
   div.uploadContainerUser form label,
   select.userUpd,
   p.userUploadMsg,
-  p.emph {
+  p.emph,
+  p.ratingLabel {
     font-size: 1.8rem;
   }
   h2.latestEdition:first-of-type,
@@ -3921,7 +3972,8 @@ p.messageDel {
   input#transSearch,
   table#mainTableStats tbody tr th,
   table#mainTable tr td,
-  span.previewDesc p,p#delete2nd {
+  span.previewDesc p,
+  p#delete2nd,a[href*="preview"] {
     font-size: 1.8rem;
   }
   /***Select tag fix for Firefox***/

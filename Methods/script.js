@@ -2216,19 +2216,19 @@ function commentEdit(element) {
                     newElement.after(button)
                     button.after(p);
                     //Removing textarea if user clicks on edit again
-                } else if(document.getElementsByClassName("userCommentText")){
-                   deleteText=document.getElementsByClassName("userCommentText");
-                   let button=document.getElementsByClassName("commentEditDiv");
-                   for(let i=0;i<deleteText.length;i++){
-                   let td = document.createElement("p");
-                   td.setAttribute("id",element.name);
-                   td.setAttribute("class","userComment");
-                   td.innerHTML=deleteText[i].value;
-                   
-                    deleteText[i].replaceWith(td);
-                    button[i].remove();
-                   }
-                  
+                } else if (document.getElementsByClassName("userCommentText")) {
+                    deleteText = document.getElementsByClassName("userCommentText");
+                    let button = document.getElementsByClassName("commentEditDiv");
+                    for (let i = 0; i < deleteText.length; i++) {
+                        let td = document.createElement("p");
+                        td.setAttribute("id", element.name);
+                        td.setAttribute("class", "userComment");
+                        td.innerHTML = deleteText[i].value;
+
+                        deleteText[i].replaceWith(td);
+                        button[i].remove();
+                    }
+
                 }
 
             } else {
@@ -2313,31 +2313,31 @@ function delCommentFinalisation(element) {
             if (this.readyState == 4 && this.status == 200) {
                 let td = document.createElement('P');//CREATING ELEMENT THAT WILL SHOW SERVER RESPONSE DATA
                 td.setAttribute("id", "delete2nd")
-                if(!document.getElementById("delete2nd")){
-                td.innerHTML = this.response;
-                let elementNo = document.getElementById("styleId");
-                elementNo.after(td);
-                if (element.name == "noComm") {
-                    if (document.getElementById("delete2nd")) {
-                        document.getElementById("delete2nd").scrollIntoView(false);
-                    }
-                    window.setTimeout(function () {
+                if (!document.getElementById("delete2nd")) {
+                    td.innerHTML = this.response;
+                    let elementNo = document.getElementById("styleId");
+                    elementNo.after(td);
+                    if (element.name == "noComm") {
+                        if (document.getElementById("delete2nd")) {
+                            document.getElementById("delete2nd").scrollIntoView(false);
+                        }
+                        window.setTimeout(function () {
 
-                        let pId = document.getElementById("delete");
-                        pId.remove();
+                            let pId = document.getElementById("delete");
+                            pId.remove();
 
-                    }, 2000) //Reloading page automatically after final response
-                } else {
-                    if (document.getElementById("delete2nd")) {
-                        document.getElementById("delete2nd").scrollIntoView(false);
+                        }, 2000) //Reloading page automatically after final response
+                    } else {
+                        if (document.getElementById("delete2nd")) {
+                            document.getElementById("delete2nd").scrollIntoView(false);
+                        }
+                        window.setTimeout(function () {
+                            location.reload();
+                        }, 2000)
                     }
-                    window.setTimeout(function () {
-                       location.reload();
-                    }, 2000)
                 }
             }
         }
-    }
         ajax.open("POST", "Methods/Controllers/deleteController");
         ajax.send(formData);
 
@@ -2347,62 +2347,146 @@ function delCommentFinalisation(element) {
 }
 /***Onload function for comments in admin panel***/
 function selectAllComments() {
-        /***Select all button logic for comments***/
-        let td = document.getElementById("selectAll");
-        if (td) {
-            td.addEventListener('click', function (e) {
-                e.preventDefault();
-    
-                let selects = document.getElementsByClassName('checked');
-                for (let i = 0; i < selects.length; i++) {
-    
-                    if (selects[i].checked == 0) {
-                        selects[i].checked = true;
-                    } else {
-                        selects[i].checked = false;
-                    }
-    
-                }
-    
-            });
-        }
-/***Deleting comments by admin****/
-if (document.getElementById("deleteSelec")) {
-    document.getElementById("deleteSelec").addEventListener('click', function (e) {
-        e.preventDefault();
+    /***Select all button logic for comments***/
+    let td = document.getElementById("selectAll");
+    if (td) {
+        td.addEventListener('click', function (e) {
+            e.preventDefault();
 
-        let selectedCustomers = document.getElementsByClassName("checked");
-        let formData = new FormData;
-        for (let i = 0; i < selectedCustomers.length; i++) {
-            if (selectedCustomers[i].checked == 1) {
-                formData.append(selectedCustomers[i].name, selectedCustomers[i].value)
+            let selects = document.getElementsByClassName('checked');
+            for (let i = 0; i < selects.length; i++) {
 
-                try {
-
-                    let ajax = new XMLHttpRequest();
-                    ajax.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-
-                            let output = document.getElementById("outputTransDel");
-                            output.innerHTML = this.response;
-                            if (document.getElementById("outputTransDel")) {
-                                document.getElementById("outputTransDel").scrollIntoView(false);
-                            }
-
-                        }
-                    }
-
-                    ajax.open("POST", "../Controllers/commentController");
-                    ajax.send(formData);
-
-                } catch (error) {
-                    console.log(error);
+                if (selects[i].checked == 0) {
+                    selects[i].checked = true;
+                } else {
+                    selects[i].checked = false;
                 }
 
             }
-        }
-    });
+
+        });
+    }
+    /***Deleting comments by admin****/
+    if (document.getElementById("deleteSelec")) {
+        document.getElementById("deleteSelec").addEventListener('click', function (e) {
+            e.preventDefault();
+
+            let selectedCustomers = document.getElementsByClassName("checked");
+            let formData = new FormData;
+            for (let i = 0; i < selectedCustomers.length; i++) {
+                if (selectedCustomers[i].checked == 1) {
+                    formData.append(selectedCustomers[i].name, selectedCustomers[i].value)
+
+                    try {
+
+                        let ajax = new XMLHttpRequest();
+                        ajax.onreadystatechange = function () {
+                            if (this.readyState == 4 && this.status == 200) {
+
+                                let output = document.getElementById("outputTransDel");
+                                output.innerHTML = this.response;
+                                if (document.getElementById("outputTransDel")) {
+                                    document.getElementById("outputTransDel").scrollIntoView(false);
+                                }
+
+                            }
+                        }
+
+                        ajax.open("POST", "../Controllers/commentController");
+                        ajax.send(formData);
+
+                    } catch (error) {
+                        console.log(error);
+                    }
+
+                }
+            }
+        });
+    }
 }
+//Changing colors of rating stars on hover
+
+function starsChecked(element) {
+    let length = element.id;
+    let stars = document.getElementsByClassName("fa-star");
+    if (stars) {
+        for (let i = 0; i < stars.length; i++) {
+            for (let i = 0; i < length; i++) {
+                stars[i].classList.add("faChecked");
+
+            }
+
+
+        }
+        let stars2 = document.getElementsByClassName("faChecked");
+        for (let i = 0; i < stars2.length; i++) {
+
+            if (length <= stars2.length) {
+                for (let z = length; z < stars2.length; z++) {
+                    stars2[z].classList.remove("faChecked");
+                }
+            }
+        }
+        //Removing the checke stars on mouseleave
+        let stars3 = document.getElementsByClassName("fa");
+        let starsContainer = document.getElementById("ratingContId");
+        starsContainer.addEventListener("mouseleave", function () {
+            for (let i = 0; i < stars3.length; i++) {
+      			window.setTimeout(function () {
+                    if (!document.getElementById("ratingStyle")) {
+                        stars3[i].classList.remove("faChecked");
+                    }
+                }, 200)
+            }
+        });
+
+    }
+}
+
+
+//Inserting book rating with ajax
+function insertRating(element) {
+    //Show the user how many stars are checked
+    let stars = document.getElementsByClassName("fa-star");
+    for (let i = 0; i < stars.length; i++) {
+
+        stars[i].onclick = null;
+        stars[i].onmouseover = null;
+    }
+
+    let length = element.id;
+    for (let i = 0; i < length; i++) {
+        stars[i].classList.add("faChecked");
+
+
+    }
+
+    try {
+        var ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function () {
+
+            if (this.readyState == 4 && this.status == 200) {
+                let cont = document.getElementById("ratingContId");
+                let td = document.createElement('P');
+                td.setAttribute("id", "ratingStyle")
+                td.innerHTML = this.responseText;
+                cont.append(td);
+                td.style.transition = "opacity 0.6s linear";
+                td.style.opacity = "1";
+                setTimeout(function () {
+                    td.style.transition = "opacity 2s linear";
+                    td.style.opacity = "0";
+
+                }, 500);
+
+            }
+        }
+        /***SENDING DATA TO server.php***/
+        ajax.open("POST", "server?rating=" + length);
+        ajax.send(length);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 //Unsetting some of the objects
@@ -2447,5 +2531,6 @@ newComment = null;
 newElement = null;
 button = null;
 pId = null;
+cont = null;
 
 
