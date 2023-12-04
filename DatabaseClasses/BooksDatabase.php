@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
- /***Class that contains SELECT queries towards Books database (for front page/guests) with chosen category books render**/
+ /***Class that contains SELECT queries towards Books database (what front page/guests see regarding books) with chosen category books render ***/
 class BooksDatabase implements UserBookSelectInterface
 {
   const limit = 5; //number of books per page (see pagination section below)
@@ -886,7 +886,18 @@ class BooksDatabase implements UserBookSelectInterface
     echo "<div class='prevContainer'>";
     echo "<div class='bookContainer'>";
     while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
-      if ($row['book_title']>0){
+      if ($row['book_title'] == null) {
+       echo"<meta http-equiv='refresh' content='4;url=https://www.afterparty-bookstore.com/index'>";
+        echo "<div class='smallContainer'>";
+        echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+        echo "<p id='empty'>Ooops...don't have books with that id sir. Returning to webshop...<p>";
+        echo "</div>";
+        unset($_SESSION['category']);
+        die();
+      }
+      $_SESSION['category'] = $row['book_category'];
+      $_SESSION['book_title'] = $row['book_title'];
+      $_SESSION['book_author'] = $row['book_title'];
       $description=$row['book_description'];
       $publisher=$row['book_publisher'];
       echo "<div class='grid-item'>";
@@ -917,8 +928,6 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='notStatus'> Not available </div>";
       }
       echo "</div>";
-    }
-    
     echo "<div class='smallPreviewCont'>";
     echo "<i class='fa fa-paperclip' style='padding:unset;' aria-hidden='true'></i>
     <span id='publisher' style='color:cadetblue;'>Published by ".$publisher."</span>";
@@ -970,6 +979,7 @@ class BooksDatabase implements UserBookSelectInterface
   }else{
   echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
   echo "<p id='empty'>Ooops...don't have books with that id sir.<p>";
+  unset($_SESSION['category']);
 
 }
   }catch (PDOException $e) {
@@ -1028,4 +1038,67 @@ class BooksDatabase implements UserBookSelectInterface
     }
     $connection = null;
   }
+   /***"Similiar like this Carousel***/
+  public static function selectCarousel():void
+  {
+    if(isset($_SESSION['category'])){
+    $book_category= $_SESSION['category'];
+    $book_author = $_SESSION['book_author'];
+    $book_title=$_SESSION['book_title'];
+    require "NamespaceAdmin4.php";
+    try { //Getting total amount of rows
+      $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $sql = $connection->prepare("SELECT books.book_id, books.book_pic, books.book_title, book_category.book_category FROM {$_ENV['DATABASE_NAME']}.books INNER JOIN {$_ENV['DATABASE_NAME']}.pricing ON books.book_id=pricing.book_id LEFT JOIN {$_ENV['DATABASE_NAME']}.book_category ON book_category.book_category_id=books.book_category_id WHERE NOT book_title=:bookTitle AND (book_category=:bookCategory OR books.book_author=:bookAuthor)");
+      $sql->execute(array('bookTitle'=>$book_title, 'bookCategory' => $book_category, 'bookAuthor' => $book_author));
+      if ($sql->rowCount()==0) {
+        return;
+      }else if ($sql->rowCount()>=1 && $sql->rowCount()<=3){
+        echo "<div class='containerSmall'>";
+        echo "<h2>More like this:</h2>";
+        while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
+    
+        $newPic = str_replace("../", "Methods/", $row['book_pic']);
+        $newPic = str_replace("class='shroudImg'", "class='shroudImgSmall'", $newPic );
+        echo "<a href='preview.php?id={$row['book_id']}'>$newPic</a>";
+      }
+      echo "</div>";
+      }else {
+      echo "<div class='container'>";
+      // Similiar like this slider 
+      echo "<h2>More like this:</h2>";
+      echo "<div class='slider-container bg-red' id='featured-products'>";
+      echo "<div class='slides-wrapper'>";
+      echo "<div class='slides-container'>";
+      echo "<ul class='slider-list'>";
+      while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
+        echo "<li class='slider-item'>";
+        $newPic = str_replace("../", "Methods/", $row['book_pic']);
+        $newPic = str_replace("width='200' height='300'", "", $newPic);
+        
+        echo "<a href='#'>";
+        echo "<a href='preview.php?id={$row['book_id']}'>$newPic</a>";
+        echo "</a>";
+        echo "</li>";
+        
+      } 
+     
+      echo "</ul>";
+      echo "</div>";
+      echo "</div>";
+     
+      echo "<div class='slider-arrows'>";
+      echo"<button type='button' class='slider-arrow-prev'>Prev</button>";
+       echo"<button type='button' class='slider-arrow-next'>Next</button>";
+      echo "</div>";
+      echo "</div>";
+      echo "</div>";
+      echo "<script src='assets/js/slider.js' defer></script>";
+    }
+    } catch (PDOException $e) {
+      $error = $e->getMessage() . " " . date("F j, Y, g:i a");
+      error_log($error . PHP_EOL, 3, "Methods/logs.txt");
+      echo "Failed to comply. Check log for more detail!";
+    }
+  }
+}
 }

@@ -6,6 +6,7 @@ External libraries used:<br/>
 1. PHP mailer - used for mail sending with google SMTP <br/>
 2. PDF Converter - used for converting transaction data into printable pdf document <br/>
 3. Vulcas/phpdotenv - used for proper reading of .env variables <br/>
+4. "Similiar like this" carousel on preview page is made by using the code from this repository https://github.com/alvand1399/product-carousel. Code is modified to work with the app products.<br/>
 
 **The app is a personal and passion project that is intended to show my coding abilities. It is still, however, completely functional product that anyone can use to check and test out.**<br/><br/>
 You can complete the purchase process without any former registration. After that you can register on the app with your working mail and explore the books. You can leave comments and/or rating below the books. Also, your user panel should contain all your purchased books with dates of the purchase if you used the same mail in the purchase process.<br/>
@@ -43,6 +44,7 @@ All the .css and .js files are minified in live for best performance. They are l
 26. Added admin panel for comments with search function and ability for admin to delete any comment. Comments can be searched by book title, or user name of comment author. Admin can delete multiple or single comment using one press of the button.<br/>
 27. Implemented rating system for logged in users. User can rate a book by using fontawesome icons from 1-5. Rating is then saved in database and displayed always for logged in user.<br/>
 28. Implemented a display of average book rating for each book.<br/>
+29. "Similiar like this" reponsive carousel that shows books that have same category or same author as the chosen book.<br/>
 
 ## Other general features
 1. All the security best-practices have been implemented. <br/>
@@ -123,3 +125,4 @@ When you login you have complete access to all features in superadmin panel.<br/
 # Update to version 1.2.
 1. Added a book rating system for logged in users using fontawesome icons
 2. Added a display of average rating provided by users on the previewed book
+3. Added "similiar like this" carousel on book preview.

@@ -80,8 +80,10 @@ p#commentMsg,
 #opis2,
 p#opis,
 div.shroudCont,
-p.inception,
+div.shroudContCat p.inception,
+p.inceptionCat,
 p.inceptionA,
+p.inceptionACat,
 div.status,
 div.notStatus,
 .notStatus,
@@ -159,7 +161,9 @@ input#submitComment,
 input#commentEdit,
 input#commentDelete,
 button#deleteSelec,
-button#selectAll {
+button#selectAll,
+button.slider-arrow-next,
+button.slider-arrow-prev {
   border-style: none;
   padding: 5px;
   border-radius: 5px 5px 5px 5px;
@@ -188,7 +192,9 @@ input#submitComment:hover,
 input#commentEdit:hover,
 input#commentDelete:hover,
 button#deleteSelec:hover,
-button#selectAll:hover {
+button#selectAll:hover,
+button.slider-arrow-next:hover,
+button.slider-arrow-prev:hover {
   cursor: pointer;
   -webkit-transition: background-color 200ms linear;
   -ms-transition: background-color 200ms linear;
@@ -397,7 +403,10 @@ input#submitComment,
 input#commentEdit,
 input#commentDelete,
 button#deleteSelec,
-button#selectAll, a[href*="preview"] {
+button#selectAll,
+a[href*="preview"],
+button.slider-arrow-next,
+button.slider-arrow-prev {
   font-size: 1.2rem;
 }
 div.titlePriceDisc,
@@ -780,6 +789,8 @@ input.cart {
 img.discountIconSlider {
   width: 65px;
   height: 70px;
+  z-index: 10000;
+  position: relative;
 }
 
 /* Hide the images by default */
@@ -894,7 +905,7 @@ div.discountContainer {
 }
 div.discIcon {
   position: absolute;
-  z-index: 5000;
+  z-index: 10000;
 }
 div.discountSlider {
   position: absolute;
@@ -902,7 +913,7 @@ div.discountSlider {
   top: 19.5px;
   font-size: 1.5rem;
   color: white;
-  z-index: 6000;
+  z-index: 11000;
 }
 
 /***Cart icon slider***/
@@ -976,6 +987,12 @@ span.previewDesc {
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
     rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   padding: 20px;
+}
+div.smallContainer {
+  position: absolute;
+  text-align: center;
+  padding: 25px;
+  border-radius: 25px;
 }
 div.smallPreviewCont {
   display: flex;
@@ -1156,7 +1173,7 @@ body.previewBody div.prevContainer {
   background-image: url(Methods/img/wave\(1\).svg);
   background-repeat: no-repeat;
   background-position: bottom;
- 
+
   background-attachment: scroll;
 }
 div.prevContainer div.grid-item {
@@ -1172,6 +1189,74 @@ body.previewBody div.headerStuff {
   flex-direction: row;
   justify-content: flex-end;
 }
+/***CAROUSEL***/
+/* Basic styles */
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+/* Slider styles */
+
+.slider-container {
+  padding: 10px 0;
+  background-color: white;
+  border: 1px solid #757575;
+  max-height: 100vh;
+}
+
+.slides-wrapper {
+  margin: auto;
+  overflow: hidden;
+}
+
+.slides-container {
+  padding: 0 10px;
+}
+
+.slider-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+  transition: 1s;
+  max-height: calc(100vh - 80px);
+}
+
+.slider-item {
+  background-color: white;
+  margin: 0 16px -4px 0;
+  min-height: 150px;
+}
+
+.slider-item img {
+  width: 100%;
+}
+
+.slider-arrows {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 25px;
+}
+
+div.slider-arrows .slider-arrow-prev,
+div.slider-arrows .slider-arrow-next {
+  border: none;
+  cursor: pointer;
+  background-color: #070707;
+  color: white;
+}
+li.slider-item a img.shroudImg {
+  height: 100%;
+}
+
+div.carouselContainer {
+  text-align: center;
+  margin-top: 25px;
+}
+
 /***FIRST PAGE BOOKS RENDER (categories, discount and search)***/
 #opis2,
 p#opis {
@@ -1187,8 +1272,14 @@ p#opis {
   margin-top: 5%;
   margin-bottom: 5%;
 }
-
-div.shroud {
+@-moz-document url-prefix() {
+  div.shroudCont div.shroud,
+  div.shroudContCat div.shroudCat {
+    top: -16px;
+  }
+}
+div.shroud,
+div.shroudCat {
   height: 0px;
   width: 200px;
   position: absolute;
@@ -1197,12 +1288,14 @@ div.shroud {
   background: #0000007a;
   z-index: 5000;
 }
-div.shroudCont {
+div.shroudCont,
+div.shroudContCat {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-p.inception {
+p.inception,
+p.inceptionCat {
   opacity: 0;
   transition-property: opacity, transform;
   color: ghostwhite;
@@ -1211,7 +1304,8 @@ p.inception {
   position: relative;
 }
 
-p.inceptionA {
+p.inceptionA,
+p.inceptionACat {
   transform: translateY(50px);
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
@@ -1219,13 +1313,11 @@ p.inceptionA {
   color: ghostwhite;
   font-size: 1.8rem;
   position: relative;
+  z-index: -5000;
 }
-@-moz-document url-prefix() {
-  div.shroudCont div.shroud {
-    top: -19px;
-  }
-}
-div.mySlides.fade a div.shroud {
+
+div.mySlides.fade a div.shroud,
+div.mySlides.fade a div.shroudCat {
   top: 21px;
 }
 
@@ -2476,7 +2568,8 @@ div.buttonCont {
 form[action="comments"] > input {
   text-align: center;
 }
-div.mainCommentContainer img.shroudImg {
+div.mainCommentContainer img.shroudImg,
+div.mainCommentContainer img.shroudImgCat {
   margin-bottom: 15px;
   margin-top: -15px;
 }
@@ -2868,6 +2961,7 @@ div.goBackMsgPreview {
     margin-top: 25px;
     margin-bottom: 15px;
   }
+
   div.mySlides.fade > img {
     margin-top: 21px;
   }
@@ -2879,6 +2973,7 @@ div.goBackMsgPreview {
     row-gap: 10px;
   }
 }
+
 p.messageDel {
   background: aliceblue;
   text-align: center;
@@ -2898,10 +2993,10 @@ p.messageDel {
   section nav a[href="#contact"] {
     font-size: 1.4rem;
   }
-  body.previewBody div.prevContainer,.mainCommentContainer {
+  body.previewBody div.prevContainer,
+  .mainCommentContainer {
     background-attachment: fixed;
     background-size: cover;
-
   }
   section.quoteNdQuestion div.quote img.questionPortrait {
     height: auto;
@@ -2978,15 +3073,26 @@ p.messageDel {
     height: 600px;
     max-height: 600px;
   }
-
-  div.discountContainer ~ a[href*="preview"] > div.shroudCont > div.shroud {
+  @-moz-document url-prefix() {
+    div.shroudCont div.shroud,
+    div.shroudContCat div.shroudCat {
+      top: -11px;
+    }
+  }
+  div.discountContainer ~ a[href*="preview"] > div.shroudCont > div.shroud,
+  div.discountContainer
+    ~ a[href*="preview"]
+    > div.shroudContCat
+    > div.shroudCat {
     width: 100%;
     right: 0.8px;
   }
-  div.titlePrice ~ a[href*="preview"] > div.shroudCont > div.shroud {
+  div.titlePrice ~ a[href*="preview"] > div.shroudCont > div.shroud,
+  div.titlePrice ~ a[href*="preview"] > div.shroudContCat > div.shroudCat {
     width: 100%;
   }
-  div.shroudCont div.shroud {
+  div.shroudCont div.shroud,
+  div.shroudContCat div.shroudCat {
     width: 300px;
   }
   input#submitComment {
@@ -3260,7 +3366,10 @@ p.messageDel {
   span.badWords,
   div.mainCommentContainer p.userComment,
   textarea.userCommentText,
-  p#delete2nd,a[href*="preview"] {
+  p#delete2nd,
+  a[href*="preview"],
+  button.slider-arrow-next,
+  button.slider-arrow-prev {
     font-size: 1.5rem;
   }
   section.notice p {
@@ -3338,7 +3447,8 @@ p.messageDel {
   p#empty {
     font-size: 2rem;
   }
-  p.inception {
+  p.inception,
+  p.inceptionCat {
     font-size: 2.5rem;
     top: 150px;
   }
@@ -3360,7 +3470,8 @@ p.messageDel {
   div.grid-item a > img:not(img.discountIcon),
   div.grid-item2 a > img:not(img.discountIcon),
   div.grid-item > img:not(img.discountIcon),
-  div.grid-item > img:not(img.discountIcon) {
+  div.grid-item > img:not(img.discountIcon),
+  div.carouselContainer div.containerSmall img.shroudImgSmall {
     height: 450px;
     width: 300px;
   }
@@ -3626,10 +3737,15 @@ p.messageDel {
   .sublinkContainerMessage3 {
     flex: 1;
   }
-  div.discountContainer ~ a[href*="preview"] > div.shroudCont > div.shroud {
+  div.discountContainer ~ a[href*="preview"] > div.shroudCont > div.shroud,
+  div.discountContainer
+    ~ a[href*="preview"]
+    > div.shroudContCat
+    > div.shroudCat {
     left: 250px;
   }
-  div.titlePrice ~ a[href*="preview"] > div.shroudCont > div.shroud {
+  div.titlePrice ~ a[href*="preview"] > div.shroudCont > div.shroud,
+  div.titlePrice ~ a[href*="preview"] > div.shroudContCat > div.shroudCat {
     left: 250px;
   }
   div.uploadContainerUser form {
@@ -3879,7 +3995,6 @@ p.messageDel {
     position: relative;
     top: 123px;
     left: 335px;
-    z-index: 5000;
   }
   div.mySlides.fade > span,
   div.mySlides.fade > span a {
@@ -3973,19 +4088,37 @@ p.messageDel {
   table#mainTableStats tbody tr th,
   table#mainTable tr td,
   span.previewDesc p,
-  p#delete2nd,a[href*="preview"] {
+  p#delete2nd,
+  a[href*="preview"] {
     font-size: 1.8rem;
+  }
+  nav div.selectWrapAnimated {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 150px;
+  }
+  nav div.selectWrapAnimated label#catLabel {
+    margin-bottom: 1%;
+  }
+  .slideshow-container {
+    margin-top: 5%;
   }
   /***Select tag fix for Firefox***/
   @-moz-document url-prefix() {
     form select#adm_units {
       width: 334.333px;
     }
+    div.shroudCont div.shroud,
+    div.shroudContCat div.shroudCat {
+      top: -6px;
+    }
   }
-  div.shroud {
+  div.shroud,
+  div.shroudCat {
     width: 400px;
   }
-  div.shroudCont div.shroud {
+  div.shroudCont div.shroud,
+  div.shroudContCat div.shroudCat {
     width: 400px;
   }
   select#adm_units {
@@ -4247,6 +4380,18 @@ p.messageDel {
   main.finalMain {
     margin-top: 50px;
   }
+  nav div.selectWrapAnimated {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 150px;
+  }
+  .slideshow-container {
+    margin-top: 5%;
+  }
+  nav div.selectWrapAnimated label#catLabel {
+    margin-bottom: 1%;
+  }
+
   div.prevContainer div.bookContainer {
     grid-template-columns: 1fr 1fr;
   }

@@ -110,6 +110,81 @@ function firstFunction() {
                 if (this.readyState == 4 && this.status == 200) {
 
                     document.getElementById('outputCategory').innerHTML = this.responseText;
+                    //Shroud appearance for category items
+                    var mediaQueryNull = window.matchMedia("only screen and (min-width: 320px) and (max-width: 479px)");
+                    var mediaQueryNew = window.matchMedia("only screen and (min-width: 480px) and (max-width: 575px)");
+                    var mediaQuery1 = window.matchMedia("only screen and (min-width: 576px) and (max-width: 767px)");
+                    var mediaQuery2 = window.matchMedia("only screen and (min-width: 768px) and (max-width: 991px)");
+                    var mediaQuery3 = window.matchMedia("only screen and (min-width: 992px) and (max-width: 1199px)");
+                    var mediaQuery4 = window.matchMedia("only screen and (min-width: 1200px) and (max-width: 1399px)");
+                    var mediaQuery5 = window.matchMedia("only screen and (min-width: 1400px) and (max-width: 1919px)");
+                    var mediaQuery6 = window.matchMedia("only screen and (min-width: 1920px)");
+                    let shroudImg = document.getElementsByClassName("shroudImgCat")
+                    let shroud = document.getElementsByClassName("shroudCat");
+                    let inception = document.getElementsByClassName("inceptionCat");
+                    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+                    for (let i = 0; i < shroudImg.length; i++) {
+                        if (isMobile) {
+                            shroudImg[i].addEventListener("touchstart", function () {
+                                window.oncontextmenu = function (event) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                    return false;
+                                };
+                                if (mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches || mediaQuery2.matches) {
+                                    shroud[i].style.height = "300px";
+                                    inception[i].classList.add("inceptionACat");
+                                } else if (mediaQuery3.matches || mediaQuery4.matches) {
+                                    shroud[i].style.height = "450px";
+                                    inception[i].classList.add("inceptionACat");
+                                } else if (mediaQuery5.matches || mediaQuery6.matches) {
+                                    shroud[i].style.height = "600px";
+                                    inception[i].classList.add("inceptionACat");
+                                }
+
+
+                            });
+                        } else {
+                            shroudImg[i].addEventListener("mouseenter", function () {
+                                if (mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches || mediaQuery2.matches) {
+                                    shroud[i].style.height = "300px";
+                                    inception[i].classList.add("inceptionACat");
+                                } else if (mediaQuery3.matches || mediaQuery4.matches) {
+                                    shroud[i].style.height = "450px";
+                                    inception[i].classList.add("inceptionACat");
+                                } else if (mediaQuery5.matches || mediaQuery6.matches) {
+                                    shroud[i].style.height = "600px";
+                                    inception[i].classList.add("inceptionACat");
+                                }
+
+
+                            });
+
+                        }
+
+                        for (let i = 0; i < shroud.length; i++) {
+                            if (isMobile) {
+                                shroud[i].addEventListener("touchmove", function () {
+                                    for (let i = 0; i < shroudImg.length; i++) {
+                                        shroud[i].style.height = "0px";
+                                        inception[i].setAttribute("class", "inceptionCat");
+
+
+                                    }
+                                });
+                            } else {
+                                shroud[i].addEventListener("mouseleave", function () {
+                                    for (let i = 0; i < shroudImg.length; i++) {
+                                        shroud[i].style.height = "0px";
+                                        inception[i].setAttribute("class", "inceptionCat");
+
+
+                                    }
+                                });
+                            }
+                        }
+                    }
 
 
                 }
@@ -135,6 +210,74 @@ function firstFunction() {
                 if (this.readyState == 4 && this.status == 200) {
 
                     document.getElementById('outputCategory').innerHTML = this.responseText;
+                    //Shroud appearance for category items with discount
+  
+                    let shroudImg = document.getElementsByClassName("shroudImgCat")
+                    let shroud = document.getElementsByClassName("shroudCat");
+                    let inception = document.getElementsByClassName("inceptionCat");
+                    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+                    for (let i = 0; i < shroudImg.length; i++) {
+                        if (isMobile) {
+                            shroudImg[i].addEventListener("touchstart", function () {
+                                window.oncontextmenu = function (event) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                    return false;
+                                };
+                                if (mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches || mediaQuery2.matches) {
+                                    shroud[i].style.height = "300px";
+                                    inception[i].classList.add("inceptionACat");
+                                } else if (mediaQuery3.matches || mediaQuery4.matches) {
+                                    shroud[i].style.height = "450px";
+                                    inception[i].classList.add("inceptionACat");
+                                } else if (mediaQuery5.matches || mediaQuery6.matches) {
+                                    shroud[i].style.height = "600px";
+                                    inception[i].classList.add("inceptionACat");
+                                }
+
+
+                            });
+                        } else {
+                            shroudImg[i].addEventListener("mouseenter", function () {
+                                if (mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches || mediaQuery2.matches) {
+                                    shroud[i].style.height = "300px";
+                                    inception[i].classList.add("inceptionACat");
+                                } else if (mediaQuery3.matches || mediaQuery4.matches) {
+                                    shroud[i].style.height = "450px";
+                                    inception[i].classList.add("inceptionACat");
+                                } else if (mediaQuery5.matches || mediaQuery6.matches) {
+                                    shroud[i].style.height = "600px";
+                                    inception[i].classList.add("inceptionACat");
+                                }
+
+
+                            });
+
+                        }
+
+                        for (let i = 0; i < shroud.length; i++) {
+                            if (isMobile) {
+                                shroud[i].addEventListener("touchmove", function () {
+                                    for (let i = 0; i < shroudImg.length; i++) {
+                                        shroud[i].style.height = "0px";
+                                        inception[i].setAttribute("class", "inceptionCat");
+
+
+                                    }
+                                });
+                            } else {
+                                shroud[i].addEventListener("mouseleave", function () {
+                                    for (let i = 0; i < shroudImg.length; i++) {
+                                        shroud[i].style.height = "0px";
+                                        inception[i].setAttribute("class", "inceptionCat");
+
+
+                                    }
+                                });
+                            }
+                        }
+                    }
 
 
                 }
@@ -719,6 +862,7 @@ function firstFunction() {
     let inception = document.getElementsByClassName("inception");
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     for (let i = 0; i < shroudImg.length; i++) {
+
         if (isMobile) {
             shroudImg[i].addEventListener("touchstart", function () {
                 window.oncontextmenu = function (event) {
@@ -782,50 +926,7 @@ function firstFunction() {
 
 
 }
-/***Shroud cover for categories and discounted items***/
-function getShroud() {
-    let mediaQueryNull = window.matchMedia("only screen and (min-width: 320px) and (max-width: 479px)");
-    let mediaQueryNew = window.matchMedia("only screen and (min-width: 480px) and (max-width: 575px)");
-    let mediaQuery1 = window.matchMedia("only screen and (min-width: 576px) and (max-width: 767px)");
-    let mediaQuery2 = window.matchMedia("only screen and (min-width: 768px) and (max-width: 991px)");
-    let mediaQuery3 = window.matchMedia("only screen and (min-width: 992px) and (max-width: 1199px)");
-    let mediaQuery4 = window.matchMedia("only screen and (min-width: 1200px) and (max-width: 1399px)");
-    let mediaQuery5 = window.matchMedia("only screen and (min-width: 1400px) and (max-width: 1919px)");
-    let mediaQuery6 = window.matchMedia("only screen and (min-width: 1920px)");
-    let shroudImg = document.getElementsByClassName("shroudImg")
-    let shroud = document.getElementsByClassName("shroud");
-    let inception = document.getElementsByClassName("inception");
 
-    for (let i = 0; i < shroudImg.length; i++) {
-        shroudImg[i].addEventListener("mouseenter", function () {
-            if (mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches || mediaQuery2.matches) {
-                shroud[i].style.height = "300px";
-                inception[i].classList.add("inceptionA");
-            } else if (mediaQuery3.matches || mediaQuery4.matches) {
-                shroud[i].style.height = "450px";
-                inception[i].classList.add("inceptionA");
-            } else if (mediaQuery5.matches || mediaQuery6.matches) {
-                shroud[i].style.height = "600px";
-                inception[i].classList.add("inceptionA");
-            }
-
-        });
-
-
-        for (let i = 0; i < shroud.length; i++) {
-            shroud[i].addEventListener("mouseleave", function () {
-                for (let i = 0; i < shroudImg.length; i++) {
-                    shroud[i].style.height = "0px";
-                    inception[i].setAttribute("class", "inception");
-
-
-                }
-            });
-
-        }
-    }
-
-}
 /***Slider JS part***/
 //Next/last slide controls
 function plusSlides(n) {
@@ -2427,16 +2528,18 @@ function starsChecked(element) {
                 }
             }
         }
-        //Removing the checke stars on mouseleave
+        //Removing the checked stars on mouseleave
         let stars3 = document.getElementsByClassName("fa");
         let starsContainer = document.getElementById("ratingContId");
         starsContainer.addEventListener("mouseleave", function () {
             for (let i = 0; i < stars3.length; i++) {
-      			window.setTimeout(function () {
+                window.setTimeout(function () {
                     if (!document.getElementById("ratingStyle")) {
                         stars3[i].classList.remove("faChecked");
                     }
-                }, 200)
+                }, 100)
+
+
             }
         });
 
@@ -2532,5 +2635,8 @@ newElement = null;
 button = null;
 pId = null;
 cont = null;
+shroud = null;
+shroudImg = null;
+inception = null;
 
 

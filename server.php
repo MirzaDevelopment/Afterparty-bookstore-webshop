@@ -175,7 +175,8 @@ if (!empty($_GET['id'])) {
             echo "<div class='grid-item2'>";
           echo "<div class='categoryFront'>".$row['book_category']."</div>";
             $newPic = str_replace("../", "Methods/", $row['book_pic']);
-            echo "<a href='preview.php?id={$row['book_id']}' onmouseover='getShroud()'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+        	$newPic = str_replace("shroudImg", "shroudImgCat", $newPic);
+            echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudContCat'><div class='shroudCat'><p class='inceptionCat'>Preview</p></div></div>$newPic </a>";
             echo "<div class='descFront2' onmouseover='getDescription(this.textContent)'>";
             echo $row['book_title'];
             echo  "</div>";
@@ -240,7 +241,8 @@ if (!empty($_GET['Discount'])) {
             echo "<div class='grid-item2'>";
             echo "<div class='categoryFront'>".$row['book_category']."</div>";
             $newPic = str_replace("../", "Methods/", $row['book_pic']);
-            echo "<a href='preview.php?id={$row['book_id']}'onmouseover='getShroud()'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+          	$newPic = str_replace("shroudImg", "shroudImgCat", $newPic);
+            echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudContCat'><div class='shroudCat'><p class='inceptionCat'>Preview</p></div></div>$newPic </a>";
             echo "<div class='descFront2' onmouseover='getDescription(this.textContent)'>";
             echo $row['book_title'];
             echo  "</div>";
@@ -453,4 +455,7 @@ if (!empty($_GET['rating'])) {
     
     $setObjekat = new SetUser();
     $setObjekat->ratingInsertSetting();
+
+
+
     }

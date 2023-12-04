@@ -18,5 +18,7 @@ interface UserBookSelectInterface
     public static function userSelectNumberBoth(int $number1, int $number2):void;
     public static function selectAllFront():void;
     public static function userSelectCategory():void;
+  	public static function bookPreview($book_id):void;
+    public static function selectCarousel():void;
    
 }

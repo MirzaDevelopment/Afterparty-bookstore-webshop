@@ -71,6 +71,10 @@ require __DIR__ . "/GeneralClasses/CommentsExtendsDatabase.php";
 $objekatSet = new SetUser();
 //Comment insert method
 $objekatSet->commentInsertSetting();
+//"Similiar like this" carousel 
+echo "<div class='carouselContainer'>";
+Booksdatabase::selectCarousel();
+echo "</div>";
 //Creating logic to correctly back users from preview panel to their corresponding panels.
 if(isset($_SESSION['status']) && $_SESSION['status'] == 2 || isset($_SESSION['status']) && $_SESSION['status']==1) {
    echo"<div class='goBackMsgPreview'>
