@@ -19,9 +19,8 @@ if (empty($_SESSION['cart'])) {
 <head>
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   	<meta name="description" content="Details, comments and average reader score.">
-    <meta name="description" content="Details, reviews and average reader score.">
     <!--Removing favicon icon console error-->
     <link rel="icon" href="data:;base64,=">
     <!-- General JS app script-->
