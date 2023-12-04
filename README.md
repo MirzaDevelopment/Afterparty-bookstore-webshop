@@ -54,9 +54,6 @@ All the .css and .js files are minified in live for best performance. They are l
 5. Web app shoud be completely responsive and is tested on GOOGLE CHROME AND FIREFOX browsers.<br/>
 6. Web application achieves 97+ score on google lighthouse test on performance, SEO and accessibility.
 
-## Planned features
-1. "Similiar like this" carousel.<br/>
-
 ## Installation and requirements
 ## Installation notice
 **Code presented on Github is a live working example of code. So therefore it will probably not work on localhost without some serious modifications. There are many reasons for it, one is .htaccess forcing the ssl certificate, and another is environmental variables that I couldn't make to work on my localhost, like they did on live server. So if you are interested in downloading the code, the best bet would be to try it on a live server (shared hosting should be sufficient).**<br/>
