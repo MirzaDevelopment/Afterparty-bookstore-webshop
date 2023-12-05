@@ -32,7 +32,7 @@ require __DIR__ . "/config.php";
     <!--Removing favicon icon console error-->
     <link rel="icon" href="data:;base64,=">
      <!-- General JS app script-->
-    <script  src="Methods/script.js"></script>
+    <script async src="Methods/script.js"></script>
     <script>
         function onSubmit(token) {
             document.getElementById("demo-form").submit(); //Recaptcha submit function
