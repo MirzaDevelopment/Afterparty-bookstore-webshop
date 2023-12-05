@@ -55,9 +55,9 @@ require __DIR__ . "/config.php";
     <div class="headerStuff">
         <span id='cartNum'><?php print_r(count($_SESSION['cart'])) ?></span>
         <!--Number of items in cart-->
-        <a class='cartIcon' href="cart"><img class='cartMain' src='Methods/img/shopping-cart.png' alt='shopping-cart-icon' width='35' height='35'></a>
+        <a class='cartIcon' href="cart"><img class='cartMain' src='Methods/img/shopping-cart.webp' alt='shopping-cart-icon' width='35' height='35'></a>
         <!--Cart icon-->
-        <a class='loginIcon' href="loginPage?raw=login"><img class="icon" src="Methods/img/userFront.png" alt="user-icon" width="35" height="35"></a>
+        <a class='loginIcon' href="loginPage?raw=login"><img class="icon" src="Methods/img/userFront.webp" alt="user-icon" width="35" height="35"></a>
         <!--Login/register page-->
         <a href="loginPage?raw=login">Login/Register</a>
     </div>
