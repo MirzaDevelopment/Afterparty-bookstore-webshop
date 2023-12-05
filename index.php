@@ -46,8 +46,10 @@ require __DIR__ . "/config.php";
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap">
     <script async src="https://kit.fontawesome.com/cba05393c5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" fetchpriority="high" as="image" href="Methods/img/dark-haired-woman.webp" type="image/webp">
+    <link rel="preload" fetchpriority="high" as="image" href="Methods/img/pexels-1.webp" type="image/webp">
   <!-- Google recaptcha script. -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LcFkIIgAAAAABbMMGAJpI5vXUgGIA_vGR-GAjhu" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcFkIIgAAAAABbMMGAJpI5vXUgGIA_vGR-GAjhu"async defer></script>
 </head>
 <body onload="firstFunction()">
     <div class="headerStuff">
