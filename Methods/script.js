@@ -126,7 +126,7 @@ function firstFunction() {
 
                     for (let i = 0; i < shroudImg.length; i++) {
                         if (isMobile) {
-                            shroudImg[i].addEventListener("touchstart", function () {
+                            shroudImg[i].addEventListener("touchstart",  function () {
                                 window.oncontextmenu = function (event) {
                                     event.preventDefault();
                                     event.stopPropagation();
@@ -144,7 +144,7 @@ function firstFunction() {
                                 }
 
 
-                            });
+                            }, {passive: true});
                         } else {
                             shroudImg[i].addEventListener("mouseenter", function () {
                                 if (mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches || mediaQuery2.matches) {
@@ -172,7 +172,7 @@ function firstFunction() {
 
 
                                     }
-                                });
+                                },{passive: true});
                             } else {
                                 shroud[i].addEventListener("mouseleave", function () {
                                     for (let i = 0; i < shroudImg.length; i++) {
@@ -211,7 +211,6 @@ function firstFunction() {
 
                     document.getElementById('outputCategory').innerHTML = this.responseText;
                     //Shroud appearance for category items with discount
-  
                     let shroudImg = document.getElementsByClassName("shroudImgCat")
                     let shroud = document.getElementsByClassName("shroudCat");
                     let inception = document.getElementsByClassName("inceptionCat");
@@ -237,7 +236,7 @@ function firstFunction() {
                                 }
 
 
-                            });
+                            },{passive: true});
                         } else {
                             shroudImg[i].addEventListener("mouseenter", function () {
                                 if (mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches || mediaQuery2.matches) {
@@ -265,7 +264,7 @@ function firstFunction() {
 
 
                                     }
-                                });
+                                },{passive: true});
                             } else {
                                 shroud[i].addEventListener("mouseleave", function () {
                                     for (let i = 0; i < shroudImg.length; i++) {
@@ -882,7 +881,7 @@ function firstFunction() {
                 }
 
 
-            });
+            },{passive: true});
         } else {
             shroudImg[i].addEventListener("mouseenter", function () {
                 if (mediaQueryNull.matches || mediaQueryNew.matches || mediaQuery1.matches || mediaQuery2.matches) {
@@ -910,7 +909,7 @@ function firstFunction() {
 
 
                     }
-                });
+                },{passive: true});
             } else {
                 shroud[i].addEventListener("mouseleave", function () {
                     for (let i = 0; i < shroudImg.length; i++) {
