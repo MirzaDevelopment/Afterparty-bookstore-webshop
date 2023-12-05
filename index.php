@@ -49,7 +49,7 @@ require __DIR__ . "/config.php";
     <link rel="preload" fetchpriority="high" as="image" href="Methods/img/dark-haired-woman.webp" type="image/webp">
     <link rel="preload" fetchpriority="high" as="image" href="Methods/img/pexels-1.webp" type="image/webp">
   <!-- Google recaptcha script. -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LcFkIIgAAAAABbMMGAJpI5vXUgGIA_vGR-GAjhu"async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcFkIIgAAAAABbMMGAJpI5vXUgGIA_vGR-GAjhu" defer></script>
 </head>
 <body onload="firstFunction()">
     <div class="headerStuff">
