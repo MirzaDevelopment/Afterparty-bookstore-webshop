@@ -90,7 +90,7 @@ class Slider
                     echo "</div>";
                     if ($row['discounted_price'] > 0) {
                      	echo "<div class='discountContainer'>";
-                        echo "<div class='discIcon'><img class='discountIconSlider' src='Methods/img/discount-icon.png' width='65' height='65' alt='discount-icon'></div>";
+                        echo "<div class='discIcon'><img class='discountIconSlider' src='Methods/img/discount-icon.webp' width='65' height='65' alt='discount-icon'></div>";
                         echo "<div class='discountSlider'>" . $row['discount'] . "%" . "</div>";
                         echo "</div>";
                         echo "<div class='titlePriceDisc'>Only for!</div>";
@@ -100,9 +100,9 @@ class Slider
                         echo "<div class='priceSlide'>" . $row['book_price'] . "$" . "</div>";
                     }
                     $newPic = str_replace("../", "Methods/", $row['book_pic']);
-                    echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
-                    echo "<span>".substr($row['book_description'],0, 350)."..."."<a href='preview.php?id={$row['book_id']}'>Read more</a></span>";
-                    echo "<input class='cartFrontSlider' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
+                    echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+                    echo "<span>".substr($row['book_description'],0, 350)."..."."<a href='preview.php?id={$row['book_id']}'aria-label='Details, rating and comments'>Details, rating and comments</a></span>";
+                    echo "<input class='cartFrontSlider' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
                     echo "<div class='sliderCartCont'>";
                     echo "</div>";
                 }
@@ -134,7 +134,7 @@ class Slider
                     echo "</div>";
                     if ($row['discounted_price'] > 0) {
                         echo "<div class='discountContainer'>";
-                        echo "<div class='discIcon'><img class='discountIconSlider' src='Methods/img/discount-icon.png' width='65' height='65' alt='discount-icon'></div>";
+                        echo "<div class='discIcon'><img class='discountIconSlider' src='Methods/img/discount-icon.webp' width='65' height='65' alt='discount-icon'></div>";
                         echo "<div class='discountSlider'>" . $row['discount'] . "%" . "</div>";
                      	echo "</div>";
                         echo "<div class='titlePriceDisc'>Only for!</div>";
@@ -144,9 +144,9 @@ class Slider
                         echo "<div class='priceSlide'>" . $row['book_price'] . "$" . "</div>";
                     }
                     $newPic = str_replace("../", "Methods/", $row['book_pic']);
- 					echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
-                    echo "<span>".substr($row['book_description'],0, 350)."..."."<a href='preview.php?id={$row['book_id']}'>Read more</a></span>";
-                    echo "<input class='cartFrontSlider' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
+ 					echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+                    echo "<span>".substr($row['book_description'],0, 350)."..."."<a href='preview.php?id={$row['book_id']}'aria-label='Details, rating and comments'>Details, rating and comments</a></span>";
+                    echo "<input class='cartFrontSlider' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
                     echo "<div class='sliderCartCont'>";
                     echo "</div>";
                 }
@@ -179,7 +179,7 @@ class Slider
                     echo "</div>";
                     if ($row['discounted_price'] > 0) {
                       echo "<div class='discountContainer'>";
-                        echo "<div class='discIcon'><img class='discountIconSlider' src='Methods/img/discount-icon.png' width='65' height='65' alt='discount-icon'></div>";
+                        echo "<div class='discIcon'><img class='discountIconSlider' src='Methods/img/discount-icon.webp' width='65' height='65' alt='discount-icon'></div>";
                         echo "<div class='discountSlider'>" . $row['discount'] . "%" . "</div>";
                       echo "</div>";
                         echo "<div class='titlePriceDisc'>Only for!</div>";
@@ -189,9 +189,9 @@ class Slider
                         echo "<div class='priceSlide'>" . $row['book_price'] . "$" . "</div>";
                     }
                     $newPic = str_replace("../", "Methods/", $row['book_pic']);
-                    echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
-                    echo "<span>".substr($row['book_description'],0, 350)."..."."<a href='preview.php?id={$row['book_id']}'>Read more</a></span>";
-                    echo "<input class='cartFrontSlider' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
+                    echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+                    echo "<span>".substr($row['book_description'],0, 350)."..."."<a href='preview.php?id={$row['book_id']}'aria-label='Details, rating and comments'>Details, rating and comments</a></span>";
+                    echo "<input class='cartFrontSlider' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
                     echo "<div class='sliderCartCont'>";
                     echo "</div>";
                 }

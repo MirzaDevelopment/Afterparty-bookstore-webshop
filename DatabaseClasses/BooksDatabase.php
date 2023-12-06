@@ -14,7 +14,7 @@ class BooksDatabase implements UserBookSelectInterface
       $sql->execute(array('author' => $book_author, 'title' => $book_title, 'price1' => $number1, 'price2' => $number2));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
-        echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+        echo "<img id='emptyIcon' src='Methods/img/sorry(2).webp' width='100' alt='sorry-icon'>";
         echo "<p id='empty'>Ooops...we don't seem to have any books similar to your search preferences. Please try again.<p>";
       }
       echo "<div class='bookContainerSearch'>";
@@ -23,7 +23,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-         echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+         echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -44,7 +44,7 @@ class BooksDatabase implements UserBookSelectInterface
         //Checking if book quantity is positive or 0, and rendering corresponding message to user
         if ($row['book_quantity'] > 0) {
           echo "<div class='status'> Available</div>";
-          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";//Shopping cart icon on front page
+          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";//Shopping cart icon on front page
         } else if ($row['book_quantity'] == 0) {
           echo "<div class='notStatus'> Not available </div>";
         }
@@ -72,7 +72,7 @@ class BooksDatabase implements UserBookSelectInterface
       $sql->execute(array('author' => $book_author));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
-        echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+        echo "<img id='emptyIcon' src='Methods/img/sorry(2).webp' width='100' alt='sorry-icon'>";
         echo "<p id='empty'>Ooops...we don't seem to have any books written by that author. Please try again.<p>";
       }
       echo "<div class='bookContainerSearch'>";
@@ -81,7 +81,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+        echo "<a href='preview.php?id={$row['book_id']}' aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -101,7 +101,7 @@ class BooksDatabase implements UserBookSelectInterface
         //Checking if book quantity is positive or 0, and rendering corresponding message to user
         if ($row['book_quantity'] > 0) {
           echo "<div class='status'> Available</div>";
-          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
+          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
         } else if ($row['book_quantity'] == 0) {
           echo "<div class='notStatus'> Not available </div>";
         }
@@ -129,7 +129,7 @@ class BooksDatabase implements UserBookSelectInterface
       $sql->execute(array('author' => $book_author, 'price1' => $number1));
        //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
-        echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+        echo "<img id='emptyIcon' src='Methods/img/sorry(2).webp' width='100' alt='sorry-icon'>";
         echo "<p id='empty'>Ooops...we don't seem to have any books written by that author with that minimum price. Please try again.<p>";
       }
       echo "<div class='bookContainerSearch'>";
@@ -138,7 +138,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+        echo "<a href='preview.php?id={$row['book_id']}' aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -159,7 +159,7 @@ class BooksDatabase implements UserBookSelectInterface
         //Checking if book quantity is positive or 0, and rendering corresponding message to user
         if ($row['book_quantity'] > 0) {
           echo "<div class='status'> Available</div>";
-          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
+          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
         } else if ($row['book_quantity'] == 0) {
           echo "<div class='notStatus'> Not available </div>";
         }
@@ -186,7 +186,7 @@ class BooksDatabase implements UserBookSelectInterface
       $sql->execute(array('author' => $book_author, 'price2' => $number2));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
-        echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+        echo "<img id='emptyIcon' src='Methods/img/sorry(2).webp' width='100' alt='sorry-icon'>";
         echo "<p id='empty'>Ooops...we don't seem to have any books written by that author with that maximum price. Please try again.<p>";
       }
       echo "<div class='bookContainerSearch'>";
@@ -195,7 +195,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+        echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -216,7 +216,7 @@ class BooksDatabase implements UserBookSelectInterface
         //Checking if book quantity is positive or 0, and rendering corresponding message to user
         if ($row['book_quantity'] > 0) {
           echo "<div class='status'> Available</div>";
-          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
+          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
         } else if ($row['book_quantity'] == 0) {
           echo "<div class='notStatus'> Not available </div>";
         }
@@ -243,7 +243,7 @@ class BooksDatabase implements UserBookSelectInterface
       $sql->execute(array('author' => $book_author, 'price1' => $number1, 'price2' => $number2));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
-        echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+        echo "<img id='emptyIcon' src='Methods/img/sorry(2).webp' width='100' alt='sorry-icon'>";
         echo "<p id='empty'>Ooops...we don't seem to have any books written by that author with that price range. Please try again.<p>";
       }
       echo "<div class='bookContainerSearch'>";
@@ -252,7 +252,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+        echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -273,7 +273,7 @@ class BooksDatabase implements UserBookSelectInterface
         //Checking if book quantity is positive or 0, and rendering corresponding message to user
         if ($row['book_quantity'] > 0) {
           echo "<div class='status'> Available</div>";
-          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
+          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
         } else if ($row['book_quantity'] == 0) {
           echo "<div class='notStatus'> Not available </div>";
         }
@@ -302,7 +302,7 @@ class BooksDatabase implements UserBookSelectInterface
       $sql->execute(array('title' => $book_title));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
-        echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+        echo "<img id='emptyIcon' src='Methods/img/sorry(2).webp' width='100' alt='sorry-icon'>";
         echo "<p id='empty'>Ooops...we don't seem to have any books with that title. Please try again.<p>";
       }
       echo "<div class='bookContainerSearch'>";
@@ -311,7 +311,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+        echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -332,7 +332,7 @@ class BooksDatabase implements UserBookSelectInterface
         //Checking if book quantity is positive or 0, and rendering corresponding message to user
         if ($row['book_quantity'] > 0) {
           echo "<div class='status'> Available</div>";
-          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
+          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
         } else if ($row['book_quantity'] == 0) {
           echo "<div class='notStatus'> Not available </div>";
         }
@@ -360,7 +360,7 @@ class BooksDatabase implements UserBookSelectInterface
       $sql->execute(array('title' => $book_title, 'price1' => $number1));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
-        echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+        echo "<img id='emptyIcon' src='Methods/img/sorry(2).webp' width='100' alt='sorry-icon'>";
         echo "<p id='empty'>Ooops...we don't seem to have any books with that title and minimum price. Please try again.<p>";
       }
       echo "<div class='bookContainerSearch'>";
@@ -369,7 +369,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+        echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -390,7 +390,7 @@ class BooksDatabase implements UserBookSelectInterface
         //Checking if book quantity is positive or 0, and rendering corresponding message to user
         if ($row['book_quantity'] > 0) {
           echo "<div class='status'> Available</div>";
-          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
+          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
         } else if ($row['book_quantity'] == 0) {
           echo "<div class='notStatus'> Not available </div>";
         }
@@ -417,7 +417,7 @@ class BooksDatabase implements UserBookSelectInterface
       $sql->execute(array('title' => $book_title, 'price2' => $number2));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
-        echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+        echo "<img id='emptyIcon' src='Methods/img/sorry(2).webp' width='100' alt='sorry-icon'>";
         echo "<p id='empty'>Ooops...we don't seem to have any books with that title and maximum price. Please try again.<p>";
       }
       echo "<div class='bookContainerSearch'>";
@@ -426,7 +426,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+        echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -447,7 +447,7 @@ class BooksDatabase implements UserBookSelectInterface
         //Checking if book quantity is positive or 0, and rendering corresponding message to user
         if ($row['book_quantity'] > 0) {
           echo "<div class='status'> Available</div>";
-          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
+          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
         } else if ($row['book_quantity'] == 0) {
           echo "<div class='notStatus'> Not available </div>";
         }
@@ -475,7 +475,7 @@ class BooksDatabase implements UserBookSelectInterface
       $sql->execute(array('title' => $book_title, 'price1' => $number1, 'price2' => $number2));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
-        echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+        echo "<img id='emptyIcon' src='Methods/img/sorry(2).webp' width='100' alt='sorry-icon'>";
         echo "<p id='empty'>Ooops...we don't seem to have any books with that title and price range. Please try again.<p>";
       }
       echo "<div class='bookContainerSearch'>";
@@ -484,7 +484,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+        echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -504,7 +504,7 @@ class BooksDatabase implements UserBookSelectInterface
 
         //Checking if book quantity is positive or 0, and rendering corresponding message to user
         if ($row['book_quantity'] > 0) {
-          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
+          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
           echo "<div class='status'> Available</div>";
         } else if ($row['book_quantity'] == 0) {
           echo "<div class='notStatus'> Not available </div>";
@@ -532,7 +532,7 @@ class BooksDatabase implements UserBookSelectInterface
       $sql->execute(array('title' => $book_title, 'author' => $book_author));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
-        echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+        echo "<img id='emptyIcon' src='Methods/img/sorry(2).webp' width='100' alt='sorry-icon'>";
         echo "<p id='empty'>Ooops...we don't seem to have any books with that author and title. Please try again.<p>";
       }
       echo "<div class='bookContainerSearch'>";
@@ -541,7 +541,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+        echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -561,7 +561,7 @@ class BooksDatabase implements UserBookSelectInterface
 
         //Checking if book quantity is positive or 0, and rendering corresponding message to user
         if ($row['book_quantity'] > 0) {
-          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
+          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
           echo "<div class='status'> Available</div>";
         } else if ($row['book_quantity'] == 0) {
           echo "<div class='notStatus'> Not available </div>";
@@ -590,7 +590,7 @@ class BooksDatabase implements UserBookSelectInterface
       $sql->execute(array('price1' => $number1));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
-        echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+        echo "<img id='emptyIcon' src='Methods/img/sorry(2).webp' width='100' alt='sorry-icon'>";
         echo "<p id='empty'>Ooops...we don't seem to have any books with that minimum price. Please try again.<p>";
       }
       echo "<div class='bookContainerSearch'>";
@@ -599,7 +599,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+        echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -620,7 +620,7 @@ class BooksDatabase implements UserBookSelectInterface
         //Checking if book quantity is positive or 0, and rendering corresponding message to user
         if ($row['book_quantity'] > 0) {
           echo "<div class='status'> Available</div>";
-          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
+          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
         } else if ($row['book_quantity'] == 0) {
           echo "<div class='notStatus'> Not available </div>";
         }
@@ -649,7 +649,7 @@ class BooksDatabase implements UserBookSelectInterface
       $sql->execute(array('price2' => $number2));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
-        echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+        echo "<img id='emptyIcon' src='Methods/img/sorry(2).webp' width='100' alt='sorry-icon'>";
         echo "<p id='empty'>Ooops...we don't seem to have any books with that maximum price. Please try again.<p>";
       }
       echo "<div class='bookContainerSearch'>";
@@ -658,7 +658,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+        echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -679,7 +679,7 @@ class BooksDatabase implements UserBookSelectInterface
         //Checking if book quantity is positive or 0, and rendering corresponding message to user
         if ($row['book_quantity'] > 0) {
           echo "<div class='status'> Available</div>";
-          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
+          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
         
         } else if ($row['book_quantity'] == 0) {
           echo "<div class='notStatus'> Not available </div>";
@@ -709,7 +709,7 @@ class BooksDatabase implements UserBookSelectInterface
       $sql->execute(array('price1' => $number1, 'price2' => $number2));
       //Message to users if no record is found in database
       if ($sql->rowCount()==0) {
-        echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+        echo "<img id='emptyIcon' src='Methods/img/sorry(2).webp' width='100' alt='sorry-icon'>";
         echo "<p id='empty'>Ooops...we don't seem to have any books in that price range. Please try again.<p>";
       }
       echo "<div class='bookContainerSearch'>";
@@ -718,7 +718,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+        echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -739,7 +739,7 @@ class BooksDatabase implements UserBookSelectInterface
         //Checking if book quantity is positive or 0, and rendering corresponding message to user
         if ($row['book_quantity'] > 0) {
           echo "<div class='status'> Available</div>";
-          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
+          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
         } else if ($row['book_quantity'] == 0) {
           echo "<div class='notStatus'> Not available </div>";
         }
@@ -802,7 +802,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
-        echo "<a href='preview.php?id={$row['book_id']}'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
+        echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];
         echo  "</div>";
@@ -823,7 +823,7 @@ class BooksDatabase implements UserBookSelectInterface
         //Checking if book quantity is positive or 0, and rendering corresponding message to user
         if ($row['book_quantity'] > 0) {
           echo "<div class='status'> Available</div>";
-          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
+          echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
         } else if ($row['book_quantity'] == 0) {
           echo "<div class='notStatus'> Not available </div>";
         }
@@ -889,7 +889,7 @@ class BooksDatabase implements UserBookSelectInterface
       if ($row['book_title'] == null) {
        echo"<meta http-equiv='refresh' content='4;url=https://www.afterparty-bookstore.com/index'>";
         echo "<div class='smallContainer'>";
-        echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+        echo "<img id='emptyIcon' src='Methods/img/sorry(2).webp' width='100' alt='sorry-icon'>";
         echo "<p id='empty'>Ooops...don't have books with that id sir. Returning to webshop...<p>";
         echo "</div>";
         unset($_SESSION['category']);
@@ -923,7 +923,7 @@ class BooksDatabase implements UserBookSelectInterface
       //Checking if book quantity is positive or 0, and rendering corresponding message to user
       if ($row['book_quantity'] > 0) {
         echo "<div class='status'> Available</div>";
-        echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' onclick='cartInsertManual(this)' value='Add-to-cart'>";//Shopping cart icon on front page
+        echo "<input class='cartFront' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' onclick='cartInsertManual(this)' value='Add-to-cart'>";//Shopping cart icon on front page
       } else if ($row['book_quantity'] == 0) {
         echo "<div class='notStatus'> Not available </div>";
       }
@@ -977,7 +977,7 @@ class BooksDatabase implements UserBookSelectInterface
     echo "</div>";
   } 
   }else{
-  echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+  echo "<img id='emptyIcon' src='Methods/img/sorry(2).webp' width='100' alt='sorry-icon'>";
   echo "<p id='empty'>Ooops...don't have books with that id sir.<p>";
   unset($_SESSION['category']);
 
@@ -1059,7 +1059,7 @@ class BooksDatabase implements UserBookSelectInterface
     
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
         $newPic = str_replace("class='shroudImg'", "class='shroudImgSmall'", $newPic );
-        echo "<a href='preview.php?id={$row['book_id']}'>$newPic</a>";
+        echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'>$newPic</a>";
       }
       echo "</div>";
       }else {
@@ -1075,8 +1075,8 @@ class BooksDatabase implements UserBookSelectInterface
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
         $newPic = str_replace("width='200' height='300'", "", $newPic);
         
-        echo "<a href='#'>";
-        echo "<a href='preview.php?id={$row['book_id']}'>$newPic</a>";
+        echo "<a href='#' aria-label='book-details'>";
+        echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'>$newPic</a>";
         echo "</a>";
         echo "</li>";
         

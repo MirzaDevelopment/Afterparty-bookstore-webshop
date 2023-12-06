@@ -39,7 +39,7 @@ public static function selectRating($book_id):void{
     }
     $sql->execute($array);
     if($sql->rowCount()==0){
-        echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+        echo "<img id='emptyIcon' src='Methods/img/sorry(2).webp' width='150' height='150' alt='sorry-icon'>";
         echo "<p id='empty'>Ooops...no rating for this book at the moment.<p>";
 }
     while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
