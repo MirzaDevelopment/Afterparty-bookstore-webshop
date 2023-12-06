@@ -3108,6 +3108,7 @@ p.messageDel {
   }
   img#emptyIcon {
     width: 150px;
+    height: 150px;
   }
   div.goBackMsgSlider {
     margin-top: 25px;
