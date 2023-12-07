@@ -197,7 +197,7 @@ if (!empty($_GET['id'])) {
             //Checking if book quantity is positive or 0, and rendering corresponding message to user
             if ($row['book_quantity'] > 0) {
                 echo "<div class='status'> Available</div>";
-                echo "<input class='cart' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' onclick='cartInsertManual(this)' value='Add-to-cart'>";
+                echo "<input class='cart' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' onclick='cartInsertManual(this)' value='Add-to-cart'>";
             } else if ($row['book_quantity'] == 0) {
                 echo "<div class='notStatus'> Not available </div>";
             }
@@ -260,7 +260,7 @@ if (!empty($_GET['Discount'])) {
             //Checking if book quantity is positive or 0, and rendering corresponding message to user
             if ($row['book_quantity'] > 0) {
                 echo "<div class='status'> Available</div>";
-                echo "<input class='cart' type='image' src='Methods/img/shopping-cart.png' width='35' height='35' alt='submit' name='{$row['book_id']}' onclick='cartInsertManual(this)' value='Add-to-cart'>";
+                echo "<input class='cart' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' onclick='cartInsertManual(this)' value='Add-to-cart'>";
             } else if ($row['book_quantity'] == 0) {
                 echo "<div class='notStatus'> Not available </div>";
             }
