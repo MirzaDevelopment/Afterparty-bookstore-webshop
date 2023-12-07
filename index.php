@@ -40,16 +40,16 @@ require __DIR__ . "/config.php";
         }
     </script>
     <title>Bookstore webshop</title>
-    <link  rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap" as="style">
+    <link  rel="preconnect" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap" as="style">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" as="style">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap">
     <script async src="https://kit.fontawesome.com/cba05393c5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preload" fetchpriority="high" as="image" href="Methods/img/dark-haired-woman.webp" type="image/webp">
     <link rel="preload" fetchpriority="high" as="image" href="Methods/img/pexels-1.webp" type="image/webp">
   <!-- Google recaptcha script. -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LcFkIIgAAAAABbMMGAJpI5vXUgGIA_vGR-GAjhu" defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcFkIIgAAAAABbMMGAJpI5vXUgGIA_vGR-GAjhu" async></script>
 </head>
 <body onload="firstFunction()">
     <div class="headerStuff">
