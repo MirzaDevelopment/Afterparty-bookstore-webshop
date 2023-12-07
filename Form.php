@@ -270,7 +270,7 @@ class Form
             "labelEmail" => '<label for="questionEmail">Your email</label>',
             "questionEmail" => '<input class="msgInsert" type="text" name="questionEmail" id="questionEmail">',
             "recaptcha" => '<input type="hidden" class="msgInsert" id="recaptchaResponse" name="recaptchaResponse">',
-            "questionSubmit" => '<button id="questionSubmit" class="g-recaptcha" name="questionSubmit" width="55" height="55"> <img src="Methods/img/customer-support.png"alt="Submit" width="55" height="55"</button>'
+            "questionSubmit" => '<button id="questionSubmit" class="g-recaptcha" name="questionSubmit" width="55" height="55"> <img src="Methods/img/customer-support.webp"alt="Submit" width="55" height="55"</button>'
         );
         foreach ($input as $array) {
             echo $array . "<br>";
