@@ -90,7 +90,7 @@ class Slider
                     echo "</div>";
                     if ($row['discounted_price'] > 0) {
                      	echo "<div class='discountContainer'>";
-                        echo "<div class='discIcon'><img class='discountIconSlider' src='Methods/img/discount-icon.webp' width='65' height='65' alt='discount-icon'></div>";
+                        echo "<div class='discIcon'><img class='discountIconSlider' src='Methods/img/discount-icon.webp' width='65' height='71' alt='discount-icon'></div>";
                         echo "<div class='discountSlider'>" . $row['discount'] . "%" . "</div>";
                         echo "</div>";
                         echo "<div class='titlePriceDisc'>Only for!</div>";
@@ -134,7 +134,7 @@ class Slider
                     echo "</div>";
                     if ($row['discounted_price'] > 0) {
                         echo "<div class='discountContainer'>";
-                        echo "<div class='discIcon'><img class='discountIconSlider' src='Methods/img/discount-icon.webp' width='65' height='65' alt='discount-icon'></div>";
+                        echo "<div class='discIcon'><img class='discountIconSlider' src='Methods/img/discount-icon.webp' width='65' height='71' alt='discount-icon'></div>";
                         echo "<div class='discountSlider'>" . $row['discount'] . "%" . "</div>";
                      	echo "</div>";
                         echo "<div class='titlePriceDisc'>Only for!</div>";
@@ -179,7 +179,7 @@ class Slider
                     echo "</div>";
                     if ($row['discounted_price'] > 0) {
                       echo "<div class='discountContainer'>";
-                        echo "<div class='discIcon'><img class='discountIconSlider' src='Methods/img/discount-icon.webp' width='65' height='65' alt='discount-icon'></div>";
+                        echo "<div class='discIcon'><img class='discountIconSlider' src='Methods/img/discount-icon.webp' width='65' height='71' alt='discount-icon'></div>";
                         echo "<div class='discountSlider'>" . $row['discount'] . "%" . "</div>";
                       echo "</div>";
                         echo "<div class='titlePriceDisc'>Only for!</div>";

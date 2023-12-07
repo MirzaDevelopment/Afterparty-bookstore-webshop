@@ -24,7 +24,7 @@ require __DIR__ . "/config.php";
 <html lang="en">
 <head>
  <!-- Cookies consent-->
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="aaaa6e6a-b768-4688-bb80-ae1fd29ce1d9" data-blockingmode="auto" type="text/javascript"></script>
+    <script id="Cookiebot" async src="https://consent.cookiebot.com/uc.js" data-cbid="aaaa6e6a-b768-4688-bb80-ae1fd29ce1d9" data-blockingmode="auto" type="text/javascript"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">

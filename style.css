@@ -789,7 +789,7 @@ input.cart {
 
 img.discountIconSlider {
   width: 65px;
-  height: 70px;
+  height: 71px;
   z-index: 10000;
   position: relative;
 }
@@ -3480,7 +3480,7 @@ p.messageDel {
   div.discountSlider {
     position: absolute;
     left: 20px;
-    top: 35.5px;
+    top: 34.5px;
     font-size: 3rem;
     color: white;
   }
