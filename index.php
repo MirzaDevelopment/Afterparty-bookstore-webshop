@@ -46,7 +46,7 @@ require __DIR__ . "/config.php";
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap">
     <script async src="https://kit.fontawesome.com/cba05393c5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="preload" fetchpriority="high" as="image" href="Methods/img/dark-haired-woman.webp" type="image/webp">
+    <link rel="preload" fetchpriority="high" as="image" href="Methods/img/dark-haired-woman320x180.webp 320w, Methods/img/dark-haired-woman480x270.webp 480w, Methods/img/dark-haired-woman576x324.webp 576w, Methods/img/dark-haired-woman768x432.webp 768w, Methods/img/dark-haired-woman992x558.webp 992w, Methods/img/dark-haired-woman1200x675.webp 1200w, Methods/img/dark-haired-woman1400x788.webp 1400w, Methods/img/dark-haired-woman1920x1080.webp 1920w" type="image/webp">
     <link rel="preload" fetchpriority="high" as="image" href="Methods/img/pexels-1.webp" type="image/webp">
   <!-- Google recaptcha script. -->
     <script src="https://www.google.com/recaptcha/api.js?render=6LcFkIIgAAAAABbMMGAJpI5vXUgGIA_vGR-GAjhu" defer></script>
@@ -166,7 +166,7 @@ require __DIR__ . "/config.php";
             <h3 class="topRws">Top reviews:</h3>
             <?php
             //Book rievews in form of article from rss feed PHP Part
-            $xml = new DOMDocument();
+             $xml = new DOMDocument();
             $xml->load("https://kirkusreviews.com/feeds/rss");
 
             $news = $xml->getElementsByTagName("item");
@@ -175,12 +175,14 @@ require __DIR__ . "/config.php";
                 $title = $article->getElementsByTagName("title")->item(0)->nodeValue;
                 $link = $article->getElementsByTagName("link")->item(0)->nodeValue;
                 $description = $article->getElementsByTagName("description")->item(0)->nodeValue;
-
+                $new=explode(",",$description);
+                $description=str_replace('width="180"', 'width="180" height="200" loading="lazy"', $new);
                 echo "<div class='reviews'>";
                 echo $title . "<br>";
-                echo $description . "<br>";
+                echo implode("",$description) . "<br>";
                 echo "<a href='{$link}'>Read more...</a><br>";
                 echo "</div>";
+       
             }
             ?>
         </article>
