@@ -250,7 +250,7 @@ class Form
             "number1" => '<input type="number" name="number1" id="number1">',
             "labelNumber2" => '<label for="number2"> Search by maximum price...</label>',
             "number2" => '<input type="number" name="number2" id="number2">',
-            "submit" => '<input type="image" src="Methods/img/search(1).png" alt="Submit" width="55" height="55">',
+            "submit" => '<input type="image" src="Methods/img/search(1).webp" alt="Submit" width="55" height="55">',
 
         );
         foreach ($input as $array) {
