@@ -28,10 +28,9 @@ if (empty($_SESSION['cart'])) {
   	<script src="Methods/validation.js"></script>
     <!-- Google recaptcha script. -->
     <title>Bookstore webshop</title>
-    <link  rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" as="style">
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap');
+    </style> 
     <script async src="https://kit.fontawesome.com/cba05393c5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>

@@ -34,10 +34,9 @@ header("Expires: 0"); // Proxies.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta name="description" content="content management panel">
     <link rel="stylesheet" href="../../style.css">
-    <link  rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" as="style">
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap');
+    </style> 
     <script src="../script.js"></script>
     <link rel="icon" href="data:;base64,=">
     <title>Super admin panel</title>

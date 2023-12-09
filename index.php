@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
 header("Pragma: no-cache"); // HTTP 1.0.
 header("Expires: 0"); // Proxies.
 session_start();
-if (empty($_SESSION['cart'])){
- $_SESSION['cart'] = array(); //Declaring general session variable to hold cart items to show on first page
+if (empty($_SESSION['cart'])) {
+    $_SESSION['cart'] = array(); //Declaring general session variable to hold cart items to show on first page
 }
 require __DIR__ . "/Traits/PreventDuplicateTrait.php"; //User name and email duplication prevention trait
 require __DIR__ . "/Traits/CleaningLadyTrait.php"; //Sanitation and valiation trait
@@ -22,35 +23,36 @@ require __DIR__ . "/config.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <!-- Cookies consent-->
+    <!-- Cookies consent-->
     <script id="Cookiebot" async src="https://consent.cookiebot.com/uc.js" data-cbid="aaaa6e6a-b768-4688-bb80-ae1fd29ce1d9" data-blockingmode="auto" type="text/javascript"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  	<meta name="description" content="Shop online and turn your dreams into reality, one click at a time.">
+    <meta name="description" content="Shop online and turn your dreams into reality, one click at a time.">
     <!--Removing favicon icon console error-->
     <link rel="icon" href="data:;base64,=">
-     <!-- General JS app script-->
-    <script async src="Methods/script.js"></script>
+    <!-- General JS app script-->
+    <script defer src="Methods/script.js"></script>
     <script>
         function onSubmit(token) {
             document.getElementById("demo-form").submit(); //Recaptcha submit function
-
         }
     </script>
     <title>Bookstore webshop</title>
-    <link  rel="preconnect" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap">
-    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=EB+Garamond:wght@500&display=swap');
+    </style>
     <script async src="https://kit.fontawesome.com/cba05393c5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preload" fetchpriority="high" as="image" href="Methods/img/dark-haired-woman320x180.webp 320w, Methods/img/dark-haired-woman480x270.webp 480w, Methods/img/dark-haired-woman576x324.webp 576w, Methods/img/dark-haired-woman768x432.webp 768w, Methods/img/dark-haired-woman992x558.webp 992w, Methods/img/dark-haired-woman1200x675.webp 1200w, Methods/img/dark-haired-woman1400x788.webp 1400w, Methods/img/dark-haired-woman1920x1080.webp 1920w" type="image/webp">
     <link rel="preload" fetchpriority="high" as="image" href="Methods/img/pexels-1.webp" type="image/webp">
-  <!-- Google recaptcha script. -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LcFkIIgAAAAABbMMGAJpI5vXUgGIA_vGR-GAjhu" defer></script>
+    <!-- Google recaptcha script. -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcFkIIgAAAAABbMMGAJpI5vXUgGIA_vGR-GAjhu" async defer></script>
 </head>
+
 <body onload="firstFunction()">
     <div class="headerStuff">
         <span id='cartNum'><?php print_r(count($_SESSION['cart'])) ?></span>
@@ -67,11 +69,8 @@ require __DIR__ . "/config.php";
             <nav>
                 <section class="frontSection">
                     <h1 class="mainTitle">Afterparty book store</h1>
-                 <picture>
-                    <img class="wrapImage"
-                    srcset="Methods/img/dark-haired-woman320x180.webp 320w, Methods/img/dark-haired-woman480x270.webp 480w, Methods/img/dark-haired-woman576x324.webp 576w, Methods/img/dark-haired-woman768x432.webp 768w, Methods/img/dark-haired-woman992x558.webp 992w, Methods/img/dark-haired-woman1200x675.webp 1200w, Methods/img/dark-haired-woman1400x788.webp 1400w, Methods/img/dark-haired-woman1920x1080.webp 1920w"
-                    src="Methods/img/dark-haired-woman.webp"
-                    alt="dark-haired-woman" width="1920" height="1080"/>
+                    <picture>
+                        <img class="wrapImage" srcset="Methods/img/dark-haired-woman320x180.webp 320w, Methods/img/dark-haired-woman480x270.webp 480w, Methods/img/dark-haired-woman576x324.webp 576w, Methods/img/dark-haired-woman768x432.webp 768w, Methods/img/dark-haired-woman992x558.webp 992w, Methods/img/dark-haired-woman1200x675.webp 1200w, Methods/img/dark-haired-woman1400x788.webp 1400w, Methods/img/dark-haired-woman1920x1080.webp 1920w" src="Methods/img/dark-haired-woman.webp" alt="dark-haired-woman" width="1920" height="1080" />
                     </picture>
                     <?php
                     //Render of "category words" on first page
@@ -82,10 +81,8 @@ require __DIR__ . "/config.php";
                         foreach ($value as $key_2 => $value_2) {
                             if ($key == "front_data") {
                                 echo '<li class="grid-item1">' . $value_2 . '</li></a>';
-                              
                             }
                         }
-                        
                     }
                     echo '<li class="grid-item1"><a href="#contact">Contact us!</a></li>';
                     echo '</ul>';
@@ -166,7 +163,7 @@ require __DIR__ . "/config.php";
             <h3 class="topRws">Top reviews:</h3>
             <?php
             //Book rievews in form of article from rss feed PHP Part
-             $xml = new DOMDocument();
+            $xml = new DOMDocument();
             $xml->load("https://kirkusreviews.com/feeds/rss");
 
             $news = $xml->getElementsByTagName("item");
@@ -175,14 +172,13 @@ require __DIR__ . "/config.php";
                 $title = $article->getElementsByTagName("title")->item(0)->nodeValue;
                 $link = $article->getElementsByTagName("link")->item(0)->nodeValue;
                 $description = $article->getElementsByTagName("description")->item(0)->nodeValue;
-                $new=explode(",",$description);
-                $description=str_replace('width="180"', 'width="180" height="200" loading="lazy"', $new);
+                $new = explode(",", $description);
+                $description = str_replace('width="180"', 'width="180" height="200" loading="lazy"', $new);
                 echo "<div class='reviews'>";
                 echo $title . "<br>";
-                echo implode("",$description) . "<br>";
+                echo implode("", $description) . "<br>";
                 echo "<a href='{$link}'>Read more...</a><br>";
                 echo "</div>";
-       
             }
             ?>
         </article>
@@ -202,14 +198,14 @@ require __DIR__ . "/config.php";
             </div>
             <!--Fancy waves part END-->
             <div class="quote">
-                <img class="questionPortrait" src="Methods/img/portraitStock.webp" alt="woman-stock-portrait" width="320" height="214">
+                <img class="questionPortrait" src="Methods/img/portraitStock.webp" alt="woman-stock-portrait" loading="lazy" width="320" height="214">
                 <span>"Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten."<strong>G.K. Chesterton.</strong></span>
             </div>
             <hr class='hrClass2'>
             <!--QUESTION FORM FOR USER-->
-  			<p id="contact"></p>
+            <p id="contact"></p>
             <div class="questionaire">
-               
+
                 <h2>Have thoughts or questions? Let us know!</h2>
                 <?php
                 //User questions form render
@@ -224,7 +220,7 @@ require __DIR__ . "/config.php";
             <aside>
                 <h2>Join us for cup of coffee!</h2>
                 <div class="mapouter">
-                    <div class="gmap_canvas"><iframe width="1080" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Cazinskih%20brigada%20&t=k&z=19&ie=UTF8&iwloc=&output=embed" title="Bookstore location on google maps" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div class="gmap_canvas"><iframe width="1080" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Cazinskih%20brigada%20&t=k&z=19&ie=UTF8&iwloc=&output=embed" loading="lazy" title="Bookstore location on google maps" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
         </section>
     </main>
     <!--Main end-->
@@ -248,5 +244,5 @@ require __DIR__ . "/config.php";
         </div>
     </footer>
 </body>
-</html>
 
+</html>
