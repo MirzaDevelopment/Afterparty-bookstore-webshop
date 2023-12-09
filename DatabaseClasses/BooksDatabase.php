@@ -802,6 +802,7 @@ class BooksDatabase implements UserBookSelectInterface
         echo "<div class='grid-item'>";
         echo "<div class='categoryFront'>".$row['book_category']."</div>";
         $newPic = str_replace("../", "Methods/", $row['book_pic']);
+        $newPic = str_replace("alt='book image'", "alt='book image' loading='lazy'", $newPic);
         echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
         echo "<div class='descFront'>";
         echo $row['book_title'];

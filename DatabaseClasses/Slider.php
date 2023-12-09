@@ -100,6 +100,7 @@ class Slider
                         echo "<div class='priceSlide'>" . $row['book_price'] . "$" . "</div>";
                     }
                     $newPic = str_replace("../", "Methods/", $row['book_pic']);
+                 	$newPic = str_replace("alt='book image'", "alt='book image' loading='lazy'", $newPic);
                     echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
                     echo "<span>".substr($row['book_description'],0, 350)."..."."<a href='preview.php?id={$row['book_id']}'aria-label='Details, rating and comments'>Details, rating and comments</a></span>";
                     echo "<input class='cartFrontSlider' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
@@ -144,6 +145,7 @@ class Slider
                         echo "<div class='priceSlide'>" . $row['book_price'] . "$" . "</div>";
                     }
                     $newPic = str_replace("../", "Methods/", $row['book_pic']);
+                 	$newPic = str_replace("alt='book image'", "alt='book image' loading='lazy'", $newPic);
  					echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
                     echo "<span>".substr($row['book_description'],0, 350)."..."."<a href='preview.php?id={$row['book_id']}'aria-label='Details, rating and comments'>Details, rating and comments</a></span>";
                     echo "<input class='cartFrontSlider' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
@@ -189,6 +191,7 @@ class Slider
                         echo "<div class='priceSlide'>" . $row['book_price'] . "$" . "</div>";
                     }
                     $newPic = str_replace("../", "Methods/", $row['book_pic']);
+                  	$newPic = str_replace("alt='book image'", "alt='book image' loading='lazy'", $newPic);
                     echo "<a href='preview.php?id={$row['book_id']}'aria-label='book-details'><div class='shroudCont'><div class='shroud'><p class='inception'>Preview</p></div></div>$newPic </a>";
                     echo "<span>".substr($row['book_description'],0, 350)."..."."<a href='preview.php?id={$row['book_id']}'aria-label='Details, rating and comments'>Details, rating and comments</a></span>";
                     echo "<input class='cartFrontSlider' type='image' src='Methods/img/shopping-cart.webp' width='35' height='35' alt='submit' name='{$row['book_id']}' value='Add-to-cart'>";
