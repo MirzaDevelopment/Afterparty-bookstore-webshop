@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Exo:400,700");
 /***GENERAL CUSTOMISATION***/
 * {
   font-family: "EB Garamond", serif;
@@ -2107,8 +2108,6 @@ p#payPal:after {
 }
 
 /***Customer registration background animation***/
-
-@import url("https://fonts.googleapis.com/css?family=Exo:400,700");
 
 body.userInsertCheckout {
   font-family: "Exo", sans-serif;
