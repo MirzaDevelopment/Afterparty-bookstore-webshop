@@ -3584,6 +3584,10 @@ p.messageDel {
     width: 55px;
     height: 60px;
   }
+  input.cart {
+    width: 55px;
+    height: 60px;
+}
   section#funPart div.cuteImage {
     margin-top: 8%;
   }
@@ -3863,7 +3867,7 @@ p.messageDel {
     padding: 5%;
   }
   div.paginationContainer div.prev {
-    top: 63px;
+    top: 62px;
   }
   footer.finalNav nav.goBackCartCheckout {
     width: 50%;
@@ -4037,7 +4041,7 @@ p.messageDel {
   #opis2,
   p#opis2 a,
   div.status,
-  div.notStatus p.cartConfirm,
+  div.notStatus, p.cartConfirm,
   span.pageNumb a,
   div.reviews p,
   div.quote span strong,
@@ -4064,7 +4068,6 @@ p.messageDel {
   div.uploadContainer form input,
   div.uploadContainer form textarea,
   div.uploadContainer form label.img,
-  label#catLabel,
   div.finalMsg > span,
   div.uploadContainer select#mySelect,
   div.selectsContainer form label,
@@ -4281,7 +4284,7 @@ p.messageDel {
     padding: 2%;
     row-gap: unset;
   }
-  div.mySlides.fade > span,
+  div.mySlides.fade > span,div.mySlides.fade > span a,
   span.pageNumb a,
   div.uploadContainer h2,
   div.numbDist a,
