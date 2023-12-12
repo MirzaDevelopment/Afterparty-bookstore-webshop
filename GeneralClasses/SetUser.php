@@ -265,7 +265,7 @@ class SetUser //VARIABLE SETTING CLASS WITH TRAITS (USER PANEL)
                 Booksdatabase::userSelectNumberBoth($number1, $number2);
                 echo "<br>";
             }else{
-            echo "<img id='emptyIcon' src='Methods/img/sorry(2).png' width='100' alt='sorry-icon'>";
+            echo "<img id='emptyIcon' src='Methods/img/sorry(2).webp' width='100' alt='sorry-icon'>";
             echo "<p id='empty'>Ooops...it seems that you didn't specify any search criteria. Please try again.<p>";
         }
           }

@@ -3888,7 +3888,7 @@ p.messageDel {
   div.descFront {
     font-size: 2.2rem;
   }
-  div.selectWrapAnimated label {
+  div.selectWrapAnimated label,label#catLabel {
     font-size: 2rem;
   }
   div.firstPageSearchContainer form label,
