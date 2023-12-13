@@ -410,9 +410,8 @@ button.slider-arrow-next,
 button.slider-arrow-prev {
   font-size: 1.2rem;
 }
-div.titlePriceDisc,
+
 div.newPriceSlider,
-div.titlePrice,
 div.priceSlide,
 h1.cartHeading,
 body.userInsert h1.mainTitle,
@@ -724,7 +723,7 @@ p#empty {
   position: relative;
   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
     rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
-    text-align: center;
+  text-align: center;
 }
 img#emptyIcon {
   margin-top: 50px;
@@ -3587,7 +3586,7 @@ p.messageDel {
   input.cart {
     width: 55px;
     height: 60px;
-}
+  }
   section#funPart div.cuteImage {
     margin-top: 8%;
   }
@@ -3636,6 +3635,8 @@ p.messageDel {
     font-size: 1.6rem;
   }
   div.priceSlide,
+  div.titlePriceDisc,
+  div.titlePrice,
   div.newPriceSlider,
   h1.cartHeading,
   p#cartOutput,
@@ -3892,7 +3893,8 @@ p.messageDel {
   div.descFront {
     font-size: 2.2rem;
   }
-  div.selectWrapAnimated label,label#catLabel {
+  div.selectWrapAnimated label,
+  label#catLabel {
     font-size: 2rem;
   }
   div.firstPageSearchContainer form label,
@@ -4041,7 +4043,8 @@ p.messageDel {
   #opis2,
   p#opis2 a,
   div.status,
-  div.notStatus, p.cartConfirm,
+  div.notStatus,
+  p.cartConfirm,
   span.pageNumb a,
   div.reviews p,
   div.quote span strong,
@@ -4284,7 +4287,8 @@ p.messageDel {
     padding: 2%;
     row-gap: unset;
   }
-  div.mySlides.fade > span,div.mySlides.fade > span a,
+  div.mySlides.fade > span,
+  div.mySlides.fade > span a,
   span.pageNumb a,
   div.uploadContainer h2,
   div.numbDist a,
