@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
 header("Pragma: no-cache"); // HTTP 1.0.
@@ -26,7 +25,7 @@ require __DIR__ . "/config.php";
 
 <head>
     <!-- Cookies consent-->
-    <script id="Cookiebot" async src="https://consent.cookiebot.com/uc.js" data-cbid="aaaa6e6a-b768-4688-bb80-ae1fd29ce1d9" data-blockingmode="auto" type="text/javascript"></script>
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="aaaa6e6a-b768-4688-bb80-ae1fd29ce1d9" data-blockingmode="auto" type="text/javascript"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -34,7 +33,7 @@ require __DIR__ . "/config.php";
     <!--Removing favicon icon console error-->
     <link rel="icon" href="data:;base64,=">
     <!-- General JS app script-->
-    <script defer src="Methods/script.js"></script>
+    <script defer src="Methods/firstscript.js"></script>
     <script>
         function onSubmit(token) {
             document.getElementById("demo-form").submit(); //Recaptcha submit function
@@ -46,7 +45,7 @@ require __DIR__ . "/config.php";
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=EB+Garamond:wght@500&display=swap');
     </style>
     <script async src="https://kit.fontawesome.com/cba05393c5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylefront.css">
     <link rel="preload" fetchpriority="high" as="image" href="Methods/img/dark-haired-woman320x180.webp 320w, Methods/img/dark-haired-woman480x270.webp 480w, Methods/img/dark-haired-woman576x324.webp 576w, Methods/img/dark-haired-woman768x432.webp 768w, Methods/img/dark-haired-woman992x558.webp 992w, Methods/img/dark-haired-woman1200x675.webp 1200w, Methods/img/dark-haired-woman1400x788.webp 1400w, Methods/img/dark-haired-woman1920x1080.webp 1920w" type="image/webp">
     <link rel="preload" fetchpriority="high" as="image" href="Methods/img/pexels-1.webp" type="image/webp">
     <!-- Google recaptcha script. -->

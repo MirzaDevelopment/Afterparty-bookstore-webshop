@@ -1,0 +1,2106 @@
+/***GENERAL CUSTOMISATION***/
+
+* {
+  font-family: "EB Garamond", serif;
+  font-size: 16px;
+  box-sizing: border-box;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/***Margin auto***/
+body,
+div#selectAllQ,
+div.uploadContainer form input[type="submit"],
+p#delete,
+p#deleteUser,
+input#submitUpdFull,
+input#submitSlider,
+input#submitCategory,
+input#listTrans,
+div#transConfirmRestore,
+p#updateDiscount,
+div.transConfirm,
+div#transConfirmDel,
+a#shop,
+div.login-failed,
+div.login-failed-empty,
+div.login-failed-user,
+div.login-failed-notfound,
+div.login-failed-ip,
+p.goBackMsg,
+p.goBackMsgTerms,
+div#porukaReg > span,
+p#loginSuccess,
+p.mailMsg,
+div#porukaReg > p,
+p.userUploadMsg,
+p#catAnchor,
+ul.words,
+div.firstPageSearchContainer form,
+div.firstPageSearchContainerA form,
+p#opisDesc,
+.slideshow-container,
+p.cartConfirmSlider,
+span.previewDesc,
+div.commentEditDiv,
+p#commentMsg,
+#opis2,
+p#opis,
+div.shroudCont,
+div.shroudContCat p.inception,
+p.inceptionCat,
+p.inceptionA,
+p.inceptionACat,
+div.status,
+div.notStatus,
+.notStatus,
+p.cartConfirm,
+.discountContainerFront,
+div.paginationContainer,
+article.bookReviews,
+div.questionaire,
+div.bookContainerCart .grid-item,
+div.bookContainerCheckout .grid-item,
+body.userInsertCheckout main div.register-wrapper-user,
+div.registerContainerUser,
+div.personalInfo,
+section.customerData h2.productSpec,
+section.orderData p,
+div#paypalContainer,
+body.userInsert form#regMailAnchor,
+div.allRegWrapper div.register-wrapper-user,
+div.register-wrapper,
+div.allRegWrapper div.registerContainerUser,
+div.uploadContainerUser,
+.step1Wrapper,
+#step2,
+#stepShow,
+#finalStepShow,
+div.mainLinksContainer,
+div.mainLinks .sublinkContainer,
+div.mainLinks h2,
+body div.questionsContainer,
+div.frontMsg,
+#mainTable,
+#userMainTable,
+#mainTableStats,
+table#mainTableUser,
+div#transConfirmRestore,
+section.notice p,
+p.messageDel {
+  margin: auto;
+}
+/***Input stilisation***/
+div.firstPageSearchContainer form input,
+div.firstPageSearchContainerA form input,
+input.inputLogin,
+input#mail,
+input#mail2,
+input#passVal,
+div.uploadContainer form input,
+div.uploadContainer form textarea,
+div.insertCategory form input {
+  border-style: none;
+  outline: none;
+}
+/***General font sizes***/
+div.quote span,
+span.originalPrice,
+span.finalThx,
+div.registerContainerUser h2,
+div.step1Wrapper h1,
+div.mainLinks h2,
+body.adminBody h1#adminMsg,
+div.uploadContainer h2,
+td.desc,
+div.uploadContainerUser h2,
+input.delCategory,
+input.submitCategory,
+span#publisher,
+p.ratingLabel {
+  font-size: 1.5rem;
+}
+div.reviews p,
+div.cartContainer label,
+body.userInsertCheckout h2,
+span.finalMail,
+body div.questionsContainer p:nth-child(1),
+tbody tr td,
+tbody tr td > a,
+#mainTable th,
+table#mainTableUser th,
+span.goBackMsgUser,
+p#output,
+p#output2,
+#userMainTable th,
+table#mainTableStats th,
+p.bookText,
+p.userText,
+div#transConfirmRestore,
+div.transConfirm,
+div#transConfirmDel,
+p#updateDiscount,
+p.emph,
+label[for="commentId"],
+a.loginComment,
+input#submitComment,
+input#commentEdit,
+input#commentDelete,
+button#deleteSelec,
+button#selectAll,
+a[href*="preview"],
+button.slider-arrow-next,
+button.slider-arrow-prev {
+  font-size: 1.2rem;
+}
+
+div.newPriceSlider,
+div.priceSlide,
+h1.cartHeading,
+body.userInsert h1.mainTitle,
+h1.statsTitle,
+h1.statsTitleCust,
+span.ratingMark {
+  font-size: 2rem;
+}
+div.descFront2,
+section.orderData p,
+div.descFront,
+.userCommentName,
+.userLoginCommentName {
+  font-size: 1.8rem;
+}
+/***Html***/
+html {
+  scroll-behavior: smooth;
+}
+/***List general stylisation***/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/***Centered elements***/
+main#cartMain,
+body[onload="paymentFinal()"] > main,
+.cartHeading,
+h2.productSpec,
+h2.latestEdition,
+div.goBackMsgUpd,
+div.paginationContainer,
+footer.loginNav,
+div.registerContainerUser,
+div.allRegWrapper div.register-wrapper-user,
+div#porukaPassword,
+h1#adminMsg,
+body.adminBody div.goBackMsg,
+div.goBackMessages,
+div.goBackMsg,
+div.searchContainer h3,
+div.searchContainer h2,
+section.searchIcon,
+div.finalMsg,
+body.transBody,
+div.userSearchContainer h2,
+div.userSearchContainer h3,
+div.goBackMsgUserSearch,
+h2.categoryInsert,
+div.insertCategory,
+div.goBackMsgCategories,
+h1#sliderTitle,
+div.goBackMsgSlider,
+#mainTableStats,
+h1.statsTitle,
+div.goBackMsgBookStats,
+h1.statsTitleCust,
+div.goBackMsgCustStatistics,
+p.customerNotice,
+div.smallPreviewCont,
+div.goBackMsgPreview {
+  text-align: center;
+}
+
+/***Select tag fix for some android phones (for some reason width isnt working)***/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min--moz-device-pixel-ratio: 1.5),
+  only screen and (-o-device-pixel-ratio: 3/2),
+  only screen and (min-device-pixel-ratio: 1.5) {
+  nav select#mySelect,
+  nav select#mySelectDiscount,
+  select#adm_units {
+    background: white;
+  }
+}
+/***Bodies***/
+body {
+  min-width: 320px;
+  max-width: 2256px;
+}
+div.categoryFront {
+  position: relative;
+  top: -35px;
+  font-size: 1.5rem;
+  filter: opacity(0.2);
+  font-style: oblique;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/***Header on first page***/
+/***Login, Icon and cart***/
+div.headerStuff img.cartMain,
+div.headerStuff input.cartMain:hover {
+  cursor: pointer;
+}
+span#cartNum {
+  box-shadow: rgb(3 102 214 / 30%) 0px 0px 0px 3px;
+  height: 25px;
+  padding: 2px;
+  align-self: center;
+}
+div.headerStuff {
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+  margin: 1%;
+  gap: 1%;
+  margin-top: 2%;
+  box-shadow: rgb(27 31 35 / 4%) 0px 1px 0px,
+    rgb(255 255 255 / 25%) 0px 1px 0px inset;
+  position: sticky;
+  top: 0;
+  flex-direction: row;
+  z-index: 4000;
+}
+div.headerStuff a {
+  align-self: center;
+}
+/***Front section***/
+section.frontSection {
+  background-attachment: unset;
+}
+
+/***Main title***/
+h1.mainTitle {
+  font-size: 2.5rem;
+  color: cornsilk;
+  filter: drop-shadow(2px 4px 6px black);
+  text-align: center;
+  margin-top: 2%;
+  position: relative;
+  top: 25px;
+}
+/***Girl first page image***/
+img.wrapImage {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  border-radius: 25% 0px 0% 0px;
+  width: 100%;
+  position: relative;
+  display: block;
+  height: auto;
+}
+
+/***First page nav words***/
+
+div.wordsContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  bottom: 2vh;
+}
+ul.words {
+  position: absolute;
+  color: white;
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  row-gap: 15px;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  border-radius: 25px 25px 25px 25px;
+  column-gap: 27%;
+  box-shadow: rgb(0 0 0 / 45%) 0px 25px 20px -20px;
+}
+ul.words li.grid-item1 {
+  list-style-type: none;
+}
+ul.words li > a {
+  transition: font-size 0.2s linear;
+  font-size: 1.2rem;
+  color: white;
+  border-radius: 10px;
+}
+ul.words li > a:hover {
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  display: inline-block;
+}
+
+section nav a[href="#contact"]:hover:after {
+  height: 5px;
+  width: 100%;
+}
+/***Categories and discounts***/
+nav select#mySelect:hover,
+select#mySelectDiscount:hover {
+  cursor: pointer;
+}
+p#outputCategory > h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 35px;
+}
+p#opisDesc {
+  font-size: large;
+  color: rgb(0, 0, 0);
+  width: fit-content;
+  padding: 25px;
+  border-radius: 50px 5px;
+  background-color: wheat;
+  box-shadow: rgba(50, 50, 105, 0.15) 0 2px 5px 0,
+    rgba(0, 0, 0, 0.05) 0 1px 1px 0;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+#opis2,
+p#opis {
+  font-size: large;
+  color: rgb(0, 0, 0);
+  width: fit-content;
+  padding: 25px;
+  border-radius: 50px 5px;
+  background-color: wheat;
+  box-shadow: rgba(50, 50, 105, 0.15) 0 2px 5px 0,
+    rgba(0, 0, 0, 0.05) 0 1px 1px 0;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+div.bookContainer2 div.grid-item2 a > img:not(img.discountIcon) {
+  box-shadow: rgb(38 57 77) 0 20px 30px -10px;
+  position: relative;
+  top: -35px;
+  margin-bottom: -5px;
+}
+div.grid-item2 {
+  text-align: center;
+  background-color: #fff;
+  padding: 15px;
+  height: fit-content;
+  font-size: 1.5rem;
+  margin-top: 0%;
+  box-shadow: rgba(17, 17, 26, 0.1) 0 1px 0;
+}
+nav p#outputCategory div.bookContainer2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 50px;
+  justify-items: center;
+  justify-content: space-between;
+  margin: 5%;
+  align-items: start;
+  column-gap: 50px;
+  margin-top: 10%;
+  margin-bottom: 60px;
+}
+nav div.selectWrap {
+  position: relative;
+  opacity: 0;
+  transform: translateY(-45px);
+  z-index: -4000;
+}
+nav select#mySelectDiscount {
+  outline: none;
+  border-style: none;
+  border: none;
+  box-shadow: rgb(9 30 66 / 25%) 0px 4px 8px -2px,
+    rgb(9 30 66 / 8%) 0px 0px 0px 1px;
+
+  text-align: center;
+}
+
+nav select#mySelect {
+  outline: none;
+  border-style: none;
+  border: none;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  text-align: center;
+}
+nav div.selectWrapAnimated {
+  opacity: 1;
+  transition-property: opacity, transform;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
+}
+nav select#mySelect:focus {
+  background-color: snow;
+}
+nav select#mySelectDiscount:focus {
+  background-color: snow;
+}
+/***First page search form***/
+
+div.firstPageSearchContainer form,
+div.firstPageSearchContainerA form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  box-shadow: rgb(0 0 0 / 45%) 0px 25px 20px -20px;
+  transition: padding 200ms linear;
+  padding: 0;
+  width: 300px;
+  position: relative;
+  padding-top: 35px;
+}
+div.firstPageSearchContainer {
+  opacity: 0;
+  transform: translateY(-45px);
+}
+div.firstPageSearchContainerA {
+  opacity: 1;
+  transition-property: opacity, transform;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+p#empty {
+  background: aliceblue;
+  color: crimson;
+  font-size: 1.5rem;
+  position: relative;
+  box-shadow: rgba(50, 50, 105, 0.15) 0 2px 5px 0,
+    rgba(0, 0, 0, 0.05) 0 1px 1px 0;
+  text-align: center;
+}
+img#emptyIcon {
+  margin-top: 50px;
+  border-radius: 15px;
+  background: aliceblue;
+}
+/***Slider area***/
+.custom-shape-divider-top-1668023651 {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  background: #00bcd494;
+  height: 92%;
+  border-radius: 0 0 25px 0px;
+}
+.custom-shape-divider-top-1668023651 svg {
+  position: relative;
+  display: block;
+  width: calc(160% + 1.3px);
+  height: 720px;
+}
+/***Slider***/
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin-top: 100px;
+}
+
+img.discountIconSlider {
+  width: 65px;
+  height: 70px;
+  z-index: 10000;
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+.mySlides.fade {
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  background-image: radial-gradient(
+      at 34% 57%,
+      rgb(127, 142, 240) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 96% 72%, rgb(224, 92, 154) 0px, transparent 50%),
+    radial-gradient(at 91% 97%, rgb(179, 122, 235) 0px, transparent 50%),
+    radial-gradient(at 71% 54%, rgb(134, 164, 228) 0px, transparent 50%),
+    radial-gradient(at 46% 94%, rgb(119, 119, 254) 0px, transparent 50%),
+    radial-gradient(at 6% 44%, rgb(90, 216, 113) 0px, transparent 50%),
+    radial-gradient(at 30% 43%, rgb(158, 239, 107) 0px, transparent 50%);
+  border-radius: 5%;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  width: auto;
+  color: black;
+  font-weight: bold;
+  font-size: 25px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+p.next {
+  border-radius: 3px 0 0 3px;
+  left: 130px;
+}
+p.prev {
+  right: 130px;
+}
+div.prevNextContainer {
+  position: relative;
+  top: 250px;
+}
+div.paginationContainer div.prev {
+  position: relative;
+  background-color: white;
+  display: inline-block;
+  padding: 10px;
+  font-weight: 700;
+  color: black;
+  right: 60px;
+  top: 50px;
+}
+div.prev a {
+  font-size: xx-large;
+  font-weight: 900;
+  text-decoration: none;
+}
+/***The dots/bullets/indicators***/
+.dotSlider {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background: #6495ed59;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  padding: 0.5%;
+  visibility: hidden;
+}
+
+.active,
+.dotSlider:hover {
+  background-color: crimson;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.custom-shape-divider-top-1668023651 .shape-fill {
+  fill: #ffffff;
+}
+div.dotContainer {
+  z-index: 5000;
+  position: relative;
+  margin-top: 57px;
+}
+span.oldPrice,
+div.oldPrice {
+  text-decoration: line-through;
+  display: inline;
+  font-size: 1.2rem;
+}
+div.discountContainer {
+  position: relative;
+  top: 70px;
+  left: 37px;
+}
+span.newPrice {
+  color: orangered;
+  font-size: 1.5rem;
+}
+div.discount {
+  position: absolute;
+  top: 16px;
+  color: white;
+  font-size: 1.5rem;
+  left: 12px;
+}
+.discountContainerFront {
+  position: relative;
+  max-width: fit-content;
+  text-align: center;
+}
+div.discIcon {
+  position: absolute;
+  z-index: 10000;
+}
+div.discountSlider {
+  position: absolute;
+  left: 12.5px;
+  top: 19.5px;
+  font-size: 1.5rem;
+  color: white;
+  z-index: 11000;
+}
+
+/***Cart icon slider***/
+.cartFrontSlider {
+  height: 60px;
+  width: 55px;
+  position: relative;
+  top: 68px;
+}
+/***Cart slider confirm message***/
+p.cartConfirmSlider {
+  background-color: #2196f3de;
+  color: white;
+  padding: 10px;
+
+  position: absolute;
+}
+div.sliderCartCont {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  top: 110px;
+}
+/***Cart slider top message***/
+div.titleFeatured {
+  color: white;
+  background: #ed143dab;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  border-radius: 25px 25px 25px 25px;
+}
+
+div.slideshow-container div.mySlides.fade img:not(img.discountIconSlider) {
+  box-shadow: rgb(38 57 77) 0px 20px 30px -10px;
+  margin-bottom: -26px;
+  margin-top: 21px;
+}
+
+div.mySlides.fade > span {
+  font-size: large;
+  color: rgb(0, 0, 0);
+  width: 85%;
+  padding: 5%;
+  margin-top: 5%;
+  border-radius: 50px 5px;
+  background-color: #fff8dc66;
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+div.newPriceSlider + a > img {
+  margin-top: 21px;
+  margin-bottom: -26px;
+}
+/***Preview part***/
+a[href*="preview"] {
+  color: #00663f;
+  text-decoration: underline;
+  position: relative;
+}
+/***FIRST PAGE BOOKS RENDER (categories, discount and search)***/
+div.shroud,
+div.shroudCat {
+  height: 0px;
+  width: 200px;
+  position: absolute;
+  top: -35px;
+  transition: 1s ease height;
+  background: #0000007a;
+  z-index: 5000;
+}
+div.shroudCont,
+div.shroudContCat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p.inception,
+p.inceptionCat {
+  opacity: 0;
+  transition-property: opacity, transform;
+  color: ghostwhite;
+  font-size: 1.8rem;
+  top: 50px;
+  position: relative;
+}
+p.inceptionA,
+p.inceptionACat {
+  transform: translateY(50px);
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+  opacity: 1;
+  color: ghostwhite;
+  font-size: 1.8rem;
+  position: relative;
+  z-index: -5000;
+}
+div.mySlides.fade a div.shroud,
+div.mySlides.fade a div.shroudCat {
+  top: 21px;
+}
+
+div.bookContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 50px;
+  justify-items: center;
+  justify-content: space-between;
+  margin: 5%;
+  align-items: start;
+  column-gap: 50px;
+  margin-top: 25px;
+  margin-bottom: 60px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+div.status {
+  color: #00663f;
+  box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
+  background-color: azure;
+  font-size: 1.2rem;
+  width: fit-content;
+  max-width: 200px;
+  padding: 10px;
+}
+
+div.notStatus,
+div.notStatusCheckout {
+  color: crimson;
+  background-color: #e91e6329;
+  width: fit-content;
+  max-width: 200px;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+.cartFront {
+  position: relative;
+  top: 10px;
+  width: 50px;
+  height: 55px;
+}
+hr.hrClass {
+  width: 50%;
+  color: #6495ed59;
+  border-style: solid;
+  max-width: 210px;
+}
+p.cartConfirm {
+  background-color: #2196f3de;
+  color: white;
+  padding: 10px;
+  width: 150px;
+  margin-top: 25px;
+}
+.discountIcon {
+  width: 65px;
+}
+section#funPart div.cuteImage {
+  background-image: url(Methods/img/indexImage.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  border-radius: 15px 0px 15px;
+}
+section#funPart div.cuteImage p {
+  font-family: "Caveat", cursive;
+  font-size: 3.8rem;
+  color: ghostwhite;
+  position: relative;
+  margin-bottom: -10px;
+  padding-top: 15%;
+}
+section.frontSection {
+  background-image: url(Methods/img/pexels-1.webp);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section#funPart {
+  position: relative;
+  text-align: center;
+}
+
+.grid-item {
+  text-align: center;
+  background-color: white;
+  padding: 15px;
+  height: fit-content;
+  font-size: 1.5rem;
+  margin-top: 5%;
+}
+div.grid-item a > img:not(img.discountIcon) {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  position: relative;
+  top: -35px;
+  margin-bottom: -5px;
+}
+h2.latestEdition:first-of-type {
+  font-size: 1.8rem;
+  margin-top: 45px;
+}
+/***Pagination***/
+span.pageNumb {
+  position: relative;
+  background-color: white;
+  display: inline-block;
+  width: 44px;
+  padding: 10px;
+  box-shadow: rgb(255 255 255 / 20%) 0px 0px 0px 1px inset,
+    rgb(0 0 0 / 90%) 0px 0px 0px 1px;
+  color: cadetblue;
+  text-decoration: none;
+}
+span.pageNumb a {
+  color: cadetblue;
+}
+div.paginationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-top: 35px;
+}
+div.numbDist a {
+  color: cadetblue;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+span.pageNumb a {
+  color: cadetblue;
+  font-size: 20px;
+  text-decoration: none;
+}
+div.paginationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-top: 35px;
+}
+div.numbDist a {
+  color: cadetblue;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+span.pageNumb a {
+  color: cadetblue;
+  font-size: 20px;
+  text-decoration: none;
+}
+div.numbDist {
+  display: inline-block;
+  padding: 1%;
+  position: relative;
+}
+
+div.numbDistContainer {
+  text-align: center;
+  background-color: aliceblue;
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  display: flex;
+  justify-content: space-evenly;
+}
+div.paginationContainer div.next {
+  position: relative;
+  background-color: white;
+  display: inline-block;
+  padding: 10px;
+  font-weight: 700;
+  color: black;
+  left: 60px;
+  top: -57px;
+}
+div.next a {
+  font-size: xx-large;
+  font-weight: 900;
+  text-decoration: none;
+}
+/***Book Reviews***/
+article.bookReviews {
+  width: 85%;
+  height: 50vh;
+  overflow: scroll;
+  text-align: center;
+  border: none;
+  padding: 3%;
+  position: relative;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
+    rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+}
+
+div.reviews {
+  margin-top: 8%;
+}
+article.bookReviews div.reviews a {
+  font-size: 1.5rem;
+  color: orangered;
+  border-bottom-style: solid;
+
+  position: relative;
+  top: -30px;
+}
+h3.topRws {
+  position: relative;
+  font-size: 1.8rem;
+}
+div.reviews img {
+  height: auto;
+  width: auto;
+  margin-top: 5%;
+}
+
+/***Fancy background around reviews and bottom part***/
+.custom-shape-divider-top-1668022447 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1668022447 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.custom-shape-divider-top-1668022447 .shape-fill {
+  fill: #ffffff;
+}
+.custom-shape-divider-bottom-1668022563 {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1668022563 svg {
+  position: relative;
+  display: block;
+  width: calc(121% + 1.3px);
+  height: 41px;
+}
+
+.custom-shape-divider-bottom-1668022563 .shape-fill {
+  fill: #ffffff;
+}
+
+/***Quote with image***/
+.quote {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section.quoteNdQuestion div.quote img.questionPortrait {
+  border-radius: 35% 65% 60% 40% / 89% 65% 35% 11%;
+  width: 100vw;
+  max-width: 992px;
+  height: auto;
+}
+div.quote span {
+  max-width: 350px;
+}
+
+hr.hrClass2 {
+  width: 50%;
+  color: #6495ed59;
+  border-style: solid;
+  margin-top: 20px;
+  max-width: 210px;
+}
+
+/***Questions form***/
+
+div.questionaire h2 {
+  font-size: 1.3rem;
+  padding: 10px 5px 0px 5px;
+}
+
+section.quoteNdQuestion {
+  display: flex;
+  flex-direction: column;
+  background-color: snow;
+  position: relative;
+  flex-wrap: wrap;
+  margin-top: 20%;
+}
+div.questionaire {
+  box-shadow: rgb(136 165 191 / 48%) 6px 2px 16px 0px,
+    rgb(255 255 255 / 80%) -6px -2px 16px 0px;
+  max-width: 20%;
+  padding: 1%;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 25px;
+  background-color: white;
+  min-width: 300px;
+  text-align: center;
+  margin-top: 45px;
+  position: relative;
+  top: -20px;
+}
+div.questionaire form textarea#questionBody.msgInsert {
+  background-color: #65a1ff1c;
+  border-radius: 10px;
+  outline: none;
+  position: relative;
+  top: 15px;
+  width: 250px;
+}
+div.questionaire form input#userName.msgInsert {
+  border-style: none;
+  border-bottom-style: solid;
+  outline: none;
+}
+div.questionaire form label {
+  display: inline-block;
+  margin-top: 5%;
+  font-size: 1.1rem;
+}
+
+div.questionaire form input#questionEmail.msgInsert {
+  border-style: none;
+  border-bottom-style: solid;
+  outline: none;
+}
+button#questionSubmit.g-recaptcha {
+  margin-top: 5%;
+  background-color: white;
+  border-style: none;
+  position: relative;
+  height: 70px;
+}
+button#questionSubmit.g-recaptcha img:hover {
+  cursor: pointer;
+}
+
+span.questionReject {
+  color: crimson;
+  font-size: 1.2rem;
+}
+p#confirmation,
+p#latest {
+  color: cornflowerblue;
+  padding: 5px;
+  background: aliceblue;
+  border-radius: 15px 15px 15px 15px;
+  font-size: 1.2rem;
+}
+/***Google maps***/
+section aside h2 {
+  font-size: 1.5rem;
+}
+.mapouter {
+  position: relative;
+  text-align: center;
+  height: 500px;
+  width: 100%;
+  margin-left: 0%;
+}
+main section aside {
+  margin-top: 70px;
+}
+section aside h2,
+body.userInsertCheckout h2 {
+  text-align: center;
+  padding-top: 12px;
+  position: relative;
+}
+iframe#gmap_canvas {
+  height: 500px;
+  width: 90vw;
+}
+/***Footer with general info***/
+div.footerContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: flex-start;
+  padding: 2%;
+}
+section.policies {
+  text-align: center;
+  flex: 0.5;
+}
+section.socials {
+  text-align: center;
+  flex: 0.5;
+}
+html body footer.frontPage,
+footer.registerPage {
+  color: cornflowerblue;
+  background-image: linear-gradient(
+    95.2deg,
+    rgb(247 247 247) 26.8%,
+    rgba(192, 229, 246, 1) 64%
+  );
+  box-shadow: rgb(0 0 0 / 6%) 0px 2px 4px 0px inset;
+  font-weight: 600;
+}
+section.policies a,
+section.policies a:visited {
+  color: cornflowerblue;
+  display: block;
+}
+section.generalData p {
+  font-family: "Playfair Display", serif;
+}
+section.generalData {
+  text-align: center;
+  width: 60%;
+  flex: 1;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+}
+.fa:hover {
+  opacity: 0.7;
+}
+.fa-facebook {
+  background: cornflowerblue;
+  color: white;
+}
+.quantityDown,
+.quantityUp,
+section h2,
+p#cartOutput,
+span.quantityFinal {
+  margin: 0;
+  font-size: 1.8rem;
+}
+/***Deleted books list***/
+div.numbDistContainer {
+  justify-content: center;
+}
+/***FIREFOX OPTIMISATION***/
+@-moz-document url-prefix() {
+  div.firstPageSearchContainerA form input,
+  div.firstPageSearchContainer form input {
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+  div.shroudCont div.shroud,
+  div.shroudContCat div.shroudCat {
+    top: -16px;
+  }
+
+  div.mySlides.fade > img {
+    margin-top: 21px;
+  }
+  nav select#mySelect,
+  nav select#mySelectDiscount,
+  select#adm_units,
+  div.uploadContainerUser > form > select#users.userUpd {
+    background: white;
+  }
+  select#users.userUpd {
+    border: none;
+  }
+
+  body.userInsert form#regMailAnchor {
+    row-gap: 5px;
+  }
+  div.selectsContainer form {
+    row-gap: 10px;
+  }
+}
+/***Media query start***/
+@media only screen and (min-width: 480px) {
+  ul.words li > a,
+  section nav a[href="#contact"] {
+    font-size: 1.4rem;
+  }
+  section.quoteNdQuestion div.quote img.questionPortrait {
+    height: auto;
+  }
+  img.wrapImage {
+    height: 100%;
+  }
+  p.cartConfirm {
+    width: fit-content;
+  }
+  ul.words {
+    column-gap: 40%;
+    background: #ed143d40;
+  }
+  section.frontSection {
+    background-position: center;
+  }
+}
+@media only screen and (min-width: 576px) {
+  ul.words li > a,
+  section nav a[href="#contact"] {
+    font-size: 1.5rem;
+  }
+  nav select#mySelect,
+  nav select#mySelectDiscount {
+    display: block;
+  }
+  section.frontSection {
+    background-attachment: fixed;
+  }
+}
+@media only screen and (min-width: 768px) {
+  ul.words li > a,
+  section nav a[href="#contact"] {
+    font-size: 1.6rem;
+  }
+  section.frontSection {
+    background-position: bottom;
+  }
+  section.quoteNdQuestion div.quote img.questionPortrait {
+    border-radius: 35% 65% 60% 40% / 89% 65% 35% 11%;
+    width: fit-content;
+    max-width: 992px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  section#funPart div.cuteImage {
+    height: 600px;
+    max-height: 600px;
+  }
+  p.next {
+    font-size: 2.5rem;
+    left: 345px;
+  }
+  p.prev {
+    right: 345px;
+    font-size: 2.5rem;
+  }
+  div.discount {
+    top: 25px;
+    font-size: 2rem;
+    left: 20.5px;
+  }
+  .discountIcon {
+    width: 94px;
+    height: 94px;
+  }
+  img#emptyIcon {
+    width: 150px;
+    height: 150px;
+  }
+  div.paginationContainer div.prev {
+    top: 57px;
+  }
+  @-moz-document url-prefix() {
+    div.shroudCont div.shroud,
+    div.shroudContCat div.shroudCat {
+      top: -11px;
+    }
+  }
+  div.discountContainer ~ a[href*="preview"] > div.shroudCont > div.shroud,
+  div.discountContainer
+    ~ a[href*="preview"]
+    > div.shroudContCat
+    > div.shroudCat {
+    width: 100%;
+    right: 0.8px;
+  }
+  div.titlePrice ~ a[href*="preview"] > div.shroudCont > div.shroud,
+  div.titlePrice ~ a[href*="preview"] > div.shroudContCat > div.shroudCat {
+    width: 100%;
+  }
+  div.shroudCont div.shroud,
+  div.shroudContCat div.shroudCat {
+    width: 300px;
+  }
+  div.selectWrapAnimated label {
+    font-size: 1.5rem;
+  }
+  span#alrdyInside,
+  span#itemInCart,
+  p.cartConfirmSlider,
+  #opis2,
+  div.status,
+  div.notStatus,
+  p.cartConfirm,
+  span.pageNumb a,
+  div.reviews p,
+  div.quote span strong,
+  div.questionaire form label,
+  section.policies a,
+  section.generalData p,
+  p#confirmation,
+  p#latest,
+  span.questionReject,
+  div.reviews,
+  p#opisDesc,
+  p#opisDesc a,
+  p#payPal,
+  p#finalDesc,
+  div.notStatusCheckout,
+  span.finalMail,
+  p.afterRegMessage,
+  form#demo-form label,
+  form#demo-form input,
+  label.acceptTerms a,
+  label[for="passDigit"],
+  input#mail3,
+  div.step1Wrapper label,
+  div#finalStepShow p,
+  div.step1Wrapper h2,
+  div.step1Wrapper input#mail,
+  form input#reset,
+  div#stepShow input#mail2,
+  p#outputMail,
+  div#stepShow h2,
+  div#finalStepShow h2,
+  div#finalStepShow input#passVal,
+  div#stepShow input#submitNum,
+  div#finalStepShow input#submitUser,
+  p#outputMail2 span.numFail,
+  p#outputMail2 > div.login-failed-password,
+  p.bookText,
+  p.userText,
+  div.onlineDotContainer span.logOut,
+  form input.logoutAdmin,
+  p#loginSuccess,
+  p.messageDel,
+  p.loginHere,
+  div.loginWrapper form label,
+  div#animated a,
+  input#loginButton,
+  input.inputLogin,
+  div.login-failed,
+  div.login-failed-empty,
+  div.login-failed-user,
+  div.login-failed-notfound,
+  div.login-failed-ip,
+  span#loginSuccess,
+  p.goBackMsg,
+  p.goBackMsgTerms,
+  div.numbDist a,
+  div#selectAllQ,
+  div.qContainer input.read,
+  div.qContainer input,
+  body div.questionsContainer p:nth-child(1),
+  body div.questionsContainer p:nth-child(2),
+  body div.questionsContainer p,
+  input.ansMsg,
+  p#answer form label,
+  input.submitAnswer,
+  form textarea.adminAnswer,
+  div.uploadContainer form input,
+  div.uploadContainer form textarea,
+  div.uploadContainer form p,
+  div.uploadContainer form label.img,
+  label#catLabel,
+  div.uploadContainer select#mySelect,
+  div.finalMsg,
+  div.finalMsg > span,
+  div.searchContainer h2,
+  form input#list,
+  div.searchContainer h3,
+  div.inputContainer label,
+  div.inputContainer input,
+  tbody tr td,
+  #mainTable th,
+  p#opis,
+  p#opis > a,
+  p#delete,
+  p#delete label,
+  input.deleteSmall,
+  p#delete2nd,
+  div.selectsContainer form label,
+  p#output,
+  p#output2,
+  span.bookId,
+  form input.bookUpd,
+  form textarea.bookUpd,
+  label[for="img"],
+  input#submitUpdFull,
+  span.key,
+  form label select#mySelect,
+  select#mySelectSlider,
+  input#submitCategory,
+  input#submitSlider,
+  input#listTrans,
+  div#transConfirmRestore,
+  p#updateDiscount,
+  form.userSearchForm input,
+  form.userSearchForm label,
+  div.userSearchContainer h2,
+  div.userSearchContainer h3,
+  #userMainTable th,
+  #mainTableUser th,
+  p#deleteUser,
+  p#deleteUser label,
+  p#deleteUser2nd,
+  div.updateContainerUser form input,
+  div.updateContainerUser form label,
+  div.updateContainerUser form select,
+  div.categoryItem,
+  div.insertCategory form label,
+  div.insertCategory form input#newCategory,
+  h2.categoryInsert,
+  input.deleteCat,
+  span#catWin,
+  span#catFail,
+  p#deleteFinal,
+  div#catNoDel,
+  p#catAnchor,
+  h1#sliderTitle,
+  input#transSearch,
+  section.notice p,
+  section.notice p strong,
+  div.transConfirm,
+  div#transConfirmDel,
+  table#mainTableStats tbody tr th,
+  p.customerNotice,
+  table#mainTableUser th,
+  form input.updateUser,
+  input.logoutUser,
+  span.userId,
+  div#poruka span,
+  div#porukaUser > span,
+  div#porukaMail > span,
+  div#porukaPassword > span,
+  p.mailMsg,
+  input#userName.msgInsert,
+  div.questionaire form textarea#questionBody.msgInsert,
+  div.questionaire form input#questionEmail.msgInsert,
+  p#opis2 a,
+  tbody tr td > a,
+  div.afterRegMessageUser a#shop,
+  a.loginComment,
+  label[for="commentId"],
+  span.previewDesc p,
+  .commentBody,
+  input#submitComment,
+  input#commentEdit,
+  input#commentDelete,
+  button#deleteSelec,
+  button#selectAll,
+  span.badWords,
+  div.mainCommentContainer p.userComment,
+  textarea.userCommentText,
+  p#delete2nd,
+  a[href*="preview"],
+  button.slider-arrow-next,
+  button.slider-arrow-prev {
+    font-size: 1.5rem;
+  }
+  div.numbDistContainer {
+    justify-content: center;
+  }
+  p.inception,
+  p.inceptionCat {
+    font-size: 2.5rem;
+    top: 150px;
+  }
+  div.slideshow-container div.mySlides.fade img:not(img.discountIconSlider) {
+    width: auto;
+    height: 600px;
+  }
+  div.grid-item a > img:not(img.discountIcon),
+  div.grid-item2 a > img:not(img.discountIcon),
+  div.grid-item > img:not(img.discountIcon),
+  div.grid-item > img:not(img.discountIcon),
+  div.carouselContainer div.containerSmall img.shroudImgSmall {
+    height: 450px;
+    width: 300px;
+  }
+  .custom-shape-divider-top-1668023651 {
+    height: 94%;
+  }
+  .cartFrontSlider {
+    height: 95px;
+    width: 90px;
+    top: 110px;
+  }
+  div.sliderCartCont {
+    top: 170px;
+  }
+  section#funPart div.cuteImage p {
+    width: 50%;
+  }
+  article.bookReviews div.reviews a,
+  section aside h2,
+  .quantityDown,
+  .quantityUp,
+  body.userInsertCheckout h2,
+  div.registerContainerUser h2,
+  div.uploadContainerUser h2,
+  h2.latestEdition:first-of-type,
+  div.next a,
+  div.prev a,
+  div.quote span,
+  p#outputCategory h2,
+  p#empty {
+    font-size: 2rem;
+  }
+  img.discountIconSlider {
+    width: 120px;
+    height: 132px;
+  }
+  div.discountContainer {
+    position: relative;
+    top: 50px;
+    left: 85px;
+  }
+  div.discountSlider {
+    position: absolute;
+    left: 20px;
+    top: 34.5px;
+    font-size: 3rem;
+    color: #fff;
+  }
+  h3.latestEditionNotice,
+  div.categoryFront,
+  .grid-item,
+  span.newPrice,
+  span.oldPrice,
+  div.newPrice,
+  div.oldPrice,
+  span.originalPrice,
+  input#cartQuantity.cartQuantity,
+  div.cartContainer label,
+  nav.goBackCart a,
+  nav.goBackCart input,
+  div.registerContainerUser section form label,
+  div.registerContainerUser section form label#acceptTerms a,
+  div.registerContainerUser section form input,
+  select#adm_units,
+  span.goBackCustomer a,
+  nav.goBackCartCheckout a,
+  form#demo-form label,
+  form#demo-form input,
+  label.acceptTerms a,
+  form#demo-form button.g-recaptcha,
+  input#submitRegMail,
+  div#porukaReg > span,
+  div#porukaReg p.registerSuccess,
+  div.mainLinks h2,
+  div.uploadContainerUser form input,
+  div.uploadContainerUser form label,
+  select.userUpd,
+  p.userUploadMsg,
+  p.emph,
+  p.ratingLabel {
+    font-size: 1.8rem;
+  }
+
+  div.quote span {
+    width: 50%;
+    max-width: unset;
+  }
+  .cartFront {
+    width: 55px;
+    height: 60px;
+  }
+  section#funPart div.cuteImage {
+    margin-top: 8%;
+  }
+  main section aside {
+    margin-top: 65px;
+  }
+
+  div.dotContainer {
+    margin-top: 105px;
+  }
+  div.questionaire {
+    max-width: 370px;
+  }
+  div.questionaire form textarea#questionBody.msgInsert {
+    width: 95%;
+  }
+  .dotSlider {
+    height: 25px;
+    width: 25px;
+  }
+  div.questionaire h2 {
+    font-size: 1.6rem;
+  }
+  div.priceSlide,
+  div.titlePriceDisc,
+  div.newPriceSlider,
+  h1.cartHeading,
+  div.titlePrice,
+  p#cartOutput,
+  section h2,
+  ul.words li > a,
+  section nav a[href="#contact"],
+  div.personalInfo {
+    font-size: 2.5rem;
+  }
+  div.prevNextContainer {
+    position: relative;
+    top: 400px;
+  }
+  h1.mainTitle {
+    font-size: 3.5rem;
+  }
+  div.bookContainer,
+  div.bookContainerSearch,
+  div.bookContainer2,
+  nav p#outputCategory div.bookContainer2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  a.loginIcon img.icon {
+    height: 55px;
+    width: 55px;
+  }
+  span#cartNum {
+    height: auto;
+    padding: 0.5%;
+    font-size: 1.5rem;
+  }
+  div.firstPageSearchContainer form,
+  div.firstPageSearchContainerA form {
+    width: 330px;
+  }
+  div.titleFeatured {
+    font-size: 2rem;
+  }
+  div.mySlides.fade > span,
+  div.mySlides.fade > span a {
+    font-size: 1.6rem;
+  }
+  div.firstPageSearchContainer form label,
+  div.firstPageSearchContainer form input,
+  div.firstPageSearchContainerA form label,
+  div.firstPageSearchContainerA form input {
+    font-size: 1.5rem;
+  }
+  div.headerStuff img.cartMain,
+  div.headerStuff input.cartMain:hover {
+    width: 55px;
+    height: 55px;
+  }
+  nav select#mySelect,
+  nav select#mySelectDiscount {
+    display: block;
+    font-size: 1.5rem;
+  }
+  div.headerStuff a {
+    align-self: center;
+    font-size: 1.5rem;
+  }
+  .grid-item,
+  div.bookContainer2,
+  div.grid-item2 {
+    box-shadow: unset;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  div.slideshow-container div.mySlides.fade img:not(img.discountIconSlider) {
+    height: 600px;
+    left: 250px;
+    position: relative;
+  }
+  div.paginationContainer div.prev {
+    top: 62px;
+  }
+  p.prev {
+    right: 500px;
+  }
+  div.titlePrice {
+    font-size: 4rem;
+    position: relative;
+    top: 370px;
+    right: 200px;
+  }
+  p.next {
+    left: 500px;
+  }
+  div.discountContainer ~ a[href*="preview"] > div.shroudCont > div.shroud,
+  div.discountContainer
+    ~ a[href*="preview"]
+    > div.shroudContCat
+    > div.shroudCat {
+    left: 250px;
+  }
+  div.selectWrapAnimated label,
+  label#catLabel {
+    font-size: 2rem;
+  }
+  button#questionSubmit.g-recaptcha img {
+    height: 70px;
+    width: 70px;
+  }
+  .quantityDown,
+  .quantityUp,
+  section h2,
+  section.customerData h2.productSpec,
+  span.quantityFinal {
+    font-size: 2.5rem;
+  }
+  ul.words li > a,
+  section nav a[href="#contact"],
+  h3.topRws,
+  p#cartOutput,
+  h1.cartHeading,
+  span.finalThx {
+    font-size: 3rem;
+  }
+  div.descFront2,
+  div.descFront {
+    font-size: 2.2rem;
+  }
+  div.firstPageSearchContainer form label,
+  div.firstPageSearchContainer form label input,
+  div.firstPageSearchContainerA form label,
+  div.firstPageSearchContainerA form label input {
+    font-size: 1.8rem;
+    margin: 8px;
+  }
+  div.bookContainer2,
+  div.grid-item2,
+  h3.latestEditionNotice,
+  div.categoryFront,
+  .grid-item,
+  span.newPrice,
+  span.oldPrice,
+  div.newPrice,
+  div.oldPrice,
+  span.finalMail {
+    font-size: 2rem;
+  }
+
+  h2.latestEdition:first-of-type,
+  div.next a,
+  div.prev a,
+  div.quote span,
+  p#outputCategory h2 {
+    font-size: 2.2rem;
+  }
+  nav select#mySelect,
+  nav select#mySelectDiscount {
+    font-size: 2rem;
+  }
+  section#funPart div.cuteImage p {
+    font-size: 5rem;
+  }
+  div.firstPageSearchContainer form,
+  div.firstPageSearchContainerA form {
+    width: 400px;
+  }
+  span#alrdyInside,
+  span#itemInCart,
+  p.cartConfirmSlider,
+  #opis2,
+  div.status,
+  div.notStatus,
+  p.cartConfirm,
+  span.pageNumb a,
+  div.reviews p,
+  div.quote span strong,
+  div.questionaire form label,
+  section.policies a,
+  section.generalData p,
+  p#confirmation,
+  p#latest,
+  span.questionReject,
+  div.reviews,
+  p#opisDesc,
+  p#opisDesc a,
+  p#opis2 a {
+    font-size: 1.6rem;
+  }
+  div.priceSlide,
+  div.newPriceSlider {
+    font-size: 4rem;
+    top: 380px;
+    position: relative;
+    right: 200px;
+  }
+  div.discountContainer {
+    position: relative;
+    top: 123px;
+    left: 335px;
+  }
+  div.mySlides.fade > span,
+  div.mySlides.fade > span a {
+    font-size: 1.8rem;
+  }
+  h1.mainTitle {
+    font-size: 4rem;
+  }
+  div.titlePriceDisc {
+    font-size: 4rem;
+    position: relative;
+    top: 370px;
+    right: 200px;
+  }
+  div.titleFeatured {
+    right: 200px;
+    position: relative;
+    top: 350px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  p#loginSuccess,
+  span#alrdyInside,
+  span#itemInCart,
+  p.cartConfirmSlider,
+  #opis2,
+  p#opis2 a,
+  div.status,
+  div.notStatus,
+  p.cartConfirm,
+  span.pageNumb a,
+  div.reviews p,
+  div.quote span strong,
+  div.questionaire form label,
+  section.policies a,
+  section.generalData p,
+  p#confirmation,
+  p#latest,
+  span.questionReject,
+  div.reviews,
+  p#opisDesc,
+  p#opisDesc a,
+  p.loginHere,
+  div.loginWrapper form label,
+  div#animated a,
+  input#loginButton,
+  input.inputLogin,
+  form#demo-form label,
+  form#demo-form input,
+  label.acceptTerms a,
+  input#mail3,
+  label[for="passDigit"],
+  div.uploadContainer form p,
+  div.uploadContainer form input,
+  div.uploadContainer form textarea,
+  div.uploadContainer form label.img,
+  div.finalMsg > span,
+  div.uploadContainer select#mySelect,
+  div.selectsContainer form label,
+  input#listTrans,
+  div#transConfirmRestore,
+  p#delete,
+  p#delete2nd,
+  table#mainTable tr th,
+  table#mainTableUser tr th,
+  p#updateDiscount,
+  #userMainTable th,
+  p#deleteUser,
+  p#deleteUser label,
+  p#deleteUser2nd,
+  input.deleteCat,
+  span#catWin,
+  span#catFail,
+  p#delete label[for="submit1"],
+  div#catNoDel,
+  p#deleteFinal,
+  input#transSearch,
+  table#mainTableStats tbody tr th,
+  table#mainTable tr td,
+  span.previewDesc p,
+  p#delete2nd,
+  a[href*="preview"] {
+    font-size: 1.8rem;
+  }
+  div.questionaire {
+    max-width: 425px;
+  }
+  div.descFront2,
+  div.descFront,
+  article.bookReviews div.reviews a {
+    font-size: 2.5rem;
+  }
+  input.cart,
+  input.cartFront {
+    width: 75px;
+    height: 80px;
+  }
+  div.discount {
+    top: 43px;
+    font-size: 3rem;
+    width: fit-content;
+    left: 35px;
+  }
+  .discountIcon {
+    width: 150px;
+    height: 150px;
+  }
+  .slideshow-container {
+    margin-top: 5%;
+  }
+  section.frontSection {
+    background-position: bottom;
+  }
+  div.shroudCont div.shroud,
+  div.shroudContCat div.shroudCat {
+    width: 400px;
+  }
+  div.mySlides.fade > span,
+  div.mySlides.fade > span a {
+    font-size: 2rem;
+  }
+  h2.latestEdition:first-of-type {
+    font-size: 3.5rem;
+  }
+
+  div.grid-item a > img:not(img.discountIcon),
+  div.grid-item2 a > img:not(img.discountIcon),
+  div.grid-item > img:not(img.discountIcon),
+  div.grid-item > img:not(img.discountIcon) {
+    height: 600px;
+    width: 400px;
+  }
+  h1.mainTitle {
+    font-size: 6rem;
+  }
+  nav div.selectWrapAnimated {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 150px;
+  }
+
+  div.bookContainer2,
+  div.grid-item2,
+  h3.latestEditionNotice,
+  div.categoryFront,
+  .grid-item,
+  span.newPrice,
+  span.oldPrice,
+  div.newPrice,
+  div.oldPrice,
+  nav.goBackCartCheckout a {
+    font-size: 2.2rem;
+  }
+  div.mySlides.fade > span,
+  div.mySlides.fade > span a,
+  span.pageNumb a,
+  div.uploadContainer h2,
+  div.numbDist a {
+    font-size: 2rem;
+  }
+  div.paginationContainer div.next {
+    top: -90px;
+    left: 85px;
+  }
+  div.paginationContainer div.prev {
+    right: 85px;
+    top: 78px;
+  }
+  h2.latestEdition:first-of-type,
+  div.next a,
+  div.prev a,
+  div.quote span,
+  p#outputCategory h2,
+  h3.topRws,
+  h2.productSpec,
+  section.orderData p {
+    font-size: 3.5rem;
+  }
+  span.pageNumb {
+    width: 70px;
+    text-decoration: none;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 1920px) and (max-width: 2560px) {
+  h1.mainTitle {
+    font-size: 8rem;
+  }
+  .slideshow-container {
+    margin-top: 5%;
+  }
+  nav div.selectWrapAnimated label#catLabel {
+    margin-bottom: 1%;
+  }
+  img#emptyIcon {
+    margin-top: 100px;
+  }
+  section.frontSection {
+    background-position: center;
+  }
+  ul.words li > a,
+  section nav a[href="#contact"],
+  h3.topRws {
+    font-size: 5rem;
+  }
+  ul.words {
+    margin-top: 150px;
+  }
+  div.firstPageSearchContainer form label,
+  input,
+  div.firstPageSearchContainerA form label,
+  input {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  div.firstPageSearchContainer form,
+  div.firstPageSearchContainerA form {
+    width: 100%;
+    flex-direction: row;
+    padding: 1%;
+  }
+
+  section#funPart div.cuteImage {
+    margin-top: 0%;
+  }
+  .slideshow-container {
+    width: 80%;
+    max-width: 80%;
+  }
+  .custom-shape-divider-top-1668023651 svg {
+    height: unset;
+  }
+  section#funPart div.cuteImage p {
+    font-size: 7rem;
+    padding-top: initial;
+  }
+  div.bookContainer,
+  div.bookContainerSearch,
+  div.bookContainer2,
+  nav p#outputCategory div.bookContainer2 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
