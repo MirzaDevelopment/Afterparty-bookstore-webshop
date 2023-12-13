@@ -1660,8 +1660,7 @@ div.numbDistContainer {
   div.questionaire h2 {
     font-size: 1.6rem;
   }
-  div.priceSlide,
-  div.titlePriceDisc,
+  div.priceSlide,div.titlePriceDisc,
   div.newPriceSlider,
   h1.cartHeading,
   div.titlePrice,
@@ -1741,6 +1740,9 @@ div.numbDistContainer {
   div.paginationContainer div.prev {
     top: 62px;
   }
+  div.titlePrice~a[href*="preview"]>div.shroudCont>div.shroud, div.titlePrice~a[href*="preview"]>div.shroudContCat>div.shroudCat {
+    left: 250px;
+}
   p.prev {
     right: 500px;
   }
@@ -1749,7 +1751,7 @@ div.numbDistContainer {
     position: relative;
     top: 370px;
     right: 200px;
-  }
+}
   p.next {
     left: 500px;
   }
