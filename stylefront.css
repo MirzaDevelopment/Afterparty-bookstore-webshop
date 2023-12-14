@@ -156,6 +156,7 @@ button.slider-arrow-prev {
 }
 
 div.newPriceSlider,
+div.titlePrice,div.titlePriceDisc,
 div.priceSlide,
 h1.cartHeading,
 body.userInsert h1.mainTitle,
@@ -803,7 +804,7 @@ div.notStatusCheckout {
   padding: 10px;
   font-size: 1.2rem;
 }
-.cartFront {
+.cartFront, input.cart {
   position: relative;
   top: 10px;
   width: 50px;
@@ -1584,7 +1585,7 @@ div.numbDistContainer {
   }
   div.discountContainer {
     position: relative;
-    top: 50px;
+    top: 60px;
     left: 85px;
   }
   div.discountSlider {
@@ -1633,7 +1634,7 @@ div.numbDistContainer {
     width: 50%;
     max-width: unset;
   }
-  .cartFront {
+  .cartFront,input.cart {
     width: 55px;
     height: 60px;
   }
@@ -1660,8 +1661,8 @@ div.numbDistContainer {
   div.questionaire h2 {
     font-size: 1.6rem;
   }
-  div.priceSlide,div.titlePriceDisc,
-  div.newPriceSlider,
+  div.priceSlide,
+  div.titlePriceDisc,div.newPriceSlider,
   h1.cartHeading,
   div.titlePrice,
   p#cartOutput,
@@ -1740,9 +1741,10 @@ div.numbDistContainer {
   div.paginationContainer div.prev {
     top: 62px;
   }
-  div.titlePrice~a[href*="preview"]>div.shroudCont>div.shroud, div.titlePrice~a[href*="preview"]>div.shroudContCat>div.shroudCat {
+  div.titlePrice ~ a[href*="preview"] > div.shroudCont > div.shroud,
+  div.titlePrice ~ a[href*="preview"] > div.shroudContCat > div.shroudCat {
     left: 250px;
-}
+  }
   p.prev {
     right: 500px;
   }
@@ -1751,7 +1753,7 @@ div.numbDistContainer {
     position: relative;
     top: 370px;
     right: 200px;
-}
+  }
   p.next {
     left: 500px;
   }
