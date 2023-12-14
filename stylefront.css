@@ -1,6 +1,7 @@
 /***Stilisation css file for first page***/
 
 /***GENERAL CUSTOMISATION***/
+
 * {
   font-family: "EB Garamond", serif;
   font-size: 16px;
@@ -1991,7 +1992,11 @@ div.numbDistContainer {
   h2.latestEdition:first-of-type {
     font-size: 3.5rem;
   }
-
+  @-moz-document url-prefix() {
+  div.shroudCont div.shroud, div.shroudContCat div.shroudCat {
+    top: -6px;
+  }
+}
   div.grid-item a > img:not(img.discountIcon),
   div.grid-item2 a > img:not(img.discountIcon),
   div.grid-item > img:not(img.discountIcon),
