@@ -24,8 +24,16 @@ require __DIR__ . "/config.php";
 <html lang="en">
 
 <head>
-    <!-- Cookies consent-->
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="aaaa6e6a-b768-4688-bb80-ae1fd29ce1d9" data-blockingmode="auto" type="text/javascript"></script>
+<!-- Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
+<script defer type="text/javascript" src="//www.freeprivacypolicy.com/public/cookie-consent/4.1.0/cookie-consent.js" charset="UTF-8"></script>
+<script defer type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palette":"light","language":"en","page_load_consent_levels":["strictly-necessary"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_name":"https://www.afterparty-bookstore.com/index","website_privacy_policy_url":"https://www.afterparty-bookstore.com/policy.html"});
+});
+</script>
+
+<noscript>Cookie Consent by <a href="https://www.freeprivacypolicy.com/">Free Privacy Policy Generator</a></noscript>
+<!-- End Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -229,6 +237,7 @@ require __DIR__ . "/config.php";
             <section class="policies">
                 <h3><a href="policy.html">Policy</a></h3>
                 <h3><a href="termsandconditions.html">Terms and conditions</a></h3>
+                                             <a href="#" id="open_preferences_center">Update cookies preferences</a>
             </section>
             <section class="generalData">
                 <p>Afterparty Bookstore e-commerce website</p>
