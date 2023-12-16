@@ -52,7 +52,9 @@ All the .css and .js files are minified in live for best performance. They are l
 3. Web app has improved user experience (e.g. aplication shows immediately if the username or email is taken, and if email or password is not in a required format).<br/>
 4. All the database queries are executed using stored procedures and/or views. <br/>
 5. Web app shoud be completely responsive and is tested on GOOGLE CHROME AND FIREFOX browsers.<br/>
-6. Web application achieves 97 score on accessibility, 95 score on best practices and 100 score on SEO in google lighthouse tests.
+6. Web application achieves 97 score on accessibility, 95 score on best practices and 100 score on SEO in google lighthouse tests. <br> 
+Using the latest lighthouse test lately, however, I couldn't achieve higher score than 86 in performance section. It is possible that the reason for this is the slower host (shared hosting) and/or my own internet connection, because almost all of the "best practices", caches, image optimisations, and other recommendations from lighthouse are implemented. Even if I delete the entire css or script file, disable the google recaptcha script, for example, the score still remains below 90.<br/>
+
 
 ## Installation and requirements
 ## Installation notice

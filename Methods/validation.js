@@ -395,7 +395,7 @@ function mailReset() {
     }
 
 }
-
+/***Messages manipulation in comment section on preview page****/
 function previewFunction(){
 
     if (document.getElementById('failComment')) {
