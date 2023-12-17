@@ -403,7 +403,7 @@ function firstFunction() {
     
     /*** Small insert of Slider part, so the elements in slider are rendered properly***/
     showSlides();//Starting function for first time
-    //var refreshIntervalId = setInterval(showSlides, 4000);
+    var refreshIntervalId = setInterval(showSlides, 4000);
     let prevButton = document.getElementsByClassName("prev");
     let nextButton = document.getElementsByClassName("next");
     for (let i = 0; i < prevButton.length; i++) {
