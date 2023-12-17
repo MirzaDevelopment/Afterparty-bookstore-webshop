@@ -155,9 +155,7 @@ class Questiondatabase implements QuestionInterface //Class for question/message
             }
             //Small helpful redirect
             echo "<p class='messageDel'>Message deleted successfully! Returning to previous page...</p>";
-            echo '<script type="text/javascript">
-            window.setTimeout(function () { window.location = "https://www.afterparty-bookstore.com/Methods/Admin/messages" }, 3000)
-             </script>';
+           echo ("<meta http-equiv='refresh' content='2'>"); //Refresh by HTTP 'meta'
             exit();
         } catch (PDOException $e) {
           date_default_timezone_set('Europe/Sarajevo');
@@ -168,9 +166,7 @@ class Questiondatabase implements QuestionInterface //Class for question/message
         $connection = null;
     }
 
-
     /***UPDATE CHECKBOX SELECTED MESSAGES AS "READ"***/
-
     public static function updQuestions($questions_id):void
     {
         require "NamespaceAdmin3.php";
