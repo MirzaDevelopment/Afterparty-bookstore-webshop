@@ -184,7 +184,7 @@ if (!empty($_GET['id'])) {
             //Logic to properly discounted price
             if ($row['discounted_price'] > 0) {
                 echo "<div class='discountContainerFront'>";
-                echo "<img class='discountIcon' src='Methods/img/Bez_naslova.png' width='65' height='65' alt='discount-icon'>";
+                echo "<img class='discountIcon' src='Methods/img/Bez_naslova.webp' width='65' height='65' alt='discount-icon'>";
                 echo "<div class='discount'>" . $row['discount'] . "%" . "</div>";
                 echo "</div>";
                 echo "<span class='oldPrice'>" . $row['book_price'] . "$" . "<br></span>";
@@ -249,7 +249,7 @@ if (!empty($_GET['Discount'])) {
             echo $row['book_author'] . "<br>";
             //Showing only discounted products in chosen category
           	echo "<div class='discountContainerFront'>";
-            echo "<img class='discountIcon' src='Methods/img/Bez_naslova.png' width='65' height='65' alt='discount-icon'>";
+            echo "<img class='discountIcon' src='Methods/img/Bez_naslova.webp' width='65' height='65' alt='discount-icon'>";
             echo "<div class='discount'>" . $row['discount'] . "%" . "</div>";
           	echo  "</div>";
             echo "<span class='oldPrice'>" . $row['book_price'] . "$" . "<br></span>";

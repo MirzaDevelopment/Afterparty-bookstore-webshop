@@ -406,8 +406,7 @@ function previewFunction(){
             setTimeout(function () {
             messages.remove();
             }, 5000);
-            let focusError4 = document.getElementById('commentAnchor');
-            focusError4.scrollIntoView(false);    
+            messages.scrollIntoView();    
     }
 
     if (document.getElementById('latest')) {
@@ -417,10 +416,7 @@ function previewFunction(){
             setTimeout(function () {
                 messages.remove();
             }, 5000);
-          
-        
-        let focusError1 = document.getElementById('commentAnchor');
-        focusError1.scrollIntoView(false);
+            messages.scrollIntoView();
     
         
 
