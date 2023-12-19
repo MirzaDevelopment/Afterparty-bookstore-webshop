@@ -22,7 +22,6 @@ class Questiondatabase implements QuestionInterface //Class for question/message
           date_default_timezone_set('Europe/Sarajevo');
             $error = $e->getMessage() . " " . date("F j, Y, g:i a");
             error_log($error . PHP_EOL, 3, "../Logs/logs.txt");
-            echo "<span id='questionReject'>This message has already been sent! Formulate question differently</span>";
         }
         $connection = null;
     }

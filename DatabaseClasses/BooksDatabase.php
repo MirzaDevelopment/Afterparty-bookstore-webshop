@@ -3,7 +3,7 @@ declare(strict_types=1);
  /***Class that contains SELECT queries towards Books database (what front page/guests see regarding books) with chosen category books render ***/
 class BooksDatabase implements UserBookSelectInterface
 {
-  const limit = 5; //number of books per page (see pagination section below)
+  const limit = 10; //number of books per page (see pagination section below)
   /***SELECT WITH FILTER ALL FILLED***/
   public static function userSelectData($book_author, $book_title, $number1, $number2):void
   {

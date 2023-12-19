@@ -779,6 +779,7 @@ function firstFunction() {
                 questionConfirm.remove();
     
             }, 3000)
+            question.scrollIntoView();
         }
         grecaptcha.ready(function () {
             grecaptcha.execute('6LcFkIIgAAAAABbMMGAJpI5vXUgGIA_vGR-GAjhu', { action: 'submit' }).then(function (token) {
