@@ -291,7 +291,7 @@ div.login-failed-notfound,
 div.login-failed-ip,
 p.goBackMsg,
 p.goBackMsgTerms,
-div#porukaReg > span {
+div#porukaReg > span,span.noticeFail  {
   background: crimson;
   color: white;
   padding: 5px;
@@ -2239,6 +2239,10 @@ main.finalMain {
   flex-direction: column;
   align-items: center;
 }
+span.noticeFail{
+  position: absolute;
+    bottom: 0px;
+}
 span.finalMsg {
   background-color: ghostwhite;
   width: fit-content;
@@ -3257,7 +3261,7 @@ p.messageDel {
   div.login-failed-empty,
   div.login-failed-user,
   div.login-failed-notfound,
-  div.login-failed-ip,
+  div.login-failed-ip, span.noticeFail, 
   span#loginSuccess,
   p.goBackMsg,
   p.goBackMsgTerms,
@@ -4096,7 +4100,7 @@ p.messageDel {
   table#mainTableStats tbody tr th,
   table#mainTable tr td,
   span.previewDesc p,
-  p#delete2nd,
+  p#delete2nd,span.noticeFail 
   a[href*="preview"] {
     font-size: 1.8rem;
   }
@@ -4296,7 +4300,7 @@ p.messageDel {
   table#userMainTable tr td,
   table#mainTableUser tr td,
   p.emph,
-  tbody tr td > a {
+  tbody tr td > a, div.notStatusCheckout {
     font-size: 2rem;
   }
   section.frontSection {

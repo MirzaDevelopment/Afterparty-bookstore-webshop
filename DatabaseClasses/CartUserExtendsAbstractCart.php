@@ -33,7 +33,7 @@ class CartUser extends AbstractCart
           //Logic to properly discounted price
           if ($row['discounted_price'] > 0) {
             echo "<div class='discountContainerFront'>";
-            echo "<img class='discountIcon' src='Methods/img/Bez_naslova.png' alt='discount-icon'>";
+            echo "<img class='discountIcon' src='Methods/img/Bez_naslova.webp' alt='discount-icon'>";
             echo "<div class='discount'>" . $row['discount'] . "%" . "</div>";
             echo "</div>";
             echo "<div class='oldPrice'>" . $row['book_price'] . "$" ."<br></div>";
@@ -104,7 +104,7 @@ class CartUser extends AbstractCart
           if ($row['discounted_price'] > 0) {
             echo "<div class='discountContainerFront'>";
             array_push($_SESSION['usedPrices'], $row['discounted_price']);
-            echo "<img class='discountIcon' src='img/Bez_naslova.png' alt='discount-icon'>";
+            echo "<img class='discountIcon' src='img/Bez_naslova.webp' alt='discount-icon'>";
             echo "<div class='discount'>" . $row['discount'] . "%" . "</div>";
             echo "</div>";
            echo "<div class='oldPrice'>" . $row['book_price'] . "$" ."<br></div>";
