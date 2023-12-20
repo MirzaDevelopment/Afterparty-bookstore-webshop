@@ -2242,6 +2242,7 @@ main.finalMain {
 span.noticeFail{
   position: absolute;
     bottom: 0px;
+    left:0px;
 }
 span.finalMsg {
   background-color: ghostwhite;

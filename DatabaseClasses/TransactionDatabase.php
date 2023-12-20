@@ -64,7 +64,7 @@ class TransactionDatabase implements TransactionInterface
             $sql2->bindParam(1, $customer_id, PDO::PARAM_STR | PDO::PARAM_INPUT_OUTPUT, 6000);
             $sql2->execute();
             $connection->commit(); //Commit transaction if above event took place
-            header("Refresh:4; url=index.php");
+            echo "<meta http-equiv='refresh' content='4;URL=index.php'>";
             die();
           }
         }
