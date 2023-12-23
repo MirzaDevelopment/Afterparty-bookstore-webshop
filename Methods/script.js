@@ -841,6 +841,7 @@ function firstFunction() {
                         if (this.readyState == 4 && this.status == 200) {
 
                             document.getElementById('outputQuestion').innerHTML = this.responseText;
+                            
 
                         }
                     }
@@ -853,7 +854,7 @@ function firstFunction() {
 
             });
         });
-
+        document.getElementById('outputQuestion').scrollIntoView();
     });
     //Shroud on images on mouse enter 
     let shroudImg = document.getElementsByClassName("shroudImg")
@@ -2289,6 +2290,38 @@ function paymentFinal() {
 
         }
     })
+
+    /***Disabling the confirm button if no books are available****/
+
+   if(document.querySelector('.notStatusCheckout') !== null){
+    let paypalButton=document.getElementById("paypal-button");
+    paypalButton.style.display="none";
+    let link = document.querySelectorAll('[href="finalisation"]');
+    for (let i=0; i<link.length;i++){
+        link[i].setAttribute("class","disabled");
+    }
+    let confirm = document.getElementsByClassName('disabled');
+        for (let i=0; i<confirm.length; i++){
+                try {
+                    if (document.getElementById("finalDescFail")) {
+                        return;
+                    } else {
+                        let td = document.createElement("p");
+                        td.setAttribute("id", "finalDescFail");
+                        td.innerHTML = "We are sorry, but there is a temporary shortage of stock for the product you ordered. To expedite your order, please consider one of the following options: Modify your order quantity to match the available stock. Choose an Alternative: Explore our collection for a similar product that is currently in stock.";
+                        confirm[i].appendChild(td);
+                    }
+                } catch (error) {
+                    console.log(error);
+        
+                }
+
+
+
+        }
+    
+    
+   }
 }
 /***Edit comment by user(creating update button and textarea***/
 function commentEdit(element) {
@@ -2637,5 +2670,5 @@ cont = null;
 shroud = null;
 shroudImg = null;
 inception = null;
-
+link=null;
 

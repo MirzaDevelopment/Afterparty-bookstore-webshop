@@ -291,7 +291,8 @@ div.login-failed-notfound,
 div.login-failed-ip,
 p.goBackMsg,
 p.goBackMsgTerms,
-div#porukaReg > span,span.noticeFail  {
+div#porukaReg > span,
+span.noticeFail {
   background: crimson;
   color: white;
   padding: 5px;
@@ -2080,6 +2081,33 @@ p#finalDesc {
   color: cornflowerblue;
   z-index: 5000;
 }
+p#finalDescFail {
+  padding: 5px 6px 8px 6px;
+  padding: 5px 6px 8px 6px;
+  border-radius: 6px;
+  float: right;
+  color: black;
+  background-color: #ffffff;
+  position: absolute;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  top: 22px;
+  width: 300px;
+  color: cornflowerblue;
+  z-index: 5000;
+  left: -195px;
+}
+p#finalDescFail:after {
+  content: "";
+  position: absolute;
+  margin-top: -21px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #ffffff;
+  transform: rotate(0deg);
+  right: 30px;
+  top: 10px;
+}
 p#payPal {
   padding: 5px 6px 8px 6px;
   border-radius: 6px;
@@ -2234,15 +2262,21 @@ section.finalImage img {
   box-shadow: rgb(0 0 0 / 45%) 0px 25px 20px -20px;
   max-width: 265px;
 }
+nav.goBackCartCheckout a.disabled {
+  pointer-events: none !important;
+  cursor: default;
+  color: white;
+  background: #0000001f;
+}
 main.finalMain {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-span.noticeFail{
+span.noticeFail {
   position: absolute;
-    bottom: 0px;
-    left:0px;
+  bottom: 0px;
+  left: 0px;
 }
 span.finalMsg {
   background-color: ghostwhite;
@@ -3091,6 +3125,11 @@ p.messageDel {
     width: 100%;
     right: 0.8px;
   }
+  a.disabled p#finalDescFail {
+    top: 33px;
+    width: 305px;
+    left: -195px;
+  }
   div.titlePrice ~ a[href*="preview"] > div.shroudCont > div.shroud,
   div.titlePrice ~ a[href*="preview"] > div.shroudContCat > div.shroudCat {
     width: 100%;
@@ -3225,6 +3264,7 @@ p.messageDel {
   p#opisDesc a,
   p#payPal,
   p#finalDesc,
+  p#finalDescFail,
   div.notStatusCheckout,
   span.finalMail,
   p.afterRegMessage,
@@ -3262,7 +3302,8 @@ p.messageDel {
   div.login-failed-empty,
   div.login-failed-user,
   div.login-failed-notfound,
-  div.login-failed-ip, span.noticeFail, 
+  div.login-failed-ip,
+  span.noticeFail,
   span#loginSuccess,
   p.goBackMsg,
   p.goBackMsgTerms,
@@ -4101,8 +4142,8 @@ p.messageDel {
   table#mainTableStats tbody tr th,
   table#mainTable tr td,
   span.previewDesc p,
-  p#delete2nd,span.noticeFail 
-  a[href*="preview"] {
+  p#delete2nd,
+  span.noticeFail a[href*="preview"] {
     font-size: 1.8rem;
   }
   nav div.selectWrapAnimated {
@@ -4293,6 +4334,9 @@ p.messageDel {
     padding: 2%;
     row-gap: unset;
   }
+  a.disabled p#finalDescFail {
+    top: 39px;
+  }
   div.mySlides.fade > span,
   div.mySlides.fade > span a,
   span.pageNumb a,
@@ -4301,7 +4345,8 @@ p.messageDel {
   table#userMainTable tr td,
   table#mainTableUser tr td,
   p.emph,
-  tbody tr td > a, div.notStatusCheckout {
+  tbody tr td > a,
+  div.notStatusCheckout {
     font-size: 2rem;
   }
   section.frontSection {
