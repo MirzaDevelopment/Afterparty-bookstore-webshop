@@ -167,7 +167,7 @@ if (empty($_SESSION['sum']) && empty($_SESSION['sumDown'])) { //Making sure if u
       <section class="generalData">
       <p>Afterparty Bookstore e-commerce website</p>
         <p>Developed by Mirza Mehagić</p>
-        <p>Copyright © 2022 Mirza Mehagić All rights reserved</p>
+        <p>Copyright © 2023 Mirza Mehagić All rights reserved</p>
         <p>This is personal and non-commercial product</p>
         <p>Contact: mirza.mehagic@hotmail.com (or via page contact form)</p>
       </section>

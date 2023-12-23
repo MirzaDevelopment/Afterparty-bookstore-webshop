@@ -1186,17 +1186,19 @@ function quantityFunction() {
     } try {
 
         ajax = new XMLHttpRequest();
+       ajax.open("POST", "server?quantity=" + arrayQuantity);
         ajax.onreadystatechange = function () {
 
             if (this.readyState == 4 && this.status == 200) {
 
                 document.getElementById('cartOutput2').innerHTML = this.responseText;
+                 window.location.href="Methods/customerRegistration";
 
             }
 
 
         }
-        ajax.open("POST", "server?quantity=" + arrayQuantity);
+       
         ajax.send(arrayQuantity);
 
     } catch (error) {
@@ -1641,10 +1643,6 @@ function multipleUpd() {//Body "onload" function in updateControllerSmall.php
             }
             document.getElementById("anchor").scrollIntoView();
         });
-
-
-
-
     }
 
     /***Update book credentials***/

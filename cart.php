@@ -43,8 +43,8 @@ require __DIR__ . "/config.php";
         </section>
     </main>
     <nav class="goBackCart">
-              <a href="index" aria-label="Go Back">Go back</a>
-       		  <a href="Methods/customerRegistration" aria-label="Continue"><input type="button" name="answer" value="Continue" onclick="quantityFunction();"></input>
+           <a href="index" aria-label="Go Back">Go back</a>
+          <input type="button" name="answer" value="Continue" onclick="quantityFunction();"></input> <!--Move forward with chosen quantity amounts -->
     </nav>
     <footer class="frontPage">
         <div class="footerContainer">
@@ -56,7 +56,7 @@ require __DIR__ . "/config.php";
             <section class="generalData">
            		<p>Afterparty Bookstore e-commerce website</p>
                 <p>Developed by Mirza Mehagić</p>
-                <p>Copyright © 2022 Mirza Mehagić All rights reserved</p>
+                <p>Copyright © 2023 Mirza Mehagić All rights reserved</p>
                 <p>This is personal and non-commercial product</p>
                 <p>Contact: mirza.mehagic@hotmail.com (or via page contact form)</p>
             </section>
