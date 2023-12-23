@@ -2067,10 +2067,8 @@ div#paypalContainer {
 }
 p#finalDesc {
   padding: 5px 6px 8px 6px;
-  padding: 5px 6px 8px 6px;
   border-radius: 6px;
   float: right;
-  color: black;
   background-color: #ffffff;
   position: absolute;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -2083,10 +2081,8 @@ p#finalDesc {
 }
 p#finalDescFail {
   padding: 5px 6px 8px 6px;
-  padding: 5px 6px 8px 6px;
   border-radius: 6px;
   float: right;
-  color: black;
   background-color: #ffffff;
   position: absolute;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,

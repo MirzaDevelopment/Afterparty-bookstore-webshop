@@ -1196,7 +1196,7 @@ function quantityFunction() {
 
 
         }
-        ajax.open("POST", "server.php/CartUser?quantity=" + arrayQuantity);
+        ajax.open("POST", "server?quantity=" + arrayQuantity);
         ajax.send(arrayQuantity);
 
     } catch (error) {
@@ -2308,7 +2308,7 @@ function paymentFinal() {
                     } else {
                         let td = document.createElement("p");
                         td.setAttribute("id", "finalDescFail");
-                        td.innerHTML = "We are sorry, but there is a temporary shortage of stock for the product you ordered. To expedite your order, please consider one of the following options: Modify your order quantity to match the available stock. Choose an Alternative: Explore our collection for a similar product that is currently in stock.";
+                        td.innerHTML = "We are sorry, but there is a temporary shortage of stock for the product you ordered. To expedite your order, please consider one of the following options: modify your order quantity to match the available stock. Choose an alternative: explore our collection for a similar product that is currently in stock.";
                         confirm[i].appendChild(td);
                     }
                 } catch (error) {
