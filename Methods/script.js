@@ -2567,7 +2567,7 @@ function starsChecked(element) {
                     if (!document.getElementById("ratingStyle")) {
                         stars3[i].classList.remove("faChecked");
                     }
-                }, 100)
+                }, 200)
 
 
             }
