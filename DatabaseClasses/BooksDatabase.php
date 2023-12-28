@@ -836,12 +836,32 @@ class BooksDatabase implements UserBookSelectInterface
       echo "</div>";
     //Small for loop to render number of pages for user to click on
     echo "<div class='numbDistContainer'>";
-    for ($i = 1; $i <= $total_pages; $i++) {
+      $length=$total_pages/4;
+      $chunk=$total_pages-2;
+      $switch=true;
+      for ($i = 1; $i <= $total_pages; $i++) {
+        if($i<=round($length)){
+        echo "<div class='numbDist'><a href='index.php?page=" . $i . "#generalAnchor'>" . $i . "</a></div>"; 
+      } else if($i>round($length) && ($i<=$chunk)){
+        if($page_number>=round($length)&&($page_number<$chunk) && $switch==true){
+          $switch=false;
+          echo"<p>...</p>";
+          echo "<div class='numbDist'><a href='index.php?page=" . $page_number+1 . "#generalAnchor'>" . $page_number+1 . "</a></div>"; 
+         
+        }else if($page_number==$chunk  && $switch==true){
+             $switch=false;
+            echo "<div class='numbDist'><a href='index.php?page=" . $page_number-1 . "#generalAnchor'>" . $page_number-1 . "</a></div>"; 
+         echo"<p>...</p>";
+        }else if($switch==true) {
+          $switch=false;
+          echo"<p>...</p>"; 
+        }
 
+    } else{
       echo "<div class='numbDist'><a href='index.php?page=" . $i . "#generalAnchor'>" . $i . "</a></div>"; //Render of total nubmer of pages user can click on
+    }
 
-
-    };
+      };
     echo "</div>";
       //Showing page number in URL
       echo "<div class='paginationContainer'>";
