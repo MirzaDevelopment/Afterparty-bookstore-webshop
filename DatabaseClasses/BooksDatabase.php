@@ -846,15 +846,15 @@ class BooksDatabase implements UserBookSelectInterface
         if($page_number>=round($length)&&($page_number<$chunk) && $switch==true){
           $switch=false;
           echo"<p>...</p>";
-          echo "<div class='numbDist'><a href='index.php?page=" . $page_number+1 . "#generalAnchor'>" . $page_number+1 . "</a></div>"; //Render of total nubmer of pages user can click on
+          echo "<div class='numbDist'><a href='index.php?page=" . $page_number+1 . "#generalAnchor'>" . $page_number+1 . "</a></div>"; 
          
         }else if($page_number==$chunk  && $switch==true){
              $switch=false;
-            echo "<div class='numbDist'><a href='index.php?page=" . $page_number-1 . "#generalAnchor'>" . $page_number-1 . "</a></div>"; //Render of total nubmer of pages user can click on
+            echo "<div class='numbDist'><a href='index.php?page=" . $page_number-1 . "#generalAnchor'>" . $page_number-1 . "</a></div>";
          echo"<p>...</p>";
         }else if($switch==true) {
           $switch=false;
-          echo"<p>...</p>"; //Render of total nubmer of pages user can click on
+          echo"<p>...</p>"; 
         }
 
     } else{
