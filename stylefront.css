@@ -405,7 +405,7 @@ div.grid-item2 {
   margin-top: 0%;
   box-shadow: rgba(17, 17, 26, 0.1) 0 1px 0;
 }
-nav p#outputCategory div.bookContainer2 {
+nav p#outputCategory div.bookContainer2, div.bookContainerSearch {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 50px;
