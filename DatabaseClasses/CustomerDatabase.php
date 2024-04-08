@@ -23,7 +23,7 @@ class CustomerDatabase implements CustomersInterface
             $sql->execute();
             //Query 2: Select last customer_id
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $connection->query("SELECT customer_id FROM dbs10877614.users_customers ORDER BY customer_id DESC LIMIT 1");
+            $sql = $connection->query("SELECT customer_id FROM {$_ENV['DATABASE_NAME']}.users_customers ORDER BY customer_id DESC LIMIT 1");
             while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
                 $_SESSION['customer_id'] = $row['customer_id'];
             }
