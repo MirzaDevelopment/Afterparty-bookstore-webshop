@@ -55,7 +55,7 @@ cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palet
     <script async src="https://kit.fontawesome.com/cba05393c5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="stylefront.css">
     <link rel="preload" fetchpriority="high" as="image" href="Methods/img/dark-haired-woman320x180.webp 320w, Methods/img/dark-haired-woman480x270.webp 480w, Methods/img/dark-haired-woman576x324.webp 576w, Methods/img/dark-haired-woman768x432.webp 768w, Methods/img/dark-haired-woman992x558.webp 992w, Methods/img/dark-haired-woman1200x675.webp 1200w, Methods/img/dark-haired-woman1400x788.webp 1400w, Methods/img/dark-haired-woman1920x1080.webp 1920w" type="image/webp">
-    <link rel="preload" fetchpriority="high" as="image" href="Methods/img/pexels-1.webp" type="image/webp">
+    <link rel="preload" fetchpriority="high" as="image" href="Methods/img/pexels-3.webp" type="image/webp">
     <!-- Google recaptcha script. -->
     <script src="https://www.google.com/recaptcha/api.js?render=6LcFkIIgAAAAABbMMGAJpI5vXUgGIA_vGR-GAjhu" async defer></script>
 </head>
