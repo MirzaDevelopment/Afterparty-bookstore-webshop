@@ -40,7 +40,7 @@ if (empty($_SESSION['cart'])) {
     <div class="headerStuff">
         <span id='cartNum'><?php print_r(count($_SESSION['cart'])) ?></span>
         <!--Number of items in cart-->
-        <a class='cartIcon' href="cart"><img class='cartMain' src='Methods/img/shopping-cart.webo' alt='shopping-cart-icon' width='35' height='35'></a>
+        <a class='cartIcon' href="cart"><img class='cartMain' src='Methods/img/shopping-cart.webp' alt='shopping-cart-icon' width='35' height='35'></a>
         <!--Cart icon-->
     </div>
     
