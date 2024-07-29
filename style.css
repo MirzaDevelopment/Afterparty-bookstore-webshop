@@ -3956,7 +3956,7 @@ p.messageDel {
   span.oldPrice,
   div.newPrice,
   div.oldPrice,
-  span.finalMail {
+  span.finalMail, span.originalPrice  {
     font-size: 2rem;
   }
 
@@ -4398,7 +4398,7 @@ p.messageDel {
   span.oldPrice,
   div.newPrice,
   div.oldPrice,
-  nav.goBackCartCheckout a {
+  nav.goBackCartCheckout a, span.originalPrice {
     font-size: 2.2rem;
   }
 

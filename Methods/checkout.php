@@ -49,7 +49,7 @@ if (empty($_SESSION['sum']) && empty($_SESSION['sumDown'])) { //Making sure if u
       session_start();
        CartUser::showCartConfirmation();
          echo "</div>";
-       echo !empty($_SESSION['sum']) && empty($_SESSION['sumDown']) ? "<p>Total price: " . $_SESSION['sum'] . "</p>" : "<p>Total price: " . $_SESSION['sumDown'] . "</p>"; //Calculating total price regarding the chosen quantity of product
+         echo !empty($_SESSION['sumDown']) ? "<p>Total price: " . $_SESSION['sumDown'] . "</p>" : "<p>Total price: " . $_SESSION['sum'] . "</p>"; //Calculating total price regarding the chosen quantity of product
       ?>
     </section>
 
