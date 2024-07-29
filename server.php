@@ -332,7 +332,7 @@ if (!empty($_GET['sum'])) {
     $_SESSION['sum'] = number_format((float)$_GET['sum'], 2, ',', '.') . " $"; //Showint total price in appropriate format
     print_r($_SESSION['sum']);
 } else if (!empty($_GET['sumDown'])) {
-    $_SESSION['sumDown'] = (float)$_GET['sumDown'] . " $";
+    $_SESSION['sumDown'] = number_format((float)$_GET['sumDown'], 2, ',', '.') . " $";
     print_r($_SESSION['sumDown']);
 }
 
