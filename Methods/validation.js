@@ -21,7 +21,7 @@ function checkMail(email) {
     if (!email.match(mailPattern)) {
         let email = document.getElementById("mailVal");
         email.removeAttribute("class", "correctMail");
-        document.getElementById("poruka").innerHTML = "<span style='color:red'>Wrong mail format. Email must be in form: yourmail@someting.com</span>";
+        document.getElementById("poruka").innerHTML = "<span style='color:red'>Wrong mail format. Email must be in form: yourmail@something.com</span>";
     } else {
         document.getElementById("poruka").innerHTML = "<span style='color:#001dff;'>Your email is correct format!</span>";
         let email = document.getElementById("mailVal");
