@@ -4156,7 +4156,7 @@ p.messageDel {
   /***Select tag fix for Firefox***/
   @-moz-document url-prefix() {
     form select#adm_units {
-      width: 334.333px;
+      width: 315.333px;
     }
     div.shroudCont div.shroud,
     div.shroudContCat div.shroudCat {
