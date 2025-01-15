@@ -1231,10 +1231,7 @@ div.numbDistContainer {
     margin-top: 25px;
     margin-bottom: 15px;
   }
-  div.shroudCont div.shroud,
-  div.shroudContCat div.shroudCat {
-    top: -16px;
-  }
+
 
   div.mySlides.fade > img {
     margin-top: 21px;
@@ -1336,12 +1333,7 @@ div.numbDistContainer {
   div.paginationContainer div.prev {
     top: 57px;
   }
-  @-moz-document url-prefix() {
-    div.shroudCont div.shroud,
-    div.shroudContCat div.shroudCat {
-      top: -11px;
-    }
-  }
+
   div.discountContainer ~ a[href*="preview"] > div.shroudCont > div.shroud,
   div.discountContainer
     ~ a[href*="preview"]
@@ -1992,11 +1984,7 @@ div.numbDistContainer {
   h2.latestEdition:first-of-type {
     font-size: 3.5rem;
   }
-  @-moz-document url-prefix() {
-  div.shroudCont div.shroud, div.shroudContCat div.shroudCat {
-    top: -6px;
-  }
-}
+
   div.grid-item a > img:not(img.discountIcon),
   div.grid-item2 a > img:not(img.discountIcon),
   div.grid-item > img:not(img.discountIcon),
