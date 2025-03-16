@@ -786,11 +786,11 @@ class BooksDatabase implements UserBookSelectInterface
     }
     $initial_page = ($page_number - 1) * $limit;
 
-    echo "<p id='generalAnchor'></p>";
+    
     echo "<h2 class='latestEdition' >Latest Editions:</h2>";
     echo "<hr class='hrClass'>";
     echo "<h3 class='latestEditionNotice' >(Hover over title for description)</h3>";
-   
+    echo "<p id='generalAnchor'></p>";
 
     /**End of pagination preparation******/
     try {
